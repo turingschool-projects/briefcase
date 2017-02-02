@@ -278,6 +278,7 @@ DEPENDENCIES
   launchy
   listen (~> 3.0.5)
   omniauth-census!
+  omniauth-oauth2
   pg (~> 0.18)
   pry
   puma (~> 3.0)

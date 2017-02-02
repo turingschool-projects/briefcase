@@ -35,6 +35,7 @@ gem 'serializer'
 gem 'faraday'
 gem 'faker'
 gem 'react-rails'
+gem 'omniauth-oauth2'
 gem 'omniauth-census', git: "https://github.com/NZenitram/census_staging_oauth"
 gem 'thin'
 

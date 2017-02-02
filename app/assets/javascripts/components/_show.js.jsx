@@ -1,4 +1,4 @@
-var Edit = React.createClass({
+var Show = React.createClass({
 
   render(){
     var user = this.props.user; // props brought from controller
@@ -13,4 +13,4 @@ var Edit = React.createClass({
       </div>
     )
   }
-})
+});

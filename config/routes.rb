@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root 'users#index'
 
   get '/dashboard', to: 'dashboard#index'
-  resources :users, only: [:index, :edit, :update]
+  resources :users, only: [:index, :edit, :update, :show]
 
   namespace :admin do
     resources :users, only: [:index, :create, :destroy]
