@@ -1,18 +1,5 @@
 var Edit = React.createClass({
 
-  getInitialState(){
-    return { description: this.props.user.description,
-             bio: this.props.bio }
-  },
-
-  editSubmit(){
-
-  },
-
-  handleBioChange(e){
-    this.setState
-  }
-
   render(){
     var user = this.props.user; // props brought from controller
 
