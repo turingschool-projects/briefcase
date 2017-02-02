@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'users#index', as: 'home'
+  get '/dashboard', to: 'dashboard#index'
+  resources :users, only: [:index, :edit, :update]
+
+  namespace :admin do
+    resources :users, only: [:index, :create, :destroy]
+  end
 end
