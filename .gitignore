@@ -26,3 +26,5 @@
 /config/application.yml
 
 /node_modules
+application.yml
+figaro

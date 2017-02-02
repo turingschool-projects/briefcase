@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/NZenitram/census_staging_oauth
+  revision: b3bc2b5ca6a6ebae8d0e1b555c402a703d260581
+  specs:
+    omniauth-census (0.1.1)
+      omniauth-oauth2
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -70,11 +77,13 @@ GEM
     connection_pool (2.2.1)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
+    daemons (1.2.4)
     database_cleaner (1.5.3)
     debug_inspector (0.0.2)
     diff-lcs (1.2.5)
     docile (1.1.5)
     erubis (2.7.0)
+    eventmachine (1.2.2)
     execjs (2.7.0)
     factory_girl (4.8.0)
       activesupport (>= 3.0.0)
@@ -91,6 +100,7 @@ GEM
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     hashdiff (0.3.1)
+    hashie (3.5.1)
     i18n (0.7.0)
     jbuilder (2.6.1)
       activesupport (>= 3.0.0, < 5.1)
@@ -100,6 +110,7 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (2.0.2)
+    jwt (1.5.6)
     launchy (2.4.3)
       addressable (~> 2.3)
     listen (3.0.8)
@@ -116,10 +127,23 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.10.1)
     multi_json (1.12.1)
+    multi_xml (0.6.0)
     multipart-post (2.0.0)
     nio4r (1.2.1)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
+    oauth2 (1.3.0)
+      faraday (>= 0.8, < 0.11)
+      jwt (~> 1.0)
+      multi_json (~> 1.3)
+      multi_xml (~> 0.5)
+      rack (>= 1.2, < 3)
+    omniauth (1.3.2)
+      hashie (>= 1.2, < 4)
+      rack (>= 1.0, < 3)
+    omniauth-oauth2 (1.4.0)
+      oauth2 (~> 1.0)
+      omniauth (~> 1.2)
     pg (0.19.0)
     pry (0.10.4)
       coderay (~> 1.1.0)
@@ -205,6 +229,10 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    thin (1.7.0)
+      daemons (~> 1.0, >= 1.0.9)
+      eventmachine (~> 1.0, >= 1.0.4)
+      rack (>= 1, < 3)
     thor (0.19.4)
     thread_safe (0.3.5)
     tilt (2.0.5)
@@ -249,6 +277,8 @@ DEPENDENCIES
   jquery-rails
   launchy
   listen (~> 3.0.5)
+  omniauth-census!
+  omniauth-oauth2
   pg (~> 0.18)
   pry
   puma (~> 3.0)
@@ -259,6 +289,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   serializer
   simplecov
+  thin
   turbolinks (~> 5.0.0)
   tzinfo-data
   uglifier (>= 1.3.0)
