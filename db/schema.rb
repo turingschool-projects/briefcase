@@ -28,6 +28,12 @@ ActiveRecord::Schema.define(version: 20170202004328) do
     t.datetime "updated_at"
     t.text     "bio"
     t.string   "background"
+    t.string   "resume_file"
+    t.text     "locations"
+    t.text     "looking_for"
+    t.text     "best_at"
+    t.integer  "hired"
+    t.integer  "published"
   end
 
 end
