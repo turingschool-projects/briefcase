@@ -4,6 +4,7 @@ var Main = React.createClass({
       return (
         <div key={user.id}>
           <h1>{user.first_name}</h1>
+
           <a href={ "users/" + user.id + "/edit"}>Edit Account</a>
         </div>
       )
@@ -11,6 +12,7 @@ var Main = React.createClass({
 
     return (
       <div>
+        <a href={ "/auth/census"}>Login with Census</a>
         {users}
       </div>
     )

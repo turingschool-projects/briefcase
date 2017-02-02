@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  root 'users#index', as: 'home'
+
+  get  'auth/:provider/callback',    to: 'sessions#create'
+  get  'sign_in_with_census',    to: 'sessions#new'
+  root 'users#index'
+
   get '/dashboard', to: 'dashboard#index'
   resources :users, only: [:index, :edit, :update]
 
