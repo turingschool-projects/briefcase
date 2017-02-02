@@ -4,13 +4,13 @@ var Main = React.createClass({
       return (
         <div key={user.id}>
           <h1>{user.first_name}</h1>
+          <a href={ "users/" + user.id + "/edit"}>Edit Account</a>
         </div>
       )
     });
 
     return (
       <div>
-        <a href={ this.props.newUserPath }>Create new Account</a>
         {users}
       </div>
     )
