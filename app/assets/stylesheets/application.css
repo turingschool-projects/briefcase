@@ -13,3 +13,70 @@
  *= require_tree .
  *= require_self
  */
+
+ .navbar .logo {
+     position: relative;
+     display: block;
+     text-decoration: none;
+     padding: 0px;
+ }
+ .pull-left {
+     float: left!important;
+ }
+
+ a {
+    color: #05c2d1;
+    text-decoration: none;
+}
+a {
+    background-color: transparent;
+}
+
+body {
+  background-color: blue;
+}
+
+.navbar .logo img.gear {
+    z-index: 0;
+    animation: spin 14s linear 0s infinite reverse;
+    -moz-animation: 14s linear 0s reverse none infinite spin;
+    -webkit-animation: spin 14s linear 0s infinite reverse;
+    -o-animation: spin 14s linear 0s infinite reverse;
+    -webkit-animation-play-state: running;
+    -o-animation-play-state: running;
+    -moz-animation-play-state: running;
+    animation-play-state: running;
+}
+
+.navbar .logo img.gear:hover {
+  animation-play-state: running;
+}
+
+.navbar .logo img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 80px;
+    z-index: 1;
+}
+img {
+    vertical-align: middle;
+}
+img {
+    border: 0;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(359deg);
+}
+}
