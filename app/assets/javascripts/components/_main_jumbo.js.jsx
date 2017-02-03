@@ -10,6 +10,8 @@ var MainJumbo = React.createClass({
                 <div className="block-content-holder">
                   <div className="block-content">
                     <h1>Alumni Portfolios</h1>
+                    <span><hr/></span>
+                    <p>Explore our recent Graduates to find your next employee</p>
                   </div>
                   <div className="block-quickedit-padding block-quickedit-padding-left" title="Drag to adjust left & right padding" data-quickedit-axis="x" data-quickedit-direction="left" />
                   <div className="block-quickedit-padding block-quickedit-padding-right" title="Drag to adjust left & right padding" data-quickedit-axis="x" data-quickedit-direction="right" />

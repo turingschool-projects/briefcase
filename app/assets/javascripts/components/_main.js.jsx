@@ -25,7 +25,7 @@ var Main = React.createClass({
         <div>
           <GuestNavbar/>
           <MainJumbo/>
-
+          <MainSearch/>
         </div>
       )
     }

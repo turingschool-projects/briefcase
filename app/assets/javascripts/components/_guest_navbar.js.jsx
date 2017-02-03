@@ -18,7 +18,7 @@ var GuestNavbar = React.createClass({
           <i className="fa fa-bars"></i>
         </div>
       </div>
-      <nav role="navigation" className="pull-right visible-lg menu-container">
+      <div role="navigation" className="pull-right visible-lg menu-container">
         <ul className="menu nav navbar-nav">
           <li className=""><a href="/"><span>The Difference</span></a></li>
           <li className=""><a href="/users/1/edit"><span>Our Team</span></a></li>
@@ -30,7 +30,7 @@ var GuestNavbar = React.createClass({
           <li className=""><a href="/user/logout"><span>Hire a Grad</span></a></li>
           <li className=""><a href="/user/logout"><span>Log In</span></a></li>
         </ul>
-      </nav>
+      </div>
     </div>
     )
   }
