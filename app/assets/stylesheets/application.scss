@@ -15,61 +15,45 @@
  */
 .navbar {
   width: 100%;
-}
- .navbar .logo {
-     position: relative;
-     display: block;
-     text-decoration: none;
-     padding: 6%;
- }
- .pull-left {
-     float: left!important;
- }
+  position: fixed;
 
- a {
-    color: white;
+  .logo {
+    position: relative;
+    display: block;
     text-decoration: none;
-}
-a {
-    background-color: transparent;
-}
-
-.navbar .logo img.gear {
-    z-index: 0;
-    animation: spin 14s linear 0s infinite reverse;
-    -moz-animation: 14s linear 0s reverse none infinite spin;
-    -webkit-animation: spin 14s linear 0s infinite reverse;
-    -o-animation: spin 14s linear 0s infinite reverse;
-    -webkit-animation-play-state: paused;
-    -o-animation-play-state: paused;
-    -moz-animation-play-state: paused;
-    animation-play-state: paused;
     padding: 6%;
+
+    img {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      height: 120px;
+      z-index: 1;
+    }
+
+    img.gear {
+      z-index: 0;
+      animation: spin 14s linear 0s infinite reverse;
+      -moz-animation: 14s linear 0s reverse none infinite spin;
+      -webkit-animation: spin 14s linear 0s infinite reverse;
+      -o-animation: spin 14s linear 0s infinite reverse;
+      -webkit-animation-play-state: paused;
+      -o-animation-play-state: paused;
+      -moz-animation-play-state: paused;
+      animation-play-state: paused;
+      padding: 6%;
+    }
+
+    img.gear:hover {
+      animation-play-state: running;
+    }
+  }
 }
-
-.navbar .logo img.gear:hover {
-  animation-play-state: running;
-}
-
-.navbar .logo img {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    height: 120px;
-    z-index: 1;
-}
-
-
-.pull-right {
-    float: right!important;
-}
-
 
 .menu  {
   list-style-type: none;
   margin-top: 5%;
   margin-right: 1em;
-
 
   li {
     float: left;
@@ -80,11 +64,9 @@ a {
   }
 }
 
-
 .active {
   border-bottom: 2px solid blue;
 }
-
 
 @keyframes spin {
     0% {
@@ -102,10 +84,6 @@ a {
     background-repeat: no-repeat;
     z-index: -1;
     top: 0 !important;
-}
-
-.navbar {
-  position: fixed
 }
 
 .block-content {
@@ -131,15 +109,26 @@ a {
   }
 }
 
-
 .region-filters {
     background-color: #05c2d1;
     padding: 2.2em 0em;
     margin-bottom: 40px;
 }
 
+.pull-left {
+    float: left!important;
+}
+
+a {
+ color: white;
+ text-decoration: none;
+ background-color: transparent;
+}
+
+.pull-right {
+   float: right!important;
+}
 
 body {
   font-family: sans-serif,Monaco,Consolas,"Courier New",monospace;
-  background-color: red;
 }
