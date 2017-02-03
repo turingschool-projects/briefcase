@@ -5,6 +5,7 @@ var Edit = React.createClass({
 
     return (
       <div>
+        <Navbar/>
         <h1>{user.first_name} {user.last_name}</h1>
         <p>{user.description}</p>
         <p>{user.bio}</p>

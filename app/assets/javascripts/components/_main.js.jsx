@@ -14,6 +14,8 @@ var Main = React.createClass({
     if(signedIn === 1) {
       return (
         <div>
+          <SignedInNavbar/>
+
           <h1>Welcome</h1>
           {users}
         </div>
@@ -21,8 +23,10 @@ var Main = React.createClass({
     } else {
       return (
         <div>
-          <a href={ "/auth/census"}>Login with Census</a>
-          {users}
+          <GuestNavbar/>
+          <MainJumbo/>
+          <MainSearch/>
+          <UserCard users = {this.props.users}/>
         </div>
       )
     }
