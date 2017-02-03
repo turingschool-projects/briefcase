@@ -111,7 +111,7 @@
 
 .region-filters {
     background-color: #05c2d1;
-    padding: 2.2em 0em;
+    // padding: 2.2em 0em;
     margin-bottom: 40px;
 }
 
@@ -129,6 +129,69 @@ a {
    float: right!important;
 }
 
+.input-field {
+  border: 2px solid white;
+  background-color: white;
+  margin-bottom: 2em;
+}
+
+#input_text {
+  // height: 60% !important;
+  border: none;
+}
+
 body {
   font-family: sans-serif,Monaco,Consolas,"Courier New",monospace;
+}
+
+#name {
+  border: 1px solid white ;
+  border-radius: 0.15em;
+  background-color: white;
+  margin-top: 1em;
+  width: 10%;
+  margin-left: 20%;
+  padding-right: 20%;
+}
+
+
+.textinput {
+  height: 3em;
+  margin: 1em 0;
+  position: relative;
+  width: 100%;
+}
+
+input[placeholder="Search Here..."]{
+  padding-left: 15px;
+}
+input[type="search"] {
+  box-sizing: border-box;
+  background-color: white;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  border-radius: 20px;
+}
+
+.search-container {
+  width: 500px;
+  margin-left: 20%;
+  // margin-right: 60%;
+}
+
+.Search {
+  position: relative;
+  display: flex;
+  font-weight: 300;
+  font-size: 40px;
+  color: #555;
+}
+
+
+
+.Search-label {
+  position: absolute;
+  top: 35%;
+  left: 90%;
+  font-size: 50%;
 }
