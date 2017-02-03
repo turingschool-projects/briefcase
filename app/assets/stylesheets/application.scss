@@ -18,7 +18,7 @@
      position: relative;
      display: block;
      text-decoration: none;
-     padding: 0px;
+     padding: 6%;
  }
  .pull-left {
      float: left!important;
@@ -32,20 +32,17 @@ a {
     background-color: transparent;
 }
 
-body {
-  background-color: blue;
-}
-
 .navbar .logo img.gear {
     z-index: 0;
     animation: spin 14s linear 0s infinite reverse;
     -moz-animation: 14s linear 0s reverse none infinite spin;
     -webkit-animation: spin 14s linear 0s infinite reverse;
     -o-animation: spin 14s linear 0s infinite reverse;
-    -webkit-animation-play-state: running;
-    -o-animation-play-state: running;
-    -moz-animation-play-state: running;
-    animation-play-state: running;
+    -webkit-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    animation-play-state: paused;
+    padding: 6%;
 }
 
 .navbar .logo img.gear:hover {
@@ -59,24 +56,61 @@ body {
     height: 80px;
     z-index: 1;
 }
-img {
-    vertical-align: middle;
+
+
+.pull-right {
+    float: right!important;
 }
-img {
-    border: 0;
+
+
+.menu  {
+  list-style-type: none;
+  padding: 5%;
 }
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+
+
+.active {
+  border-bottom: 2px solid blue;
+}
+
+.menu li {
+  float: left;
+}
+
+.menu li a {
+  display: block;
+  padding: 14px 16px;
 }
 
 
 @keyframes spin {
-  0% {
-    transform: rotate(0deg);
+    0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(359deg);
+  }
 }
-100% {
-    transform: rotate(359deg);
+
+.block.block-block-94 {
+    background-image: url(https://www.turing.io/sites/default/files/styles/block_background/public/block_background/turing-alumni-banner.jpg?itok=KJUoCDZ-);
+    background-size: 100%;
+    height: 100em;
+    background-repeat: no-repeat;
+    z-index: -1;
 }
+
+.block-content {
+  padding-top: 15%;
+  text-align: center;
+
+  h1 {
+    color: white;
+    font-size: 48px;
+
+  }
+}
+
+body {
+  font-family: sans-serif,Monaco,Consolas,"Courier New",monospace;
 }
