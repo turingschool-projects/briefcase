@@ -66,8 +66,15 @@
   }
 }
 
-.active {
-  border-bottom: 2px solid blue;
+// .active {
+//   border-bottom: 2px solid blue;
+// }
+.material-icons {
+  color: $turingblue
+}
+
+.more-vert:hover{
+  cursor:pointer;
 }
 
 @keyframes spin {
@@ -78,6 +85,8 @@
       transform: rotate(359deg);
   }
 }
+
+
 
 .block.block-block-94 {
     background-image: url(https://www.turing.io/sites/default/files/styles/block_background/public/block_background/turing-alumni-banner.jpg?itok=KJUoCDZ-);
@@ -203,6 +212,7 @@ input[type="search"] {
     padding-left: 10%;
   }
   margin-bottom: 12%;
+  margin-top: 12%;
 }
 
 img.card-picture {
@@ -223,18 +233,40 @@ img.card-picture {
 }
 
 .card {
-  height: 40em;
+  height: 45em;
 }
 
-.card-content {
+.card-picture {
+      margin-top: 20%;
+}
+
+.card .card-content {
   p {
     font-size: 14px !important;
   }
+  margin-top: 8%
 }
 
 .fa-heart-o {
   color: pink;
+  padding: 2%;
 }
 .fa-heart {
   color: pink;
+  padding: 2%;
+}
+
+i.right {
+    float: right;
+    padding: 2%;
+}
+
+hr {
+  width: 14em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.card .card-content p {
+    font-size: 16px !important;
+    line-height: 150%;
 }

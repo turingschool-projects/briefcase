@@ -8,21 +8,21 @@ class Seed
     User.create({
       first_name: "Daniel",
       last_name: "Shin",
-      bio: "alskd jlskadfj  lksajd salkdjf lskdjsdk lja lksdajf ksajdf k;jsa sakdjsadf kldfsjgfds sajdf ksdj sadjfsd jsadfk sdkjdsajfdsj sdk skfsdfjsdksd jsd asdjfsdlfjksldfsdafjdskj j sdskadfjsdkfjskdjfaslk sadkfsafsjdfsd jlksaf",
+      bio: "Being around cars has taught me a great deal about what works and doesn't when it comes to performance. Many of those principles have proved valuable in developing software as well. I love new challenges and get a kick out of working with teams to produce the best product available. Life isn't worth living if its not lived to its fullest. ",
       title: "Software Developer",
       })
 
     User.create({
       first_name: "Anthony",
       last_name: "Ciccone",
-      bio: "alskd jlskadfj  lksajd salkdjf lskdjsdk lja lksdajf ksajdf k;jsa sakdjsadf kldfsjgfds sajdf ksdj sadjfsd jsadfk sdkjdsajfdsj sdk skfsdfjsdksd jsd asdjfsdlfjksldfsdafjdskj j sdskadfjsdkfjskdjfaslk sadkfsafsjdfsd jlksaf",
+      bio: "Being around cars has taught me a great deal about what works and doesn't when it comes to performance. Many of those principles have proved valuable in developing software as well. I love new challenges and get a kick out of working with teams to produce the best product available. Life isn't worth living if its not lived to its fullest. ",
       title: "Software Developer",
       })
 
     User.create({
       first_name: "Matt",
       last_name: "DeMarteau",
-      bio: "alskd jlskadfj  lksajd salkdjf lskdjsdk lja lksdajf ksajdf k;jsa sakdjsadf kldfsjgfds sajdf ksdj sadjfsd jsadfk sdkjdsajfdsj sdk skfsdfjsdksd jsd asdjfsdlfjksldfsdafjdskj j sdskadfjsdkfjskdjfaslk sadkfsafsjdfsd jlksaf",
+      bio: "Being around cars has taught me a great deal about what works and doesn't when it comes to performance. Many of those principles have proved valuable in developing software as well. I love new challenges and get a kick out of working with teams to produce the best product available. Life isn't worth living if its not lived to its fullest. ",
       title: "Software Developer",
       })
   end

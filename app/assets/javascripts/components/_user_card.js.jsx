@@ -2,6 +2,11 @@ var UserCard = React.createClass({
   fillHeart :function(self){
     $(self.target).toggleClass("fa-heart-o fa-heart");
   },
+
+  shorterBio :function (text) {
+    return text.substring(0, 193);
+  },
+
   render(){
     var users = this.props.users.map((user) => { // props brought from controller
       return (
@@ -9,7 +14,7 @@ var UserCard = React.createClass({
             <div className="card">
 
             <i className="fa fa-heart-o left fa-2x" aria-hidden="true" onClick={this.fillHeart}></i>
-            <i className="material-icons right activator">more_vert</i>
+            <i className="material-icons right activator more-vert">more_vert</i>
 
               <div className="card-image waves-effect waves-block waves-light">
                 <center>
@@ -22,7 +27,7 @@ var UserCard = React.createClass({
                   <p className="card-title grey-text text-darken-4 ">{user.title}</p>
                 </center>
                 <hr/>
-                <p>{user.bio}</p>
+                <center><p className="card-bio">{this.shorterBio(user.bio)}...</p></center>
                 <div className="card-links">
                   <i className="fa fa-github fa-3x" aria-hidden="true"></i>
                   <i className="fa fa-linkedin fa-3x" aria-hidden="true"></i>
@@ -30,7 +35,7 @@ var UserCard = React.createClass({
                 <center><a className="card-profile" href={ "/users/" + user.id }>View Profile</a></center>
               </div>
               <div className="card-reveal">
-                <span className="card-title grey-text text-darken-4">Card Title<i className="material-icons right">close</i></span>
+                <span className="card-title grey-text text-darken-4">Bio<i className="material-icons right">close</i></span>
                 <p>{user.bio}</p>
             </div>
           </div>
