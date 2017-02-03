@@ -14,9 +14,7 @@ var GuestNavbar = React.createClass({
           <img src="/assets/turing-logo_1_0.png" alt="Home" className='logo'/>
           <img src="/assets/turing-logo-gear.png" alt="Turing Logo Gear" className="gear"/>
         </a>
-        <div className="nav-toggle sb-toggle-right hidden-lg">
-          <i className="fa fa-bars"></i>
-        </div>
+        
       </div>
       <div role="navigation" className="pull-right visible-lg menu-container">
         <ul className="menu nav navbar-nav">

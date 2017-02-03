@@ -26,6 +26,7 @@ var Main = React.createClass({
           <GuestNavbar/>
           <MainJumbo/>
           <MainSearch/>
+          <UserCard users = {this.props.users}/>
         </div>
       )
     }

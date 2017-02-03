@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+ $turingblue: #05c2d1;
+
 .navbar {
   width: 100%;
   position: fixed;
@@ -187,11 +189,52 @@ input[type="search"] {
   color: #555;
 }
 
-
-
 .Search-label {
   position: absolute;
   top: 35%;
   left: 90%;
   font-size: 50%;
+}
+
+.card-links{
+  text-align: center;
+  i {
+    padding-right: 10%;
+    padding-left: 10%;
+  }
+  margin-bottom: 12%;
+}
+
+img.card-picture {
+  border-radius: 50% !important;
+  height: 200px !important;
+  width: 200px !important;
+}
+.card-profile {
+  color: $turingblue;
+  border: 1px solid $turingblue;
+  padding: 2%;
+  border-radius: 10px;
+  font-weight: normal;
+
+  &:hover {
+    font-weight: bold;
+  }
+}
+
+.card {
+  height: 40em;
+}
+
+.card-content {
+  p {
+    font-size: 14px !important;
+  }
+}
+
+.fa-heart-o {
+  color: pink;
+}
+.fa-heart {
+  color: pink;
 }
