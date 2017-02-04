@@ -6,9 +6,14 @@ var Footer = React.createClass({
           <div className="col s4">
             <center><h2 className='newsletter'>Sign Up for our news letter</h2></center>
             <center><p className='address'>Get the latest and greatest news and updates from the team here at Turing that you'll enjoy!</p></center>
-            <center><input className='input-newsletter' placeholder="Your Email Here">
+            <div className='input-for-news'>
+          <center>
+            <input className='input-newsletter' placeholder="Your Email Here">
 
-            </input></center>
+
+            </input>
+          </center>
+            </div>
           </div>
         <div className="col s4">
           <center><h2 className='newsletter'>Social Links</h2></center>

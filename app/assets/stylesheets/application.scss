@@ -356,9 +356,17 @@ footer.page-footer {
   width: 80%;
 }
 
+.input-for-news {
+// padding-top: 3%;
+}
+
 input.input-newsletter {
-  margin-top: 3%;
   border: solid .5px white;
   width: 80%;
   border-radius: 0.20em;
+}
+
+input[placeholder="Your Email Here"]{
+  padding-left: 15px;
+
 }
