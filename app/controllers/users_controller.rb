@@ -14,8 +14,7 @@ class UsersController < ApplicationController
     render component: "Edit", props: { user: @user }
   end
 
-  def accout
-    @user = User.find(params[:id])
-    render component: 'Account', props: {user: @user}
+  def account
+    render component: 'Account'
   end
 end

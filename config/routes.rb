@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'dashboard#index'
   resources :users, only: [:index, :edit, :update, :show]
-  get '/user/:id/edit-account', to: 'users#account'
+  get '/user/1/edit-account', to: 'users#account'
 
   namespace :admin do
     resources :users, only: [:index, :create, :destroy]
