@@ -10,7 +10,7 @@ var UserCard = React.createClass({
   render(){
     var users = this.props.users.map((user) => { // props brought from controller
       return (
-          <div className="col s4"key={user.id}>
+          <div className="col s4 "key={user.id}>
             <div className="card">
 
             <i className="fa fa-heart-o left fa-2x" aria-hidden="true" onClick={this.fillHeart}></i>

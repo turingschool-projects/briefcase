@@ -27,6 +27,7 @@ var Main = React.createClass({
           <MainJumbo/>
           <MainSearch/>
           <UserCard users = {this.props.users}/>
+          <Footer/>
         </div>
       )
     }
