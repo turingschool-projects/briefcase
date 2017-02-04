@@ -6,8 +6,10 @@ var Footer = React.createClass({
           <div className="col s4">
             <center><h2 className='newsletter'>Sign Up for our news letter</h2></center>
             <center><p className='address'>Get the latest and greatest news and updates from the team here at Turing that you'll enjoy!</p></center>
-              <input className="Search-box" placeholder="Search Here..." type="search" id="Search-box" autoComplete="off" />
-              <label className="Search-label" htmlFor="Search-box"><i className="material-icons">search</i></label>      </div>
+            <center><input className='input-newsletter' placeholder="Your Email Here">
+
+            </input></center>
+          </div>
         <div className="col s4">
           <center><h2 className='newsletter'>Social Links</h2></center>
           <div>
