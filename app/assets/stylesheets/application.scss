@@ -15,12 +15,15 @@
  */
  $turingblue: #05c2d1;
 
+ @import 'show';
+
 .navbar {
   width: 100%;
   position: fixed;
 
   .logo {
     position: relative;
+    width: 324px;
     display: block;
     text-decoration: none;
     padding: 6%;
