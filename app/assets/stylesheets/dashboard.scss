@@ -1,3 +1,4 @@
+$turingblue: #05c2d1;
 
 .block.block-block-96 {
     background-image: url(https://www.turing.io/sites/default/files/styles/block_background/public/block_background/turing-banner-dashboard.jpg?itok=qqYc1uac);
@@ -27,5 +28,5 @@
 }
 
 .active {
-  border-bottom: 2px solid blue;
+  border-bottom: 4px solid $turingblue;
 }
