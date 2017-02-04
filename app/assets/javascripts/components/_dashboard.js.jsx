@@ -5,7 +5,6 @@ var Dashboard = React.createClass({
       <div>
         <SignedInNavbar/>
         <DashboardJumbo/>
-        <DashboardProfile user = { user }/>
       </div>
     )
   }

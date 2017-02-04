@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   def create
     census_user_info = env["omniauth.auth"]
     @user = User.create_from_census(census_user_info)
-    require "pry"; binding.pry
+    
     if(@user)
       session["user_id"] = @user.id
       render component: 'Dashboard', props: { user: @user }
