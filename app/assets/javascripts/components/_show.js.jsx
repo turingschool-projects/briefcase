@@ -6,8 +6,8 @@ var Show = React.createClass({
     return (
 
       <div>
-      <GuestNavbar/>
-      <GuestJumbo user = {user}/>
+        <GuestNavbar/>
+        <GuestJumbo user = {user}/>
         <h1>{user.first_name} {user.last_name}</h1>
         <p>{user.description}</p>
         <p>{user.bio}</p>

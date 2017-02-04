@@ -100,6 +100,53 @@
     top: 0 !important;
 }
 
+.block.block-block-95 {
+    background-image: url("/assets/turing-show-banner.jpg");
+    background-size: 100%;
+    height: 20em;
+    background-repeat: no-repeat;
+    z-index: -1;
+    top: 0 !important;
+
+    center{
+      text-align: left;
+      position: fixed;
+      // width: 500px;
+      // height: 200px;
+      top: 30%;
+      left: 50%;
+      margin-top: -100px; /* Negative half of height. */
+      margin-left: -250px; /* Negative half of width. */
+      width: 800px;
+
+      .title {
+        color: white;
+        font-size: 20px !important;
+      }
+
+      .resume-btn {
+        color: white  !important;
+        width: 120px !important;
+        border: 1px solid white;
+      }
+    }
+
+    p {
+      padding-top: 2%;
+    }
+}
+
+.user-show-picture{
+  background-image: url("/assets/turing-alumni-banner.jpg");
+  // background-size: 100%;
+  height: 365px;
+  width: 365px;
+  background-repeat: no-repeat;
+  margin-top: 3%;
+
+}
+
+
 .block-content {
   padding-top: 13%;
   text-align: center;
@@ -272,4 +319,57 @@ hr {
 .card .card-content p {
     font-size: 16px !important;
     line-height: 150%;
+}
+
+.container {
+  width: 80%;
+}
+
+footer.page-footer {
+  background-color: #3C4040 !important;
+  height: 300px !important;
+}
+
+.newsletter {
+  font-size: 30px;
+  color: white;
+  font-family: azo-sans-web, sans-serif;
+  margin-top: 1em;
+}
+
+.social-footer {
+  color: #05c2d1;
+  padding: 4%;
+  padding-top: 6%;
+}
+
+.address {
+  color: grey;
+  font-size: 20px;
+  width: 80%;
+  line-height: 150%;
+  margin-top: 6%
+}
+
+.phone-number {
+  color: #05c2d1;
+  font-size: 20px;
+  margin-top: 6%;
+  line-height: 150%;
+  width: 80%;
+}
+
+.input-for-news {
+// padding-top: 3%;
+}
+
+input.input-newsletter {
+  border: solid .5px white;
+  width: 80%;
+  border-radius: 0.20em;
+}
+
+input[placeholder="Your Email Here"]{
+  padding-left: 15px;
+
 }
