@@ -1,8 +1,8 @@
 var SignedInNavbar = React.createClass({
-  activePage(){
-    $('menu a').each(function(){
+  componentDidMount(){
+    $('.menu a').each(function(){
         if ($(this).prop('href') == window.location.href) {
-            $(this).addClass('active'); $(this).parents('li').addClass('active');
+            $(this).addClass('active');
         }
     });
   },

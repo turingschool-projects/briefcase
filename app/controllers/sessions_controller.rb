@@ -9,7 +9,6 @@ class SessionsController < ApplicationController
 
     if(@user)
       session["user_id"] = @user.id
-      # render component: 'Dashboard', props: { user: @user }
       redirect_to dashboard_path
     else
       render component: 'Main', props: { users: User.all, signed_in: 0, unsucessful: "Unsuccessful Login" }
