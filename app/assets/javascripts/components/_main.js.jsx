@@ -11,13 +11,11 @@ var Main = React.createClass({
       )
     });
 
-    if(signedIn === 1) {
+    if(signedIn == 1) {
       return (
         <div>
           <SignedInNavbar/>
-
-          <h1>Welcome</h1>
-          {users}
+          <DashboardJumbo/>
         </div>
       )
     } else {

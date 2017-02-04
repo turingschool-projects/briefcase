@@ -12,10 +12,8 @@ var UserCard = React.createClass({
       return (
           <div className="col s4"key={user.id}>
             <div className="card">
-
             <i className="fa fa-heart-o left fa-2x" aria-hidden="true" onClick={this.fillHeart}></i>
             <i className="material-icons right activator more-vert">more_vert</i>
-
               <div className="card-image waves-effect waves-block waves-light">
                 <center>
                   <img className="activator card-picture" src="assets/turing-alumni-banner.jpg" />
@@ -40,18 +38,15 @@ var UserCard = React.createClass({
             </div>
           </div>
         </div>
-
       )
     });
 
     return (
       <div className="container">
-
-      <div className="row">
-        {users}
+        <div className="row">
+          {users}
+        </div>
       </div>
-    </div>
-
     )
   }
 })
