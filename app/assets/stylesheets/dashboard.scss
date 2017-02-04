@@ -6,4 +6,20 @@
     background-repeat: no-repeat;
     z-index: -1;
     top: 0 !important;
+    h1 {
+      font-family: "azo-sans-web","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+		  font-weight: bold;
+      line-height: 52px;
+    }
+    p {
+      font-family: "azo-sans-web","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-size: 24px;
+      line-height: 31px;
+      font-weight: lighter;
+    }
+}
+
+.dashboard-navbar{
+  margin-top: 2em;
+  padding-right: 2em;
 }

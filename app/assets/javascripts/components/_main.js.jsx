@@ -15,7 +15,8 @@ var Main = React.createClass({
       return (
         <div>
           <SignedInNavbar/>
-          <DashboardJumbo/>
+          <MainJumbo/>
+          <MainSearch/>
         </div>
       )
     } else {

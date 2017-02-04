@@ -8,7 +8,7 @@ var SignedInNavbar = React.createClass({
   },
   render(){
   return (
-    <div className="navbar">
+    <div className="navbar dashboard-navbar">
       <div>
         <a className="logo pull-left" href="/user" title="Home">
           <img src="/assets/turing-logo_1_0.png" alt="Home" className='logo'/>
@@ -18,7 +18,7 @@ var SignedInNavbar = React.createClass({
       </div>
       <div role="navigation" className="pull-right visible-lg menu-container">
         <ul className="menu nav navbar-nav">
-          <li className=""><a href="/"><span>Dashboard</span></a></li>
+          <li className=""><a href="/dashboard"><span>Dashboard</span></a></li>
           <li className=""><a href="/"><span>My Account</span></a></li>
           <li className=""><a href="/"><span>Sign Out</span></a></li>
         </ul>
