@@ -16,12 +16,15 @@
  $turingblue: #05c2d1;
  @import 'dashboard';
 
+ @import 'show';
+
 .navbar {
   width: 100%;
   position: fixed;
 
   .logo {
     position: relative;
+    width: 324px;
     display: block;
     text-decoration: none;
     padding: 6%;
@@ -331,4 +334,53 @@ hr {
 
 .container {
   width: 80%;
+}
+
+footer.page-footer {
+  background-color: #3C4040 !important;
+  height: 300px !important;
+}
+
+.newsletter {
+  font-size: 30px;
+  color: white;
+  font-family: azo-sans-web, sans-serif;
+  margin-top: 1em;
+}
+
+.social-footer {
+  color: #05c2d1;
+  padding: 4%;
+  padding-top: 6%;
+}
+
+.address {
+  color: grey;
+  font-size: 20px;
+  width: 80%;
+  line-height: 150%;
+  margin-top: 6%
+}
+
+.phone-number {
+  color: #05c2d1;
+  font-size: 20px;
+  margin-top: 6%;
+  line-height: 150%;
+  width: 80%;
+}
+
+.input-for-news {
+// padding-top: 3%;
+}
+
+input.input-newsletter {
+  border: solid .5px white;
+  width: 80%;
+  border-radius: 0.20em;
+}
+
+input[placeholder="Your Email Here"]{
+  padding-left: 15px;
+
 }

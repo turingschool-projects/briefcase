@@ -18,4 +18,7 @@ class UsersController < ApplicationController
     render component: "Edit", props: { user: @user }
   end
 
+  def account
+    render component: 'Account'
+  end
 end

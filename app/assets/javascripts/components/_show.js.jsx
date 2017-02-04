@@ -4,13 +4,11 @@ var Show = React.createClass({
     var user = this.props.user; // props brought from controller
 
     return (
+
       <div>
         <GuestNavbar/>
-        <h1>{user.first_name} {user.last_name}</h1>
-        <p>{user.description}</p>
-        <p>{user.bio}</p>
-        <p>{user.github_url}</p>
-        <p>{user.linkedin_url}</p>
+        <GuestJumbo user = {user}/>
+  
       </div>
     )
   }
