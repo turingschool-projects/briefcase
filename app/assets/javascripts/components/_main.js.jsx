@@ -17,6 +17,8 @@ var Main = React.createClass({
           <SignedInNavbar/>
           <MainJumbo/>
           <MainSearch/>
+          <UserCard users = {this.props.users}/>
+          <Footer/>
         </div>
       )
     } else {
