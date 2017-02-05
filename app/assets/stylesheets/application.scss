@@ -14,6 +14,7 @@
  *= require_self
  */
  $turingblue: #05c2d1;
+ @import 'dashboard';
 
  @import 'show';
  @import 'user_project_card';
@@ -90,8 +91,6 @@
   }
 }
 
-
-
 .block.block-block-94 {
     background-image: url(https://www.turing.io/sites/default/files/styles/block_background/public/block_background/turing-alumni-banner.jpg?itok=KJUoCDZ-);
     background-size: 100%;
@@ -125,11 +124,23 @@
         font-size: 20px !important;
       }
 
-      .resume-btn {
+      .outer {
         color: white  !important;
-        width: 120px !important;
-        border: 1px solid white;
+        .resume-btn {
+          width: 120px !important;
+          border: 1px solid white;
+        }
+        .linkedin-btn{
+          border: 1px solid white;
+          width: 50px !important;
+        }
+        .heart{
+          border: 1px solid white;
+          width: 50px !important;
+        }
+
       }
+
     }
 
     p {
@@ -373,4 +384,14 @@ input.input-newsletter {
 input[placeholder="Your Email Here"]{
   padding-left: 15px;
 
+}
+
+.account-row {
+  margin-top: 7%;
+}
+
+.account-btn {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  background-color: #20CE20;
 }

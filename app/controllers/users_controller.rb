@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
   def index
     @users = User.all
-    render component: 'Main', props: { users: @users, signed_in: 0 }
+    if(logged_in?)
+      render component: 'Main', props: { users: @users, signed_in: 1 }
+    else
+      render component: 'Main', props: { users: @users, signed_in: 0 }
+    end
   end
 
   def show
@@ -14,4 +18,7 @@ class UsersController < ApplicationController
     render component: "Edit", props: { user: @user }
   end
 
+  def account
+    render component: 'Account'
+  end
 end
