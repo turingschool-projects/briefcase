@@ -1,8 +1,8 @@
 var SignedInNavbar = React.createClass({
-  activePage(){
-    $('menu a').each(function(){
+  componentDidMount(){
+    $('.menu a').each(function(){
         if ($(this).prop('href') == window.location.href) {
-            $(this).addClass('active'); $(this).parents('li').addClass('active');
+            $(this).addClass('active');
         }
     });
   },
@@ -20,7 +20,7 @@ var SignedInNavbar = React.createClass({
         <ul className="menu nav navbar-nav">
           <li className=""><a href="/dashboard"><span>Dashboard</span></a></li>
           <li className=""><a href="/"><span>My Account</span></a></li>
-          <li className=""><a href="/"><span>Sign Out</span></a></li>
+          <li className=""><a href="/logout"><span>Sign Out</span></a></li>
         </ul>
       </div>
     </div>

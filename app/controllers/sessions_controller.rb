@@ -6,10 +6,10 @@ class SessionsController < ApplicationController
   def create
     census_user_info = env["omniauth.auth"]
     @user = User.create_from_census(census_user_info)
-    require "pry"; binding.pry
+
     if(@user)
       session["user_id"] = @user.id
-      render component: 'Dashboard', props: { user: @user }
+      redirect_to dashboard_path
     else
       render component: 'Main', props: { users: User.all, signed_in: 0, unsucessful: "Unsuccessful Login" }
     end
@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
 
   def destroy
     reset_session
-    render component: 'Main', props: { users: User.all, signed_in: 0 }
+    redirect_to root_path
   end
 
 end

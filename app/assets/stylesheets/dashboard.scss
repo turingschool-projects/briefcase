@@ -1,3 +1,5 @@
+$turingblue: #05c2d1;
+$lightgray: #D3D3D3;
 
 .block.block-block-96 {
     background-image: url(https://www.turing.io/sites/default/files/styles/block_background/public/block_background/turing-banner-dashboard.jpg?itok=qqYc1uac);
@@ -24,4 +26,90 @@
     margin-top: 3em;
   }
   padding-right: 2em;
+}
+
+.active {
+  border-bottom: 4px solid $turingblue;
+}
+
+.dashboard-container {
+  margin-top: 8%;
+  h2{
+    font-family: "azo-sans-web","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 24px;
+    line-height: 31px;
+    font-weight: bold;
+    padding-bottom: 2%;
+  }
+  .card-picture {
+    margin-top: 10%;
+  }
+  .card-content {
+    margin-top: 2% !important;
+  }
+  .card-profile {
+    padding: 12px;
+    margin: 5px;
+    border-radius: 4px;
+  }
+  .delete{
+    border-color: red;
+    color: red;
+  }
+}
+
+.dashboard-project-container {
+  margin-top: 8%;
+  h2{
+    font-family: "azo-sans-web","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 24px;
+    line-height: 31px;
+    font-weight: bold;
+    padding-bottom: 1%;
+  }
+  .card {
+    height: 380px;
+  }
+  .dashboard-project {
+    padding-top: 5%;
+
+    .card-profile{
+      margin: 2%;
+    }
+    .dash-line {
+      width: 100%;
+      margin-bottom: 15%;
+    }
+    h1 {
+      font-size: 40px;
+      font-weight: lighter;
+    }
+
+    h1, h3, p {
+      padding-top: 2%;
+      padding-bottom: 2%;
+    }
+  }
+}
+
+.dashboard-card {
+  height: 200em;
+  width: 30em;
+  h2 {
+    font-family: "azo-sans-web","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 24px;
+    line-height: 31px;
+    font-weight: lighter;
+  }
+  h3 {
+    font-family: "azo-sans-web","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    line-height: 27px;
+    font-weight: bold;
+  }
+
+}
+
+.dashboard-padding {
+  margin-bottom: 10%;
 }

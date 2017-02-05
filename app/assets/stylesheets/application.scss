@@ -71,9 +71,6 @@
   }
 }
 
-// .active {
-//   border-bottom: 2px solid blue;
-// }
 .material-icons {
   color: $turingblue
 }
@@ -299,7 +296,7 @@ img.card-picture {
 }
 
 .card-picture {
-      margin-top: 20%;
+  margin-top: 20%;
 }
 
 .card .card-content {
@@ -360,7 +357,8 @@ footer.page-footer {
   font-size: 20px;
   width: 80%;
   line-height: 150%;
-  margin-top: 6%
+  margin-top: 6%;
+  margin-bottom: 5%;
 }
 
 .phone-number {
