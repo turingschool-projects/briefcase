@@ -45,10 +45,10 @@ var GuestJumbo = React.createClass({
               <div className="col s6 offset-s4">
                 <p>{this.props.user.bio}</p>
               </div>
-              <div className="col s6 offset-s4">
+              <div className=" col s6 offset-s4">
               <ul>
-              <li><button className='btn transparent email-btn'>Email Directly <i className="fa fa-long-arrow-right" aria-hidden="true"></i></button></li>
-              <li><button className='btn transparent github-btn'>GitHub Profile  <i className="fa fa-long-arrow-right" aria-hidden="true"></i></button></li>
+                <li><button className='btn transparent email-btn'>Email Directly <i className="fa fa-long-arrow-right" aria-hidden="true"></i></button></li>
+                <li><button className='btn transparent github-btn'>GitHub Profile  <i className="fa fa-long-arrow-right" aria-hidden="true"></i></button></li>
 
               </ul>
               </div>
@@ -94,17 +94,6 @@ var GuestJumbo = React.createClass({
                 </div>
               </div>
               </div>
-
-
-
-            <div className="row my-projects">
-              <div className='col s12'>
-                <h1>My Projects</h1>
-              </div>
-            </div>
-
-
-
 
             </div>
 
