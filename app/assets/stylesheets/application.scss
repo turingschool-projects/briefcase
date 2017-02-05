@@ -17,6 +17,7 @@
  @import 'dashboard';
 
  @import 'show';
+ @import 'user_project_card';
 
 .navbar {
   width: 100%;
@@ -381,4 +382,14 @@ input.input-newsletter {
 input[placeholder="Your Email Here"]{
   padding-left: 15px;
 
+}
+
+.account-row {
+  margin-top: 7%;
+}
+
+.account-btn {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  background-color: #20CE20;
 }

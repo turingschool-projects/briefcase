@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    render component: "Show", props: { user: @user }
+    render component: "Show", props: { user: @user, projects: @user.projects }
   end
 
   def edit
