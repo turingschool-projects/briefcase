@@ -10,7 +10,6 @@ var UserProjectCard = React.createClass ({
 								<img src={project.screenshot}></img>
 							</div>
 
-							<div className='row'>
 							<div className='project-overview col s6'>
 								<h1>Overview</h1>
 								<p>{project.description}</p>
@@ -19,16 +18,13 @@ var UserProjectCard = React.createClass ({
 								<h1>My Areas of Focus</h1>
 								<p>{project.areas_of_focus}</p>
 							</div>
-							</div>
-							<div className='row'>
 							<div className='col s12 project-buttons'>
-              <ul>
-                <li><button className='btn transparent repository-btn'>Repository Page <i className="fa fa-long-arrow-right" aria-hidden="true"></i></button></li>
-                <li><button className='btn transparent launch-app-btn'>Launch Application  <i className="fa fa-long-arrow-right" aria-hidden="true"></i></button></li>
-
-              </ul>
+	              <ul>
+	                <li><button className='btn transparent repository-btn'>Repository Page <i className="fa fa-long-arrow-right" aria-hidden="true"></i></button></li>
+	                <li><button className='btn transparent launch-app-btn'>Launch Application  <i className="fa fa-long-arrow-right" aria-hidden="true"></i></button></li>
+	              </ul>
               </div>
-							</div>
+              <div className='row'></div>
 						</div>
 						)
 		});
@@ -36,7 +32,7 @@ var UserProjectCard = React.createClass ({
 		return (
 			<div className='container'>
 				<div className="row ">
-          <div className='my-projects-title col s12'>
+          <div className='my-projects col s12'>
             <h1>My Projects</h1>
 						{all_projects}
           </div>

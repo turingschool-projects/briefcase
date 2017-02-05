@@ -39,13 +39,13 @@ var GuestJumbo = React.createClass({
                 <img className="" src="https://www.turing.io/sites/default/files/styles/graduate_full_profile/public/andrew_1.jpeg?itok=H7JqZ2_W" alt="Andrew Crist"></img>
               </div>
 
-              <div className='col s6 offset-s4'>
+              <div className='col s8 offset-s4'>
                 <h1>About Me</h1>
               </div>
-              <div className="col s6 offset-s4">
+              <div className="col s8 offset-s4">
                 <p>{this.props.user.bio}</p>
               </div>
-              <div className=" col s6 offset-s4">
+              <div className=" col s8 offset-s4">
               <ul>
                 <li><button className='btn transparent email-btn'>Email Directly <i className="fa fa-long-arrow-right" aria-hidden="true"></i></button></li>
                 <li><button className='btn transparent github-btn'>GitHub Profile  <i className="fa fa-long-arrow-right" aria-hidden="true"></i></button></li>
