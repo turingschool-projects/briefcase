@@ -12,12 +12,15 @@ var GuestJumbo = React.createClass({
                     <div className="row">
                       <div className='col s4'>
                       </div>
+
+                      
                       <div className="col s4">
                           <h1>{this.props.user.first_name} {this.props.user.last_name}</h1>
                       </div>
                       <div className="col s4 offset-s4">
                           <p>{this.props.user.title}</p>
                       </div>
+                      
                       <ul className='pull-right' >
                       <li><button className='title btn transparent resume-btn'>Resume</button></li>
                       <li><button className='title btn transparent linkedin-btn'><i className="fa fa-linkedin fa-3x" aria-hidden="true"></i></button></li>
