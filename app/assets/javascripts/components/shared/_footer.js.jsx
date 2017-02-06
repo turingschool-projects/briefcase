@@ -19,11 +19,12 @@ var Footer = React.createClass({
           <center><h2 className='newsletter'>Social Links</h2></center>
           <div>
             <center>
-          <i className="fa fa-github fa-3x social-footer" aria-hidden="true"></i>
-          <i className="fa fa-twitter fa-3x social-footer" aria-hidden="true"></i>
-          <i className="fa fa-facebook-official fa-3x social-footer" aria-hidden="true"></i>
-          <i className="fa fa-instagram fa-3x social-footer" aria-hidden="true"></i>
-          <i className="fa fa-google fa-3x social-footer" aria-hidden="true"></i>
+
+          <a href="https://github.com/turingschool"><i className="fa fa-github fa-3x social-footer" aria-hidden="true"></i></a>
+          <a href="https://twitter.com/turingschool"><i className="fa fa-twitter fa-3x social-footer" aria-hidden="true"></i></a>
+          <a href="https://www.facebook.com/turingschool"><i className="fa fa-facebook-official fa-3x social-footer" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/turing_school/"><i className="fa fa-instagram fa-3x social-footer" aria-hidden="true"></i></a>
+          <a href="https://plus.google.com/110171830647821535352"><i className="fa fa-google fa-3x social-footer" aria-hidden="true"></i></a>
           </center>
           </div>
       </div>
