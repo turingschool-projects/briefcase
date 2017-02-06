@@ -1,11 +1,25 @@
 require 'rails_helper'
 
-RSpec.describe User do
+RSpec.describe Project do
   context 'relationships' do
     it 'a project belongs to a user' do
-      user = Project.new(name: 'Turing project')
+      project = Project.new(name: 'Turing project')
 
-      expect(user).to respond_to(:user)
+      expect(project).to respond_to(:user)
+    end
+  end
+
+  context 'validations' do
+    it 'a project is invalid with out a name' do
+      project = Project.new(github: 'Turingproject.github')
+
+      expect(project).to be_invalid
+    end
+    
+    it 'a project is invalid with out a github link' do
+      project = Project.new(name: 'Jam-City')
+
+      expect(project).to be_invalid
     end
   end
 end
