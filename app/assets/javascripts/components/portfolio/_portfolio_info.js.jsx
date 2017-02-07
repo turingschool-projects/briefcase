@@ -22,8 +22,7 @@ var PortfolioInfo = React.createClass({
       user_id: user.id
     };
 
-    axios.post(`/users/${user.id}/portfolio`,{
-      data:{ portfolio: newPortfolio } })
+    axios.post(`/users/${user.id}/portfolio`,{ portfolio: newPortfolio })
     .then(response => this.handleChange())
     .catch(function (error) {
       console.log(error);

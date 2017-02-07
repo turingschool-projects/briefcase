@@ -1,7 +1,27 @@
+var update = React.addons.update;
 var PortfolioEditForm = React.createClass({
 
-  handleUpdate(){
+  getInitialState(){
+    var userPortfolio = this.props.portfolio;
+    return { portfolio: userPortfolio }
+  },
 
+  prepForUpdate(updatedState, fieldToUpdate){
+    this.setState({ portfolio: update(this.state.portfolio, {
+      [fieldToUpdate]: {$set: updatedState[fieldToUpdate]}})
+    });
+  },
+
+  handleUpdate(){
+    var user = this.props.user;
+
+    axios.put(`/users/${user.id}/portfolio.json`, {portfolio: this.state.portfolio})
+    .then(response => {
+      window.location = response.data;
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   },
 
   render: function() {
@@ -10,8 +30,9 @@ var PortfolioEditForm = React.createClass({
     return (
       <div>
         <form>
-          <PortfolioEditJumboInfo user={user} portfolio={portfolio}/>
+          <PortfolioEditJumboInfo user={user} portfolio={portfolio} prepForUpdate={this.prepForUpdate}/>
           <PortfolioEditBodyInfo user={user} portfolio={portfolio}/>
+          <input type="submit" value="Save Profile" onClick={this.handleUpdate}></input>
         </form>
       </div>
     );
