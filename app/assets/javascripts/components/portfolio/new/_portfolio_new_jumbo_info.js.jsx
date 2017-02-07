@@ -1,7 +1,11 @@
 var PortfolioNewJumboInfo = React.createClass({
 
   getInitialState(){
-    return { full_name: "" }
+    return {
+      full_name: "",
+      title: "",
+      bio: ""
+     }
   },
 
   handleNew: function(event){
@@ -9,6 +13,7 @@ var PortfolioNewJumboInfo = React.createClass({
     var fieldToUpdate;
     this.setState({full_name: event.target.value});
     if(event.target.id == "edit-full-name") { stateToUpdate.full_name = event.target.value; fieldToUpdate = "full_name" };
+    if(event.target.id == "edit-title") { stateToUpdate.title = event.target.value; fieldToUpdate = "title" };
     this.props.prepForInsert(stateToUpdate, fieldToUpdate);
   },
 
@@ -28,7 +33,7 @@ var PortfolioNewJumboInfo = React.createClass({
                       <input type="text" id="edit-full-name" placeholder="Full Name" defaultValue={this.state.full_name} onChange={this.handleNew}></input>
                   </div>
                   <div className="col s4 offset-s4">
-                      <input value={this.state.title} placeholder="Title" onChange={e => this.setState({title: e.target.value})}></input>
+                      <input type="text" id="edit-title" placeholder="Title" defaultValue={this.state.title} onChange={this.handleNew}></input>
                   </div>
                   <ul className='pull-right' >
                     <li><button className='title btn transparent resume-btn'>Published</button></li>

@@ -2,7 +2,11 @@ var update = React.addons.update;
 var PortfolioNewForm = React.createClass({
 
   getInitialState(){
-    var userPortfolio = {};
+    var userPortfolio = {
+      full_name: "",
+      title: "",
+      bio: ""
+    };
     return { portfolio: userPortfolio }
   },
 
@@ -14,7 +18,6 @@ var PortfolioNewForm = React.createClass({
 
   handleInsert(){
     var user = this.props.user;
-
     axios.post(`/users/${user.id}/portfolio.json`, {portfolio: this.state.portfolio})
     .then(response => {
       window.location = response.data;
