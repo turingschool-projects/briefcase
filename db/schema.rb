@@ -30,6 +30,9 @@ ActiveRecord::Schema.define(version: 20170206221507) do
     t.text     "best_at"
     t.integer  "hired"
     t.integer  "published"
+    t.string   "full_name"
+    t.string   "title"
+    t.string   "hired_by"
     t.integer  "user_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false

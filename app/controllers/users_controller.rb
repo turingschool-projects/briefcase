@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def index
+    require "pry"; binding.pry
     @users = User.all
     if(logged_in?)
       render component: 'Main', props: { users: @users, signed_in: 1 }

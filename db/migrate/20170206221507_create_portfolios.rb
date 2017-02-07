@@ -15,6 +15,10 @@ class CreatePortfolios < ActiveRecord::Migration[5.0]
       t.text     "best_at"
       t.integer  "hired"
       t.integer  "published"
+      t.string   "full_name"
+      t.string   "title"
+      t.string   "hired_by"
+
       t.references :user
       t.timestamps
     end
