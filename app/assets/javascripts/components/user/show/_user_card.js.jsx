@@ -9,6 +9,8 @@ var UserCard = React.createClass({
 
   render(){
     var users = this.props.users.map((user) => { // props brought from controller
+      var first_name = user.first_name.toLowerCase().replace(/ /g, '')
+      var last_name = user.last_name.toLowerCase().replace(/ /g, '')
       return (
           <div className="col s4 "key={user.id}>
             <div className="card">
@@ -30,7 +32,7 @@ var UserCard = React.createClass({
                   <i className="fa fa-github fa-3x" aria-hidden="true"></i>
                   <i className="fa fa-linkedin fa-3x" aria-hidden="true"></i>
                 </div>
-                <center><a className="card-profile" href={ "/users/" + user.id }>View Profile</a></center>
+                <center><a className="card-profile" href={ "/alumni/" + first_name + '-' + last_name}>View Profile</a></center>
               </div>
               <div className="card-reveal">
                 <span className="card-title grey-text text-darken-4">Bio<i className="material-icons right">close</i></span>
