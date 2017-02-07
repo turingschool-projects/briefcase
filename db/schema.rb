@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20170206221507) do
     t.string   "email"
     t.string   "password_digest"
     t.integer  "cohort"
-    t.text     "description"
     t.text     "github_url"
     t.text     "linkedin_url"
     t.text     "bio"
@@ -49,8 +48,6 @@ ActiveRecord::Schema.define(version: 20170206221507) do
     t.string  "description"
     t.string  "areas_of_focus"
     t.integer "user_id"
-    t.integer "portfolio_id"
-    t.index ["portfolio_id"], name: "index_projects_on_portfolio_id", using: :btree
     t.index ["user_id"], name: "index_projects_on_user_id", using: :btree
   end
 
@@ -78,6 +75,5 @@ ActiveRecord::Schema.define(version: 20170206221507) do
     t.string   "title"
   end
 
-  add_foreign_key "projects", "portfolios"
   add_foreign_key "projects", "users"
 end

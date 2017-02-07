@@ -1,4 +1,8 @@
 class Users::PortfoliosController < ApplicationController
+  def show
+    @user = User.find(params[:user_id])
+  end
+
   def new
     @user = current_user
   end
@@ -8,12 +12,12 @@ class Users::PortfoliosController < ApplicationController
     if(new_portfolio.save)
       redirect_to dashboard_path
     else
-      render component: 'PortfolioNew', props: { user: current_user, projects: [], portfolio: current_user.portfolio }
+      render component: 'PortfolioNew', props: { user: current_user, projects: current_user.projects, portfolio: current_user.portfolio }
     end
   end
 
   private
     def portfolio_params
-      params.require("data")["portfolio"].permit("full_name", "title", "description", "cohort", "github_url", "linkedin_url", "bio", "background", "resume_file", "locations", "looking_for", "best_at", "hired", "hired_by", "user_id")
+      params.require("data")["portfolio"].permit("full_name", "title", "cohort", "github_url", "linkedin_url", "bio", "background", "resume_file", "locations", "looking_for", "best_at", "hired", "hired_by", "user_id")
     end
 end

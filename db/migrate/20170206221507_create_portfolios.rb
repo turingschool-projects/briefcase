@@ -4,7 +4,6 @@ class CreatePortfolios < ActiveRecord::Migration[5.0]
       t.string   "email"
       t.string   "password_digest"
       t.integer  "cohort"
-      t.text     "description"
       t.text     "github_url"
       t.text     "linkedin_url"
       t.text     "bio"
@@ -22,8 +21,5 @@ class CreatePortfolios < ActiveRecord::Migration[5.0]
       t.references :user
       t.timestamps
     end
-
-    add_reference :projects, :portfolio, index: true
-    add_foreign_key :projects, :portfolios
   end
 end

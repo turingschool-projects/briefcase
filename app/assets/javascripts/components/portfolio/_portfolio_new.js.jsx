@@ -4,7 +4,7 @@ var PortfolioNew = React.createClass({
       return(
         <div>
           <SignedInNavbar/>
-          <PortfolioJumbo user = {user}/>
+          <PortfolioInfo user = {user}/>
         </div>
       )
   }

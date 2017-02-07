@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-	has_many :projects
-	has_one :portfolio
+	has_many :projects, dependent: :destroy
+	has_one :portfolio, dependent: :destroy
 
   def self.create_from_census(user_info)
     user = find_or_initialize_by(uid: user_info["uid"])
