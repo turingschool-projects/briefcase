@@ -1,10 +1,13 @@
-var PortfolioEditBodyInfo = React.createClass({
+var PortfolioNewBodyInfo = React.createClass({
+  getInitialState(){
+    return { portfolio: {} }
+  },
+
   handleChange(){
   },
 
   render: function() {
     var user = this.props.user;
-    var portfolio = this.props.portfolio;
 
     return (
       <div>
@@ -17,10 +20,10 @@ var PortfolioEditBodyInfo = React.createClass({
               <h1>About You</h1>
             </div>
             <div className="col s8 offset-s4">
-              <textarea className="bio-edit" value={portfolio.bio} onChange={this.handleChange}></textarea>
+              <textarea className="bio-edit" value={this.state.bio} onChange={this.handleChange}></textarea>
             </div>
         </div>
-        <PortfolioEditMidInfo user={user} portfolio={portfolio}/>
+        <PortfolioNewMidInfo user={user}/>
       </div>
     </div>
     );

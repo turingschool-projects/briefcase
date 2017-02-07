@@ -9,9 +9,11 @@ class Users::PortfoliosController < ApplicationController
   end
 
   def create
-    new_portfolio = Portfolio.new(portfolio_params)
+    user = User.find(params["user_id"])
+    new_portfolio = user.create_portfolio(portfolio_params)
+
     if(new_portfolio.save)
-      redirect_to dashboard_path
+      render js: "/users/#{user.id}/portfolio"
     else
       render component: 'PortfolioNew', props: { user: current_user, projects: current_user.projects, portfolio: current_user.portfolio }
     end
@@ -22,10 +24,11 @@ class Users::PortfoliosController < ApplicationController
   end
 
   def update
-    portfolio = Portfolio.find(params["portfolio"]["id"])
-    user_id = params["portfolio"]["user_id"]
+    user = User.find(params["user_id"])
+    portfolio = user.portfolio
+
     if(portfolio.update(portfolio_params))
-      render js: "/users/#{user_id}/portfolio"
+      render js: "/users/#{user.id}/portfolio"
     else
       render component: 'PortfolioEdit', props: { user: current_user, projects: current_user.projects, portfolio: current_user.portfolio }
     end
