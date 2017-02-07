@@ -1,7 +1,12 @@
-var PortfolioJumboInfo = React.createClass({
+var PortfolioEditJumboInfo = React.createClass({
+
+  handleChange(){
+  },
 
   render: function() {
     var user = this.props.user;
+    var portfolio = this.props.portfolio;
+
     return (
       <div>
         <div className="container">
@@ -12,15 +17,13 @@ var PortfolioJumboInfo = React.createClass({
                   <div className='col s4'>
                   </div>
                   <div className="col s4">
-                      <h1>{this.props.user.first_name} {this.props.user.last_name}</h1>
+                      <input type="text" value={portfolio.full_name} onChange={this.handleChange}></input>
                   </div>
                   <div className="col s4 offset-s4">
-                      <p>{this.props.user.title}</p>
+                      <input value={portfolio.title} onChange={this.handleChange}></input>
                   </div>
                   <ul className='pull-right' >
-                    <li><button className='title btn transparent resume-btn'>Resume</button></li>
-                    <li><button className='title btn transparent linkedin-btn'><i className="fa fa-linkedin fa-3x" aria-hidden="true"></i></button></li>
-                    <li><button className='title btn transparent heart'><i className="fa fa-heart-o left fa-2x" aria-hidden="true" onClick={this.fillHeart}></i></button></li>
+                    <li><button className='title btn transparent resume-btn'>Published</button></li>
                   </ul>
                 </div>
               </div>

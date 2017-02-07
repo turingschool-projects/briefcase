@@ -1,7 +1,12 @@
-var PortfolioMidInfo = React.createClass({
+var PortfolioEditMidInfo = React.createClass({
+  handleChange(){
+
+  },
 
   render: function() {
     var user = this.props.user;
+    var portfolio = this.props.portfolio;
+
     return (
       <div>
         <div className="row about-me-cont">

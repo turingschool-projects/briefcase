@@ -2,6 +2,8 @@ var PortfolioBodyInfo = React.createClass({
 
   render: function() {
     var user = this.props.user;
+    var portfolio = this.props.portfolio;
+
     return (
       <div>
         <div className="container">
@@ -13,7 +15,7 @@ var PortfolioBodyInfo = React.createClass({
               <h1>About Me</h1>
             </div>
             <div className="col s8 offset-s4">
-              <p>{this.props.user.bio}</p>
+              <p>{portfolio.bio}</p>
             </div>
             <div className=" col s8 offset-s4">
             <ul>
@@ -22,7 +24,7 @@ var PortfolioBodyInfo = React.createClass({
             </ul>
           </div>
         </div>
-        <PortfolioMidInfo user={user}/>
+        <PortfolioMidInfo user={user} portfolio={portfolio}/>
       </div>
     </div>
     );

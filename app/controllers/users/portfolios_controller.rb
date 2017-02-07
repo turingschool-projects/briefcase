@@ -1,4 +1,5 @@
 class Users::PortfoliosController < ApplicationController
+
   def show
     @user = User.find(params[:user_id])
   end
@@ -14,6 +15,16 @@ class Users::PortfoliosController < ApplicationController
     else
       render component: 'PortfolioNew', props: { user: current_user, projects: current_user.projects, portfolio: current_user.portfolio }
     end
+  end
+
+  def edit
+    @user = current_user
+  end
+
+  def update
+  end
+
+  def destroy
   end
 
   private

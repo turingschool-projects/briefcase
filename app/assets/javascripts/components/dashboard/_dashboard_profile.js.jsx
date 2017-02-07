@@ -27,8 +27,8 @@ var DashboardProfile = React.createClass({
                 <i className="fa fa-linkedin fa-3x" aria-hidden="true"></i>
               </div>
               <center>
-                <a className="card-profile" href={ "/users/" + user.id + "/portfolio"}>View</a>
-                <a className="card-profile" href={ "/users/" + user.id }>Edit </a>
+                <a className="card-profile" href={ `/users/${user.id}/portfolio` }>View</a>
+                <a className="card-profile" href={ `/users/${user.id}/portfolio/edit` }>Edit </a>
                 <a className="card-profile delete" href={ "/users/" + user.id }>Delete</a>
               </center>
             </div>
