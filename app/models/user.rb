@@ -1,6 +1,8 @@
 class User < ApplicationRecord
-  has_many :projects
+	has_many :projects, dependent: :destroy
+	has_one :portfolio, dependent: :destroy
 
+	after_create :set_slug
 
   def slug
     first_name.downcase.gsub(' ', '') + "-" + last_name.downcase.gsub(' ', '')
@@ -41,4 +43,10 @@ class User < ApplicationRecord
     user.title = existing_user.title
     user.cohort = existing_user.cohort
   end
+
+	private
+
+		def set_slug
+			self.update(slug: slug)
+		end
 end

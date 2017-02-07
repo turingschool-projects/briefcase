@@ -3,6 +3,7 @@ class Seed
     seed = Seed.new
     seed.create_users
     seed.create_projects
+    seed.create_portfolios
   end
 
   def create_users
@@ -59,6 +60,19 @@ class Seed
       screenshot: 'https://www.turing.io/sites/default/files/styles/project_screenshot/public/project_screenshots/screenshot.png?itok=5T0hYjb8',
       description: "The purpose of the application was to continue building our knowledge of APIs while also providing a foundational knowledge of React Router. A limitation to the project was to only allow the user to add four additional locations in addition to the user's current location (determined by using navigator.geolocation).",
       areas_of_focus: "Application that allows users to keep track of their movie collection and the format in which they own each individual movie. The project was built with React, CSS/SCSS, React Bootstrap, React YouTube, React Router 4, webpack, and Firebase. Movie information was acquired using The Movie Database API."
+      })
+  end
+
+  def create_portfolios
+    user = User.all.first
+    user.create_portfolio({
+      email: "#{user.first_name}@example.com",
+      cohort: "1608",
+      github_url: "www.github.com",
+      linkedin_url: "www.linkedin.com",
+      bio: "Being around cars has taught me a great deal about what works and doesn't when it comes to performance. Many of those principles have proved valuable in developing software as well. I love new challenges and get a kick out of working with teams to produce the best product available. Life isn't worth living if its not lived to its fullest. ",
+      title: "Software Developer",
+      full_name: "#{user.first_name} #{user.last_name}"
       })
   end
 

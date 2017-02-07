@@ -113,3 +113,49 @@ $lightgray: #D3D3D3;
 .dashboard-padding {
   margin-bottom: 10%;
 }
+
+.project-default-buttons {
+
+  ul {
+    list-style-type: none;
+    text-align: center;
+    margin-bottom: 8px;
+    margin-top: 13px;
+
+    li {
+      display: inline;
+
+      .repository-btn {
+        margin-top: 10px;
+        margin-right: 4px;
+        vertical-align: center;
+        text-align: left;
+        border: 1px solid #05C2D1 !important;
+        padding-left: 15px;
+        padding-right: 15px;
+        text-decoration: none !important;
+        color: #05C2D1;
+        line-height: 1.1;
+        font-family: "azo-sans-web","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.portfolio-row {
+  height: 100px;
+}
+
+.portfolio-new {
+  margin-top: 40px;
+
+  .name {
+    font-size: 50px;
+    border: 0;
+  }
+
+  input {
+    color: white;
+  }
+}
