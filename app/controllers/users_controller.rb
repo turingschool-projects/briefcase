@@ -9,16 +9,31 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find_by_sql("SELECT * FROM users 
+                              WHERE REPLACE(lower(first_name), ' ', '') LIKE '%#{first_name_from_slug}%' 
+                              AND REPLACE(lower(last_name), ' ', '') LIKE '%#{last_name_from_slug}%' 
+                              LIMIT 1").first
     render component: "Show", props: { user: @user, projects: @user.projects }
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = User.find_by_sql("SELECT * FROM users 
+                              WHERE REPLACE(lower(first_name), ' ', '') LIKE '%#{first_name_from_slug}%' 
+                              AND REPLACE(lower(last_name), ' ', '') LIKE '%#{last_name_from_slug}%' 
+                              LIMIT 1").first
     render component: "Edit", props: { user: @user }
   end
 
   def account
     render component: 'Account'
   end
+
+  private
+    def first_name_from_slug
+      params[:slug].split('-')[0]
+    end
+
+    def last_name_from_slug
+      params[:slug].split('-')[-1]
+    end
 end
