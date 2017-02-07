@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170207002931) do
+ActiveRecord::Schema.define(version: 20170207105911) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 20170207002931) do
     t.string   "uid"
     t.string   "access_token"
     t.string   "title"
+    t.string   "slug"
   end
 
   add_foreign_key "projects", "users"

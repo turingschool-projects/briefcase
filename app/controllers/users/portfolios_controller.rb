@@ -1,7 +1,7 @@
 class Users::PortfoliosController < ApplicationController
 
   def show
-    @user = User.find(params[:user_id])
+    @user = User.find_by(slug: params["user_slug"])
   end
 
   def new
@@ -9,11 +9,12 @@ class Users::PortfoliosController < ApplicationController
   end
 
   def create
-    user = User.find(params["user_id"])
+    user = User.find_by(slug: params["user_slug"])
     new_portfolio = user.create_portfolio(portfolio_params)
 
     if(new_portfolio.save)
-      render js: "/users/#{user.id}/portfolio"
+      sleep(4)
+      render js: "/alumni/#{user.slug}/portfolio"
     else
       render component: 'PortfolioNew', props: { user: current_user, projects: current_user.projects, portfolio: current_user.portfolio }
     end
@@ -24,11 +25,12 @@ class Users::PortfoliosController < ApplicationController
   end
 
   def update
-    user = User.find(params["user_id"])
+    user = User.find_by(slug: params["user_slug"])
     portfolio = user.portfolio
 
     if(portfolio.update(portfolio_params))
-      render js: "/users/#{user.id}/portfolio"
+      sleep(4)
+      render js: "/alumni/#{user.slug}/portfolio"
     else
       render component: 'PortfolioEdit', props: { user: current_user, projects: current_user.projects, portfolio: current_user.portfolio }
     end
