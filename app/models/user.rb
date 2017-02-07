@@ -2,6 +2,14 @@ class User < ApplicationRecord
 	has_many :projects, dependent: :destroy
 	has_one :portfolio, dependent: :destroy
 
+  def slug
+    first_name.downcase.gsub(' ', '') + "-" + last_name.downcase.gsub(' ', '')
+  end
+
+  def to_param
+    "#{slug}"
+  end
+
   def self.create_from_census(user_info)
     user = find_or_initialize_by(uid: user_info["uid"])
     user.first_name = user_info.info["first_name"]

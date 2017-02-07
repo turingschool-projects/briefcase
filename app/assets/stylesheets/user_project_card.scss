@@ -49,13 +49,10 @@
       p {
         margin-left: 5%;
         margin-right: 2.5%;
-        font-size: 26px;
-        color: #3C4040;
         font-family: "azo-sans-web","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-        font-style: normal;
-        font-weight: 200;
-        font-weight: lighter;
-        line-height: 1.1;
+        font-size: 16px;
+        line-height: 1.7;
+        color: #7c8c8e;
       }
     }
     .focus{
@@ -72,15 +69,13 @@
         line-height: 1.1;
       }
       p {
-        margin-left: 2.5%;
-        margin-right: 5%;
-        font-size: 26px;
-        color: #3C4040;
+        margin-left: 5%;
+        margin-right: 2.5%;
         font-family: "azo-sans-web","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-        font-style: normal;
-        font-weight: 200;
-        font-weight: lighter;
-        line-height: 1.1;
+        font-size: 16px;
+        line-height: 1.7;
+        color: #7c8c8e;
+
       }
     } 
     ul {
@@ -92,7 +87,7 @@
       li {
         display: inline;
 
-        .repository-btn {
+        .repository-btn{
           margin-top: 10px;
           margin-right: 4px;
           vertical-align: center;
@@ -101,10 +96,6 @@
           padding-left: 15px;
           padding-right: 15px;
           text-decoration: none !important;
-          color: #05C2D1;
-          line-height: 1.1;
-          font-family: "azo-sans-web","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-          font-size: 16px;
         }
 
         .launch-app-btn{
@@ -115,11 +106,16 @@
           border: 1px solid #05C2D1 !important;
           padding-left: 15px;
           padding-right: 15px;
+          text-decoration: none !important;
+        }
+        a{
           color: #05C2D1;
           line-height: 1.1;
           font-family: "azo-sans-web","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
           font-size: 16px;
+
         }
+
       }
     }
    .project-buttons{

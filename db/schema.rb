@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170206221507) do
+ActiveRecord::Schema.define(version: 20170207002931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "citext"
 
   create_table "portfolios", force: :cascade do |t|
     t.string   "email"
@@ -52,8 +53,8 @@ ActiveRecord::Schema.define(version: 20170206221507) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
+    t.citext   "first_name"
+    t.citext   "last_name"
     t.string   "email"
     t.string   "password_digest"
     t.integer  "cohort"
