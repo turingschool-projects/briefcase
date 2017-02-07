@@ -1,11 +1,24 @@
 var DashboardProfile = React.createClass({
   shorterBio :function (text) {
-    return text.substring(0, 193);
+    if (text === null) {
+      return ""
+    } else {
+
+      return text.substring(0, 193);
+    }
   },
 
   render: function(){
       var user = this.props.user;
-      var slug = this.props.slug;
+      var slug = this.props.user.slug;
+      var portfolio = this.props.portfolio;
+
+
+      if(portfolio.full_name != null){
+        var name = portfolio.full_name;
+      } else {
+        var name = `${user.first_name} ${user.last_name}`;
+      }
 
       return(
         <div className="col s4 dashboard-container" key={user.id}>
@@ -18,7 +31,7 @@ var DashboardProfile = React.createClass({
             </div>
             <div className="card-content">
               <center>
-                <span className="card-title grey-text text-darken-4">{user.first_name} {user.last_name }</span>
+                <span className="card-title grey-text text-darken-4">{name}</span>
                 <p className="card-title grey-text text-darken-4 ">{user.title}</p>
               </center>
               <hr/>

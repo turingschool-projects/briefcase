@@ -10,7 +10,7 @@ class Users::PortfoliosController < ApplicationController
 
   def create
     user = User.find_by(slug: params["user_slug"])
-    new_portfolio = user.create_portfolio(portfolio_params)
+    new_portfolio = user.build_portfolio(portfolio_params)
 
     if(new_portfolio.save)
       sleep(4)
