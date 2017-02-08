@@ -12,6 +12,7 @@ var PortfolioEditMidInfo = React.createClass({
         <div className="row about-me-cont">
 
           <div className="col s12">
+            <h1 id="edit-profile-information">Profile Information</h1>
             <div className="row">
               <div className='col s5'>
                 <label for="email">Email</label>
@@ -24,44 +25,31 @@ var PortfolioEditMidInfo = React.createClass({
             </div>
           </div>
 
+          <div className="col s12">
+            <div className="row mid-bio">
+              <div className='col s6'>
+                <label for="looking-for">Looking For</label>
+                <textarea id="looking-for" placeholder="example@example.com"></textarea>
+              </div>
+              <div className='col s6'>
+                <label for="best-at">Best At</label>
+                <textarea id="best-at" type="file"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div className="col s12">
+            <h2>Preferred Locations</h2>
+            <select>
+              <option value="grapefruit">Grapefruit</option>
+              <option value="lime">Lime</option>
+              <option selected value="coconut">Coconut</option>
+              <option value="mango">Mango</option>
+            </select>
+          </div>
 
 
-          <div className='col s5'>
-            <div className='col s12'>
-              <h1>Looking For</h1>
-            </div>
-            <div className='col s12'>
-              <ul>
-                <li>Somthing</li>
-                <li>Somthing</li>
-                <li>Somthing</li>
-              </ul>
-            </div>
-          </div>
-          <div className="col s4">
-            <div className='col s12'>
-              <h1>Best At</h1>
-            </div>
-            <div className='col s12'>
-              <ul>
-                <li>Somthing</li>
-                <li>Somthing</li>
-                <li>Somthing</li>
-              </ul>
-            </div>
-          </div>
-          <div className="col s3">
-            <div className='col s12'>
-              <h1>Perfered Locations</h1>
-            </div>
-            <div className='col s12'>
-              <ul>
-                <li>Somthing</li>
-                <li>Somthing</li>
-                <li>Somthing</li>
-              </ul>
-            </div>
-          </div>
+
         </div>
       </div>
     );

@@ -10,7 +10,8 @@
     <script>
       tinymce.init({
         selector:'textarea',
-        toolbar: false
+        menubar: false,
+        toolbar: 'undo redo | insert | styleselect | bold italic | bullist numlist outdent indent'
       });
     </script>
     <%= stylesheet_link_tag    'application', media: 'all' %>
