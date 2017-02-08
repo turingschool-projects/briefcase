@@ -17,7 +17,7 @@ var PortfolioEditBodyInfo = React.createClass({
               <h1>About You</h1>
             </div>
             <div className="col s8 offset-s4">
-              <textarea className="bio-edit" value={portfolio.bio} onChange={this.handleChange}></textarea>
+              <textarea id="bio"className="bio-edit" value={portfolio.bio} onChange={this.handleChange}></textarea>
             </div>
         </div>
         <PortfolioEditMidInfo user={user} portfolio={portfolio}/>
