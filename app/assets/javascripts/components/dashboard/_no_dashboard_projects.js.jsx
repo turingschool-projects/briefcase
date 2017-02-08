@@ -10,7 +10,7 @@ var NoDashboardProjects = React.createClass({
               <div className="dashboard-project">
                     <p>Looks like you don't have any projects yet. After creating projects, a website administrator will review it, and approve it.</p>
                 <center>
-                <a className="btn transparent project-btn" href={  `/users/${user.id }`}>Create New Porject <i className="fa fa-arrow-right" aria-hidden="true"></i></a>
+                <a className="btn transparent project-btn" href={  `/alumni/${user.slug}/project/new`}>Create New Porject <i className="fa fa-arrow-right" aria-hidden="true"></i></a>
                 </center>
               </div>
         </div>
