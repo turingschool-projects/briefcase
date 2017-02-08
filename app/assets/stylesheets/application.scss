@@ -397,5 +397,27 @@ input[placeholder="Your Email Here"]{
 // new project css starts here
 
 .project-form {
-  margin-top: 5%;
+  width: 95% !important;
+
+  .project-row {
+    margin-top: 5%;
+  }
+
+  input[placeholder="Project Name*"]{
+    font-size: 40px;
+  }
+
+  input[placeholder="Github Url*"]{
+    font-size: 40px;
+  }
+
+  input[placeholder="Production Url"]{
+    font-size: 40px;
+  }
+
+  input[placeholder="Upload Screen Shot"]{
+    font-size: 40px;
+  }
+
+
 }
