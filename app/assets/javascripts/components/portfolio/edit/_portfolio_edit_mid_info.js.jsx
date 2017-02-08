@@ -10,6 +10,22 @@ var PortfolioEditMidInfo = React.createClass({
     return (
       <div>
         <div className="row about-me-cont">
+
+          <div className="col s12">
+            <div className="row">
+              <div className='col s5'>
+                <label for="email">Email</label>
+                <input id="email" placeholder="example@example.com"></input>
+              </div>
+              <div className='col s5 offset-s2'>
+                <label for="resume">Email</label><br/>
+                <input id="resume" type="file"></input>
+              </div>
+            </div>
+          </div>
+
+
+
           <div className='col s5'>
             <div className='col s12'>
               <h1>Looking For</h1>

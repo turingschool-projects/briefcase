@@ -23,7 +23,7 @@ var PortfolioEditJumboInfo = React.createClass({
         <div className="container">
           <div className='portfolio-name-container'>
             <div className="show-name-holder">
-              <div className="col s12">
+              <div className="col s12 jumbo-text">
                 <div className="row">
                   <div className='col s4'>
                   </div>
