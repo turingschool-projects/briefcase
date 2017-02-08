@@ -28,7 +28,7 @@ var DeletePortfolioBody = React.createClass({
               <p>This action cannot be undone.</p>
             </div>
             <div className="col s12 delete-button-row">
-              <a className="waves-effect waves-light btn delete red" onClick={this.handleDelete}><i className="fa fa-trash-o" aria-hidden="true"></i> Delete </a>
+              <a className="waves-effect waves-light btn delete" onClick={this.handleDelete}><i className="fa fa-trash-o" aria-hidden="true"></i> Delete </a>
               <a className="cancel" href='/dashboard' >Cancel</a>
             </div>
           </div>
