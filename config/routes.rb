@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     put "portfolio", to: "users/portfolios#update"
     post "portfolio", to: "users/portfolios#create"
     delete "portfolio", to: "users/portfolios#destroy"
+    get "portfolio/delete", to: "users/portfolios#delete"
   end
 
   get '/user/1/edit-account', to: 'users#account'

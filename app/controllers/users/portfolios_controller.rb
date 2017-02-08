@@ -14,7 +14,7 @@ class Users::PortfoliosController < ApplicationController
 
     if(new_portfolio.save)
       sleep(4)
-      render js: "/alumni/#{user.slug}/portfolio"
+      render js: "/dashboard"
     else
       render component: 'PortfolioNew', props: { user: current_user, projects: current_user.projects, portfolio: current_user.portfolio }
     end
@@ -30,13 +30,23 @@ class Users::PortfoliosController < ApplicationController
 
     if(portfolio.update(portfolio_params))
       sleep(4)
-      render js: "/alumni/#{user.slug}/portfolio"
+      render js: "/dashboard"
     else
       render component: 'PortfolioEdit', props: { user: current_user, projects: current_user.projects, portfolio: current_user.portfolio }
     end
   end
 
+  def delete
+    render component: "DeletePortfolio", props: { user: current_user, portfolio: current_user.portfolio}
+  end
+
   def destroy
+    user = User.find_by(slug: params["user_slug"])
+    if(user.portfolio.delete)
+      render js: dashboard_path
+    else
+      render component: "DeletePortfolio", props: { user: current_user, portfolio: current_user.portfolio}
+    end
   end
 
   private
