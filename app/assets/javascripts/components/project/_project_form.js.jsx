@@ -22,6 +22,7 @@ var ProjectForm = React.createClass({
             </div>
           </form>
         </div>
+        <a className="waves-effect waves-light btn project-save" data-reactid="54"><i className="fa fa-check" aria-hidden="true"></i>Save Project </a>
       </div>
 
     )
