@@ -35,7 +35,7 @@ var PortfolioNewForm = React.createClass({
         <form>
           <PortfolioNewJumboInfo user={user} prepForInsert={this.prepForInsert}/>
           <PortfolioNewBodyInfo user={user} />
-          <input type="submit" value="Save Profile" onClick={this.handleInsert}></input>
+          <button type="submit" id="new-submit" value="Save Profile" onClick={this.handleInsert}>Save Profile</button>
         </form>
       </div>
     );
