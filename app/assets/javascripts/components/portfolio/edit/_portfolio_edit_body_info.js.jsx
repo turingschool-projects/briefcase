@@ -1,5 +1,17 @@
 var PortfolioEditBodyInfo = React.createClass({
-  handleChange(){
+
+  getInitialState(){
+    var userPortfolio = this.props.portfolio;
+    return { bio: "userPortfolio.bio" }
+  },
+
+  handleEdit: function(event){
+    console.log(event);
+    var stateToUpdate = {};
+    var fieldToUpdate;
+    this.setState({bio: event.target.value});
+    if(event.target.id == "bio-title") { stateToUpdate.bio = event.target.value; fieldToUpdate = "bio" };
+    this.props.prepForUpdate(stateToUpdate, fieldToUpdate);
   },
 
   render: function() {
@@ -17,7 +29,7 @@ var PortfolioEditBodyInfo = React.createClass({
               <h1>About You</h1>
             </div>
             <div className="col s8 offset-s4">
-              <textarea id="bio"className="bio-edit" value={portfolio.bio} onChange={this.handleChange}></textarea>
+              <textarea id="bio"className="bio-edit" defaultValue={portfolio.bio} onChange={this.handleEdit}></textarea>
             </div>
         </div>
         <PortfolioEditMidInfo user={user} portfolio={portfolio}/>

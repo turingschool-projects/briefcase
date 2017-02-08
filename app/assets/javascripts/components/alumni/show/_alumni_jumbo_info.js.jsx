@@ -1,9 +1,9 @@
-var PortfolioJumboInfo = React.createClass({
+var AlumniJumboInfo = React.createClass({
 
   render: function() {
     var user = this.props.user;
     var portfolio = this.props.portfolio;
-    
+
     return (
       <div>
         <div className="container">

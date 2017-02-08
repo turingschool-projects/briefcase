@@ -31,7 +31,7 @@ var PortfolioEditForm = React.createClass({
       <div>
         <form>
           <PortfolioEditJumboInfo user={user} portfolio={portfolio} prepForUpdate={this.prepForUpdate}/>
-          <PortfolioEditBodyInfo user={user} portfolio={portfolio}/>
+          <PortfolioEditBodyInfo user={user} portfolio={portfolio} prepForUpdate={this.prepForUpdate}/>
 
           <div className="container portfolio-btns">
             <button className="btn waves-effect waves-light" type="submit" name="action" value="Save Profile" onClick={this.handleUpdate}>Save Profile</button>
