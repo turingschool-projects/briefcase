@@ -13,11 +13,21 @@ var ProjectForm = React.createClass({
               </div>
             </div>
             <div className="row">
-              <div className="input-field col s6">
+              <div className="input-field col s6 production">
                 <input placeholder="Production Url" id="email" type="email" className="validate" />
               </div>
-              <div className="input-field col s6">
-                <input placeholder="Upload Screen Shot" id="email" type="email" className="validate" />
+              <div className="input-field col s6 ">
+                <form action="#">
+                 <div className="file-field input-field">
+                   <div className="btn">
+                     <span>File</span>
+                     <input type="file"/>
+                   </div>
+                   <div className="file-path-wrapper">
+                     <input placeholder="Upload Screen Shot" className="file-path validate" type="text" />
+                   </div>
+                 </div>
+               </form>
               </div>
             </div>
           </form>
