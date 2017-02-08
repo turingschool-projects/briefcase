@@ -184,3 +184,19 @@ $lightgray: #D3D3D3;
 .dash-line-p {
   width: 100%;
 }
+
+.no-projects {
+  height: 200px !important;
+
+  .project-btn {
+    margin-top: 3% ;
+  }
+
+  p {
+    font-size: 25px;
+  }
+
+  .container {
+    width: 90% !important;
+  }
+}
