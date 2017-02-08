@@ -43,7 +43,7 @@ var DashboardProfile = React.createClass({
               <center>
                 <a className="card-profile" href={ `/alumni/${slug}/portfolio` }>View</a>
                 <a className="card-profile" href={ `/alumni/${slug}/portfolio/edit` }>Edit </a>
-                <a className="card-profile delete" href={ "/alumni/" + slug }>Delete</a>
+                <a className="card-profile delete" href={ `/alumni/${slug}/portfolio/delete` }>Delete</a>
               </center>
             </div>
             <div className="card-reveal">
