@@ -38,14 +38,13 @@ var PortfolioEditMidInfo = React.createClass({
           </div>
 
           <div className="input-field col s12">
-            <label htmlFor="locations">Preferred Locations</label>
+            <label htmlFor="locations">Preferred Locations</label><br/>
             <select multiple id="locations">
                 <option value="" disabled selected>Denver Austin NYC</option>
                 <option value="1">Denver</option>
                 <option value="2">Austin</option>
                 <option value="3">NYC</option>
             </select>
-            <label>Materialize Multiple Select</label>
         </div>
 
         <div className="links">
