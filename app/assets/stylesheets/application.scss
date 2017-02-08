@@ -393,3 +393,57 @@ input[placeholder="Your Email Here"]{
   margin-bottom: 5%;
   background-color: #20CE20;
 }
+//
+// new project css starts here
+
+.project-form {
+  width: 95% !important;
+
+  .project-row {
+    margin-top: 5%;
+  }
+
+  input[placeholder="Project Name*"]{
+    font-size: 40px;
+  }
+
+  input[placeholder="Github Url*"]{
+    font-size: 40px;
+  }
+
+  input[placeholder="Production Url"]{
+    font-size: 40px;
+  }
+
+  input[placeholder="Upload Screen Shot"]{
+    font-size: 40px;
+  }
+
+  .project-save {
+    background-color: #20CE20;
+    margin-bottom: 5%;
+  }
+
+  .production {
+    margin-top: 2.5%;
+  }
+
+  .file {
+    background-color: #08BAC8 !important;
+  }
+
+}
+
+// .mce-statusbar .mce-container-body {
+//     position: relative;
+//     background-color:  #08BAC8;
+// }
+
+.mce-btn-group .mce-btn {
+    background: white
+}
+
+.mce-flow-layout {
+    background-color: white !important;
+
+}
