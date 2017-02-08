@@ -36,7 +36,15 @@ class Users::PortfoliosController < ApplicationController
     end
   end
 
+  def delete
+    user = User.find_by(slug: params["user_slug"])
+    render component: "DeletePortfolio", props: { user: user }
+  end
+
   def destroy
+    user = User.find_by(slug: params["user_slug"])
+    user.portfolio.delete
+    render component: 'Dashboard', props: { user: current_user, projects: current_user.projects, portfolio: current_user.portfolio }
   end
 
   private
