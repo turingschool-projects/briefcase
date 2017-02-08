@@ -1,18 +1,35 @@
 
 var DeletePortfolioBody = React.createClass({
+
+  getInitialState(){
+    var userPortfolio = this.props.portfolio;
+    return { portfolio: userPortfolio }
+  },
+
+  handleDelete(){
+    var user = this.props.user;
+
+    axios.delete(`/alumni/${user.slug}/portfolio.json`)
+    .then(response => {
+      window.location = response.data;
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  },
+
   render: function() {
+  var slug = this.props.user.slug
     return (
       <div>
-        <div className="container">
-          <div className="row delete-row">
-            <div className="col s12">
+        <div className="container delete-portfolio">
+          <div className="row">
+            <div className="col s12 delete-row">
               <p>This action cannot be undone.</p>
             </div>
-          </div>
-          <div className="row delete-button-row">
-            <div className="col s12">
-              <button className="profile-delete cancel" href="/dashboard"> <i className="fa fa-arrow-left" aria-hidden="true"> Cancel</i></button>
-              <button className="profile-delete delete" href="/alumi">Delete <i className="icon-trash" aria-hidden="true"></i></button>
+            <div className="col s12 delete-button-row">
+              <a className="waves-effect waves-light btn delete red" onClick={this.handleDelete}><i className="fa fa-trash-o" aria-hidden="true"></i> Delete </a>
+              <a className="cancel" href='/dashboard' >Cancel</a>
             </div>
           </div>
         </div>

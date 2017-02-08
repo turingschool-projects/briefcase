@@ -41,8 +41,12 @@ class Users::PortfoliosController < ApplicationController
   end
 
   def destroy
-    current_user.portfolio.delete
-    render component: 'Dashboard', props: { user: current_user, projects: current_user.projects, portfolio: current_user.portfolio }
+    user = User.find_by(slug: params["user_slug"])
+    if(user.portfolio.delete)
+      render js: dashboard_path
+    else
+      render component: "DeletePortfolio", props: { user: current_user, portfolio: current_user.portfolio}
+    end
   end
 
   private

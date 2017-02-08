@@ -5,7 +5,7 @@ var DeletePortfolio = React.createClass({
         <SignedInNavbar/>
         <PortfolioJumbo/>
         <DeletePortfolioJumboHeading portfolio = {this.props.portfolio}/>
-        <DeletePortfolioBody/>
+        <DeletePortfolioBody user={this.props.user} portfolio = {this.props.portfolio}/>
       </div>
 
     );
