@@ -13,15 +13,15 @@ var DashboardProject = React.createClass({
               </div>
               <div className="col s4">
               <center>
-                <img></img>
-                <a className="card-profile" href={ "/users/" + user.id }>Edit </a>
-                <a className="card-profile delete" href={ "/users/" + user.id }>Delete</a>
+                <img className="project-picture" src="assets/turing-alumni-banner.jpg" />
+                  <a className="card-profile" href={ "/users/" + user.id }>Edit</a>
+                  <a className="card-profile delete" href={ "/users/" + user.id }>Delete </a>
                 </center>
               </div>
             </div>
-            <hr className="dash-line"/>
+            <hr className="dash-line-p"/>
             <center>
-            <a className="card-profile create-project" href={ "/users/" + user.id }>Create New Porject <i className="fa fa-arrow-right" aria-hidden="true"></i></a>
+            <a className="btn transparent project-btn" href={ "/users/" + user.id }>Create New Porject <i className="fa fa-arrow-right" aria-hidden="true"></i></a>
             </center>
           </div>
         </div>
