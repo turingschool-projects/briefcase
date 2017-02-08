@@ -1,31 +1,28 @@
 var DeletePortfolioJumboHeading = React.createClass({
 
-  handleDelete(){
-    var user = this.props.user;
-
-    axios.put(`/alumni/${user.slug}/portfolio.json`, {portfolio: this.state.portfolio})
-    .then(response => {
-      window.location = response.data;
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-  },
-
   render: function() {
+    var full_name = this.props.portfolio.full_name
+    var title = this.props.portfolio.title
+
     return (
       <div>
         <div className="container">
-          <div className="row heading">
-            <div className="col s12">
-              <h1>Are you sure you want to delete {this.props.user.portfolio.full_name}?</h1>
-            </div>
-            <div className="col s12">
-              <p>{this.props.user.portfolio.title}</p>
+          <div className='portfolio-name-container'>
+            <div className="show-name-holder">
+              <div className="col s12">
+                <div className="row">
+                <div className="col s12">
+                  <h1>Are you sure you want to delete {full_name}?</h1>
+                </div>
+                <div className="col s12">
+                  <p>{title}</p>
+                </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>            
+      </div> 
     );
   }
 });
