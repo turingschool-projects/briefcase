@@ -7,12 +7,13 @@ var DashboardProject = React.createClass({
           <div className="dashboard-project">
             <div className="row">
               <div className="col s8">
-                <h1>Quantified Self</h1>
+                <h1>{project.name}</h1>
                 <h3>Created at 3hrs ago</h3>
-                <p>Description  description description description description description description </p>
+                <p>{project.description}</p>
               </div>
               <div className="col s4">
               <center>
+                <img></img>
                 <a className="card-profile" href={ "/users/" + user.id }>Edit </a>
                 <a className="card-profile delete" href={ "/users/" + user.id }>Delete</a>
                 </center>
