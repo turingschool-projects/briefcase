@@ -159,3 +159,44 @@ $lightgray: #D3D3D3;
     color: white;
   }
 }
+
+.project-picture {
+  margin-bottom: 40px;
+  height: 100px;
+}
+
+.project-btn {
+  padding-top: 4px;
+  margin-top: 10px;
+  margin-right: 4px;
+  vertical-align: center;
+  text-align: left;
+  border: 1px solid #05C2D1 !important;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-decoration: none !important;
+  color: #05C2D1;
+  line-height: 1.1;
+  font-family: "azo-sans-web","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+}
+
+.dash-line-p {
+  width: 100%;
+}
+
+.no-projects {
+  height: 200px !important;
+
+  .project-btn {
+    margin-top: 3% ;
+  }
+
+  p {
+    font-size: 25px;
+  }
+
+  .container {
+    width: 90% !important;
+  }
+}
