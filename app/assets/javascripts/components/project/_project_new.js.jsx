@@ -5,8 +5,9 @@ var ProjectNew = React.createClass({
       return(
         <div>
           <SignedInNavbar/>
-          <DashboardJumbo/>
-
+          <ProjectJumbo/>
+          <ProjectForm/>
+          <Footer/>
         </div>
       )
   }
