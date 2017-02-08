@@ -9,9 +9,9 @@ var PortfolioEditMidInfo = React.createClass({
 
     return (
 
-      <div className="row about-me-cont">
+      <main className="row about-me-cont">
 
-        <div className="col s12">
+        <section className="col s12">
           <h1 id="edit-profile-information">Profile Information</h1>
           <div className="row">
             <div className='col s6'>
@@ -23,9 +23,9 @@ var PortfolioEditMidInfo = React.createClass({
               <input id="resume" type="file"></input>
             </div>
           </div>
-        </div>
+        </section>
 
-        <div className="col s12">
+        <section className="col s12">
           <div className="row mid-bio">
             <div className='col s6'>
               <label htmlFor="looking-for">Looking For</label>
@@ -36,21 +36,20 @@ var PortfolioEditMidInfo = React.createClass({
               <textarea id="best-at" type="file"></textarea>
             </div>
           </div>
-        </div>
+        </section>
 
-        <div className="input-field col s12">
-          <label htmlFor="locations">Preferred Locations</label><br/>
+        <section className="input-field col s12">
           <select multiple id="locations">
               <option value="" disabled selected>Denver Austin NYC</option>
               <option value="1">Denver</option>
               <option value="2">Austin</option>
               <option value="3">NYC</option>
           </select>
-        </div>
+          <label htmlFor="locations">Preferred Locations</label><br/>
+        </section>
 
-        <div className="links">
-        <h1 id="edit-profile-information">Social</h1>
-
+        <section className="links col s12">
+          <h1 id="edit-profile-information">Social</h1>
           <div className="row">
             <div className='col s6'>
               <label htmlFor="github">GitHub</label>
@@ -72,9 +71,9 @@ var PortfolioEditMidInfo = React.createClass({
               <input id="github-id" placeholder=":username"></input>
             </div>
           </div>
-        </div>
+        </section>
 
-        <div className="employment-status">
+        <section className="employment-status col s12">
           <h1 id="edit-profile-information">Employment Status</h1>
           <div className="row">
             <div className='col s6'>
@@ -86,9 +85,9 @@ var PortfolioEditMidInfo = React.createClass({
               <input id="hired-by" placeholder="Google, Inc."></input>
             </div>
           </div>
-        </div>
+        </section>
 
-        <div className="school-info">
+        <section className="school-info col s12">
           <h1 id="edit-profile-information">School Information Status</h1>
           <label htmlFor="cohort">Cohort</label>
           <select id="cohort">
@@ -97,15 +96,15 @@ var PortfolioEditMidInfo = React.createClass({
               <option value="2">1610</option>
               <option value="3">1611</option>
           </select>
-        </div>
+        </section>
 
-        <div className="published">
+        <section className="published col s12">
           <h1 id="edit-profile-information">Publishing Options</h1>
           <input type="checkbox" id="published" ></input>
           <label htmlFor="published">Published</label>
-        </div>
-        
-      </div>
+        </section>
+
+      </main>
     );
   }
 });
