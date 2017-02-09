@@ -13,7 +13,7 @@ class Users::PortfoliosController < ApplicationController
     new_portfolio = user.build_portfolio(portfolio_params)
 
     if(new_portfolio.save)
-      sleep(4)
+      sleep(1)
       render js: "/dashboard"
     else
       render component: 'PortfolioNew', props: { user: current_user, projects: current_user.projects, portfolio: current_user.portfolio }
