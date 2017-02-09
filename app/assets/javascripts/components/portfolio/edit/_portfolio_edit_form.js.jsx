@@ -15,7 +15,7 @@ var PortfolioEditForm = React.createClass({
   handleUpdate(){
     var user = this.props.user;
 
-    axios.put(`/alumni/${user.slug}/portfolio.json`, {portfolio: this.state.portfolio})
+    axios.put(`/users/${user.id}/portfolio.json`, {portfolio: this.state.portfolio})
     .then(response => {
       window.location = response.data;
     })

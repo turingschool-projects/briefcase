@@ -25,8 +25,8 @@ class Users::PortfoliosController < ApplicationController
   end
 
   def update
-    user = User.find_by(slug: params["user_slug"])
-    portfolio = user.portfolio
+    require "pry"; binding.pry
+    portfolio = Portfolio.find(params[:portfolio][:id])
 
     if(portfolio.update(portfolio_params))
       sleep(4)

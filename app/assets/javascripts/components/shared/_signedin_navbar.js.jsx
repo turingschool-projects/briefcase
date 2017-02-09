@@ -10,7 +10,7 @@ var SignedInNavbar = React.createClass({
   return (
     <div className="navbar dashboard-navbar">
       <div>
-        <a className="logo pull-left" href="/user" title="Home">
+        <a className="logo pull-left" href="/" title="Home">
           <img src="/assets/turing-logo_1_0.png" alt="Home" className='logo'/>
           <img src="/assets/turing-logo-gear.png" alt="Turing Logo Gear" className="gear"/>
         </a>

@@ -21,7 +21,7 @@ var DashboardProject = React.createClass({
             </div>
             <hr className="dash-line-p"/>
             <center>
-            <a className="btn transparent project-btn" href={ "/users/" + user.id }>Create New Porject <i className="fa fa-arrow-right" aria-hidden="true"></i></a>
+            <a className="btn transparent project-btn" href={ "/users/" + user.id }>Create New Project <i className="fa fa-arrow-right" aria-hidden="true"></i></a>
             </center>
           </div>
         </div>

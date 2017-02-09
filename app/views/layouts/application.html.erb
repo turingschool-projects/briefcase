@@ -6,14 +6,11 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
     <script src="https://use.fontawesome.com/51d8da5d08.js"></script>
-    <script src="//cloud.tinymce.com/stable/tinymce.min.js?apiKey=bhtf5jac6x6wgvmsnxmqg7wwo01wq53gv8ixgbjtwpfcmccv"></script>
-    <script>
-      tinymce.init({
-        selector:'textarea',
-        menubar: false,
-        toolbar: 'undo redo | insert | styleselect | bold italic | bullist numlist outdent indent'
-      });
-    </script>
+    <link href="https://cdn.quilljs.com/1.2.0/quill.snow.css" rel="stylesheet">
+
+
+
+
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
@@ -22,6 +19,23 @@
     <%= yield %>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+
+    <script src="https://cdn.quilljs.com/1.2.0/quill.js"></script>
+    <script>
+      var toolbarOptions = [
+        ['bold', 'italic', 'underline', 'strike'],
+        [{ 'list': 'ordered'}, { 'list': 'bullet' }]
+      ];
+
+      var quill = new Quill('.editor', {
+        modules: {
+          toolbar: toolbarOptions
+        },
+        theme: 'snow'
+      });
+    </script>
+
+
   </body>
 
 </html>
