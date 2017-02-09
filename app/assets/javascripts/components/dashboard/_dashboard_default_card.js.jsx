@@ -24,7 +24,7 @@ var DashboardDefaultCard = React.createClass({
               <center>
                 <div className='col s12 project-default-buttons'>
   	              <ul>
-  	                <li><a href={"/alumni/" + user.slug + "/portfolio/new"}><button id="create-profile" className='btn transparent repository-btn'>Create Profile <i className="fa fa-long-arrow-right" aria-hidden="true"></i></button></a></li>
+  	                <li><a href={"/users/" + user.id + "/portfolio/new"}><button id="create-profile" className='btn transparent repository-btn'>Create Profile <i className="fa fa-long-arrow-right" aria-hidden="true"></i></button></a></li>
   	              </ul>
                 </div>
               </center>
