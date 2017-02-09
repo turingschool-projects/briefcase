@@ -4,7 +4,7 @@ var UserCard = React.createClass({
   },
 
   shorterBio :function (text) {
-    if(text.length < 1) {
+    if(text == null) {
       return ""
     } else {
       return text.substring(0, 193);

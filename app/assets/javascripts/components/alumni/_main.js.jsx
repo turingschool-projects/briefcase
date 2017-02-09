@@ -9,7 +9,7 @@ var Main = React.createClass({
           <SignedInNavbar/>
           <MainJumbo/>
           <MainSearch/>
-
+          <UserCard portfolios = {portfolios}/>
           <Footer/>
         </div>
       )
