@@ -21,7 +21,8 @@
 
 .navbar {
   width: 100%;
-  position: fixed;
+  position: absolute;
+  top: 0;
 
   .logo {
     position: relative;
