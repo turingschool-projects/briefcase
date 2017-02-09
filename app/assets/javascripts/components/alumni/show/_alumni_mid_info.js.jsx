@@ -1,4 +1,4 @@
-var PortfolioMidInfo = React.createClass({
+var AlumniMidInfo = React.createClass({
 
   render: function() {
     var user = this.props.user;

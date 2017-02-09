@@ -3,6 +3,38 @@ var PortfolioEditMidInfo = React.createClass({
     $('select').material_select();
   },
 
+  getInitialState(){
+    var userPortfolio = this.props.portfolio;
+    return {
+            email: userPortfolio.email,
+            resume: userPortfolio.resume,
+            looking_for: userPortfolio.looking_for,
+            cohort: userPortfolio.cohort,
+            github_url: userPortfolio.github_url,
+            linkedin_url: userPortfolio.linkedin_url,
+            background: userPortfolio.background,
+            locations: userPortfolio.locations,
+            best_at: userPortfolio.best_at,
+            hired: userPortfolio.hired,
+            hired_by: userPortfolio.hired_by
+            }
+  },
+
+  handleEdit: function(event){
+    var stateToUpdate = {};
+    var fieldToUpdate;
+    if(event.target.id == "email") {this.setState({email: event.target.value}); stateToUpdate.email = event.target.value; fieldToUpdate = "email" };
+    if(event.target.id == "resume") { this.setState({resume: event.target.value}); stateToUpdate.resume = event.target.value; fieldToUpdate = "resume" };
+    if(event.target.id == "looking-for") { this.setState({looking_for: event.target.value}); stateToUpdate.looking_for = event.target.value; fieldToUpdate = "looking_for" };
+    if(event.target.id == "best-at") { this.setState({best_at: event.target.value}); stateToUpdate.best_at = event.target.value; fieldToUpdate = "best_at" };
+    if(event.target.id == "github") {this.setState({github_url: event.target.value}) ;stateToUpdate.github_url = event.target.value; fieldToUpdate = "github_url" };
+    if(event.target.id == "linkedin") {this.setState({linkedin_url: event.target.value}) ;stateToUpdate.linkedin_url = event.target.value; fieldToUpdate = "linkedin_url" };
+    if(event.target.id == "hired-by") {this.setState({hired_by: event.target.value}) ;stateToUpdate.hired_by = event.target.value; fieldToUpdate = "hired_by" };
+    if(event.target.id == "cohort") {this.setState({cohort: event.target.value}); stateToUpdate.cohort = event.target.value; fieldToUpdate = "cohort" };
+
+    this.props.prepForUpdate(stateToUpdate, fieldToUpdate);
+  },
+
   render: function() {
     var user = this.props.user;
     var portfolio = this.props.portfolio;
@@ -16,7 +48,7 @@ var PortfolioEditMidInfo = React.createClass({
           <div className="row">
             <div className='col s6'>
               <label htmlFor="email">Email</label>
-              <input id="email" placeholder="example@example.com"></input>
+              <input id="email" placeholder="example@example.com" defaultValue={portfolio.email} onChange={this.handleEdit}></input>
             </div>
             <div className='col s6'>
               <label htmlFor="resume">Email</label><br/>
@@ -29,11 +61,11 @@ var PortfolioEditMidInfo = React.createClass({
           <div className="row mid-bio">
             <div className='col s6'>
               <label htmlFor="looking-for">Looking For</label>
-              <textarea id="looking-for" placeholder="example@example.com"></textarea>
+              <textarea className="editor-looking-for" id="looking-for" placeholder="example@example.com" defaultValue={portfolio.looking_for} onChange={this.handleEdit}></textarea>
             </div>
             <div className='col s6'>
               <label htmlFor="best-at">Best At</label>
-              <textarea id="best-at" type="file"></textarea>
+              <textarea className="editor-best-at" id="best-at" type="file" defaultValue={portfolio.best_at} onChange={this.handleEdit}></textarea>
             </div>
           </div>
         </section>
@@ -53,7 +85,7 @@ var PortfolioEditMidInfo = React.createClass({
           <div className="row">
             <div className='col s6'>
               <label htmlFor="github">GitHub</label>
-              <input id="github" placeholder="github.com/:username"></input>
+              <input id="github" placeholder="github.com/:username" defaultValue={portfolio.github_url} onChange={this.handleEdit}></input>
             </div>
             <div className='col s6'>
               <label htmlFor="twitter">Twitter</label>
@@ -64,7 +96,7 @@ var PortfolioEditMidInfo = React.createClass({
           <div className="row">
             <div className='col s6'>
               <label htmlFor="linkedin">GitHub</label>
-              <input id="linkedin" placeholder="linkedin.com/:username"></input>
+              <input id="linkedin" placeholder="linkedin.com/:username" defaultValue={portfolio.linkedin_url} onChange={this.handleEdit}></input>
             </div>
             <div className='col s6'>
               <label htmlFor="github-id">GitHub ID</label>
@@ -77,12 +109,12 @@ var PortfolioEditMidInfo = React.createClass({
           <h1 id="edit-profile-information">Employment Status</h1>
           <div className="row">
             <div className='col s6'>
-              <input type="checkbox" id="hired" ></input>
+              <input type="checkbox" id="hired" defaultValue={portfolio.hired} onChange={this.handleEdit}></input>
               <label htmlFor="hired">Hired</label>
             </div>
             <div className='col s6'>
               <label htmlFor="hired-by">Hired By</label>
-              <input id="hired-by" placeholder="Google, Inc."></input>
+              <input id="hired-by" placeholder="Google, Inc." defaultValue={portfolio.hired_by} onChange={this.handleEdit}></input>
             </div>
           </div>
         </section>
