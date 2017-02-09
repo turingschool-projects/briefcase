@@ -3,9 +3,40 @@ var PortfolioNewMidInfo = React.createClass({
     $('select').material_select();
   },
 
+  getInitialState(){
+    return {
+            email: "",
+            resume: "",
+            looking_for: "",
+            cohort: "",
+            github_url: "",
+            linkedin_url: "",
+            background: "",
+            locations: "",
+            best_at: "",
+            hired: "",
+            hired_by: ""
+            }
+  },
+
+  handleNew: function(event){
+    var stateToUpdate = {};
+    var fieldToUpdate;
+    if(event.target.id == "email") {this.setState({email: event.target.value}); stateToUpdate.email = event.target.value; fieldToUpdate = "email" };
+    if(event.target.id == "resume") { this.setState({resume: event.target.value}); stateToUpdate.resume = event.target.value; fieldToUpdate = "resume" };
+    if(event.target.id == "looking-for") { this.setState({looking_for: event.target.value}); stateToUpdate.looking_for = event.target.value; fieldToUpdate = "looking_for" };
+    if(event.target.id == "best-at") { this.setState({best_at: event.target.value}); stateToUpdate.best_at = event.target.value; fieldToUpdate = "best_at" };
+    if(event.target.id == "github") {this.setState({github_url: event.target.value}) ;stateToUpdate.github_url = event.target.value; fieldToUpdate = "github_url" };
+    if(event.target.id == "linkedin") {this.setState({linkedin_url: event.target.value}) ;stateToUpdate.linkedin_url = event.target.value; fieldToUpdate = "linkedin_url" };
+    if(event.target.id == "hired-by") {this.setState({hired_by: event.target.value}) ;stateToUpdate.hired_by = event.target.value; fieldToUpdate = "hired_by" };
+    if(event.target.id == "cohort") {this.setState({cohort: event.target.value}); stateToUpdate.cohort = event.target.value; fieldToUpdate = "cohort" };
+
+    this.props.prepForInsert(stateToUpdate, fieldToUpdate);
+  },
+
   render: function() {
     var user = this.props.user;
-    var portfolio = this.props.portfolio;
+
 
     return (
 
@@ -16,7 +47,7 @@ var PortfolioNewMidInfo = React.createClass({
           <div className="row">
             <div className='col s6'>
               <label htmlFor="email">Email</label>
-              <input id="email" placeholder="example@example.com"></input>
+              <input id="email" placeholder="example@example.com"  onChange={this.handleNew}></input>
             </div>
             <div className='col s6'>
               <label htmlFor="resume">Email</label><br/>
@@ -29,11 +60,11 @@ var PortfolioNewMidInfo = React.createClass({
           <div className="row mid-bio">
             <div className='col s6'>
               <label htmlFor="looking-for">Looking For</label>
-              <textarea id="looking-for" placeholder="example@example.com"></textarea>
+              <textarea id="looking-for" className="editor-looking-for" placeholder="example@example.com"  onChange={this.handleNew}></textarea>
             </div>
             <div className='col s6'>
               <label htmlFor="best-at">Best At</label>
-              <textarea id="best-at" type="file"></textarea>
+              <textarea id="best-at" className="editor-best-at" type="file" onChange={this.handleNew}></textarea>
             </div>
           </div>
         </section>
@@ -53,7 +84,7 @@ var PortfolioNewMidInfo = React.createClass({
           <div className="row">
             <div className='col s6'>
               <label htmlFor="github">GitHub</label>
-              <input id="github" placeholder="github.com/:username"></input>
+              <input id="github" placeholder="github.com/:username" onChange={this.handleNew}></input>
             </div>
             <div className='col s6'>
               <label htmlFor="twitter">Twitter</label>
@@ -64,7 +95,7 @@ var PortfolioNewMidInfo = React.createClass({
           <div className="row">
             <div className='col s6'>
               <label htmlFor="linkedin">GitHub</label>
-              <input id="linkedin" placeholder="linkedin.com/:username"></input>
+              <input id="linkedin" placeholder="linkedin.com/:username" onChange={this.handleNew}></input>
             </div>
             <div className='col s6'>
               <label htmlFor="github-id">GitHub ID</label>
@@ -82,7 +113,7 @@ var PortfolioNewMidInfo = React.createClass({
             </div>
             <div className='col s6'>
               <label htmlFor="hired-by">Hired By</label>
-              <input id="hired-by" placeholder="Google, Inc."></input>
+              <input id="hired-by" placeholder="Google, Inc." onChange={this.handleNew}></input>
             </div>
           </div>
         </section>

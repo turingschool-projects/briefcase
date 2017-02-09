@@ -11,9 +11,8 @@ var PortfolioNewJumboInfo = React.createClass({
   handleNew: function(event){
     var stateToUpdate = {};
     var fieldToUpdate;
-    this.setState({full_name: event.target.value});
-    if(event.target.id == "edit-full-name") { stateToUpdate.full_name = event.target.value; fieldToUpdate = "full_name" };
-    if(event.target.id == "edit-title") { stateToUpdate.title = event.target.value; fieldToUpdate = "title" };
+    if(event.target.id == "edit-full-name") {  this.setState({full_name: event.target.value}); stateToUpdate.full_name = event.target.value; fieldToUpdate = "full_name" };
+    if(event.target.id == "edit-title") {  this.setState({title: event.target.value}); stateToUpdate.title = event.target.value; fieldToUpdate = "title" };
     this.props.prepForInsert(stateToUpdate, fieldToUpdate);
   },
 

@@ -28,10 +28,10 @@ var PortfolioNewBodyInfo = React.createClass({
               <h1>About You</h1>
             </div>
             <div className="col s8 offset-s4">
-              <textarea className="bio-edit" value={this.state.bio} onChange={this.handleNew}></textarea>
+              <textarea id="bio" className="bio-edit editor" defaultValue={this.state.bio} onChange={this.handleNew}></textarea>
             </div>
         </div>
-        <PortfolioNewMidInfo user={user}/>
+        <PortfolioNewMidInfo user={user} prepForInsert={this.props.prepForInsert}/>
       </div>
     </div>
     );

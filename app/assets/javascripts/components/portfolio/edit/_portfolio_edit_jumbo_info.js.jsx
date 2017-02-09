@@ -2,15 +2,16 @@ var PortfolioEditJumboInfo = React.createClass({
 
   getInitialState(){
     var userPortfolio = this.props.portfolio;
-    return { full_name: "userPortfolio.full_name" }
+    return { full_name: userPortfolio.full_name,
+             title: userPortfolio.title
+     }
   },
 
   handleEdit: function(event){
     var stateToUpdate = {};
     var fieldToUpdate;
-    this.setState({full_name: event.target.value});
-    if(event.target.id == "edit-full-name") { stateToUpdate.full_name = event.target.value; fieldToUpdate = "full_name" };
-    if(event.target.id == "edit-title") { stateToUpdate.full_name = event.target.value; fieldToUpdate = "title" };
+    if(event.target.id == "edit-full-name") {  this.setState({full_name: event.target.value}); stateToUpdate.full_name = event.target.value; fieldToUpdate = "full_name" };
+    if(event.target.id == "edit-title") {    this.setState({title: event.target.value}); stateToUpdate.full_name = event.target.value; fieldToUpdate = "title" };
     this.props.prepForUpdate(stateToUpdate, fieldToUpdate);
   },
 

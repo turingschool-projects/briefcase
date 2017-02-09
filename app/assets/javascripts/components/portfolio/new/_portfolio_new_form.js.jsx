@@ -18,7 +18,8 @@ var PortfolioNewForm = React.createClass({
 
   handleInsert(){
     var user = this.props.user;
-    axios.post(`/alumni/${user.slug}/portfolio.json`, {portfolio: this.state.portfolio})
+    debugger;
+    axios.post(`/users/${user.id}/portfolio.json`, {portfolio: this.state.portfolio})
     .then(response => {
       window.location = response.data;
     })
@@ -35,8 +36,8 @@ var PortfolioNewForm = React.createClass({
         <form>
           <PortfolioNewJumboInfo user={user} prepForInsert={this.prepForInsert}/>
           <PortfolioNewBodyInfo user={user} prepForInsert={this.prepForInsert}/>
-            <div className="container portfolio-btns">
-              <button className="btn waves-effect waves-light" type="submit" name="action" value="Save Profile" onClick={this.handleUpdate}>Save Profile</button>
+            <div className="container">
+              <button className="btn waves-effect waves-light portfolio-btns" type="submit" name="action" value="Save Profile" onClick={this.handleInsert}>Save Profile</button>
             </div>
         </form>
       </div>

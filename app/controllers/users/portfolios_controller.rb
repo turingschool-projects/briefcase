@@ -9,11 +9,11 @@ class Users::PortfoliosController < ApplicationController
   end
 
   def create
-    user = User.find_by(slug: params["user_slug"])
+    user = User.find(params[:user_id])
     new_portfolio = user.build_portfolio(portfolio_params)
 
     if(new_portfolio.save)
-      sleep(4)
+      sleep(1)
       render js: "/dashboard"
     else
       render component: 'PortfolioNew', props: { user: current_user, projects: current_user.projects, portfolio: current_user.portfolio }
