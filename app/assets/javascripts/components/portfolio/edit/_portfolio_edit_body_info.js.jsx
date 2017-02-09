@@ -2,7 +2,7 @@ var PortfolioEditBodyInfo = React.createClass({
 
   getInitialState(){
     var userPortfolio = this.props.portfolio;
-    return { bio: "userPortfolio.bio" }
+    return { bio: userPortfolio.bio }
   },
 
   handleEdit: function(event){

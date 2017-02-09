@@ -35,11 +35,11 @@ var ProjectForm = React.createClass({
             <div className="row mid-bio">
               <div className='col s6'>
                 <label htmlFor="looking-for">Description of project</label>
-                <textarea id="looking-for" placeholder="example@example.com"></textarea>
+                <textarea className="editor-project" id="looking-for" placeholder="example@example.com"></textarea>
               </div>
               <div className='col s6'>
                 <label htmlFor="best-at">My Areas of Focus</label>
-                <textarea id="best-at" type="file"></textarea>
+                <textarea className="editor-focus" id="best-at" type="file"></textarea>
               </div>
             </div>
           </section>

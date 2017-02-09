@@ -25,7 +25,6 @@ class Users::PortfoliosController < ApplicationController
   end
 
   def update
-    require "pry"; binding.pry
     portfolio = Portfolio.find(params[:portfolio][:id])
 
     if(portfolio.update(portfolio_params))

@@ -3,6 +3,40 @@ var PortfolioEditMidInfo = React.createClass({
     $('select').material_select();
   },
 
+  getInitialState(){
+    var userPortfolio = this.props.portfolio;
+    return {
+            email: userPortfolio.email,
+            resume: userPortfolio.resume,
+            lookingFor: userPortfolio.looking_for,
+            cohort: userPortfolio.cohort,
+            github: userPortfolio.github_url,
+            linkedin: userPortfolio.linkedin_url,
+            background: userPortfolio.background,
+            locations: userPortfolio.locations,
+            bestAt: userPortfolio.best_at,
+            hired: userPortfolio.hired,
+            hiredBy: userPortfolio.hired_by
+            }
+  },
+
+  handleEdit: function(event){
+    var stateToUpdate = {};
+    var fieldToUpdate;
+    this.setState({bio: event.target.value});
+    if(event.target.id == "email") { stateToUpdate.bio = event.target.value; fieldToUpdate = "email" };
+    if(event.target.id == "resume") { stateToUpdate.bio = event.target.value; fieldToUpdate = "resume" };
+    if(event.target.id == "looking-for") { stateToUpdate.bio = event.target.value; fieldToUpdate = "lookingFor" };
+    if(event.target.id == "best-at") { stateToUpdate.bio = event.target.value; fieldToUpdate = "bestAt" };
+    if(event.target.id == "github") { stateToUpdate.bio = event.target.value; fieldToUpdate = "github" };
+    if(event.target.id == "linkedin") { stateToUpdate.bio = event.target.value; fieldToUpdate = "linkedin" };
+    if(event.target.id == "hired-by") { stateToUpdate.bio = event.target.value; fieldToUpdate = "hiredBy" };
+    if(event.target.id == "cohort") { stateToUpdate.bio = event.target.value; fieldToUpdate = "cohort" };
+    if(event.target.id == "email") { stateToUpdate.bio = event.target.value; fieldToUpdate = "email" };
+
+    this.props.prepForUpdate(stateToUpdate, fieldToUpdate);
+  },
+
   render: function() {
     var user = this.props.user;
     var portfolio = this.props.portfolio;
@@ -29,11 +63,11 @@ var PortfolioEditMidInfo = React.createClass({
           <div className="row mid-bio">
             <div className='col s6'>
               <label htmlFor="looking-for">Looking For</label>
-              <textarea id="looking-for" placeholder="example@example.com"></textarea>
+              <textarea className="editor-looking-for" id="looking-for" placeholder="example@example.com"></textarea>
             </div>
             <div className='col s6'>
               <label htmlFor="best-at">Best At</label>
-              <textarea id="best-at" type="file"></textarea>
+              <textarea className="editor-best-at" id="best-at" type="file"></textarea>
             </div>
           </div>
         </section>
