@@ -31,7 +31,7 @@ var PortfolioEditBodyInfo = React.createClass({
               <textarea id="bio"className="bio-edit editor" defaultValue={portfolio.bio} onChange={this.handleEdit}></textarea>
             </div>
         </div>
-        <PortfolioEditMidInfo user={user} portfolio={portfolio}/>
+        <PortfolioEditMidInfo user={user} portfolio={portfolio} prepForUpdate={this.props.prepForUpdate}/>
       </div>
     </div>
     );

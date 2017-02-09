@@ -8,31 +8,29 @@ var PortfolioEditMidInfo = React.createClass({
     return {
             email: userPortfolio.email,
             resume: userPortfolio.resume,
-            lookingFor: userPortfolio.looking_for,
+            looking_for: userPortfolio.looking_for,
             cohort: userPortfolio.cohort,
-            github: userPortfolio.github_url,
-            linkedin: userPortfolio.linkedin_url,
+            github_url: userPortfolio.github_url,
+            linkedin_url: userPortfolio.linkedin_url,
             background: userPortfolio.background,
             locations: userPortfolio.locations,
-            bestAt: userPortfolio.best_at,
+            best_at: userPortfolio.best_at,
             hired: userPortfolio.hired,
-            hiredBy: userPortfolio.hired_by
+            hired_by: userPortfolio.hired_by
             }
   },
 
   handleEdit: function(event){
     var stateToUpdate = {};
     var fieldToUpdate;
-    this.setState({bio: event.target.value});
-    if(event.target.id == "email") { stateToUpdate.bio = event.target.value; fieldToUpdate = "email" };
-    if(event.target.id == "resume") { stateToUpdate.bio = event.target.value; fieldToUpdate = "resume" };
-    if(event.target.id == "looking-for") { stateToUpdate.bio = event.target.value; fieldToUpdate = "lookingFor" };
-    if(event.target.id == "best-at") { stateToUpdate.bio = event.target.value; fieldToUpdate = "bestAt" };
-    if(event.target.id == "github") { stateToUpdate.bio = event.target.value; fieldToUpdate = "github" };
-    if(event.target.id == "linkedin") { stateToUpdate.bio = event.target.value; fieldToUpdate = "linkedin" };
-    if(event.target.id == "hired-by") { stateToUpdate.bio = event.target.value; fieldToUpdate = "hiredBy" };
-    if(event.target.id == "cohort") { stateToUpdate.bio = event.target.value; fieldToUpdate = "cohort" };
-    if(event.target.id == "email") { stateToUpdate.bio = event.target.value; fieldToUpdate = "email" };
+    if(event.target.id == "email") {this.setState({email: event.target.value}); stateToUpdate.email = event.target.value; fieldToUpdate = "email" };
+    if(event.target.id == "resume") { this.setState({resume: event.target.value}); stateToUpdate.resume = event.target.value; fieldToUpdate = "resume" };
+    if(event.target.id == "looking-for") { this.setState({looking_for: event.target.value}); stateToUpdate.looking_for = event.target.value; fieldToUpdate = "looking_for" };
+    if(event.target.id == "best-at") { this.setState({best_at: event.target.value}); stateToUpdate.best_at = event.target.value; fieldToUpdate = "best_at" };
+    if(event.target.id == "github") {this.setState({github_url: event.target.value}) ;stateToUpdate.github_url = event.target.value; fieldToUpdate = "github_url" };
+    if(event.target.id == "linkedin") {this.setState({linkedin_url: event.target.value}) ;stateToUpdate.linkedin_url = event.target.value; fieldToUpdate = "linkedin_url" };
+    if(event.target.id == "hired-by") {this.setState({hired_by: event.target.value}) ;stateToUpdate.hired_by = event.target.value; fieldToUpdate = "hired_by" };
+    if(event.target.id == "cohort") {this.setState({cohort: event.target.value}); stateToUpdate.cohort = event.target.value; fieldToUpdate = "cohort" };
 
     this.props.prepForUpdate(stateToUpdate, fieldToUpdate);
   },
@@ -50,7 +48,7 @@ var PortfolioEditMidInfo = React.createClass({
           <div className="row">
             <div className='col s6'>
               <label htmlFor="email">Email</label>
-              <input id="email" placeholder="example@example.com"></input>
+              <input id="email" placeholder="example@example.com" defaultValue={portfolio.email} onChange={this.handleEdit}></input>
             </div>
             <div className='col s6'>
               <label htmlFor="resume">Email</label><br/>

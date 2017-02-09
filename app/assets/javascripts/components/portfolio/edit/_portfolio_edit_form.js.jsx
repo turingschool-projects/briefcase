@@ -13,6 +13,7 @@ var PortfolioEditForm = React.createClass({
   },
 
   handleUpdate(){
+    debugger;
     var user = this.props.user;
 
     axios.put(`/users/${user.id}/portfolio.json`, {portfolio: this.state.portfolio})
