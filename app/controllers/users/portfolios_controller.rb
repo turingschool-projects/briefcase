@@ -39,7 +39,7 @@ class Users::PortfoliosController < ApplicationController
   end
 
   def destroy
-    user = User.find_by(slug: params["user_slug"])
+    user = User.find(params[:user_id])
     if(user.portfolio.delete)
       render js: dashboard_path
     else
