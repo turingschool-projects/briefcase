@@ -61,11 +61,11 @@ var PortfolioEditMidInfo = React.createClass({
           <div className="row mid-bio">
             <div className='col s6'>
               <label htmlFor="looking-for">Looking For</label>
-              <textarea className="editor-looking-for" id="looking-for" placeholder="example@example.com"></textarea>
+              <textarea className="editor-looking-for" id="looking-for" placeholder="example@example.com" defaultValue={portfolio.looking_for} onChange={this.handleEdit}></textarea>
             </div>
             <div className='col s6'>
               <label htmlFor="best-at">Best At</label>
-              <textarea className="editor-best-at" id="best-at" type="file"></textarea>
+              <textarea className="editor-best-at" id="best-at" type="file" defaultValue={portfolio.best_at} onChange={this.handleEdit}></textarea>
             </div>
           </div>
         </section>
@@ -85,7 +85,7 @@ var PortfolioEditMidInfo = React.createClass({
           <div className="row">
             <div className='col s6'>
               <label htmlFor="github">GitHub</label>
-              <input id="github" placeholder="github.com/:username"></input>
+              <input id="github" placeholder="github.com/:username" defaultValue={portfolio.github_url} onChange={this.handleEdit}></input>
             </div>
             <div className='col s6'>
               <label htmlFor="twitter">Twitter</label>
@@ -96,7 +96,7 @@ var PortfolioEditMidInfo = React.createClass({
           <div className="row">
             <div className='col s6'>
               <label htmlFor="linkedin">GitHub</label>
-              <input id="linkedin" placeholder="linkedin.com/:username"></input>
+              <input id="linkedin" placeholder="linkedin.com/:username" defaultValue={portfolio.linkedin_url} onChange={this.handleEdit}></input>
             </div>
             <div className='col s6'>
               <label htmlFor="github-id">GitHub ID</label>
@@ -109,12 +109,12 @@ var PortfolioEditMidInfo = React.createClass({
           <h1 id="edit-profile-information">Employment Status</h1>
           <div className="row">
             <div className='col s6'>
-              <input type="checkbox" id="hired" ></input>
+              <input type="checkbox" id="hired" defaultValue={portfolio.hired} onChange={this.handleEdit}></input>
               <label htmlFor="hired">Hired</label>
             </div>
             <div className='col s6'>
               <label htmlFor="hired-by">Hired By</label>
-              <input id="hired-by" placeholder="Google, Inc."></input>
+              <input id="hired-by" placeholder="Google, Inc." defaultValue={portfolio.hired_by} onChange={this.handleEdit}></input>
             </div>
           </div>
         </section>
