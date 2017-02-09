@@ -35,7 +35,7 @@ var UserCard = React.createClass({
                   <i className="fa fa-github fa-3x" aria-hidden="true"></i>
                   <i className="fa fa-linkedin fa-3x" aria-hidden="true"></i>
                 </div>
-                <center><a className="card-profile" href={ "/alumni/" + slug_name }>View Profile</a></center>
+                <center><a className="card-profile" href={ "/alumni/" + portfolio.user_slug }>View Profile</a></center>
               </div>
               <div className="card-reveal">
                 <span className="card-title grey-text text-darken-4">Bio<i className="material-icons right">close</i></span>
