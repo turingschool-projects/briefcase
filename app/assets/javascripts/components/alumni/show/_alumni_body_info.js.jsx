@@ -1,4 +1,4 @@
-var PortfolioBodyInfo = React.createClass({
+var AlumniBodyInfo = React.createClass({
 
   render: function() {
     var user = this.props.user;
@@ -24,7 +24,7 @@ var PortfolioBodyInfo = React.createClass({
             </ul>
           </div>
         </div>
-        <PortfolioMidInfo user={user} portfolio={portfolio}/>
+        <AlumniMidInfo user={user} portfolio={portfolio}/>
       </div>
     </div>
     );

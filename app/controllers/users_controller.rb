@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    user = User.find_by(slug: params["user_slug"])
+    @user = User.find_by(slug: params["slug"])
     render component: "Show", props: { user: @user, projects: @user.projects }
   end
 

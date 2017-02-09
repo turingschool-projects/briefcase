@@ -4,15 +4,18 @@ var UserCard = React.createClass({
   },
 
   shorterBio :function (text) {
-    return text.substring(0, 193);
+    if(text.length < 1) {
+      return ""
+    } else {
+      return text.substring(0, 193);
+    }
   },
 
   render(){
-    var users = this.props.users.map((user) => { // props brought from controller
-      var first_name = user.first_name.toLowerCase().replace(/ /g, '')
-      var last_name = user.last_name.toLowerCase().replace(/ /g, '')
+    var portfolios = this.props.portfolios.map((portfolio) => { // props brought from controller
+    var slug_name = portfolio.full_name.toLowerCase().replace(/ /g, '-')
       return (
-          <div className="col s4 "key={user.id}>
+          <div className="col s4 "key={portfolio.id}>
             <div className="card">
             <i className="fa fa-heart-o left fa-2x" aria-hidden="true" onClick={this.fillHeart}></i>
             <i className="material-icons right activator more-vert">more_vert</i>
@@ -23,20 +26,20 @@ var UserCard = React.createClass({
               </div>
               <div className="card-content">
                 <center>
-                  <span className="card-title grey-text text-darken-4">{user.first_name} {user.last_name }</span>
-                  <p className="card-title grey-text text-darken-4 ">{user.title}</p>
+                  <span className="card-title grey-text text-darken-4">{portfolio.full_name}</span>
+                  <p className="card-title grey-text text-darken-4 ">{portfolio.title}</p>
                 </center>
                 <hr/>
-                <center><p className="card-bio">{this.shorterBio(user.bio)}...</p></center>
+                <center><p className="card-bio">{this.shorterBio(portfolio.bio)}...</p></center>
                 <div className="card-links">
                   <i className="fa fa-github fa-3x" aria-hidden="true"></i>
                   <i className="fa fa-linkedin fa-3x" aria-hidden="true"></i>
                 </div>
-                <center><a className="card-profile" href={ "/alumni/" + first_name + '-' + last_name}>View Profile</a></center>
+                <center><a className="card-profile" href={ "/alumni/" + slug_name }>View Profile</a></center>
               </div>
               <div className="card-reveal">
                 <span className="card-title grey-text text-darken-4">Bio<i className="material-icons right">close</i></span>
-                <p>{user.bio}</p>
+                <p>{portfolio.bio}</p>
             </div>
           </div>
         </div>
@@ -46,7 +49,7 @@ var UserCard = React.createClass({
     return (
       <div className="container">
         <div className="row">
-          {users}
+          {portfolios}
         </div>
       </div>
     )

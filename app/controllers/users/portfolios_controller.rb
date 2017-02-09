@@ -25,11 +25,9 @@ class Users::PortfoliosController < ApplicationController
   end
 
   def update
-    user = User.find_by(slug: params["user_slug"])
-    portfolio = user.portfolio
-
+    portfolio = Portfolio.find(params[:portfolio][:id])
     if(portfolio.update(portfolio_params))
-      sleep(4)
+      sleep(1)
       render js: "/dashboard"
     else
       render component: 'PortfolioEdit', props: { user: current_user, projects: current_user.projects, portfolio: current_user.portfolio }
@@ -51,6 +49,6 @@ class Users::PortfoliosController < ApplicationController
 
   private
     def portfolio_params
-      params.require("portfolio").permit("full_name", "title", "cohort", "github_url", "linkedin_url", "bio", "background", "resume_file", "locations", "looking_for", "best_at", "hired", "hired_by", "user_id")
+      params.require("portfolio").permit("full_name", "title", "cohort", "github_url", "linkedin_url", "bio", "background", "resume_file", "locations", "looking_for", "best_at", "hired", "hired_by", "user_id", "email")
     end
 end
