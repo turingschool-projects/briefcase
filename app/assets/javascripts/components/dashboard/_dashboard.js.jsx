@@ -3,7 +3,7 @@ var Dashboard = React.createClass({
     var user = this.props.user;
     var projects = this.props.projects;
     var portfolio = this.props.portfolio;
-    debugger;
+
     return (
       <div>
         <SignedInNavbar/>
@@ -11,6 +11,7 @@ var Dashboard = React.createClass({
           <div className="container dashboard-padding">
             <div className="row">
               { portfolio != null ? <DashboardProfile user={user} portfolio={portfolio}/> : <DashboardDefaultCard user={user} portfolio={portfolio}/>}
+
               { projects.length > 0 ?  <DashboardProject user={user} projects={projects}/>: <NoDashboardProjects user={user} portfolio={portfolio}/>}
             </div>
           </div>

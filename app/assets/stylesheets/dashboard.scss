@@ -59,14 +59,8 @@ $lightgray: #D3D3D3;
 }
 
 .dashboard-project-container {
-  margin-top: 8%;
-  h2{
-    font-family: "azo-sans-web","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 24px;
-    line-height: 31px;
-    font-weight: bold;
-    padding-bottom: 1%;
-  }
+  margin-top: 0%;
+
   .card {
     height: 380px;
   }
@@ -84,6 +78,8 @@ $lightgray: #D3D3D3;
       font-size: 40px;
       font-weight: lighter;
     }
+
+  
 
     h1, h3, p {
       padding-top: 2%;
