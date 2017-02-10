@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170209040824) do
+ActiveRecord::Schema.define(version: 20170209235057) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(version: 20170209040824) do
     t.string  "description"
     t.string  "areas_of_focus"
     t.integer "user_id"
+    t.integer "portfolio_id"
+    t.index ["portfolio_id"], name: "index_projects_on_portfolio_id", using: :btree
     t.index ["user_id"], name: "index_projects_on_user_id", using: :btree
   end
 
@@ -78,5 +80,6 @@ ActiveRecord::Schema.define(version: 20170209040824) do
     t.string   "slug"
   end
 
+  add_foreign_key "projects", "portfolios"
   add_foreign_key "projects", "users"
 end

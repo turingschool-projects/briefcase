@@ -30,6 +30,8 @@ Rails.application.routes.draw do
     delete "portfolio", to: "users/portfolios#destroy"
     get "portfolio/delete", to: "users/portfolios#delete"
     get "project/new", to: "users/projects#new"
+    post "project", to: "users/projects#create"
+
   end
 
   get '/dashboard', to: "dashboard#index" #technically the dashboard

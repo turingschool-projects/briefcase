@@ -18,7 +18,6 @@ var PortfolioNewForm = React.createClass({
 
   handleInsert(){
     var user = this.props.user;
-    debugger;
     axios.post(`/users/${user.id}/portfolio.json`, {portfolio: this.state.portfolio})
     .then(response => {
       window.location = response.data;

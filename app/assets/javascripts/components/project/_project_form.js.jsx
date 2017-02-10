@@ -1,12 +1,29 @@
 var ProjectForm = React.createClass({
+  getInitialState(){
+    return {
+            name: ""
+
+            }
+  },
+
+
+  handleNew: function(event){
+    var stateToUpdate = {};
+    var fieldToUpdate;
+    if(event.target.id == "project-name") {this.setState({name: event.target.value}); stateToUpdate.name = event.target.value; fieldToUpdate = "name" };
+
+    this.props.prepForInsert(stateToUpdate, fieldToUpdate);
+
+  },
+
   render: function(){
     return(
       <div className="container project-form">
       <div className="row project-row">
-          <form className="col s12">
+          <div className="col s12">
             <div className="row">
               <div className="input-field col s6">
-                <input placeholder="Project Name*" id="first_name" type="text" className="validate" />
+                <input placeholder="Project Name*" id="project-name" type="text" defaultValue="" className="validate" onChange={this.handleNew}></input>
               </div>
               <div className="input-field col s6">
                 <input placeholder="Github Url*" id="last_name" type="text" className="validate" />
@@ -17,7 +34,6 @@ var ProjectForm = React.createClass({
                 <input placeholder="Production Url" id="email" type="email" className="validate" />
               </div>
               <div className="input-field col s6 ">
-                <form action="#">
                  <div className="file-field input-field">
                    <div className="btn file">
                      <span>File</span>
@@ -27,10 +43,9 @@ var ProjectForm = React.createClass({
                      <input placeholder="Upload Screen Shot" className="file-path validate" type="text" />
                    </div>
                  </div>
-               </form>
               </div>
             </div>
-          </form>
+          </div>
           <section className="col s12">
             <div className="row mid-bio">
               <div className='col s6'>
@@ -44,7 +59,7 @@ var ProjectForm = React.createClass({
             </div>
           </section>
         </div>
-        <a className="waves-effect waves-light btn project-save" data-reactid="54"><i className="fa fa-check" aria-hidden="true"></i>Save Project </a>
+        <a className="waves-effect waves-light btn project-save" onClick={this.props.handleInsert}><i className="fa fa-check" aria-hidden="true"></i>Save Project </a>
       </div>
 
     )
