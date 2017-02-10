@@ -3,7 +3,7 @@ var DashboardProject = React.createClass({
     var user = this.props.user;
     var projects = this.props.projects.map((project) => { // props brought from controller
       return (
-        <div key={1}>
+        <div key={project.id}>
           <div className="dashboard-project">
             <div className="row">
               <div className="col s8">

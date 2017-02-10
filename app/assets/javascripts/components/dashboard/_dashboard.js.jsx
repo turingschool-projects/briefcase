@@ -3,6 +3,7 @@ var Dashboard = React.createClass({
     var user = this.props.user;
     var projects = this.props.projects;
     var portfolio = this.props.portfolio;
+    debugger;
     return (
       <div>
         <SignedInNavbar/>
