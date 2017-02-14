@@ -50,7 +50,7 @@ var PortfolioNewMidInfo = React.createClass({
               <input id="email" placeholder="example@example.com"  onChange={this.handleNew}></input>
             </div>
             <div className='col s6'>
-              <label htmlFor="resume">Email</label><br/>
+              <label htmlFor="resume">Resume</label><br/>
               <input id="resume" type="file"></input>
             </div>
           </div>
@@ -98,8 +98,8 @@ var PortfolioNewMidInfo = React.createClass({
               <input id="linkedin" placeholder="linkedin.com/:username" onChange={this.handleNew}></input>
             </div>
             <div className='col s6'>
-              <label htmlFor="github-id">GitHub ID</label>
-              <input id="github-id" placeholder=":username"></input>
+              <label htmlFor="personal-site">Personal Site</label>
+              <input id="personal-site" placeholder="https://www.mysite.com"></input>
             </div>
           </div>
         </section>

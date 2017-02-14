@@ -3,7 +3,6 @@ var DeletePortfolioBody = React.createClass({
 
   handleDelete(){
     var user = this.props.user;
-    debugger;
     axios.delete(`/users/${user.id}/portfolio.json`)
     .then(response => {
       window.location = response.data;
