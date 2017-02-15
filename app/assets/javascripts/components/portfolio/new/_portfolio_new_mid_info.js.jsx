@@ -19,12 +19,14 @@ var PortfolioNewMidInfo = React.createClass({
             twitter_url: "",
             personal_url: "",
             hired_by: ""
-            }
+          }
   },
 
   handleNew: function(event){
     var stateToUpdate = {};
     var fieldToUpdate;
+
+    debugger;
     if(event.target.id == "email") {this.setState({email: event.target.value}); stateToUpdate.email = event.target.value; fieldToUpdate = "email" };
     if(event.target.id == "resume") { this.setState({resume: event.target.value}); stateToUpdate.resume = event.target.value; fieldToUpdate = "resume" };
     if(event.target.id == "looking-for") { this.setState({looking_for: event.target.value}); stateToUpdate.looking_for = event.target.value; fieldToUpdate = "looking_for" };
@@ -36,10 +38,12 @@ var PortfolioNewMidInfo = React.createClass({
     if(event.target.id == "twitter") {this.setState({twitter_url: event.target.value}); stateToUpdate.twitter_url = event.target.value; fieldToUpdate = "twitter_url" };
     if(event.target.id == "personal-url") {this.setState({personal_url: event.target.value}); stateToUpdate.personal_url = event.target.value; fieldToUpdate = "personal_url" };
     if(event.target.id == "hired-by") {this.setState({hired_by: event.target.value}); stateToUpdate.hired_by = event.target.value; fieldToUpdate = "hired_by" };
-
+    if($("#cohort")[0].value) {this.setState({cohort: $("#cohort")[0].value}); stateToUpdate.cohort = $("#cohort")[0].value; fieldToUpdate = "cohort" };
 
     this.props.prepForInsert(stateToUpdate, fieldToUpdate);
   },
+
+
 
   render: function() {
     var user = this.props.user;
@@ -128,17 +132,22 @@ var PortfolioNewMidInfo = React.createClass({
         <section className="school-info col s12">
           <h1 id="edit-profile-information">School Information Status</h1>
           <label htmlFor="cohort">Cohort</label>
-          <select id="cohort">
-              <option value="" disabled selected>1608</option>
-              <option value="1">1608</option>
-              <option value="2">1610</option>
-              <option value="3">1611</option>
+          <select id="cohort" value={this.state.value} onChange={this.handleNew}>
+              <option defaultValue="" disabled selected>1608</option>
+              <option defaultValue="1608">1608</option>
+              <option defaultValue="1608">1608</option>
+              <option defaultValue="1701">1701</option>
+              <option defaultValue="1703">1703</option>
+              <option defaultValue="1705">1705</option>
+              <option defaultValue="1707">1707</option>
+              <option defaultValue="1709">1709</option>
+              <option defaultValue="1711">1711</option>
           </select>
         </section>
 
         <section className="published col s12">
           <h1 id="edit-profile-information">Publishing Options</h1>
-          <input type="checkbox" id="published" ></input>
+          <input type="checkbox" id="published" onChange={this.handleNew}></input>
           <label htmlFor="published">Published</label>
         </section>
 
