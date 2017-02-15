@@ -17,7 +17,8 @@ var PortfolioNewMidInfo = React.createClass({
             hired: "",
             hired_by: "",
             twitter_url: "",
-            personal_url: ""
+            personal_url: "",
+            hired_by: ""
             }
   },
 
@@ -34,6 +35,8 @@ var PortfolioNewMidInfo = React.createClass({
     if(event.target.id == "cohort") {this.setState({cohort: event.target.value}); stateToUpdate.cohort = event.target.value; fieldToUpdate = "cohort" };
     if(event.target.id == "twitter") {this.setState({twitter_url: event.target.value}); stateToUpdate.twitter_url = event.target.value; fieldToUpdate = "twitter_url" };
     if(event.target.id == "personal-url") {this.setState({personal_url: event.target.value}); stateToUpdate.personal_url = event.target.value; fieldToUpdate = "personal_url" };
+    if(event.target.id == "hired-by") {this.setState({hired_by: event.target.value}); stateToUpdate.hired_by = event.target.value; fieldToUpdate = "hired_by" };
+
 
     this.props.prepForInsert(stateToUpdate, fieldToUpdate);
   },
