@@ -13,9 +13,7 @@ var AlumniMidInfo = React.createClass({
             </div>
             <div className='col s12'>
               <ul>
-                <li>Somthing</li>
-                <li>Somthing</li>
-                <li>Somthing</li>
+                <li>{portfolio.looking_for}</li>
               </ul>
             </div>
           </div>
@@ -25,9 +23,7 @@ var AlumniMidInfo = React.createClass({
             </div>
             <div className='col s12'>
               <ul>
-                <li>Somthing</li>
-                <li>Somthing</li>
-                <li>Somthing</li>
+                <li>{portfolio.best_at}</li>
               </ul>
             </div>
           </div>
@@ -37,9 +33,7 @@ var AlumniMidInfo = React.createClass({
             </div>
             <div className='col s12'>
               <ul>
-                <li>Somthing</li>
-                <li>Somthing</li>
-                <li>Somthing</li>
+                <li>{portfolio.locations}</li>
               </ul>
             </div>
           </div>
