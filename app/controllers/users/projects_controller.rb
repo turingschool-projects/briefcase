@@ -8,7 +8,6 @@ class Users::ProjectsController < ApplicationController
     portfolio = User.find(params[:user_id]).portfolio
     new_project = portfolio.projects.new(project_params)
     new_project.update(user_id: params[:user_id])
-
     if(new_project.save)
       render js: "/dashboard"
     else
