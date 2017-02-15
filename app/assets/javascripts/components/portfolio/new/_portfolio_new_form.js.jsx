@@ -3,9 +3,6 @@ var PortfolioNewForm = React.createClass({
 
   getInitialState(){
     var userPortfolio = {
-      full_name: "",
-      title: "",
-      bio: ""
     };
     return { portfolio: userPortfolio }
   },

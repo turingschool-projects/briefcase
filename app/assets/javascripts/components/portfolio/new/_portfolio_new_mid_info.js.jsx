@@ -15,7 +15,9 @@ var PortfolioNewMidInfo = React.createClass({
             locations: "",
             best_at: "",
             hired: "",
-            hired_by: ""
+            hired_by: "",
+            twitter_url: "",
+            personal_url: ""
             }
   },
 
@@ -30,6 +32,8 @@ var PortfolioNewMidInfo = React.createClass({
     if(event.target.id == "linkedin") {this.setState({linkedin_url: event.target.value}) ;stateToUpdate.linkedin_url = event.target.value; fieldToUpdate = "linkedin_url" };
     if(event.target.id == "hired-by") {this.setState({hired_by: event.target.value}) ;stateToUpdate.hired_by = event.target.value; fieldToUpdate = "hired_by" };
     if(event.target.id == "cohort") {this.setState({cohort: event.target.value}); stateToUpdate.cohort = event.target.value; fieldToUpdate = "cohort" };
+    if(event.target.id == "twitter") {this.setState({twitter_url: event.target.value}); stateToUpdate.twitter_url = event.target.value; fieldToUpdate = "twitter_url" };
+    if(event.target.id == "personal-url") {this.setState({personal_url: event.target.value}); stateToUpdate.personal_url = event.target.value; fieldToUpdate = "personal_url" };
 
     this.props.prepForInsert(stateToUpdate, fieldToUpdate);
   },
@@ -88,7 +92,7 @@ var PortfolioNewMidInfo = React.createClass({
             </div>
             <div className='col s6'>
               <label htmlFor="twitter">Twitter</label>
-              <input id="twitter" placeholder="twitter.com/:username"></input>
+              <input id="twitter" placeholder="twitter.com/:username" onChange={this.handleNew}></input>
             </div>
           </div>
 
@@ -98,8 +102,8 @@ var PortfolioNewMidInfo = React.createClass({
               <input id="linkedin" placeholder="linkedin.com/:username" onChange={this.handleNew}></input>
             </div>
             <div className='col s6'>
-              <label htmlFor="personal-site">Personal Site</label>
-              <input id="personal-site" placeholder="https://www.mysite.com"></input>
+              <label htmlFor="personal-url">Personal Site</label>
+              <input id="personal-url" placeholder="https://www.mysite.com" onChange={this.handleNew}></input>
             </div>
           </div>
         </section>
