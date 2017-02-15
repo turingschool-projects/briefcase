@@ -3,7 +3,6 @@ var Main = React.createClass({
     var signedIn = this.props.signed_in;
     var portfolios = this.props.portfolios;
     var user = this.props.user;
-    debugger;
     if(user != null) {
       return (
         <div>

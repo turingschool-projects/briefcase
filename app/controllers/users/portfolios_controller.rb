@@ -13,7 +13,6 @@ class Users::PortfoliosController < ApplicationController
     new_portfolio = user.build_portfolio(portfolio_params)
 
     if(new_portfolio.save)
-      sleep(1)
       render js: "/dashboard"
     else
       render component: 'PortfolioNew', props: { user: current_user, projects: current_user.projects, portfolio: current_user.portfolio }
@@ -27,7 +26,6 @@ class Users::PortfoliosController < ApplicationController
   def update
     portfolio = Portfolio.find(params[:portfolio][:id])
     if(portfolio.update(portfolio_params))
-      sleep(1)
       render js: "/dashboard"
     else
       render component: 'PortfolioEdit', props: { user: current_user, projects: current_user.projects, portfolio: current_user.portfolio }
@@ -40,8 +38,9 @@ class Users::PortfoliosController < ApplicationController
 
   def destroy
     user = User.find(params[:user_id])
-    if(user.portfolio.delete)
-      render js: dashboard_path
+    if(user.portfolio.projects.destroy_all)
+      user.portfolio.delete
+      render js: "/dashboard"
     else
       render component: "DeletePortfolio", props: { user: current_user, portfolio: current_user.portfolio}
     end

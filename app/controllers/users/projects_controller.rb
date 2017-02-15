@@ -9,7 +9,6 @@ class Users::ProjectsController < ApplicationController
     new_project = portfolio.projects.new(project_params)
     new_project.update(user_id: params[:user_id])
     if(new_project.save)
-      sleep(1)
       render js: "/dashboard"
     else
       render component: 'ProjectForm', props: { user: current_user}
