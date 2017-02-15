@@ -98,7 +98,7 @@ var PortfolioNewMidInfo = React.createClass({
 
           <div className="row">
             <div className='col s6'>
-              <label htmlFor="linkedin">GitHub</label>
+              <label htmlFor="linkedin">LinkedIn</label>
               <input id="linkedin" placeholder="linkedin.com/:username" onChange={this.handleNew}></input>
             </div>
             <div className='col s6'>
