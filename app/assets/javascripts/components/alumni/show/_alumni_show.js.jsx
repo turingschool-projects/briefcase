@@ -9,7 +9,7 @@ var AlumniShow = React.createClass({
           <SignedInNavbar/>
           <PortfolioJumbo user={user} portfolio={portfolio}/>
           <AlumniJumboInfo user={user} portfolio={portfolio}/>
-          <AlumniBodyInfo user={user} portfolio={portfolio}/>
+          <AlumniBodyInfo user={user} portfolio={portfolio} avatar={this.props.avatar}/>
           <UserProjectCard user={user} projects={projects}/>
           <Footer/>
         </div>
