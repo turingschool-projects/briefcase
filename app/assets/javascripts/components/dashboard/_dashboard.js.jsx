@@ -13,6 +13,7 @@ var Dashboard = React.createClass({
               { portfolio != null ? <DashboardProfile user={user} portfolio={portfolio}/> : <DashboardDefaultCard user={user} portfolio={portfolio}/>}
 
               { projects.length > 0 ?  <DashboardProject user={user} projects={projects}/>: <NoDashboardProjects user={user} portfolio={portfolio}/>}
+              
             </div>
           </div>
           <Footer/>
