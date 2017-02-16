@@ -61,7 +61,6 @@ $lightgray: #D3D3D3;
 .dashboard-project-container {
   margin-top: 15px;
 
-
   .card {
     height: 380px;
   }
@@ -211,4 +210,8 @@ p.card-bio,
 
     word-wrap: break-word !important;
 
+}
+
+.dashboard-row {
+  padding-bottom: 65px;
 }

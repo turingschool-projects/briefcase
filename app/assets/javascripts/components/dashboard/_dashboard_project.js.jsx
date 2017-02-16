@@ -43,7 +43,7 @@ var DashboardProject = React.createClass({
 
     return(
       <div>
-        <h2 className="col s8  style-h2">My Projasdasects</h2>
+        <h2 className="col s8  style-h2">My Projects</h2>
       <div className="col s8 dashboard-project-container card">
         {projects}
         <center>
