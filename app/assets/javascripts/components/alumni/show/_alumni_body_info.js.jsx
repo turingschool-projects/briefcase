@@ -9,7 +9,7 @@ var AlumniBodyInfo = React.createClass({
         <div className="container">
           <div className="row about-me">
             <div className='col s4 graduate-picture'>
-              <img className="" src="https://www.turing.io/sites/default/files/styles/graduate_full_profile/public/andrew_1.jpeg?itok=H7JqZ2_W" alt="Andrew Crist"></img>
+              <img className="alumni-avatar" src={this.props.avatar} alt="Andrew Crist"></img>
             </div>
             <div className='col s8 offset-s4'>
               <h1>About Me</h1>

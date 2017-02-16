@@ -4,6 +4,7 @@ class AlumniController < ApplicationController
   end
 
   def show
-    @portfolio = User.find_by(slug: params[:slug]).portfolio
+    @user = User.find_by(slug: params[:slug])
+    @portfolio = @user.portfolio
   end
 end

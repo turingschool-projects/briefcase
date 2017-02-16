@@ -3,8 +3,7 @@ var DeletePortfolioBody = React.createClass({
 
   handleDelete(){
     var user = this.props.user;
-
-    axios.delete(`/alumni/${user.slug}/portfolio.json`)
+    axios.delete(`/users/${user.id}/portfolio.json`)
     .then(response => {
       window.location = response.data;
     })
@@ -28,10 +27,9 @@ var DeletePortfolioBody = React.createClass({
             </div>
           </div>
         </div>
-        
+
       </div>
 
     );
   }
 });
-

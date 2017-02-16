@@ -16,13 +16,15 @@ var PortfolioEditBodyInfo = React.createClass({
   render: function() {
     var user = this.props.user;
     var portfolio = this.props.portfolio;
-
+    var avatar = this.props.avatar;
     return (
       <div>
         <div className="container">
           <div className="row about-me">
             <div className='col s4 graduate-picture'>
-              <img className="" src="https://www.turing.io/sites/default/files/styles/graduate_full_profile/public/andrew_1.jpeg?itok=H7JqZ2_W" alt="Andrew Crist"></img>
+            {avatar && 
+              <img className="" src={avatar} alt="Andrew Crist"></img>}
+              <PortfolioEditAvatar portfolio={portfolio} user={user} prepForUpdate={this.props.prepForUpdate}/>
             </div>
             <div className='col s8 offset-s4'>
               <h1>About You</h1>

@@ -1,8 +1,8 @@
 var UserProjectCard = React.createClass ({
 	render() {
 		var all_projects = this.props.projects.map((project) => {
-			var production_url = project.production_url.split('//')
-			var github = project.github.split('//')
+			// var production_url = project.production_url.split('//')
+			// var github = project.github.split('//')
 			return (
 						<div className='projects'>
 							<div className='title col s12'>
@@ -15,7 +15,7 @@ var UserProjectCard = React.createClass ({
 							<div className='project-overview col s6'>
 								<h1>Overview</h1>
 								<p>{project.description}</p>
-							</div>								
+							</div>
 							<div className='focus col s6'>
 								<h1>My Areas of Focus</h1>
 								<p>{project.areas_of_focus}</p>
@@ -44,6 +44,3 @@ var UserProjectCard = React.createClass ({
 		)
 	}
 })
-
-
-
