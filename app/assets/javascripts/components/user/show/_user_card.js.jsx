@@ -13,7 +13,6 @@ var UserCard = React.createClass({
 
   render(){
     var portfolios = this.props.portfolios.map((portfolio) => { // props brought from controller
-    var slug_name = portfolio.full_name.toLowerCase().replace(/ /g, '-')
       return (
           <div className="col s4 "key={portfolio.id}>
             <div className="card">
@@ -32,8 +31,8 @@ var UserCard = React.createClass({
                 <hr/>
                 <center><p className="card-bio">{this.shorterBio(portfolio.bio)}...</p></center>
                 <div className="card-links">
-                  <i className="fa fa-github fa-3x" aria-hidden="true"></i>
-                  <i className="fa fa-linkedin fa-3x" aria-hidden="true"></i>
+                  <a href={"http://" + portfolio.github_url}><i className="fa fa-github fa-3x social-media" aria-hidden="true"></i></a>
+                  <a href={"http://" + portfolio.linkedin_url}><i className="fa fa-linkedin fa-3x social-media" aria-hidden="true"></i></a>
                 </div>
                 <center><a className="card-profile" href={ "/alumni/" + portfolio.user_slug }>View Profile</a></center>
               </div>

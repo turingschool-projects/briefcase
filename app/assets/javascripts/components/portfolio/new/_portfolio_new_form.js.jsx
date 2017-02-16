@@ -3,14 +3,12 @@ var PortfolioNewForm = React.createClass({
 
   getInitialState(){
     var userPortfolio = {
-      full_name: "",
-      title: "",
-      bio: ""
     };
     return { portfolio: userPortfolio }
   },
 
   prepForInsert(updatedState, fieldToUpdate){
+
     this.setState({ portfolio: update(this.state.portfolio, {
       [fieldToUpdate]: {$set: updatedState[fieldToUpdate]}})
     });
@@ -18,7 +16,6 @@ var PortfolioNewForm = React.createClass({
 
   handleInsert(){
     var user = this.props.user;
-    debugger;
     axios.post(`/users/${user.id}/portfolio.json`, {portfolio: this.state.portfolio})
     .then(response => {
       window.location = response.data;
@@ -33,13 +30,13 @@ var PortfolioNewForm = React.createClass({
     var portfolio = this.props.portfolio
     return (
       <div>
-        <form>
-          <PortfolioNewJumboInfo user={user} prepForInsert={this.prepForInsert}/>
-          <PortfolioNewBodyInfo user={user} prepForInsert={this.prepForInsert}/>
-            <div className="container">
-              <button className="btn waves-effect waves-light portfolio-btns" type="submit" name="action" value="Save Profile" onClick={this.handleInsert}>Save Profile</button>
-            </div>
-        </form>
+
+        <PortfolioNewJumboInfo user={user} prepForInsert={this.prepForInsert}/>
+        <PortfolioNewBodyInfo user={user} prepForInsert={this.prepForInsert}/>
+          <div className="container">
+            <button className="btn waves-effect waves-light portfolio-btns" type="submit" name="action" value="Save Profile" onClick={this.handleInsert}>Save Profile</button>
+          </div>
+
       </div>
     );
   }

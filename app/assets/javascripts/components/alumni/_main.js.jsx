@@ -2,8 +2,8 @@ var Main = React.createClass({
   render(){
     var signedIn = this.props.signed_in;
     var portfolios = this.props.portfolios;
-
-    if(signedIn == 1) {
+    var user = this.props.user;
+    if(user != null) {
       return (
         <div>
           <SignedInNavbar/>
