@@ -7,7 +7,8 @@ var ProjectEdit = React.createClass({
       return(
         <div>
           <SignedInNavbar/>
-            <ProjectJumbo/>
+          <ProjectJumbo/>
+          <ProjectEditForm project={project}/>
           <Footer/>
         </div>
       )
