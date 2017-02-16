@@ -15,6 +15,15 @@ class Users::ProjectsController < ApplicationController
     end
   end
 
+  def destroy
+    @project = Project.find(params[:project])
+    if @project.delete
+      render js: "/dashboard"
+    else
+      render js: "/dashboard"
+    end
+  end
+
   private
 
   def project_params

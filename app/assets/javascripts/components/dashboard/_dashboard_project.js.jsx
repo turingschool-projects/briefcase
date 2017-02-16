@@ -1,4 +1,16 @@
 var DashboardProject = React.createClass({
+  handleDelete(event){
+    var user = this.props.user;
+    var id = event.target.id;
+    axios.delete(`/users/${user.id}/project?project=${id}`)
+    .then(response => {
+      window.location = response.data;
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  },
+
   render(){
     var user = this.props.user;
     var projects = this.props.projects.map((project) => { // props brought from controller
@@ -16,7 +28,7 @@ var DashboardProject = React.createClass({
                   <center>
                     <img className="project-picture" src="assets/turing-alumni-banner.jpg" />
                       <a className="card-profile" href={ "/users/" + user.id }>Edit</a>
-                      <a className="card-profile delete" href={ "/users/" + user.id }>Delete </a>
+                      <a className="card-profile delete" id={project.id} onClick={this.handleDelete} >Delete </a>
                     </center>
                   </div>
                 </div>
