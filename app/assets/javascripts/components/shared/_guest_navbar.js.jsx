@@ -18,14 +18,14 @@ var GuestNavbar = React.createClass({
       </div>
       <div role="navigation" className="pull-right visible-lg menu-container">
         <ul className="menu nav navbar-nav">
-          <li className=""><a href="/"><span>The Difference</span></a></li>
-          <li className=""><a href="/users/1/edit"><span>Our Team</span></a></li>
-          <li className=""><a href="#"><span>Programs</span></a></li>
-          <li className=""><a href="#"><span>Admissions</span></a></li>
-          <li className=""><a href="#"><span>Tuition</span></a></li>
-          <li className=""><a href="#"><span>Blog</span></a></li>
-          <li className=""><a href="#"><span>Contact</span></a></li>
-          <li className=""><a href="#"><span>Hire a Grad</span></a></li>
+          <li className=""><a href="https://www.turing.io/turing-difference"><span>The Difference</span></a></li>
+          <li className=""><a href="https://www.turing.io/our-team"><span>Our Team</span></a></li>
+          <li className=""><a href="https://www.turing.io/programs"><span>Programs</span></a></li>
+          <li className=""><a href="https://www.turing.io/admissions"><span>Admissions</span></a></li>
+          <li className=""><a href="https://www.turing.io/tuition"><span>Tuition</span></a></li>
+          <li className=""><a href="https://www.turing.io/blog"><span>Blog</span></a></li>
+          <li className=""><a href="https://www.turing.io/contact"><span>Contact</span></a></li>
+          <li className=""><a href="https://www.turing.io/why-hire-grad"><span>Hire a Grad</span></a></li>
           <li className=""><a href="/auth/census"><span>Log In</span></a></li>
         </ul>
       </div>
