@@ -27,7 +27,7 @@ var DashboardProject = React.createClass({
                   <div className="col s4">
                   <center>
                     <img className="project-picture" src="assets/turing-alumni-banner.jpg" />
-                      <a className="card-profile" href={ "/users/" + user.id }>Edit</a>
+                      <a className="card-profile" href={ "/users/" + user.id + "/project/edit?project=" + project.id }>Edit</a>
                       <a className="card-profile delete" id={project.id} onClick={this.handleDelete} >Delete </a>
                     </center>
                   </div>

@@ -4,6 +4,10 @@ class Users::ProjectsController < ApplicationController
     @user = current_user
   end
 
+  def edit
+    @project = Project.find(params[:project])
+  end
+
   def create
     portfolio = User.find(params[:user_id]).portfolio
     new_project = portfolio.projects.new(project_params)
