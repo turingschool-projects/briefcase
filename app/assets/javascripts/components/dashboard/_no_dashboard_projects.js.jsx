@@ -4,7 +4,7 @@ var NoDashboardProjects = React.createClass({
     var portfolio = this.props.portfolio;
     return(
       <div className="col s8 dashboard-project-container" >
-        <h2>My Projects</h2>
+        <h2 className="no-project-my-project-title">My Projects</h2>
         <div className="card no-projects">
           <div className="container">
             <div key={1}>

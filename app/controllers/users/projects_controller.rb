@@ -4,6 +4,17 @@ class Users::ProjectsController < ApplicationController
     @user = current_user
   end
 
+  def edit
+    @project = Project.find(params[:project])
+  end
+
+  def update
+    @project = Project.find(params[:project][:id])
+    if (@project.update(project_params))
+      render js: "/dashboard"
+    end
+  end
+
   def create
     portfolio = User.find(params[:user_id]).portfolio
     new_project = portfolio.projects.new(project_params)
@@ -12,6 +23,15 @@ class Users::ProjectsController < ApplicationController
       render js: "/dashboard"
     else
       render component: 'ProjectForm', props: { user: current_user}
+    end
+  end
+
+  def destroy
+    @project = Project.find(params[:project])
+    if @project.delete
+      render js: "/dashboard"
+    else
+      render js: "/dashboard"
     end
   end
 

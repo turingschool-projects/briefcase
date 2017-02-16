@@ -33,7 +33,7 @@ $lightgray: #D3D3D3;
 }
 
 .dashboard-container {
-  margin-top: 8%;
+  margin-top: 25px;
   h2{
     font-family: "azo-sans-web","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 24px;
@@ -59,7 +59,7 @@ $lightgray: #D3D3D3;
 }
 
 .dashboard-project-container {
-  margin-top: 0%;
+  margin-top: 15px;
 
   .card {
     height: 380px;
@@ -74,12 +74,14 @@ $lightgray: #D3D3D3;
       width: 100%;
       margin-bottom: 15%;
     }
-    h1 {
-      font-size: 40px;
+
+    h2 {
+      font-size: 100px;
       font-weight: lighter;
     }
 
-  
+
+
 
     h1, h3, p {
       padding-top: 2%;
@@ -87,6 +89,7 @@ $lightgray: #D3D3D3;
     }
   }
 }
+
 
 .dashboard-card {
   height: 200em;
@@ -207,4 +210,8 @@ p.card-bio,
 
     word-wrap: break-word !important;
 
+}
+
+.dashboard-row {
+  padding-bottom: 65px;
 }

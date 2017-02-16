@@ -31,6 +31,11 @@ Rails.application.routes.draw do
     get "portfolio/delete", to: "users/portfolios#delete"
     get "project/new", to: "users/projects#new"
     post "project", to: "users/projects#create"
+    delete "project", to: "users/projects#destroy"
+    get "project/edit", to: "users/projects#edit"
+    put "project", to: "users/projects#update"
+
+
 
   end
 
