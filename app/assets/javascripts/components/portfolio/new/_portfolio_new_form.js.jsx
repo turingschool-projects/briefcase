@@ -8,6 +8,7 @@ var PortfolioNewForm = React.createClass({
   },
 
   prepForInsert(updatedState, fieldToUpdate){
+
     this.setState({ portfolio: update(this.state.portfolio, {
       [fieldToUpdate]: {$set: updatedState[fieldToUpdate]}})
     });
@@ -35,7 +36,7 @@ var PortfolioNewForm = React.createClass({
           <div className="container">
             <button className="btn waves-effect waves-light portfolio-btns" type="submit" name="action" value="Save Profile" onClick={this.handleInsert}>Save Profile</button>
           </div>
-      
+
       </div>
     );
   }

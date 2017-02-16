@@ -89,7 +89,7 @@ var PortfolioEditMidInfo = React.createClass({
             </div>
             <div className='col s6'>
               <label htmlFor="twitter">Twitter</label>
-              <input id="twitter" placeholder="twitter.com/:username"></input>
+              <input id="twitter" defaultValue={portfolio.twitter_url} placeholder="twitter.com/:username"></input>
             </div>
           </div>
 
@@ -100,7 +100,7 @@ var PortfolioEditMidInfo = React.createClass({
             </div>
             <div className='col s6'>
               <label htmlFor="personal-site">Personal Site</label>
-              <input id="personal-site" placeholder="https://www.mypersonalsite.com"></input>
+              <input id="personal-site" defaultValue={portfolio.personal_url} placeholder="https://www.mypersonalsite.com"></input>
             </div>
           </div>
         </section>

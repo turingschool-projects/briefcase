@@ -461,3 +461,22 @@ input[placeholder="Your Email Here"]{
 
 
 }
+
+// avatar starts here
+.avatar {
+  display: inline-block;
+}
+
+.outer {
+  padding-top: 10px;
+  width: 420px;
+  text-align: center;
+  .inner {
+    display: inline-block;
+  }
+}
+
+.imgPreview {
+  width: 25%;
+  height: 25%;
+}

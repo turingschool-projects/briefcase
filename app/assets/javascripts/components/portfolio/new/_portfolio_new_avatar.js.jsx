@@ -10,7 +10,7 @@ var PortfolioNewAvatar = React.createClass({
     e.preventDefault();
     var stateToUpdate = {};
     var fieldToUpdate;
-    
+
     stateToUpdate.avatar = this.state.file; fieldToUpdate = "avatar"
     this.props.prepForInsert(stateToUpdate, fieldToUpdate);
   },
@@ -37,13 +37,13 @@ var PortfolioNewAvatar = React.createClass({
     if (imagePreviewUrl != '') {
       $imagePreview = (<img src={imagePreviewUrl} />);
     } else {
-      $imagePreview = (<div className="previewText">Please select an Image for Preview</div>);
+      $imagePreview = (<div className="previewText"></div>);
     }
 
     return (
-      <div className="portfolio-image-upload">
-          <div className='button-input'><input id='file-input' className="fileInput" type="file" onChange={this.handleImageChange} /></div>
-          <div className='button-input'><button id='submit-button' className="submitButton" type="submit" onClick={this.handleSubmit}>Upload Image</button></div>
+      <div className="portfolio-image-upload outer">
+        <div className='button-input inner'><input id='file-input' className="file fileInput" type="file" onChange={this.handleImageChange} /></div>
+        <div className='button-input inner'><button id='submit-button' className="submitButton" type="submit" onClick={this.handleSubmit}>Upload</button></div>
         <div className="imgPreview">
           {$imagePreview}
         </div>

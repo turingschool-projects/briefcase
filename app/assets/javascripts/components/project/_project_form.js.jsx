@@ -20,7 +20,6 @@ var ProjectForm = React.createClass({
     if(event.target.id == "description") {this.setState({description: event.target.value}); stateToUpdate.description = event.target.value; fieldToUpdate = "description" };
     if(event.target.id == "areas_of_focus") {this.setState({areas_of_focus: event.target.value}); stateToUpdate.areas_of_focus = event.target.value; fieldToUpdate = "areas_of_focus" };
 
-    debugger;
     this.props.prepForInsert(stateToUpdate, fieldToUpdate);
 
   },

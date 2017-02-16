@@ -26,7 +26,6 @@ var PortfolioNewMidInfo = React.createClass({
     var stateToUpdate = {};
     var fieldToUpdate;
 
-    debugger;
     if(event.target.id == "email") {this.setState({email: event.target.value}); stateToUpdate.email = event.target.value; fieldToUpdate = "email" };
     if(event.target.id == "resume") { this.setState({resume: event.target.value}); stateToUpdate.resume = event.target.value; fieldToUpdate = "resume" };
     if(event.target.id == "looking-for") { this.setState({looking_for: event.target.value}); stateToUpdate.looking_for = event.target.value; fieldToUpdate = "looking_for" };
@@ -38,7 +37,6 @@ var PortfolioNewMidInfo = React.createClass({
     if(event.target.id == "twitter") {this.setState({twitter_url: event.target.value}); stateToUpdate.twitter_url = event.target.value; fieldToUpdate = "twitter_url" };
     if(event.target.id == "personal-url") {this.setState({personal_url: event.target.value}); stateToUpdate.personal_url = event.target.value; fieldToUpdate = "personal_url" };
     if(event.target.id == "hired-by") {this.setState({hired_by: event.target.value}); stateToUpdate.hired_by = event.target.value; fieldToUpdate = "hired_by" };
-    if($("#cohort")[0].value) {this.setState({cohort: $("#cohort")[0].value}); stateToUpdate.cohort = $("#cohort")[0].value; fieldToUpdate = "cohort" };
 
     this.props.prepForInsert(stateToUpdate, fieldToUpdate);
   },
@@ -47,7 +45,6 @@ var PortfolioNewMidInfo = React.createClass({
 
   render: function() {
     var user = this.props.user;
-
 
     return (
 
