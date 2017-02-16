@@ -34,13 +34,16 @@ class Users::PortfoliosController < ApplicationController
   end
 
   def update
-    portfolio = Portfolio.find(params[:portfolio][:id])
 
     # params[:portfolio][:bio] = Kramdown::Document.new(params[:portfolio][:bio]).to_html if params[:portfolio][:bio]
     # params[:portfolio][:best_at] = Kramdown::Document.new(params[:portfolio][:best_at]).to_html if params[:portfolio][:best_at]
     # params[:portfolio][:looking_for] = Kramdown::Document.new(params[:portfolio][:looking_for]).to_html if params[:portfolio][:looking_for]
-
+    portfolio = Portfolio.find(params[:portfolio][:id])
     if(portfolio.update(portfolio_params))
+      user = User.find(params[:user_id])
+      image = Paperclip.io_adapters.for(params[:portfolio][:avatar])
+      image.original_filename = user.slug
+      portfolio.update(avatar: image)
       render js: "/dashboard"
     else
       render component: 'PortfolioEdit', props: { user: current_user, projects: current_user.projects, portfolio: current_user.portfolio }

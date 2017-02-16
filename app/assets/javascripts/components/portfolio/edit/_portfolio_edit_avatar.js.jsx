@@ -1,4 +1,4 @@
-var PortfolioNewAvatar = React.createClass({
+var PortfolioEditAvatar = React.createClass({
   getInitialState(){
     return {
       file: '',
@@ -12,7 +12,7 @@ var PortfolioNewAvatar = React.createClass({
     var fieldToUpdate;
     
     stateToUpdate.avatar = this.state.file; fieldToUpdate = "avatar"
-    this.props.prepForInsert(stateToUpdate, fieldToUpdate);
+    this.props.prepForUpdate(stateToUpdate, fieldToUpdate);
   },
 
   handleImageChange(e) {
