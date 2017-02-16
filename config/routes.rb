@@ -33,6 +33,7 @@ Rails.application.routes.draw do
     post "project", to: "users/projects#create"
     delete "project", to: "users/projects#destroy"
     get "project/edit", to: "users/projects#edit"
+    put "project", to: "users/projects#update"
 
 
 

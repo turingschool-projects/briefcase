@@ -20,9 +20,11 @@ var ProjectEditForm = React.createClass({
     if(event.target.id == "description") {this.setState({description: event.target.value}); stateToUpdate.description = event.target.value; fieldToUpdate = "description" };
     if(event.target.id == "areas_of_focus") {this.setState({areas_of_focus: event.target.value}); stateToUpdate.areas_of_focus = event.target.value; fieldToUpdate = "areas_of_focus" };
 
-    this.props.prepForInsert(stateToUpdate, fieldToUpdate);
+    this.props.prepForUpdate(stateToUpdate, fieldToUpdate);
 
   },
+
+
 
   render: function(){
     var project = this.props.project
@@ -68,7 +70,7 @@ var ProjectEditForm = React.createClass({
             </div>
           </section>
         </div>
-        <a className="waves-effect waves-light btn project-save" onClick={this.props.handleInsert}><i className="fa fa-check" aria-hidden="true"></i>Save Project </a>
+        <a className="waves-effect waves-light btn project-save" onClick={this.handleUpdate}><i className="fa fa-check" aria-hidden="true"></i>Save Project </a>
       </div>
 
     )

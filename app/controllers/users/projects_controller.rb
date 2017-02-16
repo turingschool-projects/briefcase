@@ -8,6 +8,13 @@ class Users::ProjectsController < ApplicationController
     @project = Project.find(params[:project])
   end
 
+  def update
+    @project = Project.find(params[:project][:id])
+    if (@project.update(project_params))
+      render js: "/dashboard"
+    end
+  end
+
   def create
     portfolio = User.find(params[:user_id]).portfolio
     new_project = portfolio.projects.new(project_params)
