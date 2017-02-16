@@ -13,9 +13,13 @@ class Users::PortfoliosController < ApplicationController
     # params[:portfolio][:bio] = Kramdown::Document.new(params[:portfolio][:bio]).to_html if params[:portfolio][:bio]
     # params[:portfolio][:best_at] = Kramdown::Document.new(params[:portfolio][:best_at]).to_html if params[:portfolio][:best_at]
     # params[:portfolio][:looking_for] = Kramdown::Document.new(params[:portfolio][:looking_for]).to_html if params[:portfolio][:looking_for]
-
     user = User.find(params[:user_id])
     new_portfolio = user.build_portfolio(portfolio_params)
+
+    image = Paperclip.io_adapters.for(params[:portfolio][:avatar])
+    image.original_filename = user.slug
+    new_portfolio.update(avatar: image)
+
 
     if(new_portfolio.save)
       render js: "/dashboard"

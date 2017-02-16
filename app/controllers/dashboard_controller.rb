@@ -1,9 +1,9 @@
 class DashboardController < ApplicationController
   def index
-    if(logged_in?)
-      render component: 'Dashboard', props: { user: current_user, projects: current_user.projects, portfolio: current_user.portfolio }
+    if(current_user.portfolio)
+      @projects = current_user.portfolio.projects
     else
-      render component: 'Main', props: { users: @users, signed_in: 0 }
+      @projects = []
     end
   end
 end

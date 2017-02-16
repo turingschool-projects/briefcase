@@ -23,6 +23,16 @@ class UsersController < ApplicationController
     render component: 'Account'
   end
 
+  def update
+    @user = User.find_by(id: params[:user_id])
+    portfolio = @user.build_portfolio(avatar: params[:portfolio][:avatar])
+    if(portfolio.save)
+      redirect_to dashboard_path
+    else
+      render component: "PortfolioNew"
+    end
+  end
+
   private
     def first_name_from_slug
       params[:slug].split('-')[0]
