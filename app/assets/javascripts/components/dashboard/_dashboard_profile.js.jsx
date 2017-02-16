@@ -26,7 +26,7 @@ var DashboardProfile = React.createClass({
           <div className="card">
             <div className="card-image waves-effect waves-block waves-light">
               <center>
-                <img className="activator card-picture" src="assets/turing-alumni-banner.jpg" />
+                <img className="activator card-picture" src={this.props.avatar} />
               </center>
             </div>
             <div className="card-content">

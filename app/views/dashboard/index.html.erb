@@ -1,5 +1,5 @@
 <% if(logged_in?) %>
-  <%= react_component('Dashboard', {user: current_user, projects: @projects, portfolio: current_user.portfolio}, {prerender: true}) %>
+  <%= react_component('Dashboard', {user: current_user, projects: @projects, portfolio: current_user.portfolio, avatar: current_user.portfolio.avatar.url}, {prerender: true}) %>
 <% else %>
   <%= react_component('Main', {user: current_user, signed_in: 0}, {prerender: true}) %>
 <% end %>

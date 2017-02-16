@@ -10,7 +10,7 @@ var Dashboard = React.createClass({
         <DashboardJumbo/>
           <div className="container dashboard-padding">
             <div className="row">
-              { portfolio != null ? <DashboardProfile user={user} portfolio={portfolio}/> : <DashboardDefaultCard user={user} portfolio={portfolio}/>}
+              { portfolio != null ? <DashboardProfile user={user} portfolio={portfolio} avatar={this.props.avatar}/> : <DashboardDefaultCard user={user} portfolio={portfolio}/>}
 
               { projects.length > 0 ?  <DashboardProject user={user} projects={projects}/>: <NoDashboardProjects user={user} portfolio={portfolio}/>}
             </div>

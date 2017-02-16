@@ -13,7 +13,6 @@ var UserCard = React.createClass({
 
   render(){
     var portfolios = this.props.portfolios.map((portfolio) => { // props brought from controller
-    var slug_name = portfolio.full_name.toLowerCase().replace(/ /g, '-')
       return (
           <div className="col s4 "key={portfolio.id}>
             <div className="card">
