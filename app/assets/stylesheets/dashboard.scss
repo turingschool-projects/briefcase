@@ -33,7 +33,7 @@ $lightgray: #D3D3D3;
 }
 
 .dashboard-container {
-  margin-top: 8%;
+  margin-top: 25px;
   h2{
     font-family: "azo-sans-web","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 24px;
@@ -59,7 +59,8 @@ $lightgray: #D3D3D3;
 }
 
 .dashboard-project-container {
-  margin-top: 0%;
+  margin-top: 48px;
+
 
   .card {
     height: 380px;
@@ -79,7 +80,8 @@ $lightgray: #D3D3D3;
       font-weight: lighter;
     }
 
-  
+
+
 
     h1, h3, p {
       padding-top: 2%;
@@ -87,6 +89,7 @@ $lightgray: #D3D3D3;
     }
   }
 }
+
 
 .dashboard-card {
   height: 200em;

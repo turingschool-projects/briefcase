@@ -15,7 +15,7 @@ var UserProjectCard = React.createClass ({
 							<div className='project-overview col s6'>
 								<h1>Overview</h1>
 								<p>{project.description}</p>
-							</div>								
+							</div>
 							<div className='focus col s6'>
 								<h1>My Areas of Focus</h1>
 								<p>{project.areas_of_focus}</p>
@@ -44,6 +44,3 @@ var UserProjectCard = React.createClass ({
 		)
 	}
 })
-
-
-
