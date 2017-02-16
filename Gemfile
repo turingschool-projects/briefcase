@@ -40,6 +40,7 @@ gem 'omniauth-census', git: "https://github.com/NZenitram/census_staging_oauth"
 gem 'thin'
 gem 'axios_rails', '~> 0.7.0'
 gem "responders"
+gem 'kramdown'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
