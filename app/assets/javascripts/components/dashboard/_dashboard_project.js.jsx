@@ -13,6 +13,7 @@ var DashboardProject = React.createClass({
 
   render(){
     var user = this.props.user;
+    var projectAvatars = this.props.projectAvatars
     var projects = this.props.projects.map((project) => { // props brought from controller
       return (
         <div key={project.id}>
@@ -26,7 +27,7 @@ var DashboardProject = React.createClass({
                   </div>
                   <div className="col s4">
                   <center>
-                    <img className="project-picture" src="assets/turing-alumni-banner.jpg" />
+                    <img className="project-picture" src={projectAvatars[project.id]} />
                       <a className="card-profile" href={ "/users/" + user.id + "/project/edit?project=" + project.id }>Edit</a>
                       <a className="card-profile delete" id={project.id} onClick={this.handleDelete} >Delete </a>
                     </center>

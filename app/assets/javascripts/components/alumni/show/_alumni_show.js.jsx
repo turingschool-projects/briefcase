@@ -10,7 +10,8 @@ var AlumniShow = React.createClass({
           <PortfolioJumbo user={user} portfolio={portfolio}/>
           <AlumniJumboInfo user={user} portfolio={portfolio}/>
           <AlumniBodyInfo user={user} portfolio={portfolio} avatar={this.props.avatar}/>
-          <UserProjectCard user={user} projects={projects}/>
+          {projects.length > 0 &&
+          <UserProjectCard avatars={this.props.project_avatar_urls}user={user} projects={projects}/>}
           <Footer/>
         </div>
       )

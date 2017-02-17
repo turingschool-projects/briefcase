@@ -16,9 +16,21 @@ class Users::ProjectsController < ApplicationController
   end
 
   def create
+
+
+    user = User.find(params[:user_id])
     portfolio = User.find(params[:user_id]).portfolio
     new_project = portfolio.projects.new(project_params)
-    new_project.update(user_id: params[:user_id])
+
+    image = Paperclip.io_adapters.for(params[:project][:avatar])
+    image.original_filename = portfolio.user.slug
+    new_project.update(avatar: image, user: user)
+
+    # new_project = portfolio.projects.new(project_params)
+
+    # new_project.update(user_id: params[:user_id])
+
+
     if(new_project.save)
       render js: "/dashboard"
     else

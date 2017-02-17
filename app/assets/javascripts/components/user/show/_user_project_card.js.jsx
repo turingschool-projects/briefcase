@@ -1,5 +1,6 @@
 var UserProjectCard = React.createClass ({
 	render() {
+		var avatars = this.props.avatars
 		var all_projects = this.props.projects.map((project) => {
 			// var production_url = project.production_url.split('//')
 			// var github = project.github.split('//')
@@ -10,7 +11,7 @@ var UserProjectCard = React.createClass ({
 								<h1>{project.name}</h1>
 							</div>
 							<div className='project-screenshot'>
-								<img src={project.screenshot}></img>
+								<img src={avatars[project.id]}></img>
 							</div>
 
 							<div className='project-overview col s6'>
