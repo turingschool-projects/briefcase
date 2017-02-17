@@ -22,5 +22,11 @@ class Portfolio < ApplicationRecord
       result
     end
   end
-  
+
+  def project_avatar_urls
+    self.projects.reduce({}) do |result, project|
+      result[project.id] = project.avatar.url
+      result
+    end
+  end
 end
