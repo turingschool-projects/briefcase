@@ -12,4 +12,12 @@ class Project < ApplicationRecord
 
 	validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
+
+	def self.avatar_urls(user)
+		user.projects.reduce({}) do |result, project|
+			result[project.id] = project.avatar.url
+			result
+		end
+	end
+
 end

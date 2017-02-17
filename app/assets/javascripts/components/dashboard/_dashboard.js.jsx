@@ -12,7 +12,7 @@ var Dashboard = React.createClass({
             <div className="row dashboard-row">
               { portfolio != null ? <DashboardProfile user={user} portfolio={portfolio} avatar={this.props.avatar}/> : <DashboardDefaultCard user={user} portfolio={portfolio}/>}
 
-              { projects.length > 0 ?  <DashboardProject user={user} projects={projects}/>: <NoDashboardProjects user={user} portfolio={portfolio}/>}
+              { projects.length > 0 ?  <DashboardProject projectAvatars={this.props.project_avatars} user={user} projects={projects}/>: <NoDashboardProjects user={user} portfolio={portfolio}/>}
 
             </div>
           </div>
