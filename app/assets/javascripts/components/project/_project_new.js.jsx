@@ -7,6 +7,7 @@ var ProjectNew = React.createClass({
   },
 
   prepForInsert(updatedState, fieldToUpdate){
+    debugger;
     this.setState({ project: update(this.state.project, {
       [fieldToUpdate]: {$set: updatedState[fieldToUpdate]}})
     });

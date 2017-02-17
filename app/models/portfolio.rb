@@ -2,7 +2,7 @@ class Portfolio < ApplicationRecord
   has_many :projects, dependent: :destroy
   belongs_to :user
   after_create :set_slug
-  
+
 
   has_attached_file :avatar, styles: {
     thumb: '100x100>',
@@ -14,5 +14,19 @@ class Portfolio < ApplicationRecord
 
   def set_slug
     self.update(user_slug: self.user.slug)
+  end
+
+  def self.avatar_urls
+    Portfolio.all.reduce({}) do |result, portfolio|
+      result[portfolio.id] = portfolio.avatar.url
+      result
+    end
+  end
+
+  def project_avatar_urls
+    self.projects.reduce({}) do |result, project|
+      result[project.id] = project.avatar.url
+      result
+    end
   end
 end

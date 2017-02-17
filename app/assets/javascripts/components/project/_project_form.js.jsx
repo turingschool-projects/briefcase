@@ -42,15 +42,8 @@ var ProjectForm = React.createClass({
                 <input placeholder="Production Url" id="production_url" type="email" className="validate" onChange={this.handleNew} />
               </div>
               <div className="input-field col s6 ">
-                 <div className="file-field input-field">
-                   <div className="btn file">
-                     <span>File</span>
-                     <input  type="file"/>
-                   </div>
-                   <div className="file-path-wrapper">
-                     <input placeholder="Upload Screen Shot" className="file-path validate" type="text" />
-                   </div>
-                 </div>
+                <PortfolioNewAvatar  prepForInsert={this.props.prepForInsert}/>
+
               </div>
             </div>
           </div>
