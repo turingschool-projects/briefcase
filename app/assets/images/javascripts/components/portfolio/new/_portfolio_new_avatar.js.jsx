@@ -8,7 +8,6 @@ var PortfolioNewAvatar = React.createClass({
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger;
     var stateToUpdate = {};
     var fieldToUpdate;
 

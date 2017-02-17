@@ -1,4 +1,4 @@
-var PortfolioNewAvatar = React.createClass({
+var PortfolioEditAvatar = React.createClass({
   getInitialState(){
     return {
       file: '',
@@ -8,12 +8,11 @@ var PortfolioNewAvatar = React.createClass({
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger;
     var stateToUpdate = {};
     var fieldToUpdate;
 
     stateToUpdate.avatar = this.state.file; fieldToUpdate = "avatar"
-    this.props.prepForInsert(stateToUpdate, fieldToUpdate);
+    this.props.prepForUpdate(stateToUpdate, fieldToUpdate);
   },
 
   handleImageChange(e) {
@@ -43,8 +42,8 @@ var PortfolioNewAvatar = React.createClass({
 
     return (
       <div className="portfolio-image-upload outer">
-        <div className='button-input inner'><input id='file-input' className="file fileInput" type="file" onChange={this.handleImageChange} /></div>
-        <div className='button-input inner'><button id='submit-button' className="submitButton" type="submit" onClick={this.handleSubmit}>Upload</button></div>
+          <div className='button-input inner'><input id='file-input' className="fileInput" type="file" onChange={this.handleImageChange} /></div>
+          <div className='button-input inner'><button id='submit-button' className="submitButton" type="submit" onClick={this.handleSubmit}>Upload Image</button></div>
         <div className="imgPreview">
           {$imagePreview}
         </div>

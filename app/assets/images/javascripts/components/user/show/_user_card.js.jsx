@@ -12,8 +12,6 @@ var UserCard = React.createClass({
   },
 
   render(){
-    debugger
-    var avatars = this.props.avatars;
     var portfolios = this.props.portfolios.map((portfolio) => { // props brought from controller
       return (
           <div className="col s4 "key={portfolio.id}>
@@ -22,7 +20,7 @@ var UserCard = React.createClass({
             <i className="material-icons right activator more-vert">more_vert</i>
               <div className="card-image waves-effect waves-block waves-light">
                 <center>
-                  <img className="activator card-picture" src={avatars[portfolio.id]} />
+                  <img className="activator card-picture" src="assets/turing-alumni-banner.jpg" />
                 </center>
               </div>
               <div className="card-content">
