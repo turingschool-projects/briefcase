@@ -19,7 +19,7 @@ var Main = React.createClass({
           <GuestNavbar/>
           <MainJumbo/>
           <MainSearch/>
-          <UserCard portfolios = {portfolios}/>
+          <UserCard portfolios = {portfolios} avatars={this.props.avatars}/>
           <Footer/>
         </div>
       )
