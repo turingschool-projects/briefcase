@@ -14,7 +14,7 @@ var DashboardProject = React.createClass({
   render(){
     var user = this.props.user;
     var projectAvatars = this.props.projectAvatars
-    var projects = this.props.projects.map((project) => { // props brought from controller
+    var projects = this.props.projects.map((project) => {
       return (
         <div key={project.id}>
             <div className="container">
@@ -22,7 +22,8 @@ var DashboardProject = React.createClass({
                 <div className="row">
                   <div className="col s8">
                     <h1>{project.name}</h1>
-                    <h3>Created at 3hrs ago</h3>
+                    <h3 className="time-ago">Created:
+                      {project.created_at}</h3>
                     <p>{project.description}</p>
                   </div>
                   <div className="col s4">

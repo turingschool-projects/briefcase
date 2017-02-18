@@ -26,11 +26,11 @@ $lightgray: #D3D3D3;
     margin-top: 3em;
   }
   padding-right: 2em;
+  .active {
+    border-bottom: 4px solid $turingblue;
+  }
 }
 
-.active {
-  border-bottom: 4px solid $turingblue;
-}
 
 .dashboard-container {
   margin-top: 25px;

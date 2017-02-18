@@ -6,7 +6,7 @@ var Dashboard = React.createClass({
 
     return (
       <div>
-        <SignedInNavbar/>
+        <SignedInNavbar user={user}/>
         <DashboardJumbo/>
           <div className="container dashboard-padding">
             <div className="row dashboard-row">

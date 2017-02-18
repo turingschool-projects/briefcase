@@ -31,19 +31,18 @@ var ProjectForm = React.createClass({
           <div className="col s12">
             <div className="row">
               <div className="input-field col s6">
-                <input placeholder="Project Name*" id="project-name" type="text" defaultValue="" className="validate" onChange={this.handleNew}></input>
+                <input placeholder="Project Name*" id="project-name" type="text" defaultValue="" className="" onChange={this.handleNew}></input>
               </div>
               <div className="input-field col s6">
-                <input placeholder="Github Url*" id="github" type="text" className="validate" onChange={this.handleNew}/>
+                <input placeholder="Github Url*" id="github" type="text" className="" onChange={this.handleNew}/>
               </div>
             </div>
             <div className="row">
               <div className="input-field col s6 production">
-                <input placeholder="Production Url" id="production_url" type="email" className="validate" onChange={this.handleNew} />
+                <input placeholder="Production Url" id="production_url" type="email" className="" onChange={this.handleNew} />
               </div>
               <div className="input-field col s6 ">
                 <PortfolioNewAvatar  prepForInsert={this.props.prepForInsert}/>
-
               </div>
             </div>
           </div>
