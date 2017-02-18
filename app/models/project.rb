@@ -1,6 +1,9 @@
 class Project < ApplicationRecord
 	belongs_to :user
 	belongs_to :portfolio
+	validates :github, presence: true
+	validates :name, presence: true
+	validates :description, presence: true
 
 	validates :name, presence: true
 

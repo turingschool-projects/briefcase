@@ -34,8 +34,12 @@ ActiveRecord::Schema.define(version: 20170218173957) do
     t.string   "title"
     t.string   "hired_by"
     t.integer  "user_id"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.string   "portfolio_image_file_name"
+    t.string   "portfolio_image_content_type"
+    t.integer  "portfolio_image_file_size"
+    t.datetime "portfolio_image_updated_at"
     t.string   "user_slug"
     t.string   "personal_url"
     t.string   "twitter_url"

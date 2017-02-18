@@ -1,13 +1,12 @@
+var update = React.addons.update;
 var ProjectNew = React.createClass({
   getInitialState(){
     var portfolioProject = {
-      name: ""
     };
     return { project: portfolioProject }
   },
 
   prepForInsert(updatedState, fieldToUpdate){
-    debugger;
     this.setState({ project: update(this.state.project, {
       [fieldToUpdate]: {$set: updatedState[fieldToUpdate]}})
     });
@@ -20,7 +19,7 @@ var ProjectNew = React.createClass({
       window.location = response.data;
     })
     .catch(function (error) {
-      console.log(error);
+      Materialize.toast('Error: Missing required fields!', 4000);
     });
   },
   render: function(){
