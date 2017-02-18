@@ -30,7 +30,7 @@ var ProjectEdit = React.createClass({
 
       return(
         <div>
-          <SignedInNavbar/>
+          <SignedInNavbar user={user}/>
           <ProjectJumbo/>
           <ProjectEditForm project={project}  handleUpdate={this.handleUpdate} prepForUpdate={this.prepForUpdate}/>
           <Footer/>

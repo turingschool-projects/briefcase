@@ -17,11 +17,11 @@ Rails.application.routes.draw do
   # end
 
 
-  get '/user/1/edit-account', to: 'users#account'
 
   resources :alumni, only: [:index, :show], param: :slug
 
   resources :users, only: [:edit, :update] do
+    get 'edit-account', to: 'users#account'
     get "portfolio", to: "users/portfolios#show"
     get "portfolio/new", to: "users/portfolios#new"
     get "portfolio/edit", to: "users/portfolios#edit"

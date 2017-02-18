@@ -6,7 +6,7 @@ var Main = React.createClass({
     if(user != null) {
       return (
         <div>
-          <SignedInNavbar/>
+          <SignedInNavbar user={user}/>
           <MainJumbo/>
           <MainSearch/>
           <UserCard portfolios = {portfolios} avatars={this.props.avatars}/>

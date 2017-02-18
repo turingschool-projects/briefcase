@@ -27,7 +27,7 @@ var ProjectNew = React.createClass({
 
       return(
         <div>
-          <SignedInNavbar/>
+          <SignedInNavbar user={user}/>
           <ProjectJumbo/>
           <ProjectForm user={user} prepForInsert={this.prepForInsert} handleInsert={this.handleInsert}/>
           <Footer/>

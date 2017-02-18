@@ -20,7 +20,8 @@ class UsersController < ApplicationController
   end
 
   def account
-    render component: 'Account'
+    @user = User.find_by(slug: params["slug"])
+    render component: "Account", props: { user: @user }
   end
 
   def update

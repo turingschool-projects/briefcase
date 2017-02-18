@@ -6,7 +6,7 @@ var AlumniShow = React.createClass({
 
       return(
         <div>
-          <SignedInNavbar/>
+          <SignedInNavbar user={user}/>
           <PortfolioJumbo user={user} portfolio={portfolio}/>
           <AlumniJumboInfo user={user} portfolio={portfolio}/>
           <AlumniBodyInfo user={user} portfolio={portfolio} avatar={this.props.avatar}/>

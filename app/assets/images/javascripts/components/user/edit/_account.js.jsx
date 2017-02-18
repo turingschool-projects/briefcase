@@ -2,7 +2,7 @@ var Account = React.createClass({
   render: function() {
     return (
       <div>
-        <SignedInNavbar/>
+        <SignedInNavbar user={user}/>
         <DashboardJumbo/>
         <div className="container">
           <div className="row account-row">

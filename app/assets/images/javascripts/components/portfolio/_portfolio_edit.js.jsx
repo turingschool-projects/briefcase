@@ -6,7 +6,7 @@ var PortfolioEdit = React.createClass({
 
       return(
         <div>
-          <SignedInNavbar/>
+          <SignedInNavbar user={user}/>
           <PortfolioJumbo user={user}/>
           <PortfolioEditForm avatar={avatar} user={user} portfolio={portfolio}/>
           <Footer/>
