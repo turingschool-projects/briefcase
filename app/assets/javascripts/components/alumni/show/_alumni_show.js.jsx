@@ -3,10 +3,14 @@ var AlumniShow = React.createClass({
       var user = this.props.user;
       var portfolio = this.props.portfolio;
       var projects = this.props.projects;
+      debugger;
 
       return(
         <div>
-          <SignedInNavbar user={user}/>
+          {this.props.currentUser &&
+          <SignedInNavbar user={user}/>}
+          {!this.props.currentUser &&
+          <GuestNavbar user={user}/>}
           <PortfolioJumbo user={user} portfolio={portfolio}/>
           <AlumniJumboInfo user={user} portfolio={portfolio}/>
           <AlumniBodyInfo user={user} portfolio={portfolio} avatar={this.props.avatar}/>
