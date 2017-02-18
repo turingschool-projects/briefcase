@@ -21,7 +21,7 @@ var PortfolioNewForm = React.createClass({
       window.location = response.data;
     })
     .catch(function (error) {
-      console.log(error);
+      Materialize.toast('Error: Missing required fields! Please add all fields and save profile again.', 4000);
     });
   },
 
@@ -34,7 +34,7 @@ var PortfolioNewForm = React.createClass({
         <PortfolioNewJumboInfo user={user} prepForInsert={this.prepForInsert}/>
         <PortfolioNewBodyInfo user={user} prepForInsert={this.prepForInsert}/>
           <div className="container">
-            <button id='portfolio-new-submit' className="btn waves-effect waves-light portfolio-btns" type="submit" name="action" value="Save Profile" onClick={this.handleInsert}>Save Profile</button>
+            <button className="btn waves-effect waves-light portfolio-btns" type="submit" name="action" value="Save Profile" onClick={this.handleInsert}>Save Profile</button>
           </div>
 
       </div>

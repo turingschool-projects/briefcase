@@ -22,4 +22,9 @@ RSpec.describe Project do
       expect(project).to be_invalid
     end
   end
+
+  it { should validate_presence_of(:github) }
+  it { should validate_presence_of(:name) }
+  it { should validate_presence_of(:description) }
+
 end

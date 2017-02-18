@@ -48,7 +48,7 @@ var PortfolioEditMidInfo = React.createClass({
           <div className="row">
             <div className='col s6'>
               <label htmlFor="email">Email</label>
-              <input id="email" placeholder="example@example.com" defaultValue={portfolio.email} onChange={this.handleEdit}></input>
+              <input id="email" placeholder="example@example.com (required)" defaultValue={portfolio.email} onChange={this.handleEdit}></input>
             </div>
             <div className='col s6'>
               <label htmlFor="resume">Resume</label><br/>
@@ -85,7 +85,7 @@ var PortfolioEditMidInfo = React.createClass({
           <div className="row">
             <div className='col s6'>
               <label htmlFor="github">GitHub</label>
-              <input id="github" placeholder="github.com/:username" defaultValue={portfolio.github_url} onChange={this.handleEdit}></input>
+              <input id="github" placeholder="github.com/:username (required)" defaultValue={portfolio.github_url} onChange={this.handleEdit}></input>
             </div>
             <div className='col s6'>
               <label htmlFor="twitter">Twitter</label>
@@ -96,7 +96,7 @@ var PortfolioEditMidInfo = React.createClass({
           <div className="row">
             <div className='col s6'>
               <label htmlFor="linkedin">LinkedIn</label>
-              <input id="linkedin" placeholder="linkedin.com/:username" defaultValue={portfolio.linkedin_url} onChange={this.handleEdit}></input>
+              <input id="linkedin" placeholder="linkedin.com/:username (required)" defaultValue={portfolio.linkedin_url} onChange={this.handleEdit}></input>
             </div>
             <div className='col s6'>
               <label htmlFor="personal-site">Personal Site</label>

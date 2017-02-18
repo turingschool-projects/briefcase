@@ -265,6 +265,8 @@ GEM
       websocket (~> 1.0)
     serializer (1.0.2)
       rails (> 3.0.0)
+    shoulda-matchers (3.1.1)
+      activesupport (>= 4.0.0)
     simplecov (0.13.0)
       docile (~> 1.1.0)
       json (>= 1.8, < 3)
@@ -355,6 +357,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   selenium-webdriver
   serializer
+  shoulda-matchers
   simplecov
   thin
   travis

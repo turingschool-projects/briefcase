@@ -64,6 +64,7 @@ group :test do
   #for testing our api's - avoid hitting rate limits
   gem 'webmock'
   #used in conjuction with vcr to intercept out web calls
+  gem 'shoulda-matchers'
 end
 
   group :development do

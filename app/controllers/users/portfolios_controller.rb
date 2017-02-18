@@ -9,10 +9,6 @@ class Users::PortfoliosController < ApplicationController
   end
 
   def create
-
-    # params[:portfolio][:bio] = Kramdown::Document.new(params[:portfolio][:bio]).to_html if params[:portfolio][:bio]
-    # params[:portfolio][:best_at] = Kramdown::Document.new(params[:portfolio][:best_at]).to_html if params[:portfolio][:best_at]
-    # params[:portfolio][:looking_for] = Kramdown::Document.new(params[:portfolio][:looking_for]).to_html if params[:portfolio][:looking_for]
     user = User.find(params[:user_id])
     new_portfolio = user.build_portfolio(portfolio_params)
 
@@ -30,14 +26,9 @@ class Users::PortfoliosController < ApplicationController
 
   def edit
     @user = current_user
-    # @user.portfolio.update(bio: Kramdown::Document.new(@user.portfolio.bio, :input => 'html').to_kramdown)
   end
 
   def update
-
-    # params[:portfolio][:bio] = Kramdown::Document.new(params[:portfolio][:bio]).to_html if params[:portfolio][:bio]
-    # params[:portfolio][:best_at] = Kramdown::Document.new(params[:portfolio][:best_at]).to_html if params[:portfolio][:best_at]
-    # params[:portfolio][:looking_for] = Kramdown::Document.new(params[:portfolio][:looking_for]).to_html if params[:portfolio][:looking_for]
     portfolio = Portfolio.find(params[:portfolio][:id])
     if(portfolio.update(portfolio_params))
       user = User.find(params[:user_id])
