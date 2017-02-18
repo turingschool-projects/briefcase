@@ -16,7 +16,10 @@ var PortfolioEditMidInfo = React.createClass({
             locations: userPortfolio.locations,
             best_at: userPortfolio.best_at,
             hired: userPortfolio.hired,
-            hired_by: userPortfolio.hired_by
+            hired_by: userPortfolio.hired_by,
+            twitter_url: userPortfolio.twitter_url,
+            personal_url: userPortfolio.personal_url
+
             }
   },
 
@@ -31,6 +34,9 @@ var PortfolioEditMidInfo = React.createClass({
     if(event.target.id == "linkedin") {this.setState({linkedin_url: event.target.value}) ;stateToUpdate.linkedin_url = event.target.value; fieldToUpdate = "linkedin_url" };
     if(event.target.id == "hired-by") {this.setState({hired_by: event.target.value}) ;stateToUpdate.hired_by = event.target.value; fieldToUpdate = "hired_by" };
     if(event.target.id == "cohort") {this.setState({cohort: event.target.value}); stateToUpdate.cohort = event.target.value; fieldToUpdate = "cohort" };
+    if(event.target.id == "twitter") {this.setState({twitter_url: event.target.value}); stateToUpdate.twitter_url = event.target.value; fieldToUpdate = "twitter_url" };
+    if(event.target.id == "personal-site") {this.setState({personal_url: event.target.value}); stateToUpdate.personal_url = event.target.value; fieldToUpdate = "personal_url" };
+
 
     this.props.prepForUpdate(stateToUpdate, fieldToUpdate);
   },
@@ -89,7 +95,7 @@ var PortfolioEditMidInfo = React.createClass({
             </div>
             <div className='col s6'>
               <label htmlFor="twitter">Twitter</label>
-              <input id="twitter" defaultValue={portfolio.twitter_url} placeholder="twitter.com/:username"></input>
+              <input id="twitter" defaultValue={portfolio.twitter_url} onChange={this.handleEdit} placeholder="twitter.com/:username"></input>
             </div>
           </div>
 
@@ -100,7 +106,7 @@ var PortfolioEditMidInfo = React.createClass({
             </div>
             <div className='col s6'>
               <label htmlFor="personal-site">Personal Site</label>
-              <input id="personal-site" defaultValue={portfolio.personal_url} placeholder="https://www.mypersonalsite.com"></input>
+              <input id="personal-site" defaultValue={portfolio.personal_url} onChange={this.handleEdit} placeholder="https://www.mypersonalsite.com"></input>
             </div>
           </div>
         </section>
