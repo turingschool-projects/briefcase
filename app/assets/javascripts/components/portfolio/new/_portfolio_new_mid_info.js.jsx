@@ -59,7 +59,7 @@ var PortfolioNewMidInfo = React.createClass({
             </div>
             <div className='col s6'>
               <label htmlFor="resume">Resume</label><br/>
-              <input id="resume" type="file"></input>
+              <PortfolioResume prepForUpdate={this.props.prepForInsert}/>
             </div>
           </div>
         </section>
