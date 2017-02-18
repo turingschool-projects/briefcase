@@ -9,10 +9,6 @@ class Users::PortfoliosController < ApplicationController
   end
 
   def create
-
-    # params[:portfolio][:bio] = Kramdown::Document.new(params[:portfolio][:bio]).to_html if params[:portfolio][:bio]
-    # params[:portfolio][:best_at] = Kramdown::Document.new(params[:portfolio][:best_at]).to_html if params[:portfolio][:best_at]
-    # params[:portfolio][:looking_for] = Kramdown::Document.new(params[:portfolio][:looking_for]).to_html if params[:portfolio][:looking_for]
     user = User.find(params[:user_id])
     new_portfolio = user.build_portfolio(portfolio_params)
 
@@ -22,13 +18,12 @@ class Users::PortfoliosController < ApplicationController
 
       render js: "/dashboard"
     else
-      render component: 'PortfolioNew', props: { user: current_user, projects: current_user.projects, portfolio: current_user.portfolio }
+      render component: 'PortfolioNew', props: { user: current_user, projects: current_user.projects, portfolio: current_user.portfolio }, status: 400
     end
   end
 
   def edit
     @user = current_user
-    # @user.portfolio.update(bio: Kramdown::Document.new(@user.portfolio.bio, :input => 'html').to_kramdown)
   end
 
   def update

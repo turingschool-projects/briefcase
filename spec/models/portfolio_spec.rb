@@ -1,11 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe User do
-  context 'relationships' do
-    it 'a user has a project' do
-      user = User.new(first_name: 'daniel')
-
-      expect(user).to respond_to(:portfolio)
-    end
-  end
+RSpec.describe Portfolio do
+  it { should validate_presence_of(:full_name) }
+  it { should validate_presence_of(:github_url) }
+  it { should validate_presence_of(:linkedin_url) }
+  it { should validate_presence_of(:email) }
+  it { should validate_presence_of(:title) }
+  it { should validate_presence_of(:bio) }
 end
