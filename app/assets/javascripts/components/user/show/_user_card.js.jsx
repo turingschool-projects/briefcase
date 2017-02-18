@@ -35,6 +35,10 @@ var UserCard = React.createClass({
                 <div className="card-links">
                   <a href={"http://" + portfolio.github_url}><i className="fa fa-github fa-3x social-media" aria-hidden="true"></i></a>
                   <a href={"http://" + portfolio.linkedin_url}><i className="fa fa-linkedin fa-3x social-media" aria-hidden="true"></i></a>
+                  {portfolio.twitter_url &&
+                  <a href={"http://" + portfolio.twitter_url}><i className="fa fa-twitter fa-3x social-media" aria-hidden="true"></i></a>}
+                  {portfolio.personal_url &&
+                  <a href={"http://" + portfolio.personal_url}><i className="fa fa-user fa-3x social-media" aria-hidden="true"></i></a>}
                 </div>
                 <center><a className="card-profile" href={ "/alumni/" + portfolio.user_slug }>View Profile</a></center>
               </div>
