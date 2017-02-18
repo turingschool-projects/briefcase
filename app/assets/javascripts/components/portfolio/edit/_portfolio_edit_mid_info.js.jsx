@@ -129,10 +129,15 @@ var PortfolioEditMidInfo = React.createClass({
           <h1 id="edit-profile-information">School Information Status</h1>
           <label htmlFor="cohort">Cohort</label>
           <select id="cohort">
-              <option value="" disabled selected>1608</option>
-              <option value="1608">1608</option>
-              <option value="1610">1610</option>
-              <option value="1611">1611</option>
+            <option value="" disabled selected>Select Cohort</option>
+            <option value="1608">1608</option>
+            <option value="1608">1608</option>
+            <option value="1701">1701</option>
+            <option value="1703">1703</option>
+            <option value="1705">1705</option>
+            <option value="1707">1707</option>
+            <option value="1709">1709</option>
+            <option value="1711">1711</option>
           </select>
         </section>
 
