@@ -8,6 +8,5 @@ class AlumniController < ApplicationController
     @user = User.find_by(slug: params[:slug])
     @portfolio = @user.portfolio
     @avatar_urls = @user.portfolio.project_avatar_urls
-
   end
 end

@@ -1,1 +1,7 @@
-<%= react_component('AlumniShow', {currentUser: current_user, portfolio: @portfolio, user: @user, projects: @user.portfolio.projects, avatar: @portfolio.avatar.url, project_avatar_urls: @avatar_urls }, {prerender: true}) %>
+<%= react_component('AlumniShow', {currentUser: current_user,
+  portfolio: @portfolio,
+  user: @user, projects: @user.portfolio.projects,
+  avatar: @portfolio.avatar.url,
+  project_avatar_urls: @avatar_urls,
+  resume: @portfolio.resume.url  },
+{prerender: true}) %>
