@@ -1,9 +1,10 @@
 var AlumniBodyInfo = React.createClass({
-
+  showEmail: function(event){
+    $('.email-btn')[0].innerText = this.props.portfolio.email
+  },
   render: function() {
     var user = this.props.user;
     var portfolio = this.props.portfolio;
-
     return (
       <div>
         <div className="container">
@@ -19,8 +20,8 @@ var AlumniBodyInfo = React.createClass({
             </div>
             <div className=" col s8 offset-s4">
             <ul>
-              <li><button className='btn transparent email-btn'>Email Directly <i className="fa fa-long-arrow-right" aria-hidden="true"></i></button></li>
-              <li><button className='btn transparent github-btn'>GitHub Profile  <i className="fa fa-long-arrow-right" aria-hidden="true"></i></button></li>
+              <li><button onClick={this.showEmail} className='btn transparent email-btn'>Click For Email <i className="fa fa-long-arrow-right" aria-hidden="true"></i></button></li>
+              <li><a href={"http://" + portfolio.github_url}><button className='btn transparent github-btn'>GitHub Profile  <i className="fa fa-long-arrow-right" aria-hidden="true"></i></button></a></li>
             </ul>
           </div>
         </div>
