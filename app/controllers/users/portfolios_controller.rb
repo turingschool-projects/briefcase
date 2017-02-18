@@ -20,7 +20,7 @@ class Users::PortfoliosController < ApplicationController
     if(new_portfolio.save)
       render js: "/dashboard"
     else
-      render component: 'PortfolioNew', props: { user: current_user, projects: current_user.projects, portfolio: current_user.portfolio }
+      render component: 'PortfolioNew', props: { user: current_user, projects: current_user.projects, portfolio: current_user.portfolio }, status: 400
     end
   end
 
