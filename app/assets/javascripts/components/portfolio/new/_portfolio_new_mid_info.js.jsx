@@ -68,7 +68,7 @@ var PortfolioNewMidInfo = React.createClass({
           <div className="row mid-bio">
             <div className='col s6'>
               <label htmlFor="looking-for">Looking For</label>
-              <textarea id="looking-for" className="editor-looking-for" placeholder="example@example.com"  onChange={this.handleNew}></textarea>
+              <textarea id="looking-for" className="editor-looking-for" placeholder=""  onChange={this.handleNew}></textarea>
             </div>
             <div className='col s6'>
               <label htmlFor="best-at">Best At</label>
