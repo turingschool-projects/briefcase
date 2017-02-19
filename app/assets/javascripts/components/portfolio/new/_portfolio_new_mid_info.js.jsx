@@ -1,7 +1,4 @@
 var PortfolioNewMidInfo = React.createClass({
-  componentDidMount(){
-    $('select').material_select();
-  },
 
   getInitialState(){
     return {
@@ -107,7 +104,7 @@ var PortfolioNewMidInfo = React.createClass({
 
             { locations.map(function(location){
               return  <div className='col s4'>
-                <input className="anthony" type="checkbox" id={location.id}/><label htmlFor={location.id}>{location.city}, {location.state}</label>
+                <input className="anthony" type="checkbox" id={location.city + location.state}/><label htmlFor={location.city + location.state}>{location.city}, {location.state}</label>
                 </div>
             })}
             </div>

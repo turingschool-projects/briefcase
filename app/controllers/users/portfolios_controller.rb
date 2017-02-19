@@ -6,7 +6,7 @@ class Users::PortfoliosController < ApplicationController
 
   def new
     @user = current_user
-    @locations = Location.all
+    @locations = Location.distinct_city_states
   end
 
   def create
@@ -27,15 +27,10 @@ class Users::PortfoliosController < ApplicationController
 
   def edit
     @user = current_user
-    @locations = Location.where(portfolio_id: nil)
-    @
+    @locations = Location.distinct_city_states
   end
 
   def update
-    # params[:portfolio][:bio] = Kramdown::Document.new(params[:portfolio][:bio]).to_html if params[:portfolio][:bio]
-    # params[:portfolio][:best_at] = Kramdown::Document.new(params[:portfolio][:best_at]).to_html if params[:portfolio][:best_at]
-    # params[:portfolio][:looking_for] = Kramdown::Document.new(params[:portfolio][:looking_for]).to_html if params[:portfolio][:looking_for]
-
     user = User.find(params[:user_id])
     portfolio = Portfolio.find(params[:portfolio][:id])
 

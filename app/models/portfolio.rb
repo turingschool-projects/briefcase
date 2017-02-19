@@ -37,9 +37,11 @@ class Portfolio < ApplicationRecord
   end
 
   def create_locations(locations)
+    self.locations.delete_all
+
     locations.each do |location|
-      city = location.split(",").first
-      state = location.split(",").last
+      city = location.split(",").first.strip
+      state = location.split(",").last.strip
       self.locations.find_or_create_by(city: city, state: state)
     end
   end

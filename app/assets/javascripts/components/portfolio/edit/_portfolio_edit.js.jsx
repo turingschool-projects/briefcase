@@ -8,7 +8,7 @@ var PortfolioEdit = React.createClass({
         <div>
           <SignedInNavbar user={user}/>
           <PortfolioJumbo user={user}/>
-          <PortfolioEditForm locations={this.props.locations} avatar={avatar} user={user} portfolio={portfolio}/>
+          <PortfolioEditForm locations={this.props.locations} avatar={avatar} user={user} portfolio={portfolio} userLocations={this.props.userLocations}/>
           <Footer/>
         </div>
       )

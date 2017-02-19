@@ -1,4 +1,5 @@
 var PortfolioEditMidInfo = React.createClass({
+
   getInitialState(){
     var userPortfolio = this.props.portfolio;
     return {
@@ -40,12 +41,47 @@ var PortfolioEditMidInfo = React.createClass({
     $('select').material_select();
     $('select').on('change', this.handleEdit)
     $('.modal').modal();
+    this.checkUserLocations();
+  },
+
+  checkUserLocations(){
+    var locations = $('.anthony')
+    var userLocations = this.props.userLocations;
+
+    for (var i = 0; i < locations.length; i++) {
+      var city = locations[i].parentElement.children[1].innerText.split(", ")[0]
+      var state = locations[i].parentElement.children[1].innerText.split(", ")[1]
+
+      for (var j = 0; j < userLocations.length; j++) {
+        if(city == userLocations[j].city && state == userLocations[j].state){
+          locations[i].checked = true;
+        }
+      }
+    }
+  },
+
+  cityChecked: function() {
+    var boxes = $('.anthony')
+    var locationsArray = []
+    for (var i = 0; i < boxes.length; i++) {
+      if (boxes[i].checked === true) {
+        var a = boxes[i].parentElement.children[1].innerText
+        locationsArray.push(a)
+      }
+    }
+    var stateToUpdate = {};
+    var fieldToUpdate;
+    this.setState({locations: locationsArray});
+    stateToUpdate.locations = locationsArray; fieldToUpdate = "locations"
+    this.props.prepForUpdate(stateToUpdate, fieldToUpdate);
   },
 
   render: function() {
+
     var locations = this.props.locations
     var user = this.props.user;
     var portfolio = this.props.portfolio;
+    var userLocations = this.props.userLocations;
 
     return (
 
@@ -86,7 +122,7 @@ var PortfolioEditMidInfo = React.createClass({
 
             { locations.map(function(location){
               return  <div className='col s4'>
-                <input className="anthony" type="checkbox" id={location.id}/><label htmlFor={location.id}>{location.city}, {location.state}</label>
+                <input className="anthony" type="checkbox" id={location.city + location.state}/><label htmlFor={location.city + location.state}>{location.city}, {location.state}</label>
                 </div>
             })}
             </div>
