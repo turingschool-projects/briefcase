@@ -10,12 +10,14 @@ class Users::PortfoliosController < ApplicationController
   end
 
   def create
+
     user = User.find(params[:user_id])
     new_portfolio = user.build_portfolio(portfolio_params)
 
     if(new_portfolio.save)
       update_avatar(user, new_portfolio) if params[:portfolio][:avatar]
       update_resume(user, new_portfolio) if params[:portfolio][:resume]
+      update_locations(user, new_portfolio) if params[:portfolio][:locations]
 
       render js: "/dashboard"
     else
@@ -74,5 +76,9 @@ class Users::PortfoliosController < ApplicationController
       file = Paperclip.io_adapters.for(params[:portfolio][:resume])
       file.original_filename = user.slug
       portfolio.update(resume: file)
+    end
+
+    def update_locations(user, portfolio)
+      locations = portfolio.create_locations(params[:portfolio][:locations])
     end
 end

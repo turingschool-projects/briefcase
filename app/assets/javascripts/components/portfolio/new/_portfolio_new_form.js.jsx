@@ -8,6 +8,7 @@ var PortfolioNewForm = React.createClass({
   },
 
   prepForInsert(updatedState, fieldToUpdate){
+    debugger;
     this.setState({ portfolio: update(this.state.portfolio, {
       [fieldToUpdate]: {$set: updatedState[fieldToUpdate]}})
     });

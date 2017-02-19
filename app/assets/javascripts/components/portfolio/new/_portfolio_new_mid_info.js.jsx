@@ -39,13 +39,24 @@ var PortfolioNewMidInfo = React.createClass({
     if(event.target.id == "hired-by") {this.setState({hired_by: event.target.value}); stateToUpdate.hired_by = event.target.value; fieldToUpdate = "hired_by" };
 
     this.props.prepForInsert(stateToUpdate, fieldToUpdate);
+
   },
 
   cityChecked: function() {
     var boxes = $('.anthony')
-    for (var i = 0; i < array.length; i++) {
-      array[i]
+    var locationsArray = []
+    for (var i = 0; i < boxes.length; i++) {
+      if (boxes[i].checked === true) {
+        var a = boxes[i].parentElement.children[1].innerText
+        locationsArray.push(a)
+      }
     }
+    var stateToUpdate = {};
+    var fieldToUpdate;
+    this.setState({locations: locationsArray});
+    stateToUpdate.locations = locationsArray; fieldToUpdate = "locations"
+    debugger;
+    this.props.prepForInsert(stateToUpdate, fieldToUpdate);
   },
 
   componentDidMount(){
@@ -97,7 +108,7 @@ var PortfolioNewMidInfo = React.createClass({
 
             { locations.map(function(location){
               return  <div className='col s4'>
-                <input className="anthony" type="checkbox" id={location.id}/><label htmlFor={location.id}>{location.city} , {location.state}</label>
+                <input className="anthony" type="checkbox" id={location.id}/><label htmlFor={location.id}>{location.city}, {location.state}</label>
                 </div>
             })}
             </div>
