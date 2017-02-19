@@ -10,11 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170218204818) do
+ActiveRecord::Schema.define(version: 20170219000009) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "citext"
+
+  create_table "locations", force: :cascade do |t|
+    t.string   "city"
+    t.integer  "portfolio_id"
+    t.string   "state"
+    t.string   "location"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["portfolio_id"], name: "index_locations_on_portfolio_id", using: :btree
+  end
 
   create_table "portfolios", force: :cascade do |t|
     t.string   "email"
@@ -34,12 +44,8 @@ ActiveRecord::Schema.define(version: 20170218204818) do
     t.string   "title"
     t.string   "hired_by"
     t.integer  "user_id"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.string   "portfolio_image_file_name"
-    t.string   "portfolio_image_content_type"
-    t.integer  "portfolio_image_file_size"
-    t.datetime "portfolio_image_updated_at"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.string   "user_slug"
     t.string   "personal_url"
     t.string   "twitter_url"
@@ -87,6 +93,7 @@ ActiveRecord::Schema.define(version: 20170218204818) do
     t.string   "slug"
   end
 
+  add_foreign_key "locations", "portfolios"
   add_foreign_key "projects", "portfolios"
   add_foreign_key "projects", "users"
 end
