@@ -5,6 +5,7 @@ class AlumniController < ApplicationController
   def index
     @portfolios = Portfolio.all
     @avatar_urls = Portfolio.avatar_urls
+    @bios = Portfolio.markdown_bios
   end
 
   def show

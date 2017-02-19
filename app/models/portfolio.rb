@@ -45,4 +45,13 @@ class Portfolio < ApplicationRecord
       best_at: markdown.render(self.best_at)
     }
   end
+
+  def self.markdown_bios
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, fenced_code_blocks: true)
+
+    Portfolio.all.reduce({}) do |result, portfolio|
+      result[portfolio.id] = markdown.render(portfolio.bio)
+      result
+    end
+  end
 end

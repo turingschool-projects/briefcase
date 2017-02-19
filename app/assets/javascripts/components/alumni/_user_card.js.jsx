@@ -13,6 +13,8 @@ var UserCard = React.createClass({
 
   render(){
     var avatars = this.props.avatars;
+    var bios = this.props.bios;
+
     var portfolios = this.props.portfolios.map((portfolio) => { // props brought from controller
       return (
           <div className="col s4 "key={portfolio.id}>
@@ -30,7 +32,7 @@ var UserCard = React.createClass({
                   <p className="card-title grey-text text-darken-4 ">{portfolio.title}</p>
                 </center>
                 <hr/>
-                <center><p className="card-bio">{this.shorterBio(portfolio.bio)}...</p></center>
+                <center className="alumni-show-bio"><p className="card-bio" dangerouslySetInnerHTML={{__html: this.shorterBio(bios[portfolio.id])}}></p></center>
                 <div className="card-links">
                   <a href={"http://" + portfolio.github_url}><i className="fa fa-github fa-3x social-media" aria-hidden="true"></i></a>
                   <a href={"http://" + portfolio.linkedin_url}><i className="fa fa-linkedin fa-3x social-media" aria-hidden="true"></i></a>
