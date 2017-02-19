@@ -24,13 +24,13 @@ var AlumniJumboInfo = React.createClass({
                       <a href={this.props.resume} target="_blank"><li><button className='title btn transparent resume-btn'>Resume</button></li></a>
                     }
                     {portfolio.linkedin_url &&
-                      <a href={portfolio.linkedin_url}><li><button className='title btn transparent linkedin-btn'><i className="fa fa-linkedin fa-3x" aria-hidden="true"></i></button></li></a>
+                      <a href={'http://' + portfolio.linkedin_url}><li><button className='title btn transparent linkedin-btn'><i className="fa fa-linkedin fa-3x" aria-hidden="true"></i></button></li></a>
                     }
                     {portfolio.twitter_url &&
-                      <a href={portfolio.twitter_url}><li><button className='title btn transparent linkedin-btn'><i className="fa fa-twitter fa-3x" aria-hidden="true"></i></button></li></a>
+                      <a href={'http://' + portfolio.twitter_url}><li><button className='title btn transparent linkedin-btn'><i className="fa fa-twitter fa-3x" aria-hidden="true"></i></button></li></a>
                     }
                     {portfolio.personal_url &&
-                      <a href={portfolio.personal_url}><li><button className='title btn transparent linkedin-btn'><i className="fa fa-user fa-3x" aria-hidden="true"></i></button></li></a>
+                      <a href={'http://' + portfolio.personal_url}><li><button className='title btn transparent linkedin-btn'><i className="fa fa-user fa-3x" aria-hidden="true"></i></button></li></a>
                     }
                     <li><button className='title btn transparent heart'><i className="fa fa-heart-o left fa-2x" aria-hidden="true" onClick={this.fillHeart}></i></button></li>
                   </ul>
