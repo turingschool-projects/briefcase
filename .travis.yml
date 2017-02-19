@@ -1,8 +1,9 @@
 language: ruby
 rvm:
-- 2.2
-- jruby
-- rbx-2
+  - 2.3.0
+
+services:
+  - postgresql
 
 branches:
   only:
