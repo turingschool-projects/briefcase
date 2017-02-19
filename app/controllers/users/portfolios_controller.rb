@@ -17,7 +17,7 @@ class Users::PortfoliosController < ApplicationController
     if(new_portfolio.save)
       update_avatar(user, new_portfolio) if params[:portfolio][:avatar]
       update_resume(user, new_portfolio) if params[:portfolio][:resume]
-      update_locations(user, new_portfolio) if params[:portfolio][:locations]
+      update_locations(new_portfolio) if params[:portfolio][:locations]
 
       render js: "/dashboard"
     else
@@ -40,6 +40,7 @@ class Users::PortfoliosController < ApplicationController
     if(portfolio.update(portfolio_params))
       update_avatar(user, portfolio) if params[:portfolio][:avatar]
       update_resume(user, portfolio) if params[:portfolio][:resume]
+      update_locations(portfolio) if params[:portfolio][:locations]
 
       render js: "/dashboard"
     else
@@ -54,7 +55,7 @@ class Users::PortfoliosController < ApplicationController
   def destroy
     user = User.find(params[:user_id])
     if(user.portfolio.projects.destroy_all)
-      user.portfolio.delete
+      delete_relationships(user)
       render js: "/dashboard"
     else
       render component: "DeletePortfolio", props: { user: current_user, portfolio: current_user.portfolio}
@@ -78,7 +79,12 @@ class Users::PortfoliosController < ApplicationController
       portfolio.update(resume: file)
     end
 
-    def update_locations(user, portfolio)
+    def update_locations(portfolio)
       locations = portfolio.create_locations(params[:portfolio][:locations])
+    end
+
+    def delete_relationships
+      user.portfolio.locations.delete_all
+      user.portfolio.delete
     end
 end

@@ -25,7 +25,7 @@ var AlumniBodyInfo = React.createClass({
             </ul>
           </div>
         </div>
-        <AlumniMidInfo user={user} portfolio={portfolio}/>
+        <AlumniMidInfo user={user} portfolio={portfolio} locations={this.props.locations}/>
       </div>
     </div>
     );

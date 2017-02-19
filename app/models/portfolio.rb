@@ -7,6 +7,7 @@ class Portfolio < ApplicationRecord
   validates :title, presence: true
   validates :bio, presence: true
   has_many :locations, :dependent => false
+  has_many :locations, dependent: :destroy
 
   belongs_to :user
   after_create :set_slug
@@ -37,9 +38,9 @@ class Portfolio < ApplicationRecord
 
   def create_locations(locations)
     locations.each do |location|
-        city = location.split(",").first
-        state = location.split(",").last
-        self.locations.create(city: city, state: state)
+      city = location.split(",").first
+      state = location.split(",").last
+      self.locations.create(city: city, state: state)
     end
   end
 

@@ -3,7 +3,8 @@ var AlumniMidInfo = React.createClass({
   render: function() {
     var user = this.props.user;
     var portfolio = this.props.portfolio;
-
+    var locations = this.props.locations
+    debugger;
     return (
       <div>
         <div className="row about-me-cont">
@@ -33,8 +34,12 @@ var AlumniMidInfo = React.createClass({
             </div>
             <div className='col s12'>
               <ul>
-                <li>{portfolio.locations}</li>
+                {locations.map(function(location){
+                  return 
+                  <li>{location.city}, {location.state}</li>
+                })}
               </ul>
+
             </div>
           </div>
         </div>
