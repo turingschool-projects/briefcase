@@ -11,11 +11,7 @@ class AlumniController < ApplicationController
     @user = User.find_by(slug: params[:slug])
     @portfolio = @user.portfolio
     @avatar_urls = @user.portfolio.project_avatar_urls
-
-    markdown = Redcarpet::Markdown.new(Redcarpet::Render::StripDown)
-    @bio = markdown.render(@portfolio.bio)
     @markdown_info = @portfolio.markdown_info
   end
-
 
 end

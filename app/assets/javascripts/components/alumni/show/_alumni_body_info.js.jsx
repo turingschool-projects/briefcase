@@ -15,7 +15,7 @@ var AlumniBodyInfo = React.createClass({
             <div className='col s8 offset-s4'>
               <h1>About Me</h1>
             </div>
-            <div className="col s8 offset-s4">
+            <div className="col s8 offset-s4 alumni-show-bio">
               <p dangerouslySetInnerHTML={{__html: this.props.markdownInfo.bio}}></p>
             </div>
             <div className=" col s8 offset-s4">

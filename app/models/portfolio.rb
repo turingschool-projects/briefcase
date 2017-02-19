@@ -1,5 +1,4 @@
 require 'redcarpet'
-require 'redcarpet/render_strip'
 
 class Portfolio < ApplicationRecord
   has_many :projects, dependent: :destroy
