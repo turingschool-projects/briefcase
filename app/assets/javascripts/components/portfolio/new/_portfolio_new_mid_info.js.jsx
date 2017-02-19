@@ -58,7 +58,7 @@ var PortfolioNewMidInfo = React.createClass({
           <div className="row">
             <div className='col s6'>
               <label htmlFor="email">Email</label>
-              <input id="email" placeholder="example@example.com (required)"  onChange={this.handleNew}></input>
+              <input id="email" placeholder="example@example.com*"  onChange={this.handleNew}></input>
             </div>
             <div className='col s6'>
               <label htmlFor="resume">Resume</label><br/>
@@ -80,9 +80,9 @@ var PortfolioNewMidInfo = React.createClass({
           </div>
         </section>
 
-        <section className="input-field col s12">
+        <section className="input-field locations-dropdown col s12">
           <select multiple id="locations">
-              <option value="" disabled selected>Denver Austin NYC</option>
+              <option value="" disabled selected>Please Choose...</option>
               <option value="1">Denver</option>
               <option value="2">Austin</option>
               <option value="3">NYC</option>
@@ -95,7 +95,7 @@ var PortfolioNewMidInfo = React.createClass({
           <div className="row">
             <div className='col s6'>
               <label htmlFor="github">GitHub</label>
-              <input id="github" placeholder="github.com/:username (required)" onChange={this.handleNew}></input>
+              <input id="github" placeholder="github.com/:username*" onChange={this.handleNew}></input>
             </div>
             <div className='col s6'>
               <label htmlFor="twitter">Twitter</label>
@@ -106,11 +106,11 @@ var PortfolioNewMidInfo = React.createClass({
           <div className="row">
             <div className='col s6'>
               <label htmlFor="linkedin">LinkedIn</label>
-              <input id="linkedin" placeholder="linkedin.com/:username (required)" onChange={this.handleNew}></input>
+              <input id="linkedin" placeholder="linkedin.com/:username*" onChange={this.handleNew}></input>
             </div>
             <div className='col s6'>
               <label htmlFor="personal-url">Personal Site</label>
-              <input id="personal-url" placeholder="https://www.mysite.com" onChange={this.handleNew}></input>
+              <input id="personal-url" placeholder="mypersonalsite.com" onChange={this.handleNew}></input>
             </div>
           </div>
         </section>

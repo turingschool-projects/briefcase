@@ -39,10 +39,13 @@ class Portfolio < ApplicationRecord
 
   def markdown_info
     markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, fenced_code_blocks: true)
+    self.bio.nil? ? bio = '' : bio = self.bio
+    self.looking_for.nil? ? looking_for = '' : looking_for = self.looking_for
+    self.best_at.nil? ? best_at = '' : best_at = self.best_at
     {
-      bio: markdown.render(self.bio),
-      looking_for: markdown.render(self.looking_for),
-      best_at: markdown.render(self.best_at)
+      bio: markdown.render(bio),
+      looking_for: markdown.render(looking_for),
+      best_at: markdown.render(best_at)
     }
   end
 

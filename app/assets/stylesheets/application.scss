@@ -413,20 +413,23 @@ input[placeholder="Your Email Here"]{
     margin-top: 5%;
   }
 
+  /*input palceholders*/
+
+
   input[placeholder="Project Name*"]{
-    font-size: 40px;
+    font-size: 30px;
   }
 
   input[placeholder="Github Url*"]{
-    font-size: 40px;
+    font-size: 30px;
   }
 
   input[placeholder="Production Url"]{
-    font-size: 40px;
+    font-size: 30px;
   }
 
   input[placeholder="Upload Screen Shot"]{
-    font-size: 40px;
+    font-size: 30px;
   }
 
   .project-save {
@@ -446,7 +449,7 @@ input[placeholder="Your Email Here"]{
 
 .style-h2 {
 
-      margin-top: 26px;
+      margin-top: 18px;
       font-family: "azo-sans-web","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
       font-size: 24px;
       line-height: 31px;
@@ -466,7 +469,7 @@ input[placeholder="Your Email Here"]{
   font-size: 24px;
   line-height: 31px;
   font-weight: bold;
-  padding-bottom: 1%;
+  padding-bottom: 10px;
 
 
 }
