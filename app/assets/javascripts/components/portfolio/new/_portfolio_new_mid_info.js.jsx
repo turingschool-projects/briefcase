@@ -41,7 +41,10 @@ var PortfolioNewMidInfo = React.createClass({
     this.props.prepForInsert(stateToUpdate, fieldToUpdate);
   },
 
-
+  componentDidMount(){
+    $('select').material_select();
+    $('select').on('change', this.handleNew)
+  },
 
   render: function() {
     var user = this.props.user;
@@ -129,16 +132,16 @@ var PortfolioNewMidInfo = React.createClass({
         <section className="school-info col s12">
           <h1 id="edit-profile-information">School Information Status</h1>
           <label htmlFor="cohort">Cohort</label>
-          <select id="cohort" value={this.state.value} onChange={this.handleNew}>
-              <option defaultValue="" disabled selected>1608</option>
-              <option defaultValue="1608">1608</option>
-              <option defaultValue="1608">1608</option>
-              <option defaultValue="1701">1701</option>
-              <option defaultValue="1703">1703</option>
-              <option defaultValue="1705">1705</option>
-              <option defaultValue="1707">1707</option>
-              <option defaultValue="1709">1709</option>
-              <option defaultValue="1711">1711</option>
+          <select id="cohort">
+            <option value="" disabled selected>Select Cohort</option>
+            <option value="1608">1608</option>
+            <option value="1608">1608</option>
+            <option value="1701">1701</option>
+            <option value="1703">1703</option>
+            <option value="1705">1705</option>
+            <option value="1707">1707</option>
+            <option value="1709">1709</option>
+            <option value="1711">1711</option>
           </select>
         </section>
 

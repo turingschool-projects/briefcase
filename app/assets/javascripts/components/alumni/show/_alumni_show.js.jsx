@@ -3,7 +3,6 @@ var AlumniShow = React.createClass({
       var user = this.props.user;
       var portfolio = this.props.portfolio;
       var projects = this.props.projects;
-      debugger;
 
       return(
         <div>

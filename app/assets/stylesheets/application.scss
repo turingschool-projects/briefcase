@@ -476,13 +476,9 @@ input[placeholder="Your Email Here"]{
   display: inline-block;
 }
 
-.outer {
-  padding-top: 10px;
-  width: 420px;
-  text-align: center;
-  .inner {
-    display: inline-block;
-  }
+.inner {
+  display: inline-block;
+  padding-top: 3px;
 }
 
 .imgPreview {

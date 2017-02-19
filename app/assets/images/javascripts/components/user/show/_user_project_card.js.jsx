@@ -3,7 +3,6 @@ var UserProjectCard = React.createClass ({
 		var all_projects = this.props.projects.map((project) => {
 			// var production_url = project.production_url.split('//')
 			// var github = project.github.split('//')
-			debugger;
 			return (
 						<div className='projects'>
 							<div className='title col s12'>

@@ -12,7 +12,6 @@ var UserCard = React.createClass({
   },
 
   render(){
-    debugger
     var avatars = this.props.avatars;
     var portfolios = this.props.portfolios.map((portfolio) => { // props brought from controller
       return (

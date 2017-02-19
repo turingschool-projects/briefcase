@@ -1,6 +1,5 @@
 var Account = React.createClass({
   render: function() {
-    debugger;
     var user = this.props.user;
     return (
       <div>
