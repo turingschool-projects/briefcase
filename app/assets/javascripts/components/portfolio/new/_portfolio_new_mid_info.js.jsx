@@ -85,11 +85,15 @@ var PortfolioNewMidInfo = React.createClass({
         <a className="waves-effect waves-light btn" href="#modal1">Locations</a>
          <div id="modal1" className="modal">
            <div className="modal-content">
+             <div className="row">
+             <input id="search" type="search" placeholder="search for a city"></input>
+
             { locations.map(function(location){
-              return  <div>
+              return  <div className='col s4'>
                 <input type="checkbox" id={location.id}/><label htmlFor={location.id}>{location.city} , {location.state}</label>
                 </div>
             })}
+            </div>
            </div>
            <div className="modal-footer">
              <a href="#!" className=" modal-action modal-close waves-effect waves-green btn-flat">Save Cities</a>
