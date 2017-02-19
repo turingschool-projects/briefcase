@@ -3,8 +3,7 @@ var DashboardProfile = React.createClass({
     if (text === null) {
       return ""
     } else {
-
-      return text.substring(0, 193);
+      return text.substring(0, 193) + "...";
     }
   },
 
@@ -12,7 +11,6 @@ var DashboardProfile = React.createClass({
       var user = this.props.user;
       var slug = this.props.user.slug;
       var portfolio = this.props.portfolio;
-
 
       if(portfolio.full_name != null){
         var name = portfolio.full_name;
@@ -35,7 +33,9 @@ var DashboardProfile = React.createClass({
                 <p className="card-title grey-text text-darken-4 ">{portfolio.title}</p>
               </center>
               <hr/>
-              <center><p className="card-bio">{this.shorterBio(portfolio.bio)}...</p></center>
+
+              <center className="alumni-show-bio"><p className="card-bio" dangerouslySetInnerHTML={{__html: this.shorterBio(this.props.markdownInfo.bio)}}></p></center>
+
               <div className="card-links">
                 <a href={"http://" + portfolio.github_url}><i className="fa fa-github fa-3x social-media" aria-hidden="true"></i></a>
                 <a href={"http://" + portfolio.linkedin_url}><i className="fa fa-linkedin fa-3x social-media" aria-hidden="true"></i></a>
@@ -52,7 +52,7 @@ var DashboardProfile = React.createClass({
             </div>
             <div className="card-reveal">
               <span className="card-title grey-text text-darken-4">Bio<i className="material-icons right">close</i></span>
-              <p>{portfolio.bio}</p>
+              <p dangerouslySetInnerHTML={{__html: this.shorterBio(this.props.markdownInfo.bio)}}></p>
           </div>
         </div>
       </div>

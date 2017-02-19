@@ -13,7 +13,7 @@ var AlumniMidInfo = React.createClass({
             </div>
             <div className='col s12'>
               <ul>
-                <li>{portfolio.looking_for}</li>
+                <li dangerouslySetInnerHTML={{__html: this.props.markdownInfo.looking_for}}></li>
               </ul>
             </div>
           </div>
@@ -23,7 +23,7 @@ var AlumniMidInfo = React.createClass({
             </div>
             <div className='col s12'>
               <ul>
-                <li>{portfolio.best_at}</li>
+                <li dangerouslySetInnerHTML={{__html: this.props.markdownInfo.best_at}}></li>
               </ul>
             </div>
           </div>
