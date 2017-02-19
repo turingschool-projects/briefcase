@@ -37,15 +37,16 @@ var PortfolioNewAvatar = React.createClass({
     if (imagePreviewUrl != '') {
       $imagePreview = (<img src={imagePreviewUrl} />);
     } else {
-      $imagePreview = (<div className="previewText"></div>);
+      $imagePreview = (<img className="" src="http://intelligentsystemsmonitoring.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png"></img>);
     }
 
     return (
       <div className="portfolio-image-upload outer">
-        <div className='button-input inner'><input id='file-input' className="file fileInput" type="file" onChange={this.handleImageChange} /></div>
-        <div className="imgPreview">
+        <div className="responsive-avatar"></div>
+        <div className="img-preview">
           {$imagePreview}
         </div>
+        <div className='button-input inner'><input id='file-input' className="file file-input" type="file" onChange={this.handleImageChange} /></div>
       </div>
     )
   }

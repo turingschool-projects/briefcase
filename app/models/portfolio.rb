@@ -1,11 +1,11 @@
 class Portfolio < ApplicationRecord
   has_many :projects, dependent: :destroy
-  validates :full_name, presence: true 
-  validates :github_url, presence: true 
-  validates :linkedin_url, presence: true 
-  validates :email, presence: true 
-  validates :title, presence: true 
-  validates :bio, presence: true 
+  # validates :full_name, presence: true 
+  # validates :github_url, presence: true 
+  # validates :linkedin_url, presence: true 
+  # validates :email, presence: true 
+  # validates :title, presence: true 
+  # validates :bio, presence: true 
   has_many :locations, :dependent => false
 
   belongs_to :user
