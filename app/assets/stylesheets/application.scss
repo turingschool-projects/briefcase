@@ -96,6 +96,15 @@
     background-repeat: no-repeat;
     z-index: -1;
     top: 0 !important;
+    @media (min-width: 1300px) and (max-width: 1523px) {
+      height: 25em;
+    }
+    @media (min-width: 968px) and (max-width: 1300px) {
+      height: 20em;
+    }
+    @media (max-width: 968px) {
+      height: 15em;
+    }
 }
 
 .block.block-block-95 {
