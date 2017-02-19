@@ -44,12 +44,12 @@ var PortfolioNewMidInfo = React.createClass({
   componentDidMount(){
     $('select').material_select();
     $('select').on('change', this.handleNew)
+    $('.modal').modal();
   },
 
   render: function() {
     var user = this.props.user;
     var locations = this.props.locations
-    var locationList = locations.map(function(location){return <option>{location.city} , {location.state}</option>})
     return (
 
       <main className="row about-me-cont">
@@ -65,6 +65,7 @@ var PortfolioNewMidInfo = React.createClass({
               <label htmlFor="resume">Resume</label><br/>
               <PortfolioResume prepForUpdate={this.props.prepForInsert}/>
             </div>
+
           </div>
         </section>
 
@@ -81,14 +82,24 @@ var PortfolioNewMidInfo = React.createClass({
           </div>
         </section>
 
-        <section className="input-field col s12">
-          <select multiple id="locations">
-              <option value="1">{locationList}</option>
-          </select>
-          <label htmlFor="locations">Preferred Locations</label><br/>
-        </section>
+        <a className="waves-effect waves-light btn" href="#modal1">Locations</a>
+         <div id="modal1" className="modal">
+           <div className="modal-content">
+            { locations.map(function(location){
+              return  <div>
+                <input type="checkbox" id={location.id}/><label htmlFor={location.id}>{location.city} , {location.state}</label>
+                </div>
+            })}
+           </div>
+           <div className="modal-footer">
+             <a href="#!" className=" modal-action modal-close waves-effect waves-green btn-flat">Save Cities</a>
+           </div>
+         </div>
 
-        <section className="links col s12">
+
+
+        <section clas
+          sName="links col s12">
           <h1 id="edit-profile-information">Social</h1>
           <div className="row">
             <div className='col s6'>
