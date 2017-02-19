@@ -44,6 +44,7 @@ gem 'kramdown'
 gem 'paperclip'
 gem 'aws-sdk', '~> 2.3'
 gem 'travis'
+gem 'redcarpet'
 
 
 group :development, :test do

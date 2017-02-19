@@ -16,7 +16,7 @@ var AlumniBodyInfo = React.createClass({
               <h1>About Me</h1>
             </div>
             <div className="col s8 offset-s4">
-              <p>{portfolio.bio}</p>
+              <p dangerouslySetInnerHTML={{__html: this.props.markdownInfo.bio}}></p>
             </div>
             <div className=" col s8 offset-s4">
             <ul>
@@ -25,7 +25,7 @@ var AlumniBodyInfo = React.createClass({
             </ul>
           </div>
         </div>
-        <AlumniMidInfo user={user} portfolio={portfolio}/>
+        <AlumniMidInfo user={user} portfolio={portfolio} markdownInfo={this.props.markdownInfo}/>
       </div>
     </div>
     );

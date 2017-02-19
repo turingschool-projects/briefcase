@@ -1,11 +1,14 @@
+require 'redcarpet'
+require 'redcarpet/render_strip'
+
 class Portfolio < ApplicationRecord
   has_many :projects, dependent: :destroy
-  validates :full_name, presence: true 
-  validates :github_url, presence: true 
-  validates :linkedin_url, presence: true 
-  validates :email, presence: true 
-  validates :title, presence: true 
-  validates :bio, presence: true 
+  validates :full_name, presence: true
+  validates :github_url, presence: true
+  validates :linkedin_url, presence: true
+  validates :email, presence: true
+  validates :title, presence: true
+  validates :bio, presence: true
   has_many :locations, :dependent => false
 
   belongs_to :user
@@ -33,5 +36,14 @@ class Portfolio < ApplicationRecord
       result[project.id] = project.avatar.url
       result
     end
+  end
+
+  def markdown_info
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, fenced_code_blocks: true)
+    {
+      bio: markdown.render(self.bio),
+      looking_for: markdown.render(self.looking_for),
+      best_at: markdown.render(self.best_at)
+    }
   end
 end
