@@ -19,7 +19,6 @@ var PortfolioNewBodyInfo = React.createClass({
 
     return (
       <div>
-        <div id="flash_messages" className='flash'></div>
         <div className="container">
           <div className="row about-me">
             <div className='col s4 graduate-picture'>
@@ -30,7 +29,7 @@ var PortfolioNewBodyInfo = React.createClass({
               <h1>About You</h1>
             </div>
             <div className="col s8 offset-s4">
-              <textarea id="bio" className="bio-edit editor" placeholder='A description of yourself, your background, languages you are good at, and whatever else you would like to include in our bio... (required)' defaultValue={this.state.bio} onChange={this.handleNew}></textarea>
+              <textarea id="bio" className="bio-edit editor" defaultValue={this.state.bio} onChange={this.handleNew}></textarea>
             </div>
         </div>
         <PortfolioNewMidInfo user={user} prepForInsert={this.props.prepForInsert}/>

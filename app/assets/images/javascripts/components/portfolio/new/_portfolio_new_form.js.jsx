@@ -8,6 +8,7 @@ var PortfolioNewForm = React.createClass({
   },
 
   prepForInsert(updatedState, fieldToUpdate){
+
     this.setState({ portfolio: update(this.state.portfolio, {
       [fieldToUpdate]: {$set: updatedState[fieldToUpdate]}})
     });
@@ -20,7 +21,7 @@ var PortfolioNewForm = React.createClass({
       window.location = response.data;
     })
     .catch(function (error) {
-      Materialize.toast('Error: Missing required fields!', 4000);
+      console.log(error);
     });
   },
 

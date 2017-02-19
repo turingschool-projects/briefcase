@@ -1,5 +1,6 @@
 FactoryGirl.define do
-  factory :location do
+  factory :park do
     name "MyString"
+    user nil
   end
 end
