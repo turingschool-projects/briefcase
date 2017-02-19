@@ -55,7 +55,6 @@ var PortfolioNewMidInfo = React.createClass({
     var fieldToUpdate;
     this.setState({locations: locationsArray});
     stateToUpdate.locations = locationsArray; fieldToUpdate = "locations"
-    debugger;
     this.props.prepForInsert(stateToUpdate, fieldToUpdate);
   },
 

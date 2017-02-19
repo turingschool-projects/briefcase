@@ -35,8 +35,8 @@ var AlumniMidInfo = React.createClass({
             <div className='col s12'>
               <ul>
                 {locations.map(function(location){
-                  return 
-                  <li>{location.city}, {location.state}</li>
+                  return(
+                    <li>{location.city}, {location.state}</li>)
                 })}
               </ul>
 

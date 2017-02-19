@@ -40,7 +40,7 @@ class Portfolio < ApplicationRecord
     locations.each do |location|
       city = location.split(",").first
       state = location.split(",").last
-      self.locations.create(city: city, state: state)
+      self.locations.find_or_create_by(city: city, state: state)
     end
   end
 

@@ -27,6 +27,8 @@ class Users::PortfoliosController < ApplicationController
 
   def edit
     @user = current_user
+    @locations = Location.where(portfolio_id: nil)
+    @
   end
 
   def update
