@@ -24,7 +24,11 @@ var DashboardProfile = React.createClass({
           <div className="card">
             <div className="card-image waves-effect waves-block waves-light">
               <center>
-                <img className="activator card-picture" src={this.props.avatar} />
+                {
+                  this.props.avatar === "/avatars/original/missing.png" 
+                    ? <img className="activator card-picture" src="http://intelligentsystemsmonitoring.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png"></img>
+                    : <img className="activator card-picture" src={this.props.avatar}></img> 
+                }
               </center>
             </div>
             <div className="card-content">

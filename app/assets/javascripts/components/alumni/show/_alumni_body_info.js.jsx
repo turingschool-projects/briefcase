@@ -10,7 +10,7 @@ var AlumniBodyInfo = React.createClass({
         <div className="container">
           <div className="row about-me">
             <div className='col s4 graduate-picture'>
-              <img className="alumni-avatar" src={this.props.avatar} alt="Andrew Crist"></img>
+              <img className="alumni-avatar" src={this.props.avatar}></img>
             </div>
             <div className='col s8 offset-s4'>
               <h1>About Me</h1>

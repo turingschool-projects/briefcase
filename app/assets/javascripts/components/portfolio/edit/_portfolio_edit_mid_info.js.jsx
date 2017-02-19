@@ -106,7 +106,7 @@ var PortfolioEditMidInfo = React.createClass({
             </div>
             <div className='col s6'>
               <label htmlFor="personal-site">Personal Site</label>
-              <input id="personal-site" defaultValue={portfolio.personal_url} onChange={this.handleEdit} placeholder="https://www.mypersonalsite.com"></input>
+              <input id="personal-site" defaultValue={portfolio.personal_url} onChange={this.handleEdit} placeholder="mypersonalsite.com"></input>
             </div>
           </div>
         </section>

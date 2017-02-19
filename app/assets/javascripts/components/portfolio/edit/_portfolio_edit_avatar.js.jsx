@@ -31,22 +31,26 @@ var PortfolioEditAvatar = React.createClass({
     reader.readAsDataURL(file)
   },
 
-  render() {
+render() {
     var imagePreviewUrl = this.state.imagePreviewUrl;
     var imagePreview = null;
     if (imagePreviewUrl != '') {
       $imagePreview = (<img src={imagePreviewUrl} />);
     } else {
-      $imagePreview = (<div className="previewText"></div>);
+      $imagePreview = (
+                          this.props.avatar === "/avatars/original/missing.png" 
+                            ? <img className="" src="http://intelligentsystemsmonitoring.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png"></img>
+                            : <img className="" src={this.props.avatar}></img> 
+                      );
     }
 
     return (
       <div className="portfolio-image-upload outer">
-          <div className='button-input inner'><input id='file-input-avatar' className="fileInput" type="file" onChange={this.handleImageChange} /></div>
-
-        <div className="imgPreview">
+        <div className="responsive-avatar"></div>
+        <div className="img-preview">
           {$imagePreview}
         </div>
+        <div className='button-input inner'><input id='file-input-avatar' className="file file-input" type="file" onChange={this.handleImageChange} /></div>
       </div>
     )
   }
