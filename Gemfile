@@ -35,6 +35,16 @@ gem 'serializer'
 gem 'faraday'
 gem 'faker'
 gem 'react-rails'
+gem 'omniauth-oauth2'
+gem 'omniauth-census', git: "https://github.com/NZenitram/census_staging_oauth"
+gem 'thin'
+gem 'axios_rails', '~> 0.7.0'
+gem "responders"
+gem 'kramdown'
+gem 'paperclip'
+gem 'aws-sdk', '~> 2.3'
+gem 'travis'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -46,6 +56,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'simplecov'
   gem 'database_cleaner'
+  gem 'selenium-webdriver'
 end
 
 group :test do
@@ -53,6 +64,7 @@ group :test do
   #for testing our api's - avoid hitting rate limits
   gem 'webmock'
   #used in conjuction with vcr to intercept out web calls
+  gem 'shoulda-matchers'
 end
 
   group :development do

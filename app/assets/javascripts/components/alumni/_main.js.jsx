@@ -1,0 +1,28 @@
+var Main = React.createClass({
+  render(){
+    var signedIn = this.props.signed_in;
+    var portfolios = this.props.portfolios;
+    var user = this.props.user;
+    if(user != null) {
+      return (
+        <div>
+          <SignedInNavbar user={user}/>
+          <MainJumbo/>
+          <MainSearch/>
+          <UserCard portfolios = {portfolios} avatars={this.props.avatars}/>
+          <Footer/>
+        </div>
+      )
+    } else {
+      return (
+        <div>
+          <GuestNavbar/>
+          <MainJumbo/>
+          <MainSearch/>
+          <UserCard portfolios = {portfolios} avatars={this.props.avatars}/>
+          <Footer/>
+        </div>
+      )
+    }
+  }
+})

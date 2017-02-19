@@ -1,0 +1,180 @@
+.container {
+  margin: 0 auto !important;
+  width: 70% !important;
+}
+
+.show-name-container {
+	height: 20em;
+	position: relative;
+}
+
+.show-block-95 {
+    background-image: url('/assets/turing-show-banner');
+    background-size: 100%;
+    height: 20em;
+    background-repeat: no-repeat;
+    z-index: -1;
+    top: 0 !important;
+}
+
+.graduate-picture {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	bottom: 0;
+
+}
+
+img {
+	max-width: 100%;
+	z-index: 5;
+	vertical-align: middle;
+	}
+
+.show-name-holder {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	bottom: 0;
+
+	h1 {
+    color: white;
+    font-family: "azo-sans-web","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+		font-style: normal;
+		font-weight: 700;
+    font-size: 52px;
+  }
+
+  p {
+    font-size: 26px;
+    color: white;
+    font-family: "azo-sans-web","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+		font-style: normal;
+		font-weight: 200;
+    font-weight: lighter;
+  }
+ul {
+  list-style-type: none;
+	li {
+	  	display: inline;
+	 		.resume-btn {
+	 			margin-right: 4px;
+				text-align: left;
+        border: 1px solid white;
+        padding-left: 7px;
+        padding-right: 7px;
+      }
+      .linkedin-btn{
+      	margin-right: 4px;
+      	text-align: left;
+        border: 1px solid white;
+        padding-left: 7px;
+        padding-right: 7px;
+      }
+      .heart{
+      	text-align: center;
+        border: 1px solid white;
+        padding-right: 2px;
+        padding-left: 12px;
+      }
+	  }
+
+	}
+}
+
+.about-me {
+	height: 18em;
+	position: relative;
+	h1 {
+		padding: 2%;
+		color: #3c4040;
+		font-size: 36px;
+		font-family: "azo-sans-web","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+		font-weight: 200;
+    line-height: 1.1;
+	}
+	p {
+		font-family: "azo-sans-web","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #7c8c8e;
+	}
+	ul li {
+  	display: inline;
+  	.email-btn {
+  		margin-top: 2%;
+ 			margin-right: 4px;
+ 			vertical-align: center;
+			text-align: left;
+      border: 1px solid #05C2D1 !important;
+      padding-left: 15px;
+      padding-right: 15px;
+      color: #05C2D1;
+      line-height: 1.1;
+		  font-family: "azo-sans-web","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+	    font-size: 16px;
+    }
+    .github-btn {
+  		margin-top: 2%;
+ 			margin-right: 4px;
+ 			vertical-align: center;
+			text-align: left;
+      border: 1px solid #05C2D1 !important;
+      padding-left: 15px;
+      padding-right: 15px;
+      color: #05C2D1;
+      line-height: 1.1;
+		  font-family: "azo-sans-web","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+	    font-size: 16px;
+    }
+  }
+}
+
+.my-projects {
+		h1 {
+		color: #3c4040;
+		font-size: 36px;
+		font-family: "azo-sans-web","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+		font-style: normal;
+		font-weight: 200;
+    line-height: 1.1;
+	}
+
+}
+
+.about-me-cont{
+	h1 {
+		color: #3c4040;
+		font-size: 24px;
+		font-family: "azo-sans-web","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+		font-style: bold;
+		font-weight: 700;
+    line-height: 1.1;
+	}
+	ul {
+		font-family: "azo-sans-web","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+		font-weight: 200;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #7c8c8e;
+	}
+}
+
+.card-profile {
+  padding: 12px !important;
+  margin: 5px !important;
+  border-radius: 4px !important;
+  margin-bottom: 10px !important;
+
+}
+
+
+.delete {
+  color: red !important;
+  border-color: red !important;
+}
+
+.alumni-avatar {
+  height: 365px;
+  width: 365px;
+}

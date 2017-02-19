@@ -1,0 +1,142 @@
+.my-projects{
+  h1{
+    padding-top: 20px;
+    padding-bottom: 10px;
+    color: #3C4040;
+    font-family: "azo-sans-web","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 36px;
+    line-height: 1.1;
+  }
+  .projects {
+    border: 1px solid #ebecec;
+    margin-bottom: 3em;
+    .project-screenshot{
+      max-height: 48em;
+
+
+      img {
+        max-width: 1077px;
+        max-height: 580px;
+        display: block;
+        margin: auto;
+      }
+    }
+    .title h1 {
+      margin-left: 2.5%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      color: #3C4040;
+      font-family: "azo-sans-web","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 1.1;
+    }
+    .project-overview{
+      h1 {
+        margin-left: 5%;
+        padding-top: 30px;
+        padding-bottom: 2%;
+        color: #3C4040;
+        font-family: "azo-sans-web","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 1.1;
+      }
+
+      p {
+        margin-left: 5%;
+        margin-right: 2.5%;
+        font-family: "azo-sans-web","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 16px;
+        line-height: 1.7;
+        color: #7c8c8e;
+      }
+    }
+    .focus{
+
+     h1 {
+        margin-left: 2.5%;
+        padding-top: 30px;
+        padding-bottom: 10px;
+        color: #3C4040;
+        font-family: "azo-sans-web","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 1.1;
+      }
+      p {
+        margin-left: 5%;
+        margin-right: 2.5%;
+        font-family: "azo-sans-web","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 16px;
+        line-height: 1.7;
+        color: #7c8c8e;
+
+      }
+    }
+    ul {
+      list-style-type: none;
+      text-align: center;
+      margin-bottom: 8px;
+      margin-top: 13px;
+
+      li {
+        display: inline;
+
+        .repository-btn{
+          margin-top: 10px;
+          margin-right: 4px;
+          vertical-align: center;
+          text-align: left;
+          border: 1px solid #05C2D1 !important;
+          padding-left: 15px;
+          padding-right: 15px;
+          text-decoration: none !important;
+        }
+
+        .launch-app-btn{
+          margin-top: 10px;
+          margin-right: 4px;
+          vertical-align: center;
+          text-align: left;
+          border: 1px solid #05C2D1 !important;
+          padding-left: 15px;
+          padding-right: 15px;
+          text-decoration: none !important;
+        }
+        a{
+          color: #05C2D1;
+          line-height: 1.1;
+          font-family: "azo-sans-web","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+          font-size: 16px;
+
+        }
+
+      }
+    }
+   .project-buttons{
+      margin-top: 30px;
+      border-top: 1px solid #ebecec;
+
+  }
+
+  }
+}
+
+.my-projects-title {
+  h1 {
+    margin-top: 10px;
+    padding-bottom: 10px;
+    color: #3C4040;
+    font-family: "azo-sans-web","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 36px;
+    line-height: 1.1;
+  }
+}
