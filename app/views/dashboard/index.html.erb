@@ -1,5 +1,13 @@
 <% if(logged_in?) %>
-  <%= react_component('Dashboard', {user: current_user, projects: @projects, portfolio: current_user.portfolio, avatar: @avatar, project_avatars: @project_avatars}, {prerender: true}) %>
+  <%= react_component('Dashboard', {user: current_user,
+    projects: @projects,
+    portfolio: current_user.portfolio,
+    avatar: @avatar,
+    project_avatars: @project_avatars,
+    markdownInfo: current_user.portfolio.markdown_info},
+  {prerender: true}) %>
 <% else %>
-  <%= react_component('Main', {user: current_user, signed_in: 0}, {prerender: true}) %>
+  <%= react_component('Main', {user: current_user,
+    signed_in: 0},
+  {prerender: true}) %>
 <% end %>
