@@ -23,7 +23,6 @@ var PortfolioNewBodyInfo = React.createClass({
         <div className="container">
           <div className="row about-me">
             <div className='col s4 graduate-picture'>
-              <img className="" src="http://intelligentsystemsmonitoring.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png" alt="Andrew Crist"></img>
               <PortfolioNewAvatar user={user} prepForInsert={this.props.prepForInsert}/>
             </div>
             <div className='col s8 offset-s4'>
