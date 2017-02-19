@@ -6,6 +6,7 @@ class Portfolio < ApplicationRecord
   validates :email, presence: true 
   validates :title, presence: true 
   validates :bio, presence: true 
+  has_many :locations, :dependent => false
 
   belongs_to :user
   after_create :set_slug
