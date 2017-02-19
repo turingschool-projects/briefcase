@@ -16,7 +16,6 @@ var PortfolioNewBodyInfo = React.createClass({
 
   render: function() {
     var user = this.props.user;
-
     return (
       <div>
         <div id="flash_messages" className='flash'></div>
@@ -32,7 +31,7 @@ var PortfolioNewBodyInfo = React.createClass({
               <textarea id="bio" className="bio-edit editor" placeholder='A description of yourself, your background, languages you are good at, and whatever else you would like to include in our bio... (required)' defaultValue={this.state.bio} onChange={this.handleNew}></textarea>
             </div>
         </div>
-        <PortfolioNewMidInfo user={user} prepForInsert={this.props.prepForInsert}/>
+        <PortfolioNewMidInfo locations={this.props.locations} user={user} prepForInsert={this.props.prepForInsert}/>
       </div>
     </div>
     );

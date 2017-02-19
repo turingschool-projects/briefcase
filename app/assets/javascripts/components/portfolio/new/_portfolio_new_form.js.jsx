@@ -31,7 +31,7 @@ var PortfolioNewForm = React.createClass({
       <div>
 
         <PortfolioNewJumboInfo user={user} prepForInsert={this.prepForInsert}/>
-        <PortfolioNewBodyInfo user={user} prepForInsert={this.prepForInsert}/>
+        <PortfolioNewBodyInfo locations={this.props.locations} user={user} prepForInsert={this.prepForInsert}/>
           <div className="container">
             <button className="btn waves-effect waves-light portfolio-btns" type="submit" name="action" value="Save Profile" onClick={this.handleInsert}>Save Profile</button>
           </div>

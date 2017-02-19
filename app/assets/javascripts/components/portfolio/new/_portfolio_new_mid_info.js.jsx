@@ -48,7 +48,8 @@ var PortfolioNewMidInfo = React.createClass({
 
   render: function() {
     var user = this.props.user;
-
+    var locations = this.props.locations
+    var locationList = locations.map(function(location){return <option>{location.city} , {location.state}</option>})
     return (
 
       <main className="row about-me-cont">
@@ -82,10 +83,7 @@ var PortfolioNewMidInfo = React.createClass({
 
         <section className="input-field col s12">
           <select multiple id="locations">
-              <option value="" disabled selected>Denver Austin NYC</option>
-              <option value="1">Denver</option>
-              <option value="2">Austin</option>
-              <option value="3">NYC</option>
+              <option value="1">{locationList}</option>
           </select>
           <label htmlFor="locations">Preferred Locations</label><br/>
         </section>

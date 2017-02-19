@@ -6,6 +6,7 @@ class Users::PortfoliosController < ApplicationController
 
   def new
     @user = current_user
+    @locations = Location.all
   end
 
   def create
