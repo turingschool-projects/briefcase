@@ -41,6 +41,13 @@ var PortfolioNewMidInfo = React.createClass({
     this.props.prepForInsert(stateToUpdate, fieldToUpdate);
   },
 
+  cityChecked: function() {
+    var boxes = $('.anthony')
+    for (var i = 0; i < array.length; i++) {
+      array[i]
+    }
+  },
+
   componentDidMount(){
     $('select').material_select();
     $('select').on('change', this.handleNew)
@@ -90,20 +97,19 @@ var PortfolioNewMidInfo = React.createClass({
 
             { locations.map(function(location){
               return  <div className='col s4'>
-                <input type="checkbox" id={location.id}/><label htmlFor={location.id}>{location.city} , {location.state}</label>
+                <input className="anthony" type="checkbox" id={location.id}/><label htmlFor={location.id}>{location.city} , {location.state}</label>
                 </div>
             })}
             </div>
            </div>
            <div className="modal-footer">
-             <a href="#!" className=" modal-action modal-close waves-effect waves-green btn-flat">Save Cities</a>
+             <a href="#!" className=" modal-action modal-close waves-effect waves-green btn-flat" onClick={this.cityChecked}>Save Cities</a>
            </div>
          </div>
 
 
 
-        <section clas
-          sName="links col s12">
+        <section className="links col s12">
           <h1 id="edit-profile-information">Social</h1>
           <div className="row">
             <div className='col s6'>
