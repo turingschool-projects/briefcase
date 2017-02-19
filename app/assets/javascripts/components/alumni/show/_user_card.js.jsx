@@ -13,12 +13,7 @@ var UserCard = React.createClass({
 
   render(){
     var avatars = this.props.avatars;
-    if (portfolios == null ) { 
-      var portfolios = []
-    } else {
-      var portfolios = this.props.portfolios
-    }
-    portfolios.map((portfolio) => { // props brought from controller
+    var portfolios = this.props.portfolios.map((portfolio) => { // props brought from controller
       return (
           <div className="col s4 "key={portfolio.id}>
             <div className="card">
