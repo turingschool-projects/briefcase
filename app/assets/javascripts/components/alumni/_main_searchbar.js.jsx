@@ -11,7 +11,7 @@ var MainSearch = React.createClass({
 
     for (var i = 0; i < portfolios.length; i++) {
       for (var j = 0; j < data.length; j++) {
-        if (portfolios[i].full_name.indexOf(data[j]) != -1) {
+        if (portfolios[i].full_name.toLowerCase().indexOf(data[j].toLowerCase()) != -1) {
           filterPortfolios.push(portfolios[i]);
         }
       }
