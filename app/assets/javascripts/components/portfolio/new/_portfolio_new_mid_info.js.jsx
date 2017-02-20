@@ -1,7 +1,4 @@
 var PortfolioNewMidInfo = React.createClass({
-  componentDidMount(){
-    $('select').material_select();
-  },
 
   getInitialState(){
     return {
@@ -26,7 +23,6 @@ var PortfolioNewMidInfo = React.createClass({
     var stateToUpdate = {};
     var fieldToUpdate;
 
-    debugger;
     if(event.target.id == "email") {this.setState({email: event.target.value}); stateToUpdate.email = event.target.value; fieldToUpdate = "email" };
     if(event.target.id == "resume") { this.setState({resume: event.target.value}); stateToUpdate.resume = event.target.value; fieldToUpdate = "resume" };
     if(event.target.id == "looking-for") { this.setState({looking_for: event.target.value}); stateToUpdate.looking_for = event.target.value; fieldToUpdate = "looking_for" };
@@ -38,17 +34,36 @@ var PortfolioNewMidInfo = React.createClass({
     if(event.target.id == "twitter") {this.setState({twitter_url: event.target.value}); stateToUpdate.twitter_url = event.target.value; fieldToUpdate = "twitter_url" };
     if(event.target.id == "personal-url") {this.setState({personal_url: event.target.value}); stateToUpdate.personal_url = event.target.value; fieldToUpdate = "personal_url" };
     if(event.target.id == "hired-by") {this.setState({hired_by: event.target.value}); stateToUpdate.hired_by = event.target.value; fieldToUpdate = "hired_by" };
-    if($("#cohort")[0].value) {this.setState({cohort: $("#cohort")[0].value}); stateToUpdate.cohort = $("#cohort")[0].value; fieldToUpdate = "cohort" };
 
+    this.props.prepForInsert(stateToUpdate, fieldToUpdate);
+
+  },
+
+  cityChecked: function() {
+    var boxes = $('.anthony')
+    var locationsArray = []
+    for (var i = 0; i < boxes.length; i++) {
+      if (boxes[i].checked === true) {
+        var a = boxes[i].parentElement.children[1].innerText
+        locationsArray.push(a)
+      }
+    }
+    var stateToUpdate = {};
+    var fieldToUpdate;
+    this.setState({locations: locationsArray});
+    stateToUpdate.locations = locationsArray; fieldToUpdate = "locations"
     this.props.prepForInsert(stateToUpdate, fieldToUpdate);
   },
 
-
+  componentDidMount(){
+    $('select').material_select();
+    $('select').on('change', this.handleNew)
+    $('.modal').modal();
+  },
 
   render: function() {
     var user = this.props.user;
-
-
+    var locations = this.props.locations
     return (
 
       <main className="row about-me-cont">
@@ -58,12 +73,13 @@ var PortfolioNewMidInfo = React.createClass({
           <div className="row">
             <div className='col s6'>
               <label htmlFor="email">Email</label>
-              <input id="email" placeholder="example@example.com"  onChange={this.handleNew}></input>
+              <input id="email" placeholder="example@example.com*"  onChange={this.handleNew}></input>
             </div>
             <div className='col s6'>
               <label htmlFor="resume">Resume</label><br/>
-              <input id="resume" type="file"></input>
+              <PortfolioResume prepForUpdate={this.props.prepForInsert}/>
             </div>
+
           </div>
         </section>
 
@@ -71,7 +87,7 @@ var PortfolioNewMidInfo = React.createClass({
           <div className="row mid-bio">
             <div className='col s6'>
               <label htmlFor="looking-for">Looking For</label>
-              <textarea id="looking-for" className="editor-looking-for" placeholder="example@example.com"  onChange={this.handleNew}></textarea>
+              <textarea id="looking-for" className="editor-looking-for" placeholder=""  onChange={this.handleNew}></textarea>
             </div>
             <div className='col s6'>
               <label htmlFor="best-at">Best At</label>
@@ -80,22 +96,30 @@ var PortfolioNewMidInfo = React.createClass({
           </div>
         </section>
 
-        <section className="input-field col s12">
-          <select multiple id="locations">
-              <option value="" disabled selected>Denver Austin NYC</option>
-              <option value="1">Denver</option>
-              <option value="2">Austin</option>
-              <option value="3">NYC</option>
-          </select>
-          <label htmlFor="locations">Preferred Locations</label><br/>
-        </section>
+        <a className="waves-effect waves-light btn" href="#modal1">Locations</a>
+         <div id="modal1" className="modal">
+           <div className="modal-content">
+             <div className="row">
+             <input id="search" type="search" placeholder="search for a city"></input>
+
+            { locations.map(function(location){
+              return  <div className='col s4'>
+                <input className="anthony" type="checkbox" id={location.city + location.state}/><label htmlFor={location.city + location.state}>{location.city}, {location.state}</label>
+                </div>
+            })}
+            </div>
+           </div>
+           <div className="modal-footer">
+             <a href="#!" className=" modal-action modal-close waves-effect waves-green btn-flat" onClick={this.cityChecked}>Save Cities</a>
+           </div>
+         </div>
 
         <section className="links col s12">
           <h1 id="edit-profile-information">Social</h1>
           <div className="row">
             <div className='col s6'>
               <label htmlFor="github">GitHub</label>
-              <input id="github" placeholder="github.com/:username" onChange={this.handleNew}></input>
+              <input id="github" placeholder="github.com/:username*" onChange={this.handleNew}></input>
             </div>
             <div className='col s6'>
               <label htmlFor="twitter">Twitter</label>
@@ -106,11 +130,11 @@ var PortfolioNewMidInfo = React.createClass({
           <div className="row">
             <div className='col s6'>
               <label htmlFor="linkedin">LinkedIn</label>
-              <input id="linkedin" placeholder="linkedin.com/:username" onChange={this.handleNew}></input>
+              <input id="linkedin" placeholder="linkedin.com/:username*" onChange={this.handleNew}></input>
             </div>
             <div className='col s6'>
               <label htmlFor="personal-url">Personal Site</label>
-              <input id="personal-url" placeholder="https://www.mysite.com" onChange={this.handleNew}></input>
+              <input id="personal-url" placeholder="mypersonalsite.com" onChange={this.handleNew}></input>
             </div>
           </div>
         </section>
@@ -132,16 +156,16 @@ var PortfolioNewMidInfo = React.createClass({
         <section className="school-info col s12">
           <h1 id="edit-profile-information">School Information Status</h1>
           <label htmlFor="cohort">Cohort</label>
-          <select id="cohort" value={this.state.value} onChange={this.handleNew}>
-              <option defaultValue="" disabled selected>1608</option>
-              <option defaultValue="1608">1608</option>
-              <option defaultValue="1608">1608</option>
-              <option defaultValue="1701">1701</option>
-              <option defaultValue="1703">1703</option>
-              <option defaultValue="1705">1705</option>
-              <option defaultValue="1707">1707</option>
-              <option defaultValue="1709">1709</option>
-              <option defaultValue="1711">1711</option>
+          <select id="cohort">
+            <option value="" disabled selected>Select Cohort</option>
+            <option value="1608">1608</option>
+            <option value="1608">1608</option>
+            <option value="1701">1701</option>
+            <option value="1703">1703</option>
+            <option value="1705">1705</option>
+            <option value="1707">1707</option>
+            <option value="1709">1709</option>
+            <option value="1711">1711</option>
           </select>
         </section>
 

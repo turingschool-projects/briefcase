@@ -96,6 +96,15 @@
     background-repeat: no-repeat;
     z-index: -1;
     top: 0 !important;
+    @media (min-width: 1300px) and (max-width: 1523px) {
+      height: 25em;
+    }
+    @media (min-width: 968px) and (max-width: 1300px) {
+      height: 20em;
+    }
+    @media (max-width: 968px) {
+      height: 15em;
+    }
 }
 
 .block.block-block-95 {
@@ -241,7 +250,7 @@ input[type="search"] {
   background-color: white;
   margin-top: 1em;
   margin-bottom: 1em;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .search-container {
@@ -268,8 +277,8 @@ input[type="search"] {
 .card-links{
   text-align: center;
   i {
-    padding-right: 10%;
-    padding-left: 10%;
+    padding-right: 5%;
+    padding-left: 5%;
   }
   margin-bottom: 12%;
   margin-top: 12%;
@@ -293,7 +302,7 @@ img.card-picture {
 }
 
 .card {
-  height: 45em;
+  height: 50em;
 }
 
 .card-picture {
@@ -341,7 +350,7 @@ footer.page-footer {
 }
 
 .newsletter {
-  font-size: 30px;
+  font-size: 24px;
   color: white;
   font-family: azo-sans-web, sans-serif;
   margin-top: 1em;
@@ -355,7 +364,7 @@ footer.page-footer {
 
 .address {
   color: grey;
-  font-size: 20px;
+  font-size: 16px;
   width: 80%;
   line-height: 150%;
   margin-top: 6%;
@@ -364,7 +373,7 @@ footer.page-footer {
 
 .phone-number {
   color: #05c2d1;
-  font-size: 20px;
+  font-size: 16px;
   margin-top: 6%;
   line-height: 150%;
   width: 80%;
@@ -404,20 +413,23 @@ input[placeholder="Your Email Here"]{
     margin-top: 5%;
   }
 
+  /*input palceholders*/
+
+
   input[placeholder="Project Name*"]{
-    font-size: 40px;
+    font-size: 30px;
   }
 
   input[placeholder="Github Url*"]{
-    font-size: 40px;
+    font-size: 30px;
   }
 
   input[placeholder="Production Url"]{
-    font-size: 40px;
+    font-size: 30px;
   }
 
   input[placeholder="Upload Screen Shot"]{
-    font-size: 40px;
+    font-size: 30px;
   }
 
   .project-save {
@@ -437,13 +449,61 @@ input[placeholder="Your Email Here"]{
 
 .style-h2 {
 
-
-      padding-top: 8.5%;
+      margin-top: 18px;
       font-family: "azo-sans-web","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
       font-size: 24px;
       line-height: 31px;
       font-weight: bold;
-      padding-bottom: 1%;
+}
+
+.card-profile.delete:hover{
+  cursor:pointer;
+}
+
+#project-title {
+  font-size: 10px;
+}
+
+.no-project-my-project-title {
+  font-family: "azo-sans-web","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 24px;
+  line-height: 31px;
+  font-weight: bold;
+  padding-bottom: 10px;
 
 
+}
+
+// avatar starts here
+.avatar {
+  display: inline-block;
+}
+
+.inner {
+  display: inline-block;
+  padding-top: 3px;
+}
+
+.imgPreview {
+  width: 25%;
+  height: 25%;
+}
+
+
+#file-input-resume {
+  margin-right: 330px;
+  margin-top: 10px;
+}
+
+#file-input-avatar {
+  margin-right: 75px;
+  margin-top: 10px;
+}
+
+#modal1 {
+  width: 75%;
+}
+
+.alumni-show-bio a {
+  color: #05c2d1;
 }

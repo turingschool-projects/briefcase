@@ -1,6 +1,7 @@
 class User < ApplicationRecord
 	has_many :projects, dependent: :destroy
 	has_one :portfolio, dependent: :destroy
+  
 
 	after_create :set_slug
 

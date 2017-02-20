@@ -12,8 +12,11 @@ var UserCard = React.createClass({
   },
 
   render(){
+    var avatars = this.props.avatars;
+    var bios = this.props.bios;
+    var locations = this.props.locations;
+
     var portfolios = this.props.portfolios.map((portfolio) => { // props brought from controller
-    var slug_name = portfolio.full_name.toLowerCase().replace(/ /g, '-')
       return (
           <div className="col s4 "key={portfolio.id}>
             <div className="card">
@@ -21,7 +24,7 @@ var UserCard = React.createClass({
             <i className="material-icons right activator more-vert">more_vert</i>
               <div className="card-image waves-effect waves-block waves-light">
                 <center>
-                  <img className="activator card-picture" src="assets/turing-alumni-banner.jpg" />
+                  <img className="activator card-picture" src={avatars[portfolio.id]} />
                 </center>
               </div>
               <div className="card-content">
@@ -30,16 +33,28 @@ var UserCard = React.createClass({
                   <p className="card-title grey-text text-darken-4 ">{portfolio.title}</p>
                 </center>
                 <hr/>
-                <center><p className="card-bio">{this.shorterBio(portfolio.bio)}...</p></center>
+                <center className="alumni-show-bio"><p className="card-bio" dangerouslySetInnerHTML={{__html: this.shorterBio(bios[portfolio.id])}}></p></center>
                 <div className="card-links">
                   <a href={"http://" + portfolio.github_url}><i className="fa fa-github fa-3x social-media" aria-hidden="true"></i></a>
                   <a href={"http://" + portfolio.linkedin_url}><i className="fa fa-linkedin fa-3x social-media" aria-hidden="true"></i></a>
+                  {portfolio.twitter_url &&
+                  <a href={"http://" + portfolio.twitter_url}><i className="fa fa-twitter fa-3x social-media" aria-hidden="true"></i></a>}
+                  {portfolio.personal_url &&
+                  <a href={"http://" + portfolio.personal_url}><i className="fa fa-user fa-3x social-media" aria-hidden="true"></i></a>}
                 </div>
                 <center><a className="card-profile" href={ "/alumni/" + portfolio.user_slug }>View Profile</a></center>
               </div>
               <div className="card-reveal">
                 <span className="card-title grey-text text-darken-4">Bio<i className="material-icons right">close</i></span>
-                <p>{portfolio.bio}</p>
+                <p className="card-bio alumni-show-bio" dangerouslySetInnerHTML={{__html: this.shorterBio(bios[portfolio.id])}}></p>
+
+                <hr></hr>
+                <h4>Locations</h4>
+                <ul className="locations">
+                  {locations[portfolio.id].map((location) => {
+                    return ( <li>{location.city} {location.state}</li> )
+                  })}
+                </ul>
             </div>
           </div>
         </div>

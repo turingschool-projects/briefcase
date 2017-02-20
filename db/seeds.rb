@@ -1,82 +1,19 @@
+require 'csv'
 class Seed
   def self.start
     seed = Seed.new
-    seed.create_users
-    seed.create_projects
-    seed.create_portfolios
+    seed.create_locations
   end
 
-  def create_users
-    User.create({
-      first_name: "Daniel",
-      last_name: "Shin",
-      bio: "Being around cars has taught me a great deal about what works and doesn't when it comes to performance. Many of those principles have proved valuable in developing software as well. I love new challenges and get a kick out of working with teams to produce the best product available. Life isn't worth living if its not lived to its fullest. ",
-      title: "Software Developer",
-      uid: 46
-      })
-
-    User.create({
-      first_name: "Anthony",
-      last_name: "Ciccone",
-      bio: "Being around cars has taught me a great deal about what works and doesn't when it comes to performance. Many of those principles have proved valuable in developing software as well. I love new challenges and get a kick out of working with teams to produce the best product available. Life isn't worth living if its not lived to its fullest. ",
-      title: "Software Developer",
-      uid: 60
-      })
-
-    User.create({
-      first_name: "Matt",
-      last_name: "DeMarteau",
-      bio: "Being around cars has taught me a great deal about what works and doesn't when it comes to performance. Many of those principles have proved valuable in developing software as well. I love new challenges and get a kick out of working with teams to produce the best product available. Life isn't worth living if its not lived to its fullest. ",
-      title: "Software Developer",
-      uid: 61
-      })
+  def create_locations
+    load_csv_data('./list_of_largest_cities_of_us.csv').each do |row|
+      Location.create(city: row[:city], state: row[:state], location: row[:location])
+    end
   end
 
-  def create_projects
-    user = User.all.first
-    user.projects.create({
-      name: "Movie Keeper",
-      github: 'www.github.com',
-      code_climate_url: '',
-      travis_ci_url: '',
-      production_url: 'http://www.heroku.com/home',
-      screenshot: 'https://www.turing.io/sites/default/files/styles/project_screenshot/public/project_screenshots/my_movies.png?itok=GBGGw2wx',
-      description: "Application that allows users to keep track of their movie collection and the format in which they own each individual movie. The project was built with React, CSS/SCSS, React Bootstrap, React YouTube, React Router 4, webpack, and Firebase. Movie information was acquired using The Movie Database API.",
-      areas_of_focus: 'Application that allows users to keep track of their movie collection and the format in which they own each individual movie. The project was built with React, CSS/SCSS, React Bootstrap, React YouTube, React Router 4, webpack, and Firebase. Movie information was acquired using The Movie Database API.'
-      })
-    user.projects.create({
-      name: "Penny Wise",
-      github: 'www.github.com',
-      code_climate_url: '',
-      travis_ci_url: '',
-      production_url: 'http://www.heroku.com/home',
-      screenshot: "https://www.turing.io/sites/default/files/styles/project_screenshot/public/project_screenshots/Screen%20Shot%202017-01-31%20at%201.49.09%20PM_1.png?itok=KGnO0wSn",
-      description: "PennyWise is a budget app. From the beginning, in the planning stage, we decided to build an app that the first-time budgeter could use and enjoy. We believe that people are primarily concerned with monthly income and expenses, which is why our app is focused on a monthly financial outlook. The world is full of budget apps that are overly complicated, which leads to people who try them and then delete them.",
-      areas_of_focus: "Application that allows users to keep track of their movie collection and the format in which they own each individual movie. The project was built with React, CSS/SCSS, React Bootstrap, React YouTube, React Router 4, webpack, and Firebase. Movie information was acquired using The Movie Database API."
-      })
-    user.projects.create({
-      name: "Weather Forecast",
-      github: 'www.github.com',
-      code_climate_url: '',
-      travis_ci_url: '',
-      production_url: 'http://www.heroku.com/home',
-      screenshot: 'https://www.turing.io/sites/default/files/styles/project_screenshot/public/project_screenshots/screenshot.png?itok=5T0hYjb8',
-      description: "The purpose of the application was to continue building our knowledge of APIs while also providing a foundational knowledge of React Router. A limitation to the project was to only allow the user to add four additional locations in addition to the user's current location (determined by using navigator.geolocation).",
-      areas_of_focus: "Application that allows users to keep track of their movie collection and the format in which they own each individual movie. The project was built with React, CSS/SCSS, React Bootstrap, React YouTube, React Router 4, webpack, and Firebase. Movie information was acquired using The Movie Database API."
-      })
-  end
-
-  def create_portfolios
-    user = User.all.first
-    user.create_portfolio({
-      email: "#{user.first_name}@example.com",
-      cohort: "1608",
-      github_url: "www.github.com",
-      linkedin_url: "www.linkedin.com",
-      bio: "Being around cars has taught me a great deal about what works and doesn't when it comes to performance. Many of those principles have proved valuable in developing software as well. I love new challenges and get a kick out of working with teams to produce the best product available. Life isn't worth living if its not lived to its fullest. ",
-      title: "Software Developer",
-      full_name: "#{user.first_name} #{user.last_name}"
-      })
+  def load_csv_data(filename)
+    csv = CSV.open(filename, headers: true, header_converters: :symbol)
+    csv.to_a.map { |row| row.to_h }
   end
 
   Seed.start

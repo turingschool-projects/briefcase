@@ -1,9 +1,15 @@
 class DashboardController < ApplicationController
   def index
-    if(logged_in?)
-      render component: 'Dashboard', props: { user: current_user, projects: current_user.projects, portfolio: current_user.portfolio }
+    if (logged_in?)
+      if(current_user.portfolio)
+        @user = UserPresenter.new(current_user)
+        @projects = @user.projects
+        @project_avatars = Project.avatar_urls(current_user)
+      else
+        @projects = []
+      end
     else
-      render component: 'Main', props: { users: @users, signed_in: 0 }
+      redirect_to root_path
     end
   end
 end

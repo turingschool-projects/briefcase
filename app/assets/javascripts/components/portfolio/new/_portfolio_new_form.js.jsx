@@ -8,6 +8,7 @@ var PortfolioNewForm = React.createClass({
   },
 
   prepForInsert(updatedState, fieldToUpdate){
+    debugger;
     this.setState({ portfolio: update(this.state.portfolio, {
       [fieldToUpdate]: {$set: updatedState[fieldToUpdate]}})
     });
@@ -20,7 +21,7 @@ var PortfolioNewForm = React.createClass({
       window.location = response.data;
     })
     .catch(function (error) {
-      console.log(error);
+      Materialize.toast('Error: Missing required fields!', 4000);
     });
   },
 
@@ -29,13 +30,13 @@ var PortfolioNewForm = React.createClass({
     var portfolio = this.props.portfolio
     return (
       <div>
-        <form>
-          <PortfolioNewJumboInfo user={user} prepForInsert={this.prepForInsert}/>
-          <PortfolioNewBodyInfo user={user} prepForInsert={this.prepForInsert}/>
-            <div className="container">
-              <button className="btn waves-effect waves-light portfolio-btns" type="submit" name="action" value="Save Profile" onClick={this.handleInsert}>Save Profile</button>
-            </div>
-        </form>
+
+        <PortfolioNewJumboInfo user={user} prepForInsert={this.prepForInsert}/>
+        <PortfolioNewBodyInfo locations={this.props.locations} user={user} prepForInsert={this.prepForInsert}/>
+          <div className="container">
+            <button className="btn waves-effect waves-light portfolio-btns" type="submit" name="action" value="Save Profile" onClick={this.handleInsert}>Save Profile</button>
+          </div>
+
       </div>
     );
   }

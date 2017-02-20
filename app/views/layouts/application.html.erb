@@ -13,53 +13,10 @@
   </head>
 
   <body>
+
     <%= yield %>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
-
-    <script src="https://cdn.quilljs.com/1.2.0/quill.js"></script>
-    <script>
-      var toolbarOptions = [
-        ['bold', 'italic', 'underline', 'strike'],
-        [{ 'list': 'ordered'}, { 'list': 'bullet' }]
-      ];
-
-      var quill = new Quill('.editor', {
-        modules: {
-          toolbar: toolbarOptions
-        },
-        theme: 'snow'
-      });
-
-      var bestAt = new Quill('.editor-best-at', {
-        modules: {
-          toolbar: toolbarOptions
-        },
-        theme: 'snow'
-      });
-
-      var lookingFor = new Quill('.editor-looking-for', {
-        modules: {
-          toolbar: toolbarOptions
-        },
-        theme: 'snow'
-      });
-
-      var projectDes = new Quill('.editor-project', {
-        modules: {
-          toolbar: toolbarOptions
-        },
-        theme: 'snow'
-      });
-
-      var projectFocus = new Quill('.editor-focus', {
-        modules: {
-          toolbar: toolbarOptions
-        },
-        theme: 'snow'
-      });
-    </script>
-
 
   </body>
 

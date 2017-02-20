@@ -1,7 +1,7 @@
+var update = React.addons.update;
 var ProjectNew = React.createClass({
   getInitialState(){
     var portfolioProject = {
-      name: ""
     };
     return { project: portfolioProject }
   },
@@ -19,7 +19,7 @@ var ProjectNew = React.createClass({
       window.location = response.data;
     })
     .catch(function (error) {
-      console.log(error);
+      Materialize.toast('Error: Missing required fields!', 4000);
     });
   },
   render: function(){
@@ -27,7 +27,7 @@ var ProjectNew = React.createClass({
 
       return(
         <div>
-          <SignedInNavbar/>
+          <SignedInNavbar user={user}/>
           <ProjectJumbo/>
           <ProjectForm user={user} prepForInsert={this.prepForInsert} handleInsert={this.handleInsert}/>
           <Footer/>

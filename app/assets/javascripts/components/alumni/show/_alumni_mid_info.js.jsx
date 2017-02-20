@@ -3,7 +3,8 @@ var AlumniMidInfo = React.createClass({
   render: function() {
     var user = this.props.user;
     var portfolio = this.props.portfolio;
-
+    var locations = this.props.locations
+    debugger;
     return (
       <div>
         <div className="row about-me-cont">
@@ -13,9 +14,7 @@ var AlumniMidInfo = React.createClass({
             </div>
             <div className='col s12'>
               <ul>
-                <li>Somthing</li>
-                <li>Somthing</li>
-                <li>Somthing</li>
+                <li dangerouslySetInnerHTML={{__html: this.props.markdownInfo.looking_for}}></li>
               </ul>
             </div>
           </div>
@@ -25,9 +24,7 @@ var AlumniMidInfo = React.createClass({
             </div>
             <div className='col s12'>
               <ul>
-                <li>Somthing</li>
-                <li>Somthing</li>
-                <li>Somthing</li>
+                <li dangerouslySetInnerHTML={{__html: this.props.markdownInfo.best_at}}></li>
               </ul>
             </div>
           </div>
@@ -37,10 +34,12 @@ var AlumniMidInfo = React.createClass({
             </div>
             <div className='col s12'>
               <ul>
-                <li>Somthing</li>
-                <li>Somthing</li>
-                <li>Somthing</li>
+                {locations.map(function(location){
+                  return(
+                    <li>{location.city}, {location.state}</li>)
+                })}
               </ul>
+
             </div>
           </div>
         </div>
