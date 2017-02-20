@@ -44,7 +44,6 @@ var PortfolioEditMidInfo = React.createClass({
     this.checkUserLocations();
 
     $("#search").keyup(function(){
-      debugger;
       var input, filter, table, tr, td, i;
       input = document.getElementById('search-city');
       filter = this.value.toUpperCase();
