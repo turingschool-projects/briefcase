@@ -30,6 +30,7 @@ class Users::PortfoliosController < ApplicationController
   end
 
   def update
+    require "pry"; binding.pry
     user = User.find(params[:user_id])
     portfolio = Portfolio.find(params[:portfolio][:id])
 
@@ -40,7 +41,13 @@ class Users::PortfoliosController < ApplicationController
 
       render js: "/dashboard"
     else
-      render component: 'PortfolioEdit', props: { user: current_user, projects: current_user.projects, portfolio: current_user.portfolio }
+      render component: 'PortfolioEdit', props: { user: current_user,
+        portfolio: current_user.portfolio,
+        slug: current_user.slug,
+        avatar: current_user.portfolio.avatar.url,
+        locations: Location.distinct_city_states,
+        userLocations: current_user.portfolio.locations
+      }
     end
   end
 

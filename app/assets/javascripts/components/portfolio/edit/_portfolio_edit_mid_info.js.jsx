@@ -92,7 +92,7 @@ var PortfolioEditMidInfo = React.createClass({
           <div className="row">
             <div className='col s6'>
               <label htmlFor="email">Email</label>
-              <input id="email" placeholder="example@example.com (required)" defaultValue={portfolio.email} onChange={this.handleEdit}></input>
+              <input id="email" name="email" placeholder="example@example.com (required)" defaultValue={portfolio.email} onChange={this.handleEdit}></input>
             </div>
             <div className='col s6'>
               <label htmlFor="resume">Resume</label><br/>
@@ -105,11 +105,11 @@ var PortfolioEditMidInfo = React.createClass({
           <div className="row mid-bio">
             <div className='col s6'>
               <label htmlFor="looking-for">Looking For</label>
-              <textarea className="editor-looking-for" id="looking-for" placeholder="example@example.com" defaultValue={portfolio.looking_for} onChange={this.handleEdit}></textarea>
+              <textarea name="looking-for" className="editor-looking-for" id="looking-for" placeholder="example@example.com" defaultValue={portfolio.looking_for} onChange={this.handleEdit}></textarea>
             </div>
             <div className='col s6'>
               <label htmlFor="best-at">Best At</label>
-              <textarea className="editor-best-at" id="best-at" type="file" defaultValue={portfolio.best_at} onChange={this.handleEdit}></textarea>
+              <textarea name="best-at" className="editor-best-at" id="best-at" type="file" defaultValue={portfolio.best_at} onChange={this.handleEdit}></textarea>
             </div>
           </div>
         </section>
@@ -137,18 +137,18 @@ var PortfolioEditMidInfo = React.createClass({
           <div className="row">
             <div className='col s6'>
               <label htmlFor="github">GitHub</label>
-              <input id="github" placeholder="github.com/:username (required)" defaultValue={portfolio.github_url} onChange={this.handleEdit}></input>
+              <input id="github" name="github" placeholder="github.com/:username (required)" defaultValue={portfolio.github_url} onChange={this.handleEdit}></input>
             </div>
             <div className='col s6'>
               <label htmlFor="twitter">Twitter</label>
-              <input id="twitter" defaultValue={portfolio.twitter_url} onChange={this.handleEdit} placeholder="twitter.com/:username"></input>
+              <input id="twitter" name="twitter" defaultValue={portfolio.twitter_url} onChange={this.handleEdit} placeholder="twitter.com/:username"></input>
             </div>
           </div>
 
           <div className="row">
             <div className='col s6'>
               <label htmlFor="linkedin">LinkedIn</label>
-              <input id="linkedin" placeholder="linkedin.com/:username (required)" defaultValue={portfolio.linkedin_url} onChange={this.handleEdit}></input>
+              <input id="linkedin" name="linkedin" placeholder="linkedin.com/:username (required)" defaultValue={portfolio.linkedin_url} onChange={this.handleEdit}></input>
             </div>
             <div className='col s6'>
               <label htmlFor="personal-site">Personal Site</label>
