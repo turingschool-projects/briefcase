@@ -10,7 +10,6 @@ class Users::PortfoliosController < ApplicationController
   end
 
   def create
-
     user = User.find(params[:user_id])
     new_portfolio = user.build_portfolio(portfolio_params)
 
