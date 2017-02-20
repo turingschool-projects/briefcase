@@ -143,6 +143,7 @@ ul {
 }
 
 .about-me-cont{
+  padding-top: 20px;
 	h1 {
 		color: #3c4040;
 		font-size: 24px;
@@ -177,4 +178,12 @@ ul {
   height: 365px;
   width: 365px;
   border-radius: 3%;
+}
+
+.info-padding {
+  padding-top: 10px;
+}
+
+.full-name {
+  width: 300%;
 }
