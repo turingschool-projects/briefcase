@@ -9,6 +9,7 @@ class Portfolio < ApplicationRecord
   validates :title, presence: true
   validates :bio, presence: true
   has_many :locations, :dependent => false
+  has_many :locations, dependent: :destroy
 
   belongs_to :user
   after_create :set_slug
@@ -37,6 +38,16 @@ class Portfolio < ApplicationRecord
     end
   end
 
+  def create_locations(locations)
+    self.locations.delete_all
+
+    locations.each do |location|
+      city = location.split(",").first.strip
+      state = location.split(",").last.strip
+      self.locations.find_or_create_by(city: city, state: state)
+    end
+  end
+
   def markdown_info
     markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, fenced_code_blocks: true)
     self.bio.nil? ? bio = '' : bio = self.bio
@@ -57,4 +68,5 @@ class Portfolio < ApplicationRecord
       result
     end
   end
+  
 end

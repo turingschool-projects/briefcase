@@ -1,1 +1,7 @@
-<%= react_component('PortfolioEdit', {user: @user, portfolio: @user.portfolio, avatar: @user.portfolio.avatar.url, slug: @user.slug}, {prerender: true}) %>
+<%= react_component('PortfolioEdit', {user: @user,
+  portfolio: @user.portfolio,
+  avatar: @user.portfolio.avatar.url,
+  slug: @user.slug,
+  locations: @locations,
+  userLocations: @user.portfolio.locations},
+{prerender: true}) %>

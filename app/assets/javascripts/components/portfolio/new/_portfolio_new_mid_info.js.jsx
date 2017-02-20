@@ -1,7 +1,4 @@
 var PortfolioNewMidInfo = React.createClass({
-  componentDidMount(){
-    $('select').material_select();
-  },
 
   getInitialState(){
     return {
@@ -39,16 +36,34 @@ var PortfolioNewMidInfo = React.createClass({
     if(event.target.id == "hired-by") {this.setState({hired_by: event.target.value}); stateToUpdate.hired_by = event.target.value; fieldToUpdate = "hired_by" };
 
     this.props.prepForInsert(stateToUpdate, fieldToUpdate);
+
+  },
+
+  cityChecked: function() {
+    var boxes = $('.anthony')
+    var locationsArray = []
+    for (var i = 0; i < boxes.length; i++) {
+      if (boxes[i].checked === true) {
+        var a = boxes[i].parentElement.children[1].innerText
+        locationsArray.push(a)
+      }
+    }
+    var stateToUpdate = {};
+    var fieldToUpdate;
+    this.setState({locations: locationsArray});
+    stateToUpdate.locations = locationsArray; fieldToUpdate = "locations"
+    this.props.prepForInsert(stateToUpdate, fieldToUpdate);
   },
 
   componentDidMount(){
     $('select').material_select();
     $('select').on('change', this.handleNew)
+    $('.modal').modal();
   },
 
   render: function() {
     var user = this.props.user;
-
+    var locations = this.props.locations
     return (
 
       <main className="row about-me-cont">
@@ -64,6 +79,7 @@ var PortfolioNewMidInfo = React.createClass({
               <label htmlFor="resume">Resume</label><br/>
               <PortfolioResume prepForUpdate={this.props.prepForInsert}/>
             </div>
+
           </div>
         </section>
 
@@ -80,15 +96,23 @@ var PortfolioNewMidInfo = React.createClass({
           </div>
         </section>
 
-        <section className="input-field locations-dropdown col s12">
-          <select multiple id="locations">
-              <option value="" disabled selected>Please Choose...</option>
-              <option value="1">Denver</option>
-              <option value="2">Austin</option>
-              <option value="3">NYC</option>
-          </select>
-          <label htmlFor="locations">Preferred Locations</label><br/>
-        </section>
+        <a className="waves-effect waves-light btn" href="#modal1">Locations</a>
+         <div id="modal1" className="modal">
+           <div className="modal-content">
+             <div className="row">
+             <input id="search" type="search" placeholder="search for a city"></input>
+
+            { locations.map(function(location){
+              return  <div className='col s4'>
+                <input className="anthony" type="checkbox" id={location.city + location.state}/><label htmlFor={location.city + location.state}>{location.city}, {location.state}</label>
+                </div>
+            })}
+            </div>
+           </div>
+           <div className="modal-footer">
+             <a href="#!" className=" modal-action modal-close waves-effect waves-green btn-flat" onClick={this.cityChecked}>Save Cities</a>
+           </div>
+         </div>
 
         <section className="links col s12">
           <h1 id="edit-profile-information">Social</h1>

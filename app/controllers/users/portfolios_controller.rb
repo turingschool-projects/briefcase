@@ -6,15 +6,18 @@ class Users::PortfoliosController < ApplicationController
 
   def new
     @user = current_user
+    @locations = Location.distinct_city_states
   end
 
   def create
+
     user = User.find(params[:user_id])
     new_portfolio = user.build_portfolio(portfolio_params)
 
     if(new_portfolio.save)
       update_avatar(user, new_portfolio) if params[:portfolio][:avatar]
       update_resume(user, new_portfolio) if params[:portfolio][:resume]
+      update_locations(new_portfolio) if params[:portfolio][:locations]
 
       render js: "/dashboard"
     else
@@ -24,19 +27,17 @@ class Users::PortfoliosController < ApplicationController
 
   def edit
     @user = current_user
+    @locations = Location.distinct_city_states
   end
 
   def update
-    # params[:portfolio][:bio] = Kramdown::Document.new(params[:portfolio][:bio]).to_html if params[:portfolio][:bio]
-    # params[:portfolio][:best_at] = Kramdown::Document.new(params[:portfolio][:best_at]).to_html if params[:portfolio][:best_at]
-    # params[:portfolio][:looking_for] = Kramdown::Document.new(params[:portfolio][:looking_for]).to_html if params[:portfolio][:looking_for]
-
     user = User.find(params[:user_id])
     portfolio = Portfolio.find(params[:portfolio][:id])
 
     if(portfolio.update(portfolio_params))
       update_avatar(user, portfolio) if params[:portfolio][:avatar]
       update_resume(user, portfolio) if params[:portfolio][:resume]
+      update_locations(portfolio) if params[:portfolio][:locations]
 
       render js: "/dashboard"
     else
@@ -51,7 +52,7 @@ class Users::PortfoliosController < ApplicationController
   def destroy
     user = User.find(params[:user_id])
     if(user.portfolio.projects.destroy_all)
-      user.portfolio.delete
+      delete_relationships(user)
       render js: "/dashboard"
     else
       render component: "DeletePortfolio", props: { user: current_user, portfolio: current_user.portfolio}
@@ -73,5 +74,14 @@ class Users::PortfoliosController < ApplicationController
       file = Paperclip.io_adapters.for(params[:portfolio][:resume])
       file.original_filename = user.slug
       portfolio.update(resume: file)
+    end
+
+    def update_locations(portfolio)
+      locations = portfolio.create_locations(params[:portfolio][:locations])
+    end
+
+    def delete_relationships(user)
+      user.portfolio.locations.delete_all
+      user.portfolio.delete
     end
 end

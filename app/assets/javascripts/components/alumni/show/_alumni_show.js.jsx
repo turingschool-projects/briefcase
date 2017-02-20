@@ -12,7 +12,7 @@ var AlumniShow = React.createClass({
           <GuestNavbar user={user}/>}
           <PortfolioJumbo user={user} portfolio={portfolio}/>
           <AlumniJumboInfo user={user} portfolio={portfolio} resume={this.props.resume}/>
-          <AlumniBodyInfo user={user} portfolio={portfolio} avatar={this.props.avatar} markdownInfo={this.props.markdownInfo}/>
+          <AlumniBodyInfo user={user} portfolio={portfolio} avatar={this.props.avatar} markdownInfo={this.props.markdownInfo} locations={this.props.locations}/>
           {projects.length > 0 &&
           <UserProjectCard avatars={this.props.project_avatar_urls}user={user} projects={projects}/>}
           <Footer/>
