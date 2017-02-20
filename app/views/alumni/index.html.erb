@@ -1,1 +1,1 @@
-<%= react_component('Main', {portfolios: @portfolios, user: current_user, all: @all, avatars: @avatar_urls, bios: @bios}, {prerender: true}) %>
+<%= react_component('Main', {portfolios: @portfolio.all, user: current_user, avatars: @portfolio.avatar_urls, bios: @portfolio.bios}, {prerender: true}) %>
