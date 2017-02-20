@@ -2,9 +2,9 @@
   <%= react_component('Dashboard', {user: current_user,
     projects: @projects,
     portfolio: current_user.portfolio,
-    avatar: @avatar,
+    avatar: @user.avatar,
     project_avatars: @project_avatars,
-    markdownInfo: @markdown_info},
+    markdownInfo: @user.markdown_info},
   {prerender: true}) %>
 <% else %>
   <%= react_component('Main', {user: current_user,
