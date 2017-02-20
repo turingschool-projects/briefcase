@@ -254,9 +254,9 @@ input[type="search"] {
 }
 
 .search-container {
-  width: 500px;
-  margin-left: 20%;
-  // margin-right: 60%;
+  position: relative;
+  width: 100%;
+
 }
 
 .Search {
@@ -506,4 +506,15 @@ input[placeholder="Your Email Here"]{
 
 .alumni-show-bio a {
   color: #05c2d1;
+}
+
+#by-heart{
+}
+
+.heart {
+  width: 30px !important;
+  padding-left: 2px !important;
+  padding-right: 2px !important;
+  margin-top: 20px;
+
 }

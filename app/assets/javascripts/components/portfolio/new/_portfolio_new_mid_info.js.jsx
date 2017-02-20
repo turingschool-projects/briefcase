@@ -59,6 +59,24 @@ var PortfolioNewMidInfo = React.createClass({
     $('select').material_select();
     $('select').on('change', this.handleNew)
     $('.modal').modal();
+
+    $("#search").keyup(function(){
+      var input, filter, table, tr, td, i;
+      input = document.getElementById('search-city');
+      filter = this.value.toUpperCase();
+      table = $('.modal-content');
+      tr = $(".search-city label");
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].innerText;
+        if (td) {
+          if (td.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    });
   },
 
   render: function() {
@@ -99,7 +117,7 @@ var PortfolioNewMidInfo = React.createClass({
         <a className="waves-effect waves-light btn" href="#modal1">Locations</a>
          <div id="modal1" className="modal">
            <div className="modal-content">
-             <div className="row">
+             <div className="row search-city">
              <input id="search" type="search" placeholder="search for a city"></input>
 
             { locations.map(function(location){
