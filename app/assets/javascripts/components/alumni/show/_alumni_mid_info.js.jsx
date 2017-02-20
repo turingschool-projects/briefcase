@@ -4,7 +4,7 @@ var AlumniMidInfo = React.createClass({
     var user = this.props.user;
     var portfolio = this.props.portfolio;
     var locations = this.props.locations
-    debugger;
+    
     return (
       <div>
         <div className="row about-me-cont">
