@@ -8,7 +8,7 @@ var Main = React.createClass({
         var data = this.value.split(" ");
         $.each(data, function (index, value) {
           rows.filter(function(){
-            return $(this).find('.card-reveal .locations').text().toLowerCase().indexOf(value.toLowerCase()) > -1;
+            return $(this).find('.card-content, .card-reveal').text().toLowerCase().indexOf(value.toLowerCase()) > -1;
           }).show();
         });
       } else {
