@@ -6,6 +6,7 @@ class AlumniController < ApplicationController
     @portfolios = Portfolio.all
     @avatar_urls = Portfolio.avatar_urls
     @bios = Portfolio.markdown_bios
+    @locations = Portfolio.locations
   end
 
   def show

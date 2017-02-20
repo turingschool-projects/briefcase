@@ -31,6 +31,22 @@ class Portfolio < ApplicationRecord
     end
   end
 
+  def self.markdown_bios
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, fenced_code_blocks: true)
+
+    Portfolio.all.reduce({}) do |result, portfolio|
+      result[portfolio.id] = markdown.render(portfolio.bio)
+      result
+    end
+  end
+
+  def self.locations
+    Portfolio.all.reduce({}) do |result, portfolio|
+      result[portfolio.id] = portfolio.locations
+      result
+    end
+  end
+
   def project_avatar_urls
     self.projects.reduce({}) do |result, project|
       result[project.id] = project.avatar.url
@@ -60,13 +76,4 @@ class Portfolio < ApplicationRecord
     }
   end
 
-  def self.markdown_bios
-    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, fenced_code_blocks: true)
-
-    Portfolio.all.reduce({}) do |result, portfolio|
-      result[portfolio.id] = markdown.render(portfolio.bio)
-      result
-    end
-  end
-  
 end
