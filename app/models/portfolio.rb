@@ -1,3 +1,5 @@
+require 'redcarpet'
+
 class Portfolio < ApplicationRecord
   has_many :projects, dependent: :destroy
   validates :full_name, presence: true
@@ -46,4 +48,25 @@ class Portfolio < ApplicationRecord
     end
   end
 
+  def markdown_info
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, fenced_code_blocks: true)
+    self.bio.nil? ? bio = '' : bio = self.bio
+    self.looking_for.nil? ? looking_for = '' : looking_for = self.looking_for
+    self.best_at.nil? ? best_at = '' : best_at = self.best_at
+    {
+      bio: markdown.render(bio),
+      looking_for: markdown.render(looking_for),
+      best_at: markdown.render(best_at)
+    }
+  end
+
+  def self.markdown_bios
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, fenced_code_blocks: true)
+
+    Portfolio.all.reduce({}) do |result, portfolio|
+      result[portfolio.id] = markdown.render(portfolio.bio)
+      result
+    end
+  end
+  
 end

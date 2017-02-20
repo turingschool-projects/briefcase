@@ -11,7 +11,7 @@ var DashboardDefaultCard = React.createClass({
           <div className="card">
             <div className="card-image waves-effect waves-block waves-light">
               <center>
-                <img className="activator card-picture" src="assets/turing-alumni-banner.jpg" />
+                <img className="activator card-picture" src="http://intelligentsystemsmonitoring.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png" />
               </center>
             </div>
             <div className="card-content">

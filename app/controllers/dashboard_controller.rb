@@ -1,13 +1,16 @@
 class DashboardController < ApplicationController
   def index
-    if (current_user)
+    if (logged_in?)
       if(current_user.portfolio)
         @projects = current_user.portfolio.projects
         @avatar = current_user.portfolio.avatar.url
         @project_avatars = Project.avatar_urls(current_user)
+        @markdown_info = current_user.portfolio.markdown_info
       else
         @projects = []
       end
+    else
+      redirect_to root_path
     end
   end
 end

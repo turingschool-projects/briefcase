@@ -22,9 +22,7 @@ var PortfolioEditBodyInfo = React.createClass({
         <div className="container">
           <div className="row about-me">
             <div className='col s4 graduate-picture'>
-            {avatar &&
-              <img className="" src={avatar}></img>}
-              <PortfolioEditAvatar portfolio={portfolio} user={user} prepForUpdate={this.props.prepForUpdate}/>
+              <PortfolioEditAvatar portfolio={portfolio} user={user} avatar={avatar} prepForUpdate={this.props.prepForUpdate}/>
             </div>
             <div className='col s8 offset-s4'>
               <h1>About You</h1>
