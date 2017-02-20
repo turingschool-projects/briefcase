@@ -50,7 +50,7 @@ var UserCard = React.createClass({
 
                 <hr></hr>
                 <h4>Locations</h4>
-                <ul>
+                <ul className="locations">
                   {locations[portfolio.id].map((location) => {
                     return ( <li>{location.city} {location.state}</li> )
                   })}
