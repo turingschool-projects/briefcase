@@ -1,4 +1,22 @@
 var Main = React.createClass({
+
+  componentDidMount(){
+    $("#Search-box").keyup(function(){
+      var rows = $(".card").hide();
+
+      if (this.value.length) {
+        var data = this.value.split(" ");
+        $.each(data, function (index, value) {
+          rows.filter(function(){
+            return $(this).find('.card-reveal .locations').text().toLowerCase().indexOf(value.toLowerCase()) > -1;
+          }).show();
+        });
+      } else {
+        rows.show();
+      }
+    });
+  },
+
   render(){
     var signedIn = this.props.signed_in;
     var portfolios = this.props.portfolios;
