@@ -14,6 +14,7 @@ var UserCard = React.createClass({
   render(){
     var avatars = this.props.avatars;
     var bios = this.props.bios;
+    var locations = this.props.locations;
 
     var portfolios = this.props.portfolios.map((portfolio) => { // props brought from controller
       return (
@@ -46,6 +47,13 @@ var UserCard = React.createClass({
               <div className="card-reveal">
                 <span className="card-title grey-text text-darken-4">Bio<i className="material-icons right">close</i></span>
                 <p>{portfolio.bio}</p>
+                <hr></hr>
+                <h4>Locations</h4>
+                <ul>
+                  {locations[portfolio.id].map((location) => {
+                    return ( <li>{location.city} {location.state}</li> )
+                  })}
+                </ul>
             </div>
           </div>
         </div>
