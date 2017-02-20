@@ -46,7 +46,8 @@ var UserCard = React.createClass({
               </div>
               <div className="card-reveal">
                 <span className="card-title grey-text text-darken-4">Bio<i className="material-icons right">close</i></span>
-                <p>{portfolio.bio}</p>
+                <p className="card-bio alumni-show-bio" dangerouslySetInnerHTML={{__html: this.shorterBio(bios[portfolio.id])}}></p>
+
                 <hr></hr>
                 <h4>Locations</h4>
                 <ul>
