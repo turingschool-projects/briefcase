@@ -10,7 +10,7 @@ var Main = React.createClass({
           <SignedInNavbar user={user}/>
           <MainJumbo/>
           <MainSearch/>
-          <UserCard portfolios = {portfolios} avatars={this.props.avatars} bios={this.props.bios}/>
+          <UserCard portfolios = {portfolios} avatars={this.props.avatars} bios={this.props.bios} locations={this.props.locations}/>
           <Footer/>
         </div>
       )
@@ -20,7 +20,7 @@ var Main = React.createClass({
           <GuestNavbar/>
           <MainJumbo/>
           <MainSearch/>
-          <UserCard portfolios = {portfolios} avatars={this.props.avatars} bios={this.props.bios}/>
+          <UserCard portfolios = {portfolios} avatars={this.props.avatars} bios={this.props.bios} locations={this.props.locations}/>
           <Footer/>
         </div>
       )

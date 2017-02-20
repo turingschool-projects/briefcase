@@ -11,11 +11,11 @@ class PortfolioPresenter
     @portfolio.avatar_urls
   end
 
-  def markdown_bios
+  def bios
     @portfolio.markdown_bios
   end
 
-  # def locations
-  #   @portfolio.locations
-  # end
+  def locations
+    @portfolio.locations
+  end
 end
