@@ -9,7 +9,7 @@ var AlumniMidInfo = React.createClass({
       <div>
         <div className="row about-me-cont">
           <div className='col s5'>
-            <div className='col s12'>
+            <div className='col s12 info-padding'>
               <h1>Looking For</h1>
             </div>
             <div className='col s12'>
