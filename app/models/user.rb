@@ -22,29 +22,9 @@ class User < ApplicationRecord
     user.access_token = user_info.credentials["token"]
 
     existing_user = User.find_by({first_name: user.first_name, last_name: user.last_name})
-    # if(existing_user)
-    #   sync_user(user, existing_user)
-    # end
-
+ 
     user.save ? user : false
   end
-
-  # def self.sync_user(user, existing_user)
-  #   user.bio = existing_user.bio
-  #   user.email = existing_user.email
-  #   user.description = existing_user.description
-  #   user.github_url = existing_user.github_url
-  #   user.linkedin_url = existing_user.linkedin_url
-  #   user.background = existing_user.background
-  #   user.resume_file = existing_user.resume_file
-  #   user.locations = existing_user.locations
-  #   user.looking_for = existing_user.looking_for
-  #   user.best_at = existing_user.best_at
-  #   user.hired = existing_user.hired
-  #   user.published = existing_user.published
-  #   user.title = existing_user.title
-  #   user.cohort = existing_user.cohort
-  # end
 
 	private
 
