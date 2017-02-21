@@ -42,7 +42,6 @@ var MainSearch = React.createClass({
             break
           }
         }
-
       }
     }
     if(data[0].length < 1) { filterPortfolios = portfolios; }
