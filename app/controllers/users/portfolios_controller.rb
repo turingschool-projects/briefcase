@@ -30,7 +30,6 @@ class Users::PortfoliosController < ApplicationController
   end
 
   def update
-    require "pry"; binding.pry
     user = User.find(params[:user_id])
     portfolio = Portfolio.find(params[:portfolio][:id])
 
