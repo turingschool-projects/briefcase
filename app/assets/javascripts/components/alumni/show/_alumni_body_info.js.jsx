@@ -21,7 +21,7 @@ var AlumniBodyInfo = React.createClass({
             <div className=" col s8 offset-s4">
             <ul>
               <li><button onClick={this.showEmail} className='btn transparent email-btn'>Click For Email <i className="fa fa-long-arrow-right" aria-hidden="true"></i></button></li>
-              <li><a href={"http://" + portfolio.github_url}><button className='btn transparent github-btn'>GitHub Profile  <i className="fa fa-long-arrow-right" aria-hidden="true"></i></button></a></li>
+              <li><a target="_blank" href={"http://" + portfolio.github_url}><button className='btn transparent github-btn'>GitHub Profile  <i className="fa fa-long-arrow-right" aria-hidden="true"></i></button></a></li>
             </ul>
           </div>
         </div>
