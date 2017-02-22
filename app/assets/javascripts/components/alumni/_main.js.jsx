@@ -20,7 +20,9 @@ var Main = React.createClass({
           <SignedInNavbar user={user}/>
           <MainJumbo/>
           <MainSearch prepNewPortfolios={this.prepNewPortfolios} portfolios={this.props.portfolios} locations={this.props.locations}/>
-          <UserCard portfolios ={newPortfolios} avatars={this.props.avatars} bios={this.props.bios} locations={this.props.locations}/>
+          <div className='filter-user-cards'>
+            <UserCard portfolios ={newPortfolios} avatars={this.props.avatars} bios={this.props.bios} locations={this.props.locations}/>
+          </div>
           <Footer/>
         </div>
       )

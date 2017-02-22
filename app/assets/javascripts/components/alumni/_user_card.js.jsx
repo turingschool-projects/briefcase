@@ -25,7 +25,11 @@ var UserCard = React.createClass({
             <i className="material-icons right activator more-vert">more_vert</i>
               <div className="card-image waves-effect waves-block waves-light">
                 <center>
-                  <img className="activator card-picture" src={avatars[portfolio.id]} />
+                  {
+                    avatars[portfolio.id] === "/avatars/original/missing.png" 
+                    ? <img className="activator card-picture" src="http://intelligentsystemsmonitoring.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png" />
+                    : <img className="activator card-picture" src={avatars[portfolio.id]} />
+                  }
                 </center>
               </div>
               <div className="card-content">
