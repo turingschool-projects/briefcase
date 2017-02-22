@@ -2,15 +2,15 @@ var UserProjectCard = React.createClass ({
 	render() {
 		var avatars = this.props.avatars
 		var all_projects = this.props.projects.map((project) => {
-			// var production_url = project.production_url.split('//')
-			// var github = project.github.split('//')
+			debugger;
 			return (
 						<div className='projects'>
 							<div className='title col s12'>
 								<h1>{project.name}</h1>
 							</div>
 							<div className='project-screenshot'>
-								<img src={avatars[project.id]}></img>
+								{avatars[project.id] !== "/avatars/original/missing.png" &&
+								<img src={avatars[project.id]}></img>}
 							</div>
 
 							<div className='project-overview col s6'>

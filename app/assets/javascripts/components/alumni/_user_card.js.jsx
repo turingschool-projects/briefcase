@@ -47,10 +47,10 @@ var UserCard = React.createClass({
               </div>
               <div className="card-reveal">
                 <span className="card-title grey-text text-darken-4">Bio<i className="material-icons right">close</i></span>
-                <p className="card-bio alumni-show-bio" dangerouslySetInnerHTML={{__html: this.shorterBio(bios[portfolio.id])}}></p>
+                <p className="card-bio alumni-show-bio" dangerouslySetInnerHTML={{__html: portfolio.bio}}></p>
 
-                <hr></hr>
-                <h4>Locations</h4>
+                <hr className="pop-up"></hr>
+                <span className="card-title grey-text text-darken-4">Locations</span>
                 <ul className="locations">
                   {locations[portfolio.id].map((location) => {
                     return ( <li>{location.city} {location.state}</li> )
