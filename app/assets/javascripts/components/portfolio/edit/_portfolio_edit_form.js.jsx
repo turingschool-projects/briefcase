@@ -3,7 +3,10 @@ var PortfolioEditForm = React.createClass({
 
   getInitialState(){
     var userPortfolio = this.props.portfolio;
-    return { portfolio: userPortfolio }
+    return {
+      portfolio: userPortfolio,
+      errors: ""
+     }
   },
 
   prepForUpdate(updatedState, fieldToUpdate){
@@ -14,14 +17,47 @@ var PortfolioEditForm = React.createClass({
 
   handleUpdate(){
     var user = this.props.user;
+    var validationMessages = this.validationMessages;
 
     axios.put(`/users/${user.id}/portfolio.json`, {portfolio: this.state.portfolio})
     .then(response => {
       window.location = response.data;
     })
-    .catch(function (error) {
-      console.log(error);
+    .catch(error => {
+      errors = validationMessages();
+      this.setState({errors: errors});
+      Materialize.toast(errors.join(""), 8000);
     });
+  },
+
+  validationMessages(){
+    var errors = [];
+    if($('#edit-full-name').val().length == 0){
+      errors.push(["Name is required. "]);
+    }
+    if($('#edit-title').val().length == 0){
+      errors.push(["Title is required. "]);
+    }
+    if($('#bio').val().length == 0){
+      errors.push(["Bio is required. "]);
+    }
+    if($('#email').val().length == 0){
+      errors.push(["Email is required. "]);
+    }
+    if($('#github').val().length == 0){
+      errors.push(["Github URL is required. "]);
+    }
+    if($('#linkedin').val().length == 0){
+      errors.push(["Linkedin URL is required. "]);
+    }
+    return errors;
+  },
+
+  componentDidMount(){
+    debugger
+    if(this.state.errors.length > 0){
+      Materialize.toast(this.state.errors, 8000);
+    }
   },
 
   render: function() {
