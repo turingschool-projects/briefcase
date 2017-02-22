@@ -17,11 +17,9 @@ var PortfolioEditForm = React.createClass({
 
     axios.put(`/users/${user.id}/portfolio.json`, {portfolio: this.state.portfolio})
     .then(response => {
-      debugger
       window.location = response.data;
     })
     .catch(function (error) {
-      debugger
       console.log(error);
     });
   },
