@@ -9,10 +9,12 @@ class Users::ProjectsController < ApplicationController
   end
 
   def update
-    require "pry"; binding.pry
-    @project = Project.find(params[:project][:id])
+    project = Project.find(params[:project][:id])
+    image = Paperclip.io_adapters.for(params[:project][:avatar])
+    image.original_filename = project.user.slug
+    Project.update(avatar: image)
 
-    if (@project.update(project_params))
+    if (project.update(project_params))
       render js: "/dashboard"
     end
   end
