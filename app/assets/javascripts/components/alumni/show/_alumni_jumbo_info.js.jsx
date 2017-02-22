@@ -3,7 +3,6 @@ var AlumniJumboInfo = React.createClass({
   render: function() {
     var user = this.props.user;
     var portfolio = this.props.portfolio;
-
     return (
       <div>
         <div className="container">
@@ -20,7 +19,7 @@ var AlumniJumboInfo = React.createClass({
                       <p>{portfolio.title}</p>
                   </div>
                   <ul className='pull-right' >
-                    {portfolio.resume &&
+                    {this.props.resume != '/resumes/original/missing.png' &&
                       <a href={this.props.resume} target="_blank"><li><button className='title btn transparent resume-btn'>Resume</button></li></a>
                     }
                     {portfolio.linkedin_url &&

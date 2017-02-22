@@ -4,8 +4,7 @@ var PortfolioEditForm = React.createClass({
   getInitialState(){
     var userPortfolio = this.props.portfolio;
     return {
-      portfolio: userPortfolio,
-      errors: ""
+      portfolio: userPortfolio
      }
   },
 
@@ -25,7 +24,6 @@ var PortfolioEditForm = React.createClass({
     })
     .catch(error => {
       errors = validationMessages();
-      this.setState({errors: errors});
       Materialize.toast(errors.join(""), 8000);
     });
   },
@@ -51,13 +49,6 @@ var PortfolioEditForm = React.createClass({
       errors.push(["Linkedin URL is required. "]);
     }
     return errors;
-  },
-
-  componentDidMount(){
-    debugger
-    if(this.state.errors.length > 0){
-      Materialize.toast(this.state.errors, 8000);
-    }
   },
 
   render: function() {
