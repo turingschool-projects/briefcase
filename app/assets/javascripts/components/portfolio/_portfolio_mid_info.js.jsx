@@ -22,6 +22,7 @@ var PortfolioMidInfo = React.createClass({
       }
 
     return {
+      portfolio: {
         email: userPortfolio.email,
         resume: userPortfolio.resume,
         looking_for: userPortfolio.looking_for,
@@ -36,6 +37,7 @@ var PortfolioMidInfo = React.createClass({
         twitter_url: userPortfolio.twitter_url,
         personal_url: userPortfolio.personal_url
       }
+    }
   },
 
   handleUpdate: function(event){
@@ -78,8 +80,8 @@ var PortfolioMidInfo = React.createClass({
     $('select').material_select();
     $('select').on('change', this.handleUpdate)
     $('.modal').modal();
-    this.checkUserLocations();
-
+    if(this.props.allProps.portfolio != null) { this.checkUserLocations(); }
+    
     $("#search").keyup(function(){
       var input, filter, table, tr, td, i;
       input = document.getElementById('search-city');
@@ -117,6 +119,7 @@ var PortfolioMidInfo = React.createClass({
 
   render: function() {
     var allProps = this.props.allProps;
+    var userPortfolio = this.state.portfolio;
 
     return (
       <main className="row about-me-cont">
@@ -126,7 +129,7 @@ var PortfolioMidInfo = React.createClass({
           <div className="row">
             <div className='col s6'>
               <label htmlFor="email">Email</label>
-              <input id="email" name="email" placeholder="example@example.com*" defaultValue={allProps.portfolio.email} onChange={this.handleUpdate}></input>
+              <input id="email" name="email" placeholder="example@example.com*" defaultValue={userPortfolio.email} onChange={this.handleUpdate}></input>
             </div>
             <div className='col s6'>
               <label htmlFor="resume">Resume</label><br/>
@@ -140,11 +143,11 @@ var PortfolioMidInfo = React.createClass({
           <div className="row mid-bio">
             <div className='col s6'>
               <label htmlFor="looking-for">Looking For</label>
-              <textarea id="looking-for" className="editor-looking-for" placeholder="" defaultValue={allProps.portfolio.looking_for} onChange={this.handleUpdate}></textarea>
+              <textarea id="looking-for" className="editor-looking-for" placeholder="" defaultValue={userPortfolio.looking_for} onChange={this.handleUpdate}></textarea>
             </div>
             <div className='col s6'>
               <label htmlFor="best-at">Best At</label>
-              <textarea id="best-at" className="editor-best-at" type="file" defaultValue={allProps.portfolio.best_at} onChange={this.handleUpdate}></textarea>
+              <textarea id="best-at" className="editor-best-at" type="file" defaultValue={userPortfolio.best_at} onChange={this.handleUpdate}></textarea>
             </div>
           </div>
         </section>
@@ -172,22 +175,22 @@ var PortfolioMidInfo = React.createClass({
           <div className="row">
             <div className='col s6'>
               <label htmlFor="github">GitHub</label>
-              <input id="github" name="github" placeholder="github.com/:username*" defaultValue={allProps.portfolio.github_url} onChange={this.handleUpdate}></input>
+              <input id="github" name="github" placeholder="github.com/:username*" defaultValue={userPortfolio.github_url} onChange={this.handleUpdate}></input>
             </div>
             <div className='col s6'>
               <label htmlFor="twitter">Twitter</label>
-              <input id="twitter" placeholder="twitter.com/:username" defaultValue={allProps.portfolio.twitter_url}  onChange={this.handleUpdate}></input>
+              <input id="twitter" placeholder="twitter.com/:username" defaultValue={userPortfolio.twitter_url}  onChange={this.handleUpdate}></input>
             </div>
           </div>
 
           <div className="row">
             <div className='col s6'>
               <label htmlFor="linkedin">LinkedIn</label>
-              <input id="linkedin" name="linkedin" placeholder="linkedin.com/:username*" defaultValue={allProps.portfolio.linkedin_url} onChange={this.handleUpdate}></input>
+              <input id="linkedin" name="linkedin" placeholder="linkedin.com/:username*" defaultValue={userPortfolio.linkedin_url} onChange={this.handleUpdate}></input>
             </div>
             <div className='col s6'>
               <label htmlFor="personal-url">Personal Site</label>
-              <input id="personal-url" placeholder="mypersonalsite.com" defaultValue={allProps.portfolio.personal_url} onChange={this.handleUpdate}></input>
+              <input id="personal-url" placeholder="mypersonalsite.com" defaultValue={userPortfolio.personal_url} onChange={this.handleUpdate}></input>
             </div>
           </div>
         </section>
@@ -196,12 +199,12 @@ var PortfolioMidInfo = React.createClass({
           <h1 id="edit-profile-information">Employment Status</h1>
           <div className="row">
             <div className='col s6'>
-              <input type="checkbox" id="hired" defaultValue={allProps.portfolio.hired} ></input>
+              <input type="checkbox" id="hired" defaultValue={userPortfolio.hired} ></input>
               <label htmlFor="hired">Hired</label>
             </div>
             <div className='col s6'>
               <label htmlFor="hired-by">Hired By</label>
-              <input id="hired-by" placeholder="Google, Inc." defaultValue={allProps.portfolio.hired_by} onChange={this.handleUpdate}></input>
+              <input id="hired-by" placeholder="Google, Inc." defaultValue={userPortfolio.hired_by} onChange={this.handleUpdate}></input>
             </div>
           </div>
         </section>
@@ -210,7 +213,7 @@ var PortfolioMidInfo = React.createClass({
           <h1 id="edit-profile-information">School Information Status</h1>
           <label htmlFor="cohort">Cohort</label>
           <select id="cohort">
-            <option value={allProps.portfolio.cohort}>{allProps.portfolio.cohort}</option>
+            <option value={userPortfolio.cohort}>{userPortfolio.cohort}</option>
             <option value="1608">1608</option>
             <option value="1701">1701</option>
             <option value="1703">1703</option>

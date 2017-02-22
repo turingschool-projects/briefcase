@@ -76,7 +76,7 @@ class Users::PortfoliosController < ApplicationController
     end
 
     def update_locations(portfolio)
-      locations = portfolio.create_locations(params[:portfolio][:locations])
+      portfolio.create_locations(params[:portfolio][:locations])
     end
 
     def delete_relationships(user)

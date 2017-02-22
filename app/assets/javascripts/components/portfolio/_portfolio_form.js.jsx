@@ -73,29 +73,18 @@ var PortfolioForm = React.createClass({
     var allProps = this.props.allProps;
     allProps.prepForUpdate = this.prepForUpdate;
 
-    if(allProps.portfolio == null) {
-      return (
-        <div>
-          <PortfolioJumboInfo allProps={allProps} />
-          <PortfolioBodyInfo allProps={allProps} />
-          <div className="container">
-            <button className="btn waves-effect waves-light portfolio-btns" type="submit" name="action" value="Save Profile" onClick={this.handleInsert}>Save Profile</button>
-          </div>
+    return (
+      <div>
+        <PortfolioJumboInfo allProps={allProps} />
+        <PortfolioBodyInfo allProps={allProps} />
+        <div className="container">
+          {
+            allProps.portfolio == null
+            ? <button className="btn waves-effect waves-light portfolio-btns" type="submit" name="action" value="Save Profile" onClick={this.handleInsert}>Save Profile</button>
+            : <button className="btn waves-effect waves-light portfolio-btns" type="submit" name="action" value="Save Profile" onClick={this.handleUpdate}>Save Profile</button>
+          }
         </div>
-      )
-    } else {
-
-      return (
-        <div>
-          <form>
-            <PortfolioJumboInfo allProps={allProps} />
-            <PortfolioBodyInfo allProps={allProps} />
-            <div className="container">
-              <button className="btn waves-effect waves-light portfolio-btns" type="submit" name="action" value="Save Profile" onClick={this.handleUpdate}>Save Profile</button>
-            </div>
-          </form>
-        </div>
-      )
-    }
+      </div>
+    )
   }
 });
