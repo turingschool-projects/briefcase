@@ -38,7 +38,11 @@
     if (imagePreviewUrl != '') {
       $imagePreview = (<img src={imagePreviewUrl} />);
     } else {
-      $imagePreview = (<img className="" src="http://intelligentsystemsmonitoring.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png"></img>);
+      $imagePreview = (
+                        this.props.allProps.avatar === "/avatars/original/missing.png" || this.props.allProps.portfolio == null
+                          ? <img className="" src="http://intelligentsystemsmonitoring.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png"></img>
+                          : <img className="" src={this.props.allProps.avatar}></img>
+                      );
     }
 
     return (
