@@ -9,7 +9,9 @@ class Users::ProjectsController < ApplicationController
   end
 
   def update
+    require "pry"; binding.pry
     @project = Project.find(params[:project][:id])
+
     if (@project.update(project_params))
       render js: "/dashboard"
     end
