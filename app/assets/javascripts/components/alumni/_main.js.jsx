@@ -1,34 +1,28 @@
 var Main = React.createClass({
+  getInitialState(){
+    return {
+      newPortfolios: this.props.portfolios
+    }
+  },
 
-  componentDidMount(){
-    $("#Search-box").keyup(function(){
-      var rows = $(".card").hide();
-
-      if (this.value.length) {
-        var data = this.value.split(" ");
-        $.each(data, function (index, value) {
-          rows.filter(function(){
-            return $(this).find('.card-content, .card-reveal').text().toLowerCase().indexOf(value.toLowerCase()) > -1;
-          }).show();
-        });
-      } else {
-        rows.show();
-      }
-    });
+  prepNewPortfolios :function(filterPortfolios){
+    this.setState({newPortfolios: filterPortfolios});
   },
 
   render(){
     var signedIn = this.props.signed_in;
-    var portfolios = this.props.portfolios;
     var user = this.props.user;
+    var newPortfolios = this.state.newPortfolios;
 
     if(user != null) {
       return (
         <div>
           <SignedInNavbar user={user}/>
           <MainJumbo/>
-          <MainSearch/>
-          <UserCard portfolios = {portfolios} avatars={this.props.avatars} bios={this.props.bios} locations={this.props.locations}/>
+          <MainSearch prepNewPortfolios={this.prepNewPortfolios} portfolios={this.props.portfolios} locations={this.props.locations}/>
+          <div className='filter-user-cards'>
+            <UserCard portfolios ={newPortfolios} avatars={this.props.avatars} bios={this.props.bios} locations={this.props.locations}/>
+          </div>
           <Footer/>
         </div>
       )
@@ -37,8 +31,8 @@ var Main = React.createClass({
         <div>
           <GuestNavbar/>
           <MainJumbo/>
-          <MainSearch/>
-          <UserCard portfolios = {portfolios} avatars={this.props.avatars} bios={this.props.bios} locations={this.props.locations}/>
+          <MainSearch prepNewPortfolios={this.prepNewPortfolios} portfolios={this.props.portfolios} locations={this.props.locations}/>
+          <UserCard portfolios = {newPortfolios} avatars={this.props.avatars} bios={this.props.bios} locations={this.props.locations}/>
           <Footer/>
         </div>
       )

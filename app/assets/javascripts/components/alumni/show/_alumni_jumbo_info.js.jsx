@@ -14,7 +14,7 @@ var AlumniJumboInfo = React.createClass({
                   <div className='col s4'>
                   </div>
                   <div className="col s4">
-                      <h1>{portfolio.full_name}</h1>
+                      <h1 className="full-name">{portfolio.full_name}</h1>
                   </div>
                   <div className="col s4 offset-s4">
                       <p>{portfolio.title}</p>
