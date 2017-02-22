@@ -10,11 +10,9 @@ class Users::ProjectsController < ApplicationController
 
   def update
     project = Project.find(params[:project][:id])
-    image = Paperclip.io_adapters.for(params[:project][:avatar])
-    image.original_filename = project.user.slug
-    Project.update(avatar: image)
 
     if (project.update(project_params))
+      update_avatar(project) if params[:project][:avatar]
       render js: "/dashboard"
     end
   end
@@ -48,5 +46,11 @@ class Users::ProjectsController < ApplicationController
 
   def project_params
     params.require(:project).permit(:name, :github, :production_url, :screenshot, :description, :areas_of_focus )
+  end
+
+  def update_avatar(project)
+    image = Paperclip.io_adapters.for(params[:project][:avatar])
+    image.original_filename = project.user.slug
+    Project.update(avatar: image)
   end
 end
