@@ -2,15 +2,15 @@ var UserProjectCard = React.createClass ({
 	render() {
 		var avatars = this.props.avatars
 		var all_projects = this.props.projects.map((project) => {
-			// var production_url = project.production_url.split('//')
-			// var github = project.github.split('//')
+			debugger;
 			return (
 						<div className='projects'>
 							<div className='title col s12'>
 								<h1>{project.name}</h1>
 							</div>
 							<div className='project-screenshot'>
-								<img src={avatars[project.id]}></img>
+								{avatars[project.id] !== "/avatars/original/missing.png" &&
+								<img src={avatars[project.id]}></img>}
 							</div>
 
 							<div className='project-overview col s6'>
@@ -23,8 +23,8 @@ var UserProjectCard = React.createClass ({
 							</div>
 							<div className='col s12 project-buttons'>
 	              <ul>
-	                <li><button className='btn transparent repository-btn'><a href={ 'http://' + project.github}>Repository Page <i className="fa fa-long-arrow-right" aria-hidden="true"></i></a> </button></li>
-									<li><button className='btn transparent launch-app-btn'><a href={ 'http://' + project.production_url }>Launch Application <i className="fa fa-long-arrow-right" aria-hidden="true"></i></a> </button></li>
+	                <li><button className='btn transparent repository-btn'><a target="_blank" href={ 'http://' + project.github}>Repository Page <i className="fa fa-long-arrow-right" aria-hidden="true"></i></a> </button></li>
+									<li><button className='btn transparent launch-app-btn'><a target="_blank" href={ 'http://' + project.production_url }>Launch Application <i className="fa fa-long-arrow-right" aria-hidden="true"></i></a> </button></li>
 							</ul>
               </div>
               <div className='row'></div>

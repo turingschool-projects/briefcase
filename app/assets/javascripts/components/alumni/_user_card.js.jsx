@@ -47,14 +47,14 @@ var UserCard = React.createClass({
                   {portfolio.personal_url &&
                   <a href={"http://" + portfolio.personal_url}><i className="fa fa-user fa-3x social-media" aria-hidden="true"></i></a>}
                 </div>
-                <center><a className="card-profile" href={ "/alumni/" + portfolio.user_slug }>View Profile</a></center>
+                <center><a target="_blank"className="card-profile" href={ "/alumni/" + portfolio.user_slug }>View Profile</a></center>
               </div>
               <div className="card-reveal">
                 <span className="card-title grey-text text-darken-4">Bio<i className="material-icons right">close</i></span>
-                <p className="card-bio alumni-show-bio" dangerouslySetInnerHTML={{__html: this.shorterBio(bios[portfolio.id])}}></p>
+                <p className="card-bio alumni-show-bio" dangerouslySetInnerHTML={{__html: portfolio.bio}}></p>
 
-                <hr></hr>
-                <h4>Locations</h4>
+                <hr className="pop-up"></hr>
+                <span className="card-title grey-text text-darken-4">Locations</span>
                 <ul className="locations">
                   {locations[portfolio.id].map((location) => {
                     return ( <li>{location.city} {location.state}</li> )
