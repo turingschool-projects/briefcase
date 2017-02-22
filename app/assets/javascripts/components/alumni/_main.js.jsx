@@ -19,10 +19,8 @@ var Main = React.createClass({
         <div>
           <SignedInNavbar user={user}/>
           <MainJumbo/>
-          <MainSearch prepNewPortfolios={this.prepNewPortfolios} portfolios={this.props.portfolios} locations={this.props.locations}/>
-          <div className='filter-user-cards'>
-            <UserCard portfolios ={newPortfolios} avatars={this.props.avatars} bios={this.props.bios} locations={this.props.locations}/>
-          </div>
+          <MainSearch prepNewPortfolios={this.prepNewPortfolios} port_asc={this.props.port_asc} port_desc={this.props.port_desc} portfolios={this.props.portfolios} locations={this.props.locations}/>
+            <UserCard portfolios={newPortfolios}  avatars={this.props.avatars} bios={this.props.bios} locations={this.props.locations}/>
           <Footer/>
         </div>
       )
@@ -31,8 +29,8 @@ var Main = React.createClass({
         <div>
           <GuestNavbar/>
           <MainJumbo/>
-          <MainSearch prepNewPortfolios={this.prepNewPortfolios} portfolios={this.props.portfolios} locations={this.props.locations}/>
-          <UserCard portfolios = {newPortfolios} avatars={this.props.avatars} bios={this.props.bios} locations={this.props.locations}/>
+          <MainSearch prepNewPortfolios={this.prepNewPortfolios} port_asc={this.props.port_asc} port_desc={this.props.port_desc} portfolios={this.props.portfolios} locations={this.props.locations}/>
+          <UserCard portfolios={newPortfolios} avatars={this.props.avatars} bios={this.props.bios} locations={this.props.locations}/>
           <Footer/>
         </div>
       )
