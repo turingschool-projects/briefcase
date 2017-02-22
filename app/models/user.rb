@@ -1,7 +1,7 @@
 class User < ApplicationRecord
 	has_many :projects, dependent: :destroy
 	has_one :portfolio, dependent: :destroy
-  
+
 
 	after_create :set_slug
 
@@ -20,9 +20,9 @@ class User < ApplicationRecord
     user.last_name = user_info.info["last_name"]
     user.uid = user_info.info["id"]
     user.access_token = user_info.credentials["token"]
-
+		user.cohort = user_info['info']['cohort']['name'] if user_info['info']['cohort']['name']
     existing_user = User.find_by({first_name: user.first_name, last_name: user.last_name})
- 
+
     user.save ? user : false
   end
 

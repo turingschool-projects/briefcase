@@ -9,8 +9,9 @@ class Users::ProjectsController < ApplicationController
   end
 
   def update
-    @project = Project.find(params[:project][:id])
-    if (@project.update(project_params))
+    project = Project.find(params[:project][:id])
+    if (project.update(project_params))
+      update_avatar(project) if params[:project][:avatar]
       render js: "/dashboard"
     end
   end
@@ -19,12 +20,9 @@ class Users::ProjectsController < ApplicationController
     user = User.find(params[:user_id])
     portfolio = User.find(params[:user_id]).portfolio
     new_project = portfolio.projects.new(project_params)
-
-    image = Paperclip.io_adapters.for(params[:project][:avatar])
-    image.original_filename = portfolio.user.slug
-    new_project.update(avatar: image, user: user)
-
+    new_project.user_id = user.id
     if(new_project.save)
+      update_avatar(new_project) if params[:project][:avatar]
       render js: "/dashboard"
     else
       render component: 'ProjectNew', props: { user: current_user}, status: 400
@@ -44,5 +42,11 @@ class Users::ProjectsController < ApplicationController
 
   def project_params
     params.require(:project).permit(:name, :github, :production_url, :screenshot, :description, :areas_of_focus )
+  end
+
+  def update_avatar(project)
+    image = Paperclip.io_adapters.for(params[:project][:avatar])
+    image.original_filename = project.user.slug
+    project.update(avatar: image)
   end
 end
