@@ -67,9 +67,6 @@ var MainSearch = React.createClass({
                 <li><button className='title btn transparent a-z-btn'>A-Z <i className="fa fa-user fa-3x" aria-hidden="true"></i></button></li>
               </ul>
             </div>
-          <div className='col s1'>
-            <i id="by-heart" className="fa fa-heart-o left fa-2x heart" aria-hidden="true" onClick={this.showHearts}></i>
-          </div>
         </div>
       </div>
     )
