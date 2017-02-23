@@ -20,12 +20,14 @@ var PortfolioForm = React.createClass({
   handleInsert(){
     var user = this.props.allProps.user;
     var validationMessages = this.validationMessages;
+    $('.loader').show();
 
     axios.post(`/users/${user.id}/portfolio.json`, {portfolio: this.state.portfolio})
     .then(response => {
       window.location = response.data;
     })
     .catch(error => {
+      $('.loader').hide();
       errors = validationMessages();
       Materialize.toast(errors.join(""), 8000);
     });
@@ -34,12 +36,14 @@ var PortfolioForm = React.createClass({
   handleUpdate(){
     var user = this.props.allProps.user;
     var validationMessages = this.validationMessages;
+    $('.loader').show();
 
     axios.put(`/users/${user.id}/portfolio.json`, {portfolio: this.state.portfolio})
     .then(response => {
       window.location = response.data;
     })
     .catch(error => {
+      $('.loader').hide();
       errors = validationMessages();
       Materialize.toast("Missing require fields", 8000);
     });
@@ -68,6 +72,10 @@ var PortfolioForm = React.createClass({
     return errors;
   },
 
+  componentDidMount(){
+    $('.loader').hide();
+  },
+
   render: function() {
 
     var allProps = this.props.allProps;
@@ -76,6 +84,7 @@ var PortfolioForm = React.createClass({
     return (
       <div>
         <PortfolioJumboInfo allProps={allProps} />
+        <div className="loader"></div>
         <PortfolioBodyInfo allProps={allProps} />
         <div className="container">
           {
