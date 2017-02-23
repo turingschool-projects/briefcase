@@ -3,7 +3,7 @@ class Seed
   def self.start
     seed = Seed.new
     seed.create_locations
-    seed.create_users_and_portfolios
+    # seed.create_users_and_portfolios
   end
 
   def create_locations
@@ -34,5 +34,5 @@ class Seed
     user6.create_portfolio(full_name: 'Sally May', email: 'example@example.com', github_url: 'github.com', linkedin_url: 'linkedin.com', bio: 'I like cars', title: 'Software Developer')
   end
 end
-  
+
 Seed.start
