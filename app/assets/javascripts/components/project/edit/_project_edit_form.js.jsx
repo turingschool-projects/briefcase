@@ -21,9 +21,7 @@ var ProjectEditForm = React.createClass({
     if(event.target.id == "areas_of_focus") {this.setState({areas_of_focus: event.target.value}); stateToUpdate.areas_of_focus = event.target.value; fieldToUpdate = "areas_of_focus" };
 
     this.props.prepForUpdate(stateToUpdate, fieldToUpdate);
-
   },
-
 
 
   render: function(){

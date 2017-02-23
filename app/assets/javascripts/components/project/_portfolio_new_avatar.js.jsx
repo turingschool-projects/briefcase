@@ -1,4 +1,4 @@
-var PortfolioNewAvatar = React.createClass({
+var ProjectNewAvatar = React.createClass({
   getInitialState(){
     return {
       file: '',
