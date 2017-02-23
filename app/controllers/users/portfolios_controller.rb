@@ -32,7 +32,6 @@ class Users::PortfoliosController < ApplicationController
   def update
     user = User.find(params[:user_id])
     portfolio = Portfolio.find(params[:portfolio][:id])
-
     if(portfolio.update(portfolio_params))
       update_avatar(user, portfolio) if params[:portfolio][:avatar]
       update_resume(user, portfolio) if params[:portfolio][:resume]

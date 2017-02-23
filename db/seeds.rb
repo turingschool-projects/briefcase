@@ -3,7 +3,7 @@ class Seed
   def self.start
     seed = Seed.new
     seed.create_locations
-    seed.create_users_and_portfolios
+    # seed.create_users_and_portfolios
   end
 
   def create_locations
