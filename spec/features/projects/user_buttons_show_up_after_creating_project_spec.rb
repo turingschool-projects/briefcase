@@ -10,7 +10,6 @@ RSpec.describe Portfolio, js:true  do
 
       within(:css, ".dashboard-project") do 
         expect(page).to have_link('Create New Project')
-        expect(page).to_not have_content('View')
         expect(page).to_not have_content('Edit')
         expect(page).to_not have_content('Delete')
       end 
@@ -25,9 +24,8 @@ RSpec.describe Portfolio, js:true  do
 
       visit dashboard_path
 
-       within(:css, ".dashboard-project") do 
+      within(:css, ".dashboard-project") do 
         expect(page).to_not have_link('Create New Project')
-        expect(page).to have_content('View')
         expect(page).to have_content('Edit')
         expect(page).to have_content('Delete')
       end 
