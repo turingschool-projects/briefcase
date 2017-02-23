@@ -23,19 +23,6 @@ RSpec.describe Project do
     end
   end
 
-  context "methods" do
-    it "self.distinct_city_states" do
-      Location.create(city: "Denver", state: "Colorado")
-      Location.create(city: "Denver", state: "Colorado")
-
-      locations = Location.distinct_city_states
-
-      expect(locations.first.city).to eq("Denver")
-      expect(locations.first.state).to eq("Colorado")
-      expect(locations.to_a.count).to eq(1)
-    end
-  end
-
   it { should validate_presence_of(:github) }
   it { should validate_presence_of(:name) }
   it { should validate_presence_of(:description) }
