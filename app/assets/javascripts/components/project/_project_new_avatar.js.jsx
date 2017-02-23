@@ -42,7 +42,6 @@ var ProjectNewAvatar = React.createClass({
 
     return (
       <div className="portfolio-image-upload outer">
-        <div className='button-input inner'><input id='file-input' className="file fileInput" type="file" onChange={this.handleImageChange} /></div>
         <div className="imgPreview">
           {$imagePreview}
         </div>

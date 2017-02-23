@@ -1,4 +1,5 @@
 var update = React.addons.update;
+
 var ProjectNew = React.createClass({
   getInitialState(){
     var portfolioProject = {
@@ -14,14 +15,22 @@ var ProjectNew = React.createClass({
 
   handleInsert(){
     var user = this.props.user;
+    $('.loader').show();
+
     axios.post(`/users/${user.id}/project.json`, {project: this.state.project})
     .then(response => {
       window.location = response.data;
     })
     .catch(function (error) {
+      $('.loader').hide();
       Materialize.toast('Error: Missing required fields!', 4000);
     });
   },
+
+  componentDidMount(){
+    $('.loader').hide();
+  },
+
   render: function(){
       var user = this.props.user;
 
@@ -29,6 +38,7 @@ var ProjectNew = React.createClass({
         <div>
           <SignedInNavbar user={user}/>
           <ProjectJumbo/>
+          <div className="loader"></div>
           <ProjectForm user={user} prepForInsert={this.prepForInsert} handleInsert={this.handleInsert}/>
           <Footer/>
         </div>
