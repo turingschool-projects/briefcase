@@ -1,8 +1,11 @@
 var UserProjectCard = React.createClass ({
+	stripUrl(url){
+		return url.replace("https://", "").replace("http://", "");
+	},
+
 	render() {
 		var avatars = this.props.avatars
 		var all_projects = this.props.projects.map((project) => {
-			debugger;
 			return (
 						<div className='projects'>
 							<div className='title col s12'>
@@ -23,8 +26,8 @@ var UserProjectCard = React.createClass ({
 							</div>
 							<div className='col s12 project-buttons'>
 	              <ul>
-	                <li><button className='btn transparent repository-btn'><a target="_blank" href={ 'http://' + project.github}>Repository Page <i className="fa fa-long-arrow-right" aria-hidden="true"></i></a> </button></li>
-									<li><button className='btn transparent launch-app-btn'><a target="_blank" href={ 'http://' + project.production_url }>Launch Application <i className="fa fa-long-arrow-right" aria-hidden="true"></i></a> </button></li>
+	                <li><button className='btn transparent repository-btn'><a target="_blank" href={ 'http://' + this.stripUrl(project.github)}>Repository Page <i className="fa fa-long-arrow-right" aria-hidden="true"></i></a> </button></li>
+									<li><button className='btn transparent launch-app-btn'><a target="_blank" href={ 'http://' + this.stripUrl(project.production_url) }>Launch Application <i className="fa fa-long-arrow-right" aria-hidden="true"></i></a> </button></li>
 							</ul>
               </div>
               <div className='row'></div>
