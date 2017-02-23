@@ -37,6 +37,10 @@ var DashboardProject = React.createClass({
     return Math.floor(seconds) + " seconds";
   },
 
+  shorten(description){
+    return description.substring(0,150);
+  },
+
   render(){
     var user = this.props.user;
     var projectAvatars = this.props.projectAvatars
@@ -48,8 +52,8 @@ var DashboardProject = React.createClass({
                 <div className="row">
                   <div className="col s8">
                     <h1>{project.name}</h1>
-                    <h3 className="time-ago">Created: {this.timeSince(project.created_at)}</h3>
-                    <p>{project.description}</p>
+                    <h3 className="time-ago">Created: {this.timeSince(project.created_at)} ago</h3>
+                    <p className="description">{this.shorten(project.description)}...</p>
                   </div>
                   <div className="col s4">
                   <center>
@@ -74,7 +78,8 @@ var DashboardProject = React.createClass({
       <div className="col s8 dashboard-project-container card">
         {projects}
         <center>
-        <a className="btn transparent project-btn" href={ "/users/" + user.id +  "/project/new" }>Create New Project <i className="fa fa-arrow-right" aria-hidden="true"></i></a>
+        {projects.length < 3 ? <a className="btn transparent project-btn" href={ "/users/" + user.id +  "/project/new" }>Create New Project <i className="fa fa-arrow-right" aria-hidden="true"></i></a>:
+        <p className="project-limit">You have reached your limit of projects</p>}
         </center>
       </div>
     </div>

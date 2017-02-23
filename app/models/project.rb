@@ -5,8 +5,6 @@ class Project < ApplicationRecord
 	validates :name, presence: true
 	validates :description, presence: true
 
-	validates :name, presence: true
-
 	has_attached_file :avatar, styles: {
 		thumb: '100x100>',
 		square: '200x200#',
