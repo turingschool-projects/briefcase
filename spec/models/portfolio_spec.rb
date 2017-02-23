@@ -71,7 +71,8 @@ RSpec.describe Portfolio do
 
       expect(portfolio.locations.count).to eq(2)
     end
-
+  end
+  
   context "relationships" do
     it "has many projects" do
       portfolio = Portfolio.new(linkedin_url: "linkedin.com", full_name: "Anthony Ciccone", github_url: "github.com", email: "test@test.com", title: "software developer", bio: "about myself here")
