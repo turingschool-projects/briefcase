@@ -11,7 +11,7 @@ var PortfolioResume = React.createClass({
     var fieldToUpdate;
 
     stateToUpdate.resume = this.state.file; fieldToUpdate = "resume"
-    this.props.prepForUpdate(stateToUpdate, fieldToUpdate);
+    this.props.allProps.prepForUpdate(stateToUpdate, fieldToUpdate);
   },
 
   handleImageChange(e) {

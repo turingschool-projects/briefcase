@@ -250,13 +250,13 @@ input[type="search"] {
   background-color: white;
   margin-top: 1em;
   margin-bottom: 1em;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .search-container {
-  width: 500px;
-  margin-left: 20%;
-  // margin-right: 60%;
+  position: relative;
+  width: 100%;
+
 }
 
 .Search {
@@ -482,6 +482,7 @@ input[placeholder="Your Email Here"]{
 .inner {
   display: inline-block;
   padding-top: 3px;
+  margin-right: 215px;
 }
 
 .imgPreview {
@@ -506,4 +507,83 @@ input[placeholder="Your Email Here"]{
 
 .alumni-show-bio a {
   color: #05c2d1;
+}
+
+#by-heart{
+
+}
+
+#description {
+  height: 300px;
+}
+
+#areas_of_focus {
+  height: 300px;
+}
+
+
+.search-buttons {
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-top: 22px;
+    li {
+      display: inline;
+      .all-graduates-btn {
+        margin-right: 4px;
+        text-align: left;
+        border: 1px solid white;
+        padding-left: 7px;
+        padding-right: 7px;
+      }
+      .a-z-btn{
+        margin-right: 4px;
+        text-align: left;
+        border: 1px solid white;
+        padding-left: 7px;
+        padding-right: 7px;
+      }
+      .heart{
+        margin-right: 4px;
+        text-align: center;
+        border: 1px solid white;
+        padding-right: 2px;
+        padding-left: 2px;
+      }
+    }
+  }
+}
+
+.pop-up {
+  width: 100%;
+}
+
+.card-title {
+  margin-bottom: 10px;
+}
+
+.button-space {
+  padding-bottom: 20px !important;
+}
+
+
+.project-limit {
+  font-size: 18px;
+  padding-top: 15px;
+  font-weight: bold;
+}
+
+#top-modal-btn{
+  margin-top: 25px;
+}
+
+#bottom-modal-btn {
+  margin-right: 200px;
+}
+
+.alumni-show-bio {
+  height: 60px;
+
 }

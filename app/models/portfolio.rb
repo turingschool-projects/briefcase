@@ -54,12 +54,17 @@ class Portfolio < ApplicationRecord
     end
   end
 
-  def create_locations(locations)
+  def create_locations(checked_locations)
     self.locations.delete_all
 
-    locations.each do |location|
-      city = location.split(",").first.strip
-      state = location.split(",").last.strip
+    checked_locations.each do |location|
+      if(location.class == ActionController::Parameters)
+        city = location[:city].strip
+        state = location[:state].strip
+      else
+        city = location.split(",").first.strip
+        state = location.split(",").last.strip
+      end
       self.locations.find_or_create_by(city: city, state: state)
     end
   end

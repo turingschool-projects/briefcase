@@ -1,4 +1,4 @@
-var PortfolioNewAvatar = React.createClass({
+var ProjectEditAvatar = React.createClass({
   getInitialState(){
     return {
       file: '',
@@ -11,7 +11,7 @@ var PortfolioNewAvatar = React.createClass({
     var fieldToUpdate;
 
     stateToUpdate.avatar = this.state.file; fieldToUpdate = "avatar"
-    this.props.prepForInsert(stateToUpdate, fieldToUpdate);
+    this.props.prepForUpdate(stateToUpdate, fieldToUpdate);
   },
 
   handleImageChange(e) {
@@ -31,13 +31,17 @@ var PortfolioNewAvatar = React.createClass({
     reader.readAsDataURL(file)
   },
 
-  render() {
+render() {
     var imagePreviewUrl = this.state.imagePreviewUrl;
     var imagePreview = null;
     if (imagePreviewUrl != '') {
       $imagePreview = (<img src={imagePreviewUrl} />);
     } else {
-      $imagePreview = (<img className="" src="http://intelligentsystemsmonitoring.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png"></img>);
+      $imagePreview = (
+                          this.props.avatar === "/avatars/original/missing.png"
+                            ? <img className="" src="http://intelligentsystemsmonitoring.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png"></img>
+                            : <img className="" src={this.props.avatar}></img>
+                      );
     }
 
     return (
