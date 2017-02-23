@@ -16,8 +16,8 @@ RSpec.describe Portfolio, js:true  do
       end 
 
       within(:css, ".dashboard-project") do
-        find("a", :text => "Delete").trigger("click")
-        sleep(3)
+        find('.delete').trigger("click")
+        sleep(1)
       end 
 
       expect(current_path).to eq(dashboard_path)
