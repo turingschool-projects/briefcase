@@ -46,10 +46,7 @@ var ProjectNewAvatar = React.createClass({
         <div className="imgPreview">
           {$imagePreview}
         </div>
-<<<<<<< HEAD:app/assets/javascripts/components/project/_project_new_avatar.js.jsx
         <div className='button-input inner'><input id='file-input-avatar' className="file-input" type="file" onChange={this.handleImageChange} /></div>
-=======
->>>>>>> master:app/assets/javascripts/components/portfolio/new/_portfolio_new_avatar.js.jsx
       </div>
     )
   }
