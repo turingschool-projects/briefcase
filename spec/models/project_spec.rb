@@ -29,7 +29,10 @@ RSpec.describe Project do
       Location.create(city: "Denver", state: "Colorado")
 
       locations = Location.distinct_city_states
-      expect(locations).to eq("")
+
+      expect(locations.first.city).to eq("Denver")
+      expect(locations.first.state).to eq("Colorado")
+      expect(locations.to_a.count).to eq(1)
     end
   end
 
