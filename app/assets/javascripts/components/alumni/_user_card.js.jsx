@@ -14,12 +14,9 @@ var UserCard = React.createClass({
 
   render(){
     var avatars = this.props.avatars;
-<<<<<<< HEAD:app/assets/javascripts/components/alumni/_user_card.js.jsx
     var bios = this.props.bios;
     var locations = this.props.locations;
 
-=======
->>>>>>> master:app/assets/javascripts/components/user/show/_user_card.js.jsx
     var portfolios = this.props.portfolios.map((portfolio) => { // props brought from controller
       return (
           <div className="col s4 "key={portfolio.id}>
@@ -29,7 +26,7 @@ var UserCard = React.createClass({
               <div className="card-image waves-effect waves-block waves-light">
                 <center>
                   {
-                    avatars[portfolio.id] === "/avatars/original/missing.png" 
+                    avatars[portfolio.id] === "/avatars/original/missing.png"
                     ? <img className="activator card-picture" src="http://intelligentsystemsmonitoring.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png" />
                     : <img className="activator card-picture" src={avatars[portfolio.id]} />
                   }
