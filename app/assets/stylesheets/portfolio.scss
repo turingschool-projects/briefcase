@@ -14,21 +14,23 @@
 	height: 80px;
 }
 
-.jumbo-text {
+// .jumbo-text {
 	#edit-full-name, {
 		font-size: 40px;
 		color: white;
-		width: 200%;
-		border-bottom: none;
+		width: 100%;
+		// border-bottom: none !important;
+		padding-left: 10px;
 	}
 
 	#edit-title{
 		font-size: 30px;
 		color: white;
-		border-bottom: none;
+		// border-bottom: none !important;
+		padding-left: 10px;
 
 	}
-}
+
 
 .email {
 	margin-top: 2%;
