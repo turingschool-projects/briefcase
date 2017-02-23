@@ -10,5 +10,4 @@ class AlumniController < ApplicationController
   def show
     @user = UserPresenter.new(User.find_by(slug: params[:slug]))
   end
-
 end

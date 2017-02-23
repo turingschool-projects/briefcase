@@ -40,7 +40,6 @@ gem 'omniauth-census', git: "https://github.com/NZenitram/census_staging_oauth"
 gem 'thin'
 gem 'axios_rails', '~> 0.7.0'
 gem "responders"
-gem 'kramdown'
 gem 'paperclip'
 gem 'aws-sdk', '~> 2.3'
 gem 'travis'
@@ -66,6 +65,8 @@ group :test do
   gem 'webmock'
   #used in conjuction with vcr to intercept out web calls
   gem 'shoulda-matchers'
+  gem 'poltergeist'
+  gem 'phantomjs', :require => 'phantomjs/poltergeist'
 end
 
   group :development do

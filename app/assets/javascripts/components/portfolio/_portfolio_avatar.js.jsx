@@ -1,4 +1,4 @@
-var PortfolioEditAvatar = React.createClass({
+ var PortfolioAvatar = React.createClass({
   getInitialState(){
     return {
       file: '',
@@ -11,7 +11,8 @@ var PortfolioEditAvatar = React.createClass({
     var fieldToUpdate;
 
     stateToUpdate.avatar = this.state.file; fieldToUpdate = "avatar"
-    this.props.prepForUpdate(stateToUpdate, fieldToUpdate);
+
+    this.props.allProps.prepForUpdate(stateToUpdate, fieldToUpdate);
   },
 
   handleImageChange(e) {
@@ -31,16 +32,16 @@ var PortfolioEditAvatar = React.createClass({
     reader.readAsDataURL(file)
   },
 
-render() {
+  render() {
     var imagePreviewUrl = this.state.imagePreviewUrl;
     var imagePreview = null;
     if (imagePreviewUrl != '') {
       $imagePreview = (<img src={imagePreviewUrl} />);
     } else {
       $imagePreview = (
-                          this.props.avatar === "/avatars/original/missing.png" 
-                            ? <img className="" src="http://intelligentsystemsmonitoring.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png"></img>
-                            : <img className="" src={this.props.avatar}></img> 
+                        this.props.allProps.avatar === "/avatars/original/missing.png" || this.props.allProps.portfolio == null
+                          ? <img className="" src="http://intelligentsystemsmonitoring.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png"></img>
+                          : <img className="" src={this.props.allProps.avatar}></img>
                       );
     }
 
@@ -50,7 +51,7 @@ render() {
         <div className="img-preview">
           {$imagePreview}
         </div>
-        <div className='button-input inner'><input id='file-input-avatar' className="file file-input" type="file" onChange={this.handleImageChange} /></div>
+        <div className='button-input inner'><input id='file-input-avatar' className="file-input" type="file" onChange={this.handleImageChange} /></div>
       </div>
     )
   }
