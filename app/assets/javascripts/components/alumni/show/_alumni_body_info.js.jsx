@@ -13,10 +13,10 @@ var AlumniBodyInfo = React.createClass({
               <img className="alumni-avatar" src={this.props.avatar}></img>
             </div>
             <div className='col s8 offset-s4'>
-              <h1>About Me</h1>
+              <h1 className="about-title">About Me</h1>
             </div>
-            <div className="col s8 offset-s4 alumni-show-bio">
-              <p dangerouslySetInnerHTML={{__html: this.props.markdownInfo.bio}}></p>
+            <div className="col s8 offset-s4 alumni-bio-show">
+              <p className="project-bio-info" dangerouslySetInnerHTML={{__html: this.props.markdownInfo.bio}}></p>
             </div>
             <div className=" col s8 offset-s4 button-space">
             <ul>

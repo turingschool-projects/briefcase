@@ -229,13 +229,6 @@ var PortfolioMidInfo = React.createClass({
             <option value="1711">1711</option>
           </select>
         </section>
-
-        <section className="published col s12">
-          <h1 id="edit-profile-information">Publishing Options</h1>
-          <input type="checkbox" id="published" onChange={this.handleUpdate}></input>
-          <label htmlFor="published">Published</label>
-        </section>
-
       </main>
     );
   }
