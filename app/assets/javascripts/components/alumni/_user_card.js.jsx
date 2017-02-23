@@ -8,7 +8,7 @@ var UserCard = React.createClass({
     if(text == null) {
       return ""
     } else {
-      return text.substring(0, 193);
+      return text.substring(0, 180);
     }
   },
 
