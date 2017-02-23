@@ -1,25 +1,46 @@
-var PortfolioNewMidInfo = React.createClass({
+var PortfolioMidInfo = React.createClass({
 
   getInitialState(){
+    if(this.props.allProps.portfolio == null) {
+      var userPortfolio = {
+                            email: "",
+                            resume: "",
+                            looking_for: "",
+                            cohort: "",
+                            github_url: "",
+                            linkedin_url: "",
+                            background: "",
+                            locations: "",
+                            best_at: "",
+                            hired: "",
+                            hired_by: "",
+                            twitter_url: "",
+                            personal_url: "",
+                            hired_by: "" }
+      } else {
+        var userPortfolio = this.props.allProps.portfolio;
+      }
+
     return {
-            email: "",
-            resume: "",
-            looking_for: "",
-            cohort: "",
-            github_url: "",
-            linkedin_url: "",
-            background: "",
-            locations: "",
-            best_at: "",
-            hired: "",
-            hired_by: "",
-            twitter_url: "",
-            personal_url: "",
-            hired_by: ""
-          }
+      portfolio: {
+        email: userPortfolio.email,
+        resume: userPortfolio.resume,
+        looking_for: userPortfolio.looking_for,
+        cohort: userPortfolio.cohort,
+        github_url: userPortfolio.github_url,
+        linkedin_url: userPortfolio.linkedin_url,
+        background: userPortfolio.background,
+        locations: userPortfolio.locations,
+        best_at: userPortfolio.best_at,
+        hired: userPortfolio.hired,
+        hired_by: userPortfolio.hired_by,
+        twitter_url: userPortfolio.twitter_url,
+        personal_url: userPortfolio.personal_url
+      }
+    }
   },
 
-  handleNew: function(event){
+  handleUpdate: function(event){
     var stateToUpdate = {};
     var fieldToUpdate;
 
@@ -35,8 +56,7 @@ var PortfolioNewMidInfo = React.createClass({
     if(event.target.id == "personal-url") {this.setState({personal_url: event.target.value}); stateToUpdate.personal_url = event.target.value; fieldToUpdate = "personal_url" };
     if(event.target.id == "hired-by") {this.setState({hired_by: event.target.value}); stateToUpdate.hired_by = event.target.value; fieldToUpdate = "hired_by" };
 
-    this.props.prepForInsert(stateToUpdate, fieldToUpdate);
-
+    this.props.allProps.prepForUpdate(stateToUpdate, fieldToUpdate);
   },
 
   cityChecked: function() {
@@ -52,13 +72,15 @@ var PortfolioNewMidInfo = React.createClass({
     var fieldToUpdate;
     this.setState({locations: locationsArray});
     stateToUpdate.locations = locationsArray; fieldToUpdate = "locations"
-    this.props.prepForInsert(stateToUpdate, fieldToUpdate);
+
+    this.props.allProps.prepForUpdate(stateToUpdate, fieldToUpdate);
   },
 
   componentDidMount(){
     $('select').material_select();
-    $('select').on('change', this.handleNew)
+    $('select').on('change', this.handleUpdate)
     $('.modal').modal();
+    if(this.props.allProps.portfolio != null) { this.checkUserLocations(); }
 
     $("#search").keyup(function(){
       var input, filter, table, tr, td, i;
@@ -79,11 +101,27 @@ var PortfolioNewMidInfo = React.createClass({
     });
   },
 
-  render: function() {
-    var user = this.props.user;
-    var locations = this.props.locations
-    return (
+  checkUserLocations(){
+    var locations = $('.anthony')
+    var userLocations = this.props.allProps.userLocations;
 
+    for (var i = 0; i < locations.length; i++) {
+      var city = locations[i].parentElement.children[1].innerText.split(", ")[0]
+      var state = locations[i].parentElement.children[1].innerText.split(", ")[1]
+
+      for (var j = 0; j < userLocations.length; j++) {
+        if(city == userLocations[j].city && state == userLocations[j].state){
+          locations[i].checked = true;
+        }
+      }
+    }
+  },
+
+  render: function() {
+    var allProps = this.props.allProps;
+    var userPortfolio = this.state.portfolio;
+
+    return (
       <main className="row about-me-cont">
 
         <section className="col s12">
@@ -91,11 +129,11 @@ var PortfolioNewMidInfo = React.createClass({
           <div className="row">
             <div className='col s6'>
               <label htmlFor="email">Email</label>
-              <input id="email" name="email" placeholder="example@example.com*"  onChange={this.handleNew}></input>
+              <input id="email" name="email" placeholder="example@example.com*" defaultValue={userPortfolio.email} onChange={this.handleUpdate}></input>
             </div>
             <div className='col s6'>
               <label htmlFor="resume">Resume</label><br/>
-              <PortfolioResume prepForUpdate={this.props.prepForInsert}/>
+              <PortfolioResume allProps={this.props.allProps}/>
             </div>
 
           </div>
@@ -105,11 +143,11 @@ var PortfolioNewMidInfo = React.createClass({
           <div className="row mid-bio">
             <div className='col s6'>
               <label htmlFor="looking-for">Looking For</label>
-              <textarea id="looking-for" className="editor-looking-for" placeholder=""  onChange={this.handleNew}></textarea>
+              <textarea id="looking-for" className="editor-looking-for" placeholder="" defaultValue={userPortfolio.looking_for} onChange={this.handleUpdate}></textarea>
             </div>
             <div className='col s6'>
               <label htmlFor="best-at">Best At</label>
-              <textarea id="best-at" className="editor-best-at" type="file" onChange={this.handleNew}></textarea>
+              <textarea id="best-at" className="editor-best-at" type="file" defaultValue={userPortfolio.best_at} onChange={this.handleUpdate}></textarea>
             </div>
           </div>
         </section>
@@ -117,10 +155,16 @@ var PortfolioNewMidInfo = React.createClass({
         <a className="waves-effect waves-light btn" href="#modal1">Locations</a>
          <div id="modal1" className="modal">
            <div className="modal-content">
+             <div className='row'>
+               <div className='col s8'>
+                 <input id="search" type="search" placeholder="search for a city"></input>
+               </div>
+               <div className='col s4'>
+                 <a href="#!" id='top-modal-btn' className=" modal-action modal-close waves-effect waves-green btn-flat" onClick={this.cityChecked}>Save Cities</a>
+               </div>
+             </div>
              <div className="row search-city">
-             <input id="search" type="search" placeholder="search for a city"></input>
-
-            { locations.map(function(location){
+            { allProps.locations.map(function(location){
               return  <div className='col s4'>
                 <input className="anthony" type="checkbox" id={location.city + location.state}/><label htmlFor={location.city + location.state}>{location.city}, {location.state}</label>
                 </div>
@@ -128,7 +172,7 @@ var PortfolioNewMidInfo = React.createClass({
             </div>
            </div>
            <div className="modal-footer">
-             <a href="#!" className=" modal-action modal-close waves-effect waves-green btn-flat" onClick={this.cityChecked}>Save Cities</a>
+             <a href="#!" id='bottom-modal-btn' className=" modal-action modal-close waves-effect waves-green btn-flat" onClick={this.cityChecked}>Save Cities</a>
            </div>
          </div>
 
@@ -137,22 +181,22 @@ var PortfolioNewMidInfo = React.createClass({
           <div className="row">
             <div className='col s6'>
               <label htmlFor="github">GitHub</label>
-              <input id="github" name="github" placeholder="github.com/:username*" onChange={this.handleNew}></input>
+              <input id="github" name="github" placeholder="github.com/:username*" defaultValue={userPortfolio.github_url} onChange={this.handleUpdate}></input>
             </div>
             <div className='col s6'>
               <label htmlFor="twitter">Twitter</label>
-              <input id="twitter" placeholder="twitter.com/:username" onChange={this.handleNew}></input>
+              <input id="twitter" placeholder="twitter.com/:username" defaultValue={userPortfolio.twitter_url}  onChange={this.handleUpdate}></input>
             </div>
           </div>
 
           <div className="row">
             <div className='col s6'>
               <label htmlFor="linkedin">LinkedIn</label>
-              <input id="linkedin" name="linkedin" placeholder="linkedin.com/:username*" onChange={this.handleNew}></input>
+              <input id="linkedin" name="linkedin" placeholder="linkedin.com/:username*" defaultValue={userPortfolio.linkedin_url} onChange={this.handleUpdate}></input>
             </div>
             <div className='col s6'>
               <label htmlFor="personal-url">Personal Site</label>
-              <input id="personal-url" placeholder="mypersonalsite.com" onChange={this.handleNew}></input>
+              <input id="personal-url" placeholder="mypersonalsite.com" defaultValue={userPortfolio.personal_url} onChange={this.handleUpdate}></input>
             </div>
           </div>
         </section>
@@ -161,12 +205,12 @@ var PortfolioNewMidInfo = React.createClass({
           <h1 id="edit-profile-information">Employment Status</h1>
           <div className="row">
             <div className='col s6'>
-              <input type="checkbox" id="hired" ></input>
+              <input type="checkbox" id="hired" defaultValue={userPortfolio.hired} ></input>
               <label htmlFor="hired">Hired</label>
             </div>
             <div className='col s6'>
               <label htmlFor="hired-by">Hired By</label>
-              <input id="hired-by" placeholder="Google, Inc." onChange={this.handleNew}></input>
+              <input id="hired-by" placeholder="Google, Inc." defaultValue={userPortfolio.hired_by} onChange={this.handleUpdate}></input>
             </div>
           </div>
         </section>
@@ -175,8 +219,7 @@ var PortfolioNewMidInfo = React.createClass({
           <h1 id="edit-profile-information">School Information Status</h1>
           <label htmlFor="cohort">Cohort</label>
           <select id="cohort">
-            <option value="" disabled selected>Select Cohort</option>
-            <option value="1608">1608</option>
+            <option value={userPortfolio.cohort}>{userPortfolio.cohort}</option>
             <option value="1608">1608</option>
             <option value="1701">1701</option>
             <option value="1703">1703</option>
@@ -189,7 +232,7 @@ var PortfolioNewMidInfo = React.createClass({
 
         <section className="published col s12">
           <h1 id="edit-profile-information">Publishing Options</h1>
-          <input type="checkbox" id="published" onChange={this.handleNew}></input>
+          <input type="checkbox" id="published" onChange={this.handleUpdate}></input>
           <label htmlFor="published">Published</label>
         </section>
 

@@ -20,7 +20,7 @@ class Users::PortfoliosController < ApplicationController
 
       render js: "/dashboard"
     else
-      render component: 'PortfolioNew', props: { user: current_user, portfolio: current_user.portfolio, slug: current_user.slug, locations: Location.distinct_city_states}, status: 400
+      render component: 'Portfolio', props: { user: current_user, portfolio: current_user.portfolio, slug: current_user.slug, locations: Location.distinct_city_states}, status: 400
     end
   end
 
@@ -40,7 +40,7 @@ class Users::PortfoliosController < ApplicationController
 
       render js: "/dashboard"
     else
-      render component: 'PortfolioEdit', props: { user: current_user, portfolio: current_user.portfolio, slug: current_user.slug, avatar: current_user.portfolio.avatar.url, locations: Location.distinct_city_states, userLocations: current_user.portfolio.locations }
+      render component: 'Portfolio', props: { user: current_user, portfolio: current_user.portfolio, slug: current_user.slug, avatar: current_user.portfolio.avatar.url, locations: Location.distinct_city_states, userLocations: current_user.portfolio.locations }, status: 400
     end
   end
 
@@ -76,7 +76,7 @@ class Users::PortfoliosController < ApplicationController
     end
 
     def update_locations(portfolio)
-      locations = portfolio.create_locations(params[:portfolio][:locations])
+      portfolio.create_locations(params[:portfolio][:locations])
     end
 
     def delete_relationships(user)

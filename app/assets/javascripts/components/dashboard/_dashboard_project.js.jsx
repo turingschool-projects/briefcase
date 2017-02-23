@@ -57,7 +57,8 @@ var DashboardProject = React.createClass({
                   </div>
                   <div className="col s4">
                   <center>
-                    <img className="project-picture" src={projectAvatars[project.id]} />
+                    {projectAvatars[project.id] != "/avatars/original/missing.png" &&
+                    <img className="project-picture" src={projectAvatars[project.id]} /> }
                       <a className="card-profile" href={ "/users/" + user.id + "/project/edit?project=" + project.id }>Edit</a>
                       <a className="card-profile delete" id={project.id} onClick={this.handleDelete} >Delete </a>
                     </center>
