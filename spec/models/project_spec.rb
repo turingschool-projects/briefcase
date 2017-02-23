@@ -15,11 +15,21 @@ RSpec.describe Project do
 
       expect(project).to be_invalid
     end
-    
+
     it 'a project is invalid with out a github link' do
       project = Project.new(name: 'Jam-City')
 
       expect(project).to be_invalid
+    end
+  end
+
+  context "methods" do
+    it "self.distinct_city_states" do
+      Location.create(city: "Denver", state: "Colorado")
+      Location.create(city: "Denver", state: "Colorado")
+
+      locations = Location.distinct_city_states
+      expect(locations).to eq("")
     end
   end
 
