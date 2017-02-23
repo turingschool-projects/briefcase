@@ -21,9 +21,7 @@ var ProjectEditForm = React.createClass({
     if(event.target.id == "areas_of_focus") {this.setState({areas_of_focus: event.target.value}); stateToUpdate.areas_of_focus = event.target.value; fieldToUpdate = "areas_of_focus" };
 
     this.props.prepForUpdate(stateToUpdate, fieldToUpdate);
-
   },
-
 
 
   render: function(){
@@ -45,15 +43,7 @@ var ProjectEditForm = React.createClass({
                 <input placeholder="Production Url" id="production_url" type="email" defaultValue={project.production_url} className="validate" onChange={this.handleNew} />
               </div>
               <div className="input-field col s6 ">
-                 <div className="file-field input-field">
-                   <div className="btn file">
-                     <span>File</span>
-                     <input  type="file"/>
-                   </div>
-                   <div className="file-path-wrapper">
-                     <input placeholder="Upload Screen Shot" className="file-path validate" type="text" />
-                   </div>
-                 </div>
+                <ProjectEditAvatar avatar={this.props.avatar} prepForUpdate={this.props.prepForUpdate}/>
               </div>
             </div>
           </div>

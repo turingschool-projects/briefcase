@@ -32,7 +32,7 @@ var ProjectEdit = React.createClass({
         <div>
           <SignedInNavbar user={user}/>
           <ProjectJumbo/>
-          <ProjectEditForm project={project}  handleUpdate={this.handleUpdate} prepForUpdate={this.prepForUpdate}/>
+          <ProjectEditForm project={project} avatar={this.props.avatar} handleUpdate={this.handleUpdate} prepForUpdate={this.prepForUpdate}/>
           <Footer/>
         </div>
       )

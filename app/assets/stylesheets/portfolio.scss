@@ -1,5 +1,13 @@
 .portfolio-name-container {
 	position: relative;
+
+	input[placeholder="Full Name*"]{
+    font-size: 30px;
+  }
+
+  input[placeholder="Title*"]{
+    font-size: 30px;
+  }
 }
 
 .bio-edit {
@@ -8,13 +16,17 @@
 
 .jumbo-text {
 	#edit-full-name, {
-		font-size: 60px;
+		font-size: 40px;
 		color: white;
+		width: 200%;
+		border-bottom: none;
 	}
 
 	#edit-title{
 		font-size: 30px;
 		color: white;
+		border-bottom: none;
+
 	}
 }
 
@@ -38,10 +50,50 @@
 
 #bio {
 	height: 200px;
+
+
+}
+
+textarea[placeholder="A description of yourself, your background, languages you are good at, and whatever else you would like to include in your bio...*"]{
+  font-size: 20px;
 }
 
 .portfolio-btns {
 	margin-bottom: 30px;
 	margin-top: 10px;
 	background-color: #20CE20
+}
+
+.about-me-cont {
+	input[placeholder="example@example.com*"]{
+    font-size: 20px;
+  }
+
+  input[placeholder="github.com/:username*"]{
+    font-size: 20px;
+  }
+
+  input[placeholder="twitter.com/:username"]{
+    font-size: 20px;
+  }
+
+  input[placeholder="linkedin.com/:username*"]{
+    font-size: 20px;
+  }
+
+  input[placeholder="mypersonalsite.com"]{
+    font-size: 20px;
+  }
+
+  input[placeholder="Google, Inc."]{
+    font-size: 20px;
+  }
+
+   /* label color */ /* label color */
+   label {
+    font-family: "azo-sans-web","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-style: bold;
+    font-weight: 700;
+    font-size: 16px;
+   }
 }

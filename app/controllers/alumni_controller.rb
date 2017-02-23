@@ -1,12 +1,13 @@
+require 'redcarpet'
+require 'redcarpet/render_strip'
+
+
 class AlumniController < ApplicationController
   def index
-    @portfolios = Portfolio.all
-    @avatar_urls = Portfolio.avatar_urls
+    @portfolio = PortfolioPresenter.new(Portfolio)
   end
 
   def show
-    @user = User.find_by(slug: params[:slug])
-    @portfolio = @user.portfolio
-    @avatar_urls = @user.portfolio.project_avatar_urls
+    @user = UserPresenter.new(User.find_by(slug: params[:slug]))
   end
 end

@@ -250,13 +250,13 @@ input[type="search"] {
   background-color: white;
   margin-top: 1em;
   margin-bottom: 1em;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .search-container {
-  width: 500px;
-  margin-left: 20%;
-  // margin-right: 60%;
+  position: relative;
+  width: 100%;
+
 }
 
 .Search {
@@ -413,20 +413,23 @@ input[placeholder="Your Email Here"]{
     margin-top: 5%;
   }
 
+  /*input palceholders*/
+
+
   input[placeholder="Project Name*"]{
-    font-size: 40px;
+    font-size: 30px;
   }
 
   input[placeholder="Github Url*"]{
-    font-size: 40px;
+    font-size: 30px;
   }
 
   input[placeholder="Production Url"]{
-    font-size: 40px;
+    font-size: 30px;
   }
 
   input[placeholder="Upload Screen Shot"]{
-    font-size: 40px;
+    font-size: 30px;
   }
 
   .project-save {
@@ -446,7 +449,7 @@ input[placeholder="Your Email Here"]{
 
 .style-h2 {
 
-      margin-top: 26px;
+      margin-top: 18px;
       font-family: "azo-sans-web","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
       font-size: 24px;
       line-height: 31px;
@@ -466,7 +469,7 @@ input[placeholder="Your Email Here"]{
   font-size: 24px;
   line-height: 31px;
   font-weight: bold;
-  padding-bottom: 1%;
+  padding-bottom: 10px;
 
 
 }
@@ -479,9 +482,108 @@ input[placeholder="Your Email Here"]{
 .inner {
   display: inline-block;
   padding-top: 3px;
+  margin-right: 215px;
 }
 
 .imgPreview {
   width: 25%;
   height: 25%;
+}
+
+
+#file-input-resume {
+  margin-right: 330px;
+  margin-top: 10px;
+}
+
+#file-input-avatar {
+  margin-right: 75px;
+  margin-top: 10px;
+}
+
+#modal1 {
+  width: 75%;
+}
+
+.alumni-show-bio a {
+  color: #05c2d1;
+}
+
+#by-heart{
+
+}
+
+#description {
+  height: 300px;
+}
+
+#areas_of_focus {
+  height: 300px;
+}
+
+
+.search-buttons {
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-top: 22px;
+    li {
+      display: inline;
+      .all-graduates-btn {
+        margin-right: 4px;
+        text-align: left;
+        border: 1px solid white;
+        padding-left: 7px;
+        padding-right: 7px;
+      }
+      .a-z-btn{
+        margin-right: 4px;
+        text-align: left;
+        border: 1px solid white;
+        padding-left: 7px;
+        padding-right: 7px;
+      }
+      .heart{
+        margin-right: 4px;
+        text-align: center;
+        border: 1px solid white;
+        padding-right: 2px;
+        padding-left: 2px;
+      }
+    }
+  }
+}
+
+.pop-up {
+  width: 100%;
+}
+
+.card-title {
+  margin-bottom: 10px;
+}
+
+.button-space {
+  padding-bottom: 20px !important;
+}
+
+
+.project-limit {
+  font-size: 18px;
+  padding-top: 15px;
+  font-weight: bold;
+}
+
+#top-modal-btn{
+  margin-top: 25px;
+}
+
+#bottom-modal-btn {
+  margin-right: 200px;
+}
+
+.alumni-show-bio {
+  height: 60px;
+
 }

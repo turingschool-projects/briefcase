@@ -11,7 +11,7 @@ var PortfolioResume = React.createClass({
     var fieldToUpdate;
 
     stateToUpdate.resume = this.state.file; fieldToUpdate = "resume"
-    this.props.prepForUpdate(stateToUpdate, fieldToUpdate);
+    this.props.allProps.prepForUpdate(stateToUpdate, fieldToUpdate);
   },
 
   handleImageChange(e) {
@@ -34,7 +34,7 @@ var PortfolioResume = React.createClass({
   render() {
     return (
       <div className="portfolio-image-upload outer">
-        <div className='button-input inner'><input id='file-input' className="fileInput" type="file" onChange={this.handleImageChange} /></div>
+        <div className='button-input inner'><input id='file-input-resume' className="fileInput" type="file" onChange={this.handleImageChange} /></div>
       </div>
     )
   }

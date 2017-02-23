@@ -42,7 +42,7 @@ var ProjectForm = React.createClass({
                 <input placeholder="Production Url" id="production_url" type="email" className="" onChange={this.handleNew} />
               </div>
               <div className="input-field col s6 ">
-                <PortfolioNewAvatar  prepForInsert={this.props.prepForInsert}/>
+                <ProjectNewAvatar prepForInsert={this.props.prepForInsert}/>
               </div>
             </div>
           </div>
