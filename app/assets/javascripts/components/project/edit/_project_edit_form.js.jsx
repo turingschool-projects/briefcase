@@ -43,7 +43,7 @@ var ProjectEditForm = React.createClass({
                 <input placeholder="Production Url" id="production_url" type="email" defaultValue={project.production_url} className="validate" onChange={this.handleNew} />
               </div>
               <div className="input-field col s6 ">
-                <PortfolioEditAvatar avatar={this.props.avatar} prepForUpdate={this.props.prepForUpdate}/>
+                <ProjectEditAvatar avatar={this.props.avatar} prepForUpdate={this.props.prepForUpdate}/>
               </div>
             </div>
           </div>
