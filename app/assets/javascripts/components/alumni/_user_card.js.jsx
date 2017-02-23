@@ -14,9 +14,12 @@ var UserCard = React.createClass({
 
   render(){
     var avatars = this.props.avatars;
+<<<<<<< HEAD:app/assets/javascripts/components/alumni/_user_card.js.jsx
     var bios = this.props.bios;
     var locations = this.props.locations;
 
+=======
+>>>>>>> master:app/assets/javascripts/components/user/show/_user_card.js.jsx
     var portfolios = this.props.portfolios.map((portfolio) => { // props brought from controller
       return (
           <div className="col s4 "key={portfolio.id}>
