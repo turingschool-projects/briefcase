@@ -12,6 +12,10 @@ var UserCard = React.createClass({
     }
   },
 
+  stripUrl(url){
+    return url.replace("https://", "").replace("http://", "");
+  },
+
   render(){
     var avatars = this.props.avatars;
     var bios = this.props.bios;
@@ -40,14 +44,14 @@ var UserCard = React.createClass({
                 <hr/>
                 <center className="alumni-show-bio"><p className="card-bio" dangerouslySetInnerHTML={{__html: this.shorterBio(bios[portfolio.id])}}></p></center>
                 <div className="card-links">
-                  <a href={"http://" + portfolio.github_url}><i className="fa fa-github fa-3x social-media" aria-hidden="true"></i></a>
-                  <a href={"http://" + portfolio.linkedin_url}><i className="fa fa-linkedin fa-3x social-media" aria-hidden="true"></i></a>
+                  <a href={"http://" + this.stripUrl(portfolio.github_url)}><i className="fa fa-github fa-3x social-media" aria-hidden="true"></i></a>
+                  <a href={"http://" + this.stripUrl(portfolio.linkedin_url)}><i className="fa fa-linkedin fa-3x social-media" aria-hidden="true"></i></a>
                   {portfolio.twitter_url &&
-                  <a href={"http://" + portfolio.twitter_url}><i className="fa fa-twitter fa-3x social-media" aria-hidden="true"></i></a>}
+                  <a href={"http://" + this.stripUrl(portfolio.twitter_url)}><i className="fa fa-twitter fa-3x social-media" aria-hidden="true"></i></a>}
                   {portfolio.personal_url &&
-                  <a href={"http://" + portfolio.personal_url}><i className="fa fa-user fa-3x social-media" aria-hidden="true"></i></a>}
+                  <a href={"http://" + this.stripUrl(portfolio.personal_url)}><i className="fa fa-user fa-3x social-media" aria-hidden="true"></i></a>}
                 </div>
-                <center><a target="_blank"className="card-profile" href={ "/alumni/" + portfolio.user_slug }>View Profile</a></center>
+                <center><a className="card-profile" href={ "/alumni/" + portfolio.user_slug }>View Profile</a></center>
               </div>
               <div className="card-reveal">
                 <span className="card-title grey-text text-darken-4">Bio<i className="material-icons right">close</i></span>
