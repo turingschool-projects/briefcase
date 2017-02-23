@@ -10,7 +10,10 @@ describe 'as a user', js:true do
 
       visit alumni_index_path
 
+      
       click_on "View Profile"
+      sleep(10)
+      save_and_open_page
 
       expect(page).to have_content("Anthony Ciccone")
       expect(page).to have_content("software developer")

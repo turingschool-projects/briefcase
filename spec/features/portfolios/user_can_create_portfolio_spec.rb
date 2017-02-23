@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Portfolio, js:true do
+RSpec.describe Portfolio, js:true  do
   context 'as a new logged in user' do
     it "can create a new portfolio" do
       user = new_user
