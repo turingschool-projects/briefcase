@@ -81,7 +81,7 @@ var PortfolioMidInfo = React.createClass({
     $('select').on('change', this.handleUpdate)
     $('.modal').modal();
     if(this.props.allProps.portfolio != null) { this.checkUserLocations(); }
-    
+
     $("#search").keyup(function(){
       var input, filter, table, tr, td, i;
       input = document.getElementById('search-city');
@@ -155,9 +155,15 @@ var PortfolioMidInfo = React.createClass({
         <a className="waves-effect waves-light btn" href="#modal1">Locations</a>
          <div id="modal1" className="modal">
            <div className="modal-content">
+             <div className='row'>
+               <div className='col s8'>
+                 <input id="search" type="search" placeholder="search for a city"></input>
+               </div>
+               <div className='col s4'>
+                 <a href="#!" id='top-modal-btn' className=" modal-action modal-close waves-effect waves-green btn-flat" onClick={this.cityChecked}>Save Cities</a>
+               </div>
+             </div>
              <div className="row search-city">
-             <input id="search" type="search" placeholder="search for a city"></input>
-
             { allProps.locations.map(function(location){
               return  <div className='col s4'>
                 <input className="anthony" type="checkbox" id={location.city + location.state}/><label htmlFor={location.city + location.state}>{location.city}, {location.state}</label>
@@ -166,7 +172,7 @@ var PortfolioMidInfo = React.createClass({
             </div>
            </div>
            <div className="modal-footer">
-             <a href="#!" className=" modal-action modal-close waves-effect waves-green btn-flat" onClick={this.cityChecked}>Save Cities</a>
+             <a href="#!" id='bottom-modal-btn' className=" modal-action modal-close waves-effect waves-green btn-flat" onClick={this.cityChecked}>Save Cities</a>
            </div>
          </div>
 
