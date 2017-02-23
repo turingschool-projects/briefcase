@@ -14,5 +14,4 @@ RSpec.describe User do
       expect(user).to respond_to(:portfolio)
     end
   end
-
 end
