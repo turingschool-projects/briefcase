@@ -78,7 +78,8 @@ var DashboardProject = React.createClass({
       <div className="col s8 dashboard-project-container card">
         {projects}
         <center>
-        <a className="btn transparent project-btn" href={ "/users/" + user.id +  "/project/new" }>Create New Project <i className="fa fa-arrow-right" aria-hidden="true"></i></a>
+        {projects.length < 3 ? <a className="btn transparent project-btn" href={ "/users/" + user.id +  "/project/new" }>Create New Project <i className="fa fa-arrow-right" aria-hidden="true"></i></a>:
+        <p className="project-limit">You have reached your limit of projects</p>}
         </center>
       </div>
     </div>
