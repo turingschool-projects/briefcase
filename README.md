@@ -4,7 +4,7 @@ Briefcase is an index of Turing alumni for employers to see. Students can create
 
 Users login through Census, a third party application. All pictures and files are hosted on AWS S3.
 
-<center><img src="./app/assets/images/markdown4.png" width="600"></center>
+<center><img src="./app/assets/images/markdown4.png" width="850"></center>
 
 ## Getting Started
 
@@ -60,11 +60,11 @@ Registered users can create a portfolio by visiting the dashboard page and click
 * LinkedIn URL
 
 Users can type markdown in the bio, looking for and best at fields. The fields accept fenced code blocks or any markdown format.
-<center><img src="./app/assets/images/markdown3.png" width="800"></center>
+<center><img src="./app/assets/images/markdown3.png" width="850"></center>
 
 The markdown will be rendered on the alumni show page. The rendered markdown displays on the dashboard, alumni show page and the alumni index for each portfolio. After a user creates a portfolio, their portfolio will be visible on the alumni index page, where a user can view their individual profile.
 
-<center><img src="./app/assets/images/charles.png" width="800"></center>
+<center><img src="./app/assets/images/charles.png" width="850"></center>
 
 Users can view, edit and delete their portfolio by visiting the dashboard.
 
@@ -76,7 +76,7 @@ Registered users can create up to three projects for their portfolio. Projects r
 
 Users can upload a picture per project. After the user creates a project, the projects will be visible in the user's portfolio public show page.
 
-<center><img src="./app/assets/images/project.png" width="800"></center>
+<center><img src="./app/assets/images/project.png" width="850"></center>
 
 Users can also view, edit and delete their projects by visiting the dashboard.
 
