@@ -75,7 +75,7 @@ var MainSearch = React.createClass({
           <div className='col s4 offset-s2'>
             <div className="search-container">
               <form action className="Search">
-                <input className="Search-box" placeholder="Search Here..." type="search" id="Search-box" autoComplete="off" onChange={this.handleSearch}/>
+                <input name="search-field" className="Search-box" placeholder="Search Here..." type="search" id="Search-box" autoComplete="off" onChange={this.handleSearch}/>
                 <label className="Search-label" htmlFor="Search-box"><i className="material-icons">search</i></label>
               </form>
             </div>
