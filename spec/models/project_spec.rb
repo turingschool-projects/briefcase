@@ -15,7 +15,7 @@ RSpec.describe Project do
 
       expect(project).to be_invalid
     end
-    
+
     it 'a project is invalid with out a github link' do
       project = Project.new(name: 'Jam-City')
 
