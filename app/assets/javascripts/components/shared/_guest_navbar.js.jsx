@@ -18,7 +18,7 @@ var GuestNavbar = React.createClass({
       </div>
       <div role="navigation" className="pull-right visible-lg menu-container">
         <ul className="menu nav navbar-nav">
-          <li className=""><a href="https://www.turing.io/turing-difference"><span>The Difference</span></a></li>
+          <li className="the-difference"><a href="https://www.turing.io/turing-difference"><span>The Difference</span></a></li>
           <li className=""><a href="https://www.turing.io/our-team"><span>Our Team</span></a></li>
           <li className=""><a href="https://www.turing.io/programs"><span>Programs</span></a></li>
           <li className=""><a href="https://www.turing.io/admissions"><span>Admissions</span></a></li>

@@ -17,8 +17,8 @@ RSpec.describe Portfolio, js:true do
 
       click_on 'Save Profile'
       sleep(1)
-      portfolio = Portfolio.first
 
+      portfolio = Portfolio.first
       expect(portfolio.full_name).to eq("John")
       expect(portfolio.title).to eq("Engineer")
       expect(portfolio.bio).to eq("Edited Bio")
