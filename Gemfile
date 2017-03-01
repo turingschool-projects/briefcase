@@ -33,7 +33,7 @@ gem 'rb-readline'
 gem 'figaro'
 gem 'serializer'
 gem 'faraday'
-gem 'faker'
+# gem 'faker'
 gem 'react-rails'
 gem 'omniauth-oauth2'
 gem 'omniauth-census', git: "https://github.com/NZenitram/census_staging_oauth"
@@ -44,7 +44,8 @@ gem 'paperclip'
 gem 'aws-sdk', '~> 2.3'
 gem 'travis'
 gem 'redcarpet'
-
+# gem 'awesome_print', path: "/Users/danielshin/Documents/turing/module_4/projects/awesome_print"
+gem "rack-timeout"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
