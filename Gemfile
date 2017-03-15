@@ -44,7 +44,7 @@ gem 'paperclip'
 gem 'aws-sdk', '~> 2.3'
 gem 'travis'
 gem 'redcarpet'
- gem 'awesome_print', path: "/Users/danielshin/Documents/turing/module_4/projects/awesome_print"
+# gem 'awesome_print', path: "/Users/danielshin/Documents/turing/module_4/projects/awesome_print"
 gem "rack-timeout"
 gem 'faker', git: "https://github.com/mscherer11/faker.git"
 
