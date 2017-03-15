@@ -12,11 +12,6 @@ GIT
     faker (1.7.3)
       i18n (~> 0.5)
 
-PATH
-  remote: /Users/danielshin/Documents/turing/module_4/projects/awesome_print
-  specs:
-    awesome_print (1.7.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -343,7 +338,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  awesome_print!
   aws-sdk (~> 2.3)
   axios_rails (~> 0.7.0)
   bcrypt (~> 3.1.7)
