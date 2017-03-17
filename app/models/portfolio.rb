@@ -14,7 +14,7 @@ class Portfolio < ApplicationRecord
   belongs_to :user
   after_create :set_slug
 
-  has_attached_file :avatar, styles: { thumb: '100x100>', square: '200x200#', medium: '300x300>'}
+  has_attached_file :avatar, styles: { thumb: '100x100>', square: '200x200#', medium: '300x300>',  regular: '365x365>'}
   has_attached_file :resume
 
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
@@ -26,7 +26,7 @@ class Portfolio < ApplicationRecord
 
   def self.avatar_urls
     Portfolio.all.reduce({}) do |result, portfolio|
-      result[portfolio.id] = portfolio.avatar.url
+      result[portfolio.id] = portfolio.avatar.url(:regular)
       result
     end
   end
@@ -49,7 +49,7 @@ class Portfolio < ApplicationRecord
 
   def project_avatar_urls
     self.projects.reduce({}) do |result, project|
-      result[project.id] = project.avatar.url
+      result[project.id] = project.avatar.url(:regular)
       result
     end
   end
