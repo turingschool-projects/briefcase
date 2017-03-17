@@ -18,7 +18,8 @@ var SignedInNavbar = React.createClass({
       </div>
       <div role="navigation" className="pull-right visible-lg menu-container">
         <ul className="menu nav navbar-nav">
-          <li className=""><a href="/dashboard"><span>Dashboard</span></a></li>
+          <li className=""><a href="/"><span>All Portfolios</span></a></li>
+          <li className=""><a href="/dashboard"><span>Your Dashboard</span></a></li>
           <li className=""><a href="/logout"><span>Sign Out</span></a></li>
         </ul>
       </div>
