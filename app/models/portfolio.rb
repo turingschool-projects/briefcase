@@ -26,7 +26,7 @@ class Portfolio < ApplicationRecord
 
   def self.avatar_urls
     Portfolio.all.reduce({}) do |result, portfolio|
-      result[portfolio.id] = portfolio.avatar.url(:regular)
+      result[portfolio.id] = portfolio.avatar.url(:square)
       result
     end
   end
