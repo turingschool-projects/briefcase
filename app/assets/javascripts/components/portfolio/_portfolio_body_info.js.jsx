@@ -30,6 +30,7 @@ var PortfolioBodyInfo = React.createClass({
           <div className="row about-me">
             <div className='col s4 graduate-picture'>
               <PortfolioAvatar allProps={this.props.allProps}/>
+              <h3>Ideally square, like 365px x 365px</h3>
             </div>
             <div className='col s8 offset-s4'>
               <h1>About You</h1>
