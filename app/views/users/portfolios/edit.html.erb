@@ -1,6 +1,6 @@
 <%= react_component('Portfolio', {user: @user,
   portfolio: @user.portfolio,
-  avatar: @user.portfolio.avatar.url,
+  avatar: @user.portfolio.avatar.url(:regular),
   slug: @user.slug,
   locations: @locations,
   userLocations: @user.portfolio.locations},

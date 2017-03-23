@@ -21,7 +21,7 @@ RSpec.describe Portfolio do
       avatar = File.new(Rails.root + 'app/assets/images/turing-show-banner.jpg')
       user.portfolio = create(:portfolio, user: user, avatar: avatar)
 
-      url = user.portfolio.avatar.url
+      url = user.portfolio.avatar.url(:regular)
       urls = Portfolio.avatar_urls
       expected = { user.portfolio.id => url }
 
@@ -57,7 +57,7 @@ RSpec.describe Portfolio do
       project = create(:project, portfolio: portfolio, user: user)
 
       urls = portfolio.project_avatar_urls
-      expected = {project.id => project.avatar.url}
+      expected = {project.id => project.avatar.url(:regular)}
 
       expect(urls).to eq(expected)
     end
@@ -72,7 +72,7 @@ RSpec.describe Portfolio do
       expect(portfolio.locations.count).to eq(2)
     end
   end
-  
+
   context "relationships" do
     it "has many projects" do
       portfolio = Portfolio.new(linkedin_url: "linkedin.com", full_name: "Anthony Ciccone", github_url: "github.com", email: "test@test.com", title: "software developer", bio: "about myself here")

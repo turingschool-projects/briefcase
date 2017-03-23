@@ -16,7 +16,7 @@ class Project < ApplicationRecord
 
 	def self.avatar_urls(user)
 		user.projects.reduce({}) do |result, project|
-			result[project.id] = project.avatar.url
+			result[project.id] = project.avatar.url(:regular)
 			result
 		end
 	end

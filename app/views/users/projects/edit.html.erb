@@ -1,1 +1,1 @@
-<%= react_component('ProjectEdit', {avatar: @project.avatar.url, user: current_user, project: @project, slug: current_user.slug}, {prerender: true}) %>
+<%= react_component('ProjectEdit', {avatar: @project.avatar.url(:regular), user: current_user, project: @project, slug: current_user.slug}, {prerender: true}) %>

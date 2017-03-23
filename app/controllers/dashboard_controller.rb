@@ -4,7 +4,7 @@ class DashboardController < ApplicationController
       if(current_user.portfolio)
         @user = current_user
         @projects = @user.projects
-        @avatar = current_user.portfolio.avatar.url
+        @avatar = current_user.portfolio.avatar.url(:square)
         @markdown_info = current_user.portfolio.markdown_info
         @project_avatars = Project.avatar_urls(current_user)
       else
