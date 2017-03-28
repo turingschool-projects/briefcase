@@ -9,7 +9,7 @@ RSpec.describe Portfolio, js:true  do
 
       click_link 'Create Profile'
 
-      expect(current_path).to eq(user_portfolio_new_path(user.id))
+      expect(current_path).to eq(new_user_portfolio_path(user.id))
 
       fill_in 'name', with: "Jimmy"
       fill_in 'title', with: "Software developer"
@@ -48,7 +48,7 @@ RSpec.describe Portfolio, js:true  do
       click_on 'Save Profile'
       sleep(1)
 
-      expect(current_path).to eq(user_portfolio_new_path(user.id))
+      expect(current_path).to eq(new_user_portfolio_path(user.id))
       expect(user.portfolio).to eq(nil)
     end
 
@@ -68,7 +68,7 @@ RSpec.describe Portfolio, js:true  do
       click_on 'Save Profile'
       sleep(1)
 
-      expect(current_path).to eq(user_portfolio_new_path(user.id))
+      expect(current_path).to eq(new_user_portfolio_path(user.id))
       expect(user.portfolio).to eq(nil)
     end
 
@@ -88,7 +88,7 @@ RSpec.describe Portfolio, js:true  do
       click_on 'Save Profile'
       sleep(1)
 
-      expect(current_path).to eq(user_portfolio_new_path(user.id))
+      expect(current_path).to eq(new_user_portfolio_path(user.id))
       expect(user.portfolio).to eq(nil)
     end
 
@@ -106,7 +106,7 @@ RSpec.describe Portfolio, js:true  do
       click_on 'Save Profile'
       sleep(1)
 
-      expect(current_path).to eq(user_portfolio_new_path(user.id))
+      expect(current_path).to eq(new_user_portfolio_path(user.id))
       expect(user.portfolio).to eq(nil)
     end
   end
