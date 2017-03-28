@@ -12,7 +12,7 @@ describe 'as a user', js:true do
 
       click_on "Create New Project"
 
-      expect(current_path).to eq(user_project_new_path(user.id))
+      expect(current_path).to eq(new_user_project_path(user.id))
 
       fill_in 'project-name', with: "Jam City"
       fill_in 'github', with: "github.com"
@@ -20,7 +20,7 @@ describe 'as a user', js:true do
 
       find(".project-save").trigger("click")
       sleep(1)
-      
+
       expect(current_path).to eq(dashboard_path)
       expect(user.projects.count).to eq(1)
     end
