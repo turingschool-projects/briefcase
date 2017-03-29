@@ -12,11 +12,11 @@ class DashboardPresenter
   end
 
   def avatar
-    @user.portfolio.avatar.url(:square)
+    @user.portfolio.avatar.url(:square) if portfolio
   end
 
   def markdown_info
-    @user.portfolio.markdown_info
+    @user.portfolio.markdown_info if portfolio
   end
 
   def project_avatars

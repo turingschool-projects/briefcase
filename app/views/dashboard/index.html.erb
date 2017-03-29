@@ -1,7 +1,7 @@
 <% if(logged_in?) %>
   <%= react_component('Dashboard', {
     user: current_user,
-    projects: @dashboard_presenter.projects,
+    projects: @projects,
     portfolio: current_user.portfolio,
     avatar: @dashboard_presenter.avatar,
     project_avatars: @dashboard_presenter.project_avatars,
