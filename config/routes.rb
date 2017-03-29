@@ -10,11 +10,9 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :update] do
     get 'edit-account', to: 'users#account'
     get "portfolio", to: "users/portfolios#show"
-    get "portfolio/edit", to: "users/portfolios#edit"
-    put "portfolio", to: "users/portfolios#update"
     delete "portfolio", to: "users/portfolios#destroy"
     get "portfolio/delete", to: "users/portfolios#delete"
-    resources :portfolio, :controller => "users/portfolios", only: [:new, :create]
+    resource :portfolio, :controller => "users/portfolios", only: [:new, :create, :edit, :update]
     resources :project, :controller => "users/projects", only: [:new, :create]
     delete "project", to: "users/projects#destroy"
     get "project/edit", to: "users/projects#edit"
