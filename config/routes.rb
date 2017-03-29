@@ -12,11 +12,7 @@ Rails.application.routes.draw do
     resource :portfolio, :controller => "users/portfolios", only: [:show, :new, :create, :edit, :update, :destroy] do
       get '/delete', to: "users/portfolios#delete"
     end
-
-    resources :project, :controller => "users/projects", only: [:new, :create]
-    delete "project", to: "users/projects#destroy"
-    get "project/edit", to: "users/projects#edit"
-    put "project", to: "users/projects#update"
+    resource :project, :controller => "users/projects", only: [:new, :create, :edit, :update, :destroy]
   end
 
   get '/dashboard', to: "dashboard#index" #technically the dashboard
