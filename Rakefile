@@ -7,7 +7,7 @@ Rails.application.load_tasks
 
 namespace :db do
   namespace :seed do
-    require_relative 'db/seeds'
+    require_relative 'db/test_user'
     desc "Seed database with test User and test Portfolio information"
     task :test_user => :environment do
       create_users_and_portfolios
