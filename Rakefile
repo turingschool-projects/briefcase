@@ -4,3 +4,13 @@
 require_relative 'config/application'
 
 Rails.application.load_tasks
+
+namespace :db do
+  namespace :seed do
+    require_relative 'db/seeds'
+    desc "Seed database with test User and test Portfolio information"
+    task :test_user => :environment do
+      create_users_and_portfolios
+    end
+  end
+end
