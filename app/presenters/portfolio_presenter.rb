@@ -26,4 +26,21 @@ class PortfolioPresenter
   def asc
     @portfolio.order(full_name: :asc)
   end
+
+  # def asc
+  #   TestPortfolio.new(@portfolio.first.full_name, @portfolio.avatar_urls.first)
+  #   binding.pry
+
+  #   puts 'hello'
+  # end
 end
+
+
+# class TestPortfolio
+#   attr_reader :full_name, :avatar_urls
+#   def initialize(full_name, avatar_urls)
+#     @full_name = full_name
+#     @avatar_urls = avatar_urls
+#   end
+
+# end
