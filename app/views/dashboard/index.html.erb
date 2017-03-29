@@ -1,6 +1,6 @@
 <%= react_component('Dashboard', {
   user: current_user,
-  projects: @projects,
+  projects: @dashboard_presenter.projects,
   portfolio: current_user.portfolio,
   avatar: @dashboard_presenter.avatar,
   project_avatars: @dashboard_presenter.project_avatars,
