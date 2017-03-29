@@ -1,11 +1,13 @@
 <% if(logged_in?) %>
-  <%= react_component('Dashboard', {user: current_user,
-    projects: @projects,
+  <%= react_component('Dashboard', {
+    user: current_user,
+    projects: @dashboard_presenter.projects,
     portfolio: current_user.portfolio,
-    avatar: @avatar,
-    project_avatars: @project_avatars,
-    markdownInfo: @markdown_info},
+    avatar: @dashboard_presenter.avatar,
+    project_avatars: @dashboard_presenter.project_avatars,
+    markdownInfo: @dashboard_presenter.markdown_info},
   {prerender: true}) %>
+
 <% else %>
   <%= react_component('Main', {user: current_user,
     signed_in: 0},
