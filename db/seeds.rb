@@ -1,9 +1,9 @@
 require 'csv'
-class Seed
-  def self.start
-    seed = Seed.new
-    seed.create_locations
-    # seed.create_users_and_portfolios
+# class Seed
+  def start
+    # seed = Seed.new
+    # seed.
+    create_locations
   end
 
   def create_locations
@@ -19,6 +19,8 @@ class Seed
 
 
   def create_users_and_portfolios
+    puts 'Start adding test users and test portfolios...'
+    puts 'Test users first...'
     user1 = User.create(first_name: 'Leslie', last_name: 'Hawk', email: 'example@example.com')
     user2 = User.create(first_name: 'Joe', last_name: 'Henry', email: 'example@example.com')
     user3 = User.create(first_name: 'Jack', last_name: 'Donley', email: 'example@example.com')
@@ -26,13 +28,15 @@ class Seed
     user5 = User.create(first_name: 'Sue', last_name: 'Anne', email: 'example@example.com')
     user6 = User.create(first_name: 'Sally', last_name: 'May', email: 'example@example.com')
 
+    puts 'Test portfolios...'
     user1.create_portfolio(full_name: 'Leslie Hawk', email: 'example@example.com', github_url: 'github.com', linkedin_url: 'linkedin.com', bio: 'I like cars', title: 'Software Developer')
     user2.create_portfolio(full_name: 'Joe Henry', email: 'example@example.com', github_url: 'github.com', linkedin_url: 'linkedin.com', bio: 'I like cars', title: 'Software Developer')
     user3.create_portfolio(full_name: 'Jack Donley', email: 'example@example.com', github_url: 'github.com', linkedin_url: 'linkedin.com', bio: 'I like cars', title: 'Software Developer')
     user4.create_portfolio(full_name: 'Greg Maker', email: 'example@example.com', github_url: 'github.com', linkedin_url: 'linkedin.com', bio: 'I like cars', title: 'Software Developer')
     user5.create_portfolio(full_name: 'Sue Anne', email: 'example@example.com', github_url: 'github.com', linkedin_url: 'linkedin.com', bio: 'I like cars', title: 'Software Developer')
     user6.create_portfolio(full_name: 'Sally May', email: 'example@example.com', github_url: 'github.com', linkedin_url: 'linkedin.com', bio: 'I like cars', title: 'Software Developer')
+    puts 'Finished adding test users and test portfolios...'
   end
-end
+# end
 
-Seed.start
+# Seed.start
