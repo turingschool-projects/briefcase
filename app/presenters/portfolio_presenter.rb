@@ -4,7 +4,8 @@ class PortfolioPresenter
   end
 
   def all
-    @portfolios.all
+    # @portfolios.all
+    asc
   end
 
   def avatar_urls
@@ -26,23 +27,42 @@ class PortfolioPresenter
   def asc
     # @portfolio.order(full_name: :asc)
     # Hijacked this method to test passing new PORO to Front-End
-    pf = Portfolio.first
-    PortfolioForReact.new()
+    @portfolios.all.map do |one_portfolio|
+      avatar_url = '/avatars/original/missing.png'
+      PortfolioForReact.new(one_portfolio.title,
+                            one_portfolio.full_name,
+                            avatar_url,
+                            one_portfolio.bio,
+                            one_portfolio.locations,
+                            one_portfolio.github_url,
+                            one_portfolio.linkedin_url,
+                            one_portfolio.twitter_url,
+                            one_portfolio.personal_url,
+                            one_portfolio.user_slug).output_for_react
+    end
   end
 end
 
 
 class PortfolioForReact
   attr_reader :portfolio
-  def initialize(full_name, avatar_urls, bio, locations, github_url, linkedin_url)
+  def initialize(title, full_name, avatar_url, bio, locations, github_url, linkedin_url, twitter_url, personal_url, user_slug)
     @portfolio = {
-      full_name => full_name,
-      avatar_urls => avatar_urls,
-      bio => bio,
-      locations => locations,
-      github_url => github_url,
-      linkedin_url => linkedin_url
+      :title => title,
+      :full_name => full_name,
+      :avatar_url => avatar_url,
+      :bio => bio,
+      :locations => locations,
+      :github_url => github_url,
+      :linkedin_url => linkedin_url,
+      :twitter_url => twitter_url,
+      :personal_url => personal_url,
+      :user_slug => user_slug
     }
+  end
+
+  def output_for_react
+    portfolio
   end
 
 end

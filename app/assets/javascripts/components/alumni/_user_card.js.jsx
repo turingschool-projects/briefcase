@@ -32,7 +32,7 @@ var UserCard = React.createClass({
                   {
                     avatars[portfolio.id] === "/avatars/original/missing.png"
                     ? <img className="activator card-picture" src="http://intelligentsystemsmonitoring.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png" />
-                    : <img className="activator card-picture" src={avatars[portfolio.id]} />
+                    : <img className="activator card-picture" src={portfolio.avatar_url} />
                   }
                 </center>
               </div>
