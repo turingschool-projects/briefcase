@@ -9,7 +9,7 @@ RSpec.describe Portfolio, js:true do
 
       click_link 'Edit'
 
-      expect(current_path).to eq(user_portfolio_edit_path(user.id))
+      expect(current_path).to eq(edit_user_portfolio_path(user.id))
 
       fill_in :name, with: "John"
       fill_in :title, with: "Engineer"
