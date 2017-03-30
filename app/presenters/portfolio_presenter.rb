@@ -5,7 +5,7 @@ class PortfolioPresenter
 
   def all
     # @portfolios.all
-    output = asc
+    output = build_up_portfolios
     return output
   end
 
@@ -26,14 +26,20 @@ class PortfolioPresenter
   end
 
   def asc
-    # @portfolio.order(full_name: :asc)
-    # Hijacked this method to test passing new PORO to Front-End
+    @portfolio.order(full_name: :asc)
+  end
+
+  def build_up_portfolios
     @portfolios.all.map do |one_portfolio|
-      avatar_url = '/avatars/original/missing.png'
+      avatar_urls = {}
+      avatar_urls[:thumb] = one_portfolio.avatar.url(:thumb)
+      avatar_urls[:square] = one_portfolio.avatar.url(:square)
+      avatar_urls[:medium] = one_portfolio.avatar.url(:medium)
+      avatar_urls[:regular] = one_portfolio.avatar.url(:regular)
       PortfolioForReact.new(one_portfolio.id,
                             one_portfolio.title,
                             one_portfolio.full_name,
-                            avatar_url,
+                            avatar_urls,
                             one_portfolio.bio,
                             one_portfolio.locations,
                             one_portfolio.github_url,
@@ -45,15 +51,14 @@ class PortfolioPresenter
   end
 end
 
-
 class PortfolioForReact
   attr_reader :portfolio
-  def initialize(id, title, full_name, avatar_url, bio, locations, github_url, linkedin_url, twitter_url, personal_url, user_slug)
+  def initialize(id, title, full_name, avatar_urls, bio, locations, github_url, linkedin_url, twitter_url, personal_url, user_slug)
     @portfolio = {
       :id => id,
       :title => title,
       :full_name => full_name,
-      :avatar_url => avatar_url,
+      :avatar_urls => avatar_urls,
       :bio => bio,
       :locations => locations,
       :github_url => github_url,
@@ -70,7 +75,7 @@ class PortfolioForReact
 
 end
 
-
+# Copied here for reference to see what is needed within the other components
 # <%= react_component('Main', {portfolios: @portfolio.all,
 #   user: current_user,
 #   avatars: @portfolio.avatar_urls,
