@@ -17,13 +17,4 @@ class UsersController < ApplicationController
       render component: "PortfolioNew"
     end
   end
-
-  private
-    def first_name_from_slug
-      params[:slug].split('-')[0]
-    end
-
-    def last_name_from_slug
-      params[:slug].split('-')[-1]
-    end
 end
