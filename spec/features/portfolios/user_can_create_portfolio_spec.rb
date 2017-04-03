@@ -49,6 +49,7 @@ RSpec.describe Portfolio, js:true  do
       sleep(1)
 
       expect(current_path).to eq(new_user_portfolio_path(user.id))
+      expect(page).to have_content("Name is required")
       expect(user.portfolio).to eq(nil)
     end
 
@@ -69,6 +70,7 @@ RSpec.describe Portfolio, js:true  do
       sleep(1)
 
       expect(current_path).to eq(new_user_portfolio_path(user.id))
+      expect(page).to have_content("Title is required")
       expect(user.portfolio).to eq(nil)
     end
 
@@ -89,6 +91,7 @@ RSpec.describe Portfolio, js:true  do
       sleep(1)
 
       expect(current_path).to eq(new_user_portfolio_path(user.id))
+      expect(page).to have_content("Bio is required")
       expect(user.portfolio).to eq(nil)
     end
 
@@ -107,6 +110,7 @@ RSpec.describe Portfolio, js:true  do
       sleep(1)
 
       expect(current_path).to eq(new_user_portfolio_path(user.id))
+      expect(page).to have_content("Email is required")
       expect(user.portfolio).to eq(nil)
     end
   end
