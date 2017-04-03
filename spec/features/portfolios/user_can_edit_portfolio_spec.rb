@@ -41,9 +41,39 @@ RSpec.describe Portfolio, js:true do
       sleep(1)
 
       expect(current_path).to eq(edit_user_portfolio_path(@user.id))
-      save_and_open_page
       expect(page).to have_content("Missing require field")
+    end
 
+    it 'requires a title' do
+      click_link 'Edit'
+
+      expect(current_path).to eq(edit_user_portfolio_path(@user.id))
+
+      fill_in :name, with: "John"
+      fill_in :title, with: ""
+      fill_in :bio, with: "Edited Bio"
+
+      click_on 'Save Profile'
+      sleep(1)
+
+      expect(current_path).to eq(edit_user_portfolio_path(@user.id))
+      expect(page).to have_content("Missing require field")
+    end
+
+    it 'requires a bio' do
+      click_link 'Edit'
+
+      expect(current_path).to eq(edit_user_portfolio_path(@user.id))
+
+      fill_in :name, with: "John"
+      fill_in :title, with: "Engineer"
+      fill_in :bio, with: ""
+
+      click_on 'Save Profile'
+      sleep(1)
+
+      expect(current_path).to eq(edit_user_portfolio_path(@user.id))
+      expect(page).to have_content("Missing require field")
     end
   end
 end
