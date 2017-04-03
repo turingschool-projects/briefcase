@@ -20,7 +20,7 @@ class Users::PortfoliosController < ApplicationController
 
       render js: "/dashboard"
     else
-      render component: 'Portfolio', props: { user: current_user, portfolio: current_user.portfolio, slug: current_user.slug, locations: Location.distinct_city_states}, status: 400
+      redirect_to new_user_portfolio_path(current_user), status: 400
     end
   end
 
