@@ -1,15 +1,17 @@
 require 'rails_helper'
 
 RSpec.describe Portfolio, js:true do
+  before(:each) do
+    @user = new_user
+    portfolio = @user.create_portfolio(linkedin_url: "linkedin.com", full_name: "Anthony Ciccone", github_url: "github.com", email: "test@test.com", title: "software developer", bio: "about myself here")
+    visit dashboard_path
+  end
+
   context 'as a new logged in user' do
     it "can edit an existing portfolio" do
-      user = new_user
-      portfolio = user.create_portfolio(linkedin_url: "linkedin.com", full_name: "Anthony Ciccone", github_url: "github.com", email: "test@test.com", title: "software developer", bio: "about myself here")
-      visit dashboard_path
-
       click_link 'Edit'
 
-      expect(current_path).to eq(edit_user_portfolio_path(user.id))
+      expect(current_path).to eq(edit_user_portfolio_path(@user.id))
 
       fill_in :name, with: "John"
       fill_in :title, with: "Engineer"
