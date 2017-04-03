@@ -26,4 +26,25 @@ describe 'as a user', js:true do
       expect(@user.projects.count).to eq(1)
     end
   end
+
+  context 'validations' do
+    it 'requires a name' do
+      visit dashboard_path
+
+      click_on "Create New Project"
+
+      expect(current_path).to eq(new_user_project_path(@user.id))
+
+      fill_in 'project-name', with: ""
+      fill_in 'github', with: "github.com"
+      fill_in 'description', with: "best project"
+
+      find(".project-save").trigger("click")
+      sleep(1)
+
+      expect(current_path).to eq(new_user_project_path(@user.id))
+      expect(page).to have_content("Error: Missing required fields!")
+      expect(@user.projects.count).to eq(0)
+    end
+  end
 end
