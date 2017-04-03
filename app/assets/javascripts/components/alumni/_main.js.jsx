@@ -20,7 +20,7 @@ var Main = React.createClass({
           <SignedInNavbar user={user}/>
           <MainJumbo/>
           <MainSearch prepNewPortfolios={this.prepNewPortfolios} port_asc={this.props.port_asc} port_desc={this.props.port_desc} portfolios={this.props.portfolios} locations={this.props.locations}/>
-            <UserCard portfolios={newPortfolios}  avatars={this.props.avatars} bios={this.props.bios} locations={this.props.locations}/>
+            <UserCard portfolios={newPortfolios} bios={this.props.bios} locations={this.props.locations}/>
           <Footer/>
         </div>
       )
@@ -30,7 +30,7 @@ var Main = React.createClass({
           <GuestNavbar/>
           <MainJumbo/>
           <MainSearch prepNewPortfolios={this.prepNewPortfolios} port_asc={this.props.port_asc} port_desc={this.props.port_desc} portfolios={this.props.portfolios} locations={this.props.locations}/>
-          <UserCard portfolios={newPortfolios} avatars={this.props.avatars} bios={this.props.bios} locations={this.props.locations}/>
+          <UserCard portfolios={newPortfolios} bios={this.props.bios} locations={this.props.locations}/>
           <Footer/>
         </div>
       )

@@ -17,7 +17,6 @@ var UserCard = React.createClass({
   },
 
   render(){
-    var avatars = this.props.avatars;
     var bios = this.props.bios;
     var locations = this.props.locations;
 
