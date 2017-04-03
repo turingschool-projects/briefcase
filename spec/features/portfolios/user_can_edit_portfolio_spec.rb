@@ -16,6 +16,7 @@ RSpec.describe Portfolio, js:true do
       fill_in :name, with: "John"
       fill_in :title, with: "Engineer"
       fill_in :bio, with: "Edited Bio"
+      fill_in :email, with: "some-email@email.com"
 
       click_on 'Save Profile'
       sleep(1)
@@ -36,6 +37,7 @@ RSpec.describe Portfolio, js:true do
       fill_in :name, with: ""
       fill_in :title, with: "Engineer"
       fill_in :bio, with: "Edited Bio"
+      fill_in :email, with: "some-email@email.com"
 
       click_on 'Save Profile'
       sleep(1)
@@ -52,6 +54,7 @@ RSpec.describe Portfolio, js:true do
       fill_in :name, with: "John"
       fill_in :title, with: ""
       fill_in :bio, with: "Edited Bio"
+      fill_in :email, with: "some-email@email.com"
 
       click_on 'Save Profile'
       sleep(1)
@@ -68,6 +71,24 @@ RSpec.describe Portfolio, js:true do
       fill_in :name, with: "John"
       fill_in :title, with: "Engineer"
       fill_in :bio, with: ""
+      fill_in :email, with: "some-email@email.com"
+
+      click_on 'Save Profile'
+      sleep(1)
+
+      expect(current_path).to eq(edit_user_portfolio_path(@user.id))
+      expect(page).to have_content("Missing require field")
+    end
+
+    it 'requires an email' do
+      click_link 'Edit'
+
+      expect(current_path).to eq(edit_user_portfolio_path(@user.id))
+
+      fill_in :name, with: "John"
+      fill_in :title, with: "Engineer"
+      fill_in :bio, with: "Edited Bio"
+      fill_in :email, with: ""
 
       click_on 'Save Profile'
       sleep(1)
