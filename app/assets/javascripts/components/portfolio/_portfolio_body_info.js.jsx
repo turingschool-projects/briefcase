@@ -32,11 +32,11 @@ var PortfolioBodyInfo = React.createClass({
               <PortfolioAvatar allProps={this.props.allProps}/>
             </div>
             <div className='col s8 offset-s4'>
-              <h1>About You</h1>
-              <h7 class="required">*required</h7>
+              <h1>About You*</h1>
             </div>
             <div className="col s8 offset-s4">
               <textarea id="bio" name="bio" className="bio-edit editor" placeholder={placeHolder} defaultValue={this.state.bio} onChange={this.handleNew}></textarea>
+              <h7 className='col s4 offset-s0'>* denotes required fields </h7>
             </div>
         </div>
         <PortfolioMidInfo allProps={this.props.allProps} />
