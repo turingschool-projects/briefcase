@@ -25,7 +25,7 @@ class Users::ProjectsController < ApplicationController
       update_avatar(new_project) if params[:project][:avatar]
       render js: "/dashboard"
     else
-      render component: 'ProjectNew', props: { user: current_user}, status: 400
+      redirect_to new_user_project_path(current_user), status: 400
     end
   end
 
