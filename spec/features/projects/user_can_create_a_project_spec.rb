@@ -4,7 +4,7 @@ describe 'as a user', js:true do
   before(:each) do
     @user = new_user
 
-    @user.create_portfolio(linkedin_url: "linkedin.com", full_name: "Anthony Ciccone", github_url: "github.com", email: "test@test.com", title: "test", bio: "software develooer")
+    @user.create_portfolio(linkedin_url: "linkedin.com", full_name: "Anthony Ciccone", github_url: "project@github.com", email: "test@test.com", title: "test", bio: "software develooer")
   end
 
   context 'when I create a portfolio' do
@@ -16,7 +16,7 @@ describe 'as a user', js:true do
       expect(current_path).to eq(new_user_project_path(@user.id))
 
       fill_in 'project-name', with: "Jam City"
-      fill_in 'github', with: "github.com"
+      fill_in 'github', with: "updated-project@github.com"
       fill_in 'description', with: "best project"
 
       find(".project-save").trigger("click")
@@ -36,8 +36,44 @@ describe 'as a user', js:true do
       expect(current_path).to eq(new_user_project_path(@user.id))
 
       fill_in 'project-name', with: ""
-      fill_in 'github', with: "github.com"
+      fill_in 'github', with: "updated-project@github.com"
       fill_in 'description', with: "best project"
+
+      find(".project-save").trigger("click")
+      sleep(1)
+
+      expect(current_path).to eq(new_user_project_path(@user.id))
+      expect(page).to have_content("Error: Missing required fields!")
+      expect(@user.projects.count).to eq(0)
+    end
+
+    it 'requires a github url' do
+      visit dashboard_path
+
+      click_on "Create New Project"
+
+      expect(current_path).to eq(new_user_project_path(@user.id))
+
+      fill_in 'project-name', with: "Jam City"
+      fill_in 'description', with: "best project"
+
+      find(".project-save").trigger("click")
+      sleep(1)
+
+      expect(current_path).to eq(new_user_project_path(@user.id))
+      expect(page).to have_content("Error: Missing required fields!")
+      expect(@user.projects.count).to eq(0)
+    end
+
+    it 'requires a description' do
+      visit dashboard_path
+
+      click_on "Create New Project"
+
+      expect(current_path).to eq(new_user_project_path(@user.id))
+
+      fill_in 'project-name', with: "Jam City"
+      fill_in 'github', with: "updated-project@github.com"
 
       find(".project-save").trigger("click")
       sleep(1)
