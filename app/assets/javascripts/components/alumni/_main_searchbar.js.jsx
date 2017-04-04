@@ -15,13 +15,21 @@ var MainSearch = React.createClass({
 
   sort: function(self){
     if ($('#arrow-toggle').hasClass('fa-arrow-up')) {
-      this.props.prepNewPortfolios(this.props.port_asc);
+      this.props.prepNewPortfolios(this.props.portfolios.sort(function(a, b){
+        if(a.full_name < b.full_name) return -1;
+        if(a.full_name > b.full_name) return 1;
+        return 0;
+      }))
       $('#arrow-toggle').removeClass("fa-arrow-up");
       $('#arrow-toggle').addClass("fa-arrow-down");
     } else {
+      this.props.prepNewPortfolios(this.props.portfolios.sort(function(a, b){
+        if(b.full_name < a.full_name) return -1;
+        if(b.full_name > a.full_name) return 1;
+        return 0;
+      }))
       $('#arrow-toggle').removeClass("fa-arrow-down");
       $('#arrow-toggle').addClass("fa-arrow-up");
-      this.props.prepNewPortfolios(this.props.port_desc)
     }
   },
 
