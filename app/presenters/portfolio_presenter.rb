@@ -28,7 +28,7 @@ class PortfolioPresenter
   end
 
   def build_up_portfolios
-    @portfolios.all.map do |one_portfolio|
+    @portfolios.all.published.map do |one_portfolio|
       PortfolioForReact.new(one_portfolio).output_for_react
     end
   end
