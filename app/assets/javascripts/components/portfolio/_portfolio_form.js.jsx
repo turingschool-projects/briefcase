@@ -22,7 +22,11 @@ var PortfolioForm = React.createClass({
     var validationMessages = this.validationMessages;
     $('.loader').show();
 
-    axios.post(`/users/${user.id}/portfolio.json`, {portfolio: this.state.portfolio})
+    const newPortfolio = update(this.state.portfolio, {
+      'published': { $set: 'false' }
+    });
+
+    axios.post(`/users/${user.id}/portfolio.json`, {portfolio: newPortfolio})
     .then(response => {
       window.location = response.data;
     })

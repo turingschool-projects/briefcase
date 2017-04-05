@@ -12,7 +12,6 @@ class Users::PortfoliosController < ApplicationController
   def create
     user = User.find(params[:user_id])
     new_portfolio = user.build_portfolio(portfolio_params)
-
     if(new_portfolio.save)
       update_avatar(user, new_portfolio) if params[:portfolio][:avatar]
       update_resume(user, new_portfolio) if params[:portfolio][:resume]
@@ -59,7 +58,7 @@ class Users::PortfoliosController < ApplicationController
 
   private
     def portfolio_params
-      params.require("portfolio").permit("full_name", "title", "cohort", "github_url", "linkedin_url", "bio", "background", "resume_file", "locations", "looking_for", "best_at", "hired", "hired_by", "user_id", "email", "twitter_url", "personal_url", "hired_by")
+      params.require("portfolio").permit("full_name", "title", "cohort", "github_url", "linkedin_url", "bio", "background", "resume_file", "locations", "looking_for", "best_at", "hired", "hired_by", "user_id", "email", "twitter_url", "personal_url", "published")
     end
 
     def update_avatar(user, portfolio)
