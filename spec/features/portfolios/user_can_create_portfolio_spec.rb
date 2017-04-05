@@ -56,6 +56,7 @@ RSpec.describe Portfolio, js:true  do
       expect(user.portfolio.email).to eq("www.test.com")
       expect(user.portfolio.github_url).to eq("www.test.com")
       expect(user.portfolio.linkedin_url).to eq("www.test.com")
+      expect(user.portfolio.published).to eq(false)
 
       visit alumni_index_path
 

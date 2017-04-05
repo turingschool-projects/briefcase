@@ -17,6 +17,22 @@ var PortfolioForm = React.createClass({
     });
   },
 
+  handleDraftInsert(){
+    var user = this.props.allProps.user;
+    var validationMessages = this.validationMessages;
+    $('.loader').show();
+
+    axios.post(`/users/${user.id}/portfolio.json`, {portfolio: this.state.portfolio})
+    .then(response => {
+      window.location = response.data;
+    })
+    .catch(error => {
+      $('.loader').hide();
+      errors = validationMessages();
+      Materialize.toast(errors.join(""), 8000);
+    });
+  },
+
   handleInsert(){
     var user = this.props.allProps.user;
     var validationMessages = this.validationMessages;
@@ -91,7 +107,7 @@ var PortfolioForm = React.createClass({
             allProps.portfolio == null
             ?
             <div>
-              <button className="btn waves-effect waves-light portfolio-btns" type="submit" name="action" value="Save Draft" onClick={this.handleInsert}>Save as Draft</button>
+              <button className="btn waves-effect waves-light portfolio-btns" type="submit" name="action" value="Save Draft" onClick={this.handleDraftInsert}>Save as Draft</button>
               <button className="btn waves-effect waves-light portfolio-btns" type="submit" name="action" value="Save Profile" onClick={this.handleInsert}>Save Profile</button>
             </div>
             :
