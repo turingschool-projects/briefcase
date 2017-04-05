@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170219000009) do
+ActiveRecord::Schema.define(version: 20170405152451) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,13 +39,12 @@ ActiveRecord::Schema.define(version: 20170219000009) do
     t.text     "looking_for"
     t.text     "best_at"
     t.integer  "hired"
-    t.integer  "published"
     t.string   "full_name"
     t.string   "title"
     t.string   "hired_by"
     t.integer  "user_id"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.string   "user_slug"
     t.string   "personal_url"
     t.string   "twitter_url"
@@ -57,6 +56,7 @@ ActiveRecord::Schema.define(version: 20170219000009) do
     t.string   "resume_content_type"
     t.integer  "resume_file_size"
     t.datetime "resume_updated_at"
+    t.boolean  "published",           default: true
     t.index ["user_id"], name: "index_portfolios_on_user_id", using: :btree
   end
 
