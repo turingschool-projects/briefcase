@@ -10,6 +10,8 @@ class Portfolio < ApplicationRecord
   validates :bio, presence: true
   has_many :locations, :dependent => false
   has_many :locations, dependent: :destroy
+  has_many :portfolio_past_experiences
+  has_many :portfolios, through: :portfolio_past_experiences
 
   belongs_to :user
   after_create :set_slug
