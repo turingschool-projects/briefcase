@@ -8,7 +8,7 @@ describe 'as a user', js:true do
   end
 
   context 'when I create a portfolio' do
-    it 'I can then create a project' do
+    it 'I can then create and PUBLISH a project' do
       visit dashboard_path
 
       click_on "Create New Project"
@@ -25,6 +25,29 @@ describe 'as a user', js:true do
       expect(current_path).to eq(dashboard_path)
       expect(@user.projects.count).to eq(1)
     end
+
+    it 'I can then create and SAVE AS DRAFT a project' do
+      visit dashboard_path
+
+      click_on "Create New Project"
+
+      expect(current_path).to eq(new_user_project_path(@user.id))
+
+      fill_in 'project-name', with: "Jam City"
+      fill_in 'github', with: "updated-project@github.com"
+      fill_in 'description', with: "best project"
+
+      find(".project-draft").trigger("click")
+      sleep(1)
+
+      expect(current_path).to eq(dashboard_path)
+      expect(@user.projects.count).to eq(1)
+      expect(@user.projects.first.published).to eq(false)
+      within('.projects-draft') do
+        expect(page).to have_content("Jam City")
+      end
+    end
+
   end
 
   context 'validations' do
