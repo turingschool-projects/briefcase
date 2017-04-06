@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170405152451) do
+ActiveRecord::Schema.define(version: 20170406145124) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,19 @@ ActiveRecord::Schema.define(version: 20170405152451) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.index ["portfolio_id"], name: "index_locations_on_portfolio_id", using: :btree
+  end
+
+  create_table "past_experiences", force: :cascade do |t|
+    t.text     "experience"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "portfolio_past_experiences", force: :cascade do |t|
+    t.integer "portfolio_id"
+    t.integer "past_experience_id"
+    t.index ["past_experience_id"], name: "index_portfolio_past_experiences_on_past_experience_id", using: :btree
+    t.index ["portfolio_id"], name: "index_portfolio_past_experiences_on_portfolio_id", using: :btree
   end
 
   create_table "portfolios", force: :cascade do |t|
@@ -56,6 +69,7 @@ ActiveRecord::Schema.define(version: 20170405152451) do
     t.string   "resume_content_type"
     t.integer  "resume_file_size"
     t.datetime "resume_updated_at"
+    t.text     "previous_experience"
     t.boolean  "published",           default: true
     t.index ["user_id"], name: "index_portfolios_on_user_id", using: :btree
   end
@@ -94,6 +108,8 @@ ActiveRecord::Schema.define(version: 20170405152451) do
   end
 
   add_foreign_key "locations", "portfolios"
+  add_foreign_key "portfolio_past_experiences", "past_experiences"
+  add_foreign_key "portfolio_past_experiences", "portfolios"
   add_foreign_key "projects", "portfolios"
   add_foreign_key "projects", "users"
 end

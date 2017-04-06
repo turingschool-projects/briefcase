@@ -90,7 +90,7 @@ var MainSearch = React.createClass({
           </div>
           <div className='col s12 l6 search-buttons'>
             <ul>
-              <li><button className='title btn transparent all-graduates-btn' onClick={this.allGraduates}>All Alumni</button></li>
+              <li><button className='title btn transparent all-graduates-btn' onClick={this.allGraduates}>All Graduates</button></li>
               <li><button className='title btn transparent heart' onClick={this.showHearts}><i id="by-heart" className="fa fa-heart-o center fa-2x" aria-label="favorite graduates" aria-hidden="true"></i></button></li>
               <li><button className='title btn transparent a-z-btn' onClick={this.sort}> A-Z <i id='arrow-toggle' className="fa fa-arrow-down" aria-label="sort graduates a to z" aria-hidden="true"></i></button></li>
             </ul>
