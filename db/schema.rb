@@ -52,13 +52,12 @@ ActiveRecord::Schema.define(version: 20170406145124) do
     t.text     "looking_for"
     t.text     "best_at"
     t.integer  "hired"
-    t.integer  "published"
     t.string   "full_name"
     t.string   "title"
     t.string   "hired_by"
     t.integer  "user_id"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.string   "user_slug"
     t.string   "personal_url"
     t.string   "twitter_url"
@@ -71,6 +70,7 @@ ActiveRecord::Schema.define(version: 20170406145124) do
     t.integer  "resume_file_size"
     t.datetime "resume_updated_at"
     t.text     "previous_experience"
+    t.boolean  "published",           default: true
     t.index ["user_id"], name: "index_portfolios_on_user_id", using: :btree
   end
 

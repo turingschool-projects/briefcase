@@ -70,11 +70,6 @@ RSpec.describe 'Navbar', js:true  do
 
       visit '/'
 
-      click_on('My Account')
-      expect(current_path).to eq('/users/1/edit-account')
-
-      visit '/'
-
       click_on('Sign Out')
       expect(current_path).to eq('/')
     end

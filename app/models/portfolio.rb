@@ -22,6 +22,9 @@ class Portfolio < ApplicationRecord
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
   validates_attachment_content_type :resume, content_type: ["application/pdf"]
 
+  scope :published, -> { where(published: true) }
+  scope :draft, -> { where(published: false) }
+
   def set_slug
     self.update(user_slug: self.user.slug)
   end

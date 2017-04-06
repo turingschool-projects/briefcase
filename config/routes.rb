@@ -9,18 +9,10 @@ Rails.application.routes.draw do
 
   resources :users, only: [:edit, :update] do
     get 'edit-account', to: 'users#account'
-    get "portfolio", to: "users/portfolios#show"
-    get "portfolio/new", to: "users/portfolios#new"
-    get "portfolio/edit", to: "users/portfolios#edit"
-    put "portfolio", to: "users/portfolios#update"
-    post "portfolio", to: "users/portfolios#create"
-    delete "portfolio", to: "users/portfolios#destroy"
-    get "portfolio/delete", to: "users/portfolios#delete"
-    get "project/new", to: "users/projects#new"
-    post "project", to: "users/projects#create"
-    delete "project", to: "users/projects#destroy"
-    get "project/edit", to: "users/projects#edit"
-    put "project", to: "users/projects#update"
+    resource :portfolio, :controller => "users/portfolios" do
+      get '/delete', to: "users/portfolios#delete"
+    end
+    resource :project, :controller => "users/projects", only: [:new, :create, :edit, :update, :destroy]
   end
 
   get '/dashboard', to: "dashboard#index" #technically the dashboard
