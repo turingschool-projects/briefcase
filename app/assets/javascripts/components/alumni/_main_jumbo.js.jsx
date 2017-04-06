@@ -2,16 +2,16 @@ var MainJumbo = React.createClass({
   render: function() {
     return (
       <div>
-          <section id="block-block-94" className="block block-block block-background block-block-94 block-layout-contained      clearfix" >
+          <section id="block-block-94" className="block block-block block-background block-block-94 block-layout-contained clearfix" >
             <div className="container">
               <div className="block-title-container">
               </div>
               <div className="block-content-container">
                 <div className="block-content-holder">
                   <div className="block-content">
-                    <h1>Job Seeker Portfolios</h1>
+                    <h1>Alumni Portfolios</h1>
                     <span><hr/></span>
-                    <p>Meet our job-seeking alums</p>
+                    <p>Explore our recent Graduates to find your next employee</p>
                   </div>
                   <div className="block-quickedit-padding block-quickedit-padding-left" title="Drag to adjust left & right padding" data-quickedit-axis="x" data-quickedit-direction="left" />
                   <div className="block-quickedit-padding block-quickedit-padding-right" title="Drag to adjust left & right padding" data-quickedit-axis="x" data-quickedit-direction="right" />

@@ -74,17 +74,42 @@ RSpec.describe Portfolio do
   end
 
   context "relationships" do
-    it "has many projects" do
-      portfolio = Portfolio.new(linkedin_url: "linkedin.com", full_name: "Anthony Ciccone", github_url: "github.com", email: "test@test.com", title: "software developer", bio: "about myself here")
+    it { is_expected.to have_many :projects }
+    it { is_expected.to have_many :portfolio_past_experiences }
+    it { is_expected.to have_many :portfolios }
+    it { is_expected.to belong_to :user }
+  end
 
-      expect(portfolio).to respond_to(:projects)
+  context 'scopes' do
+    context 'PUBLISHED' do
+      it 'filters out DRAFT portfolios' do
+        user = new_user      
+        draft_portfolio = Portfolio.new(linkedin_url: "linkedin.com", full_name: "Anthony Ciccone", github_url: "github.com", email: "test@test.com", title: "software developer", bio: "about myself here", published: false, user: user)
+        draft_portfolio.save
+        published_portfolio = Portfolio.new(linkedin_url: "linkedin.com", full_name: "Anthony Ciccone", github_url: "github.com", email: "test@test.com", title: "software developer", bio: "about myself here", published: true, user: user)
+        published_portfolio.save
+
+        published_portfolios = Portfolio.all.published
+
+        expect(Portfolio.count).to eq(2)
+        expect(published_portfolios.count).to eq(1)
+      end
+    end
+    context 'DRAFT' do
+      it 'filters out PUBLISHED portfolios' do
+        user = new_user      
+        draft_portfolio = Portfolio.new(linkedin_url: "linkedin.com", full_name: "Anthony Ciccone", github_url: "github.com", email: "test@test.com", title: "software developer", bio: "about myself here", published: false, user: user)
+        draft_portfolio.save
+        published_portfolio = Portfolio.new(linkedin_url: "linkedin.com", full_name: "Anthony Ciccone", github_url: "github.com", email: "test@test.com", title: "software developer", bio: "about myself here", published: true, user: user)
+        published_portfolio.save
+
+        draft_portfolios = Portfolio.all.draft
+
+        expect(Portfolio.count).to eq(2)
+        expect(draft_portfolios.count).to eq(1)
+      end
     end
 
-    it "belongs to a user" do
-      portfolio = Portfolio.new(linkedin_url: "linkedin.com", full_name: "Anthony Ciccone", github_url: "github.com", email: "test@test.com", title: "software developer", bio: "about myself here")
-
-      expect(portfolio).to respond_to(:user)
-    end
   end
 
   context 'scopes' do

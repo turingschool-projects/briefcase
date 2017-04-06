@@ -13,9 +13,8 @@
  *= require_tree .
  *= require_self
  */
- $turingblue: #05c2d1;
+ // $turingblue: #05c2d1;
  @import 'dashboard';
-
  @import 'show';
  @import 'user_project_card';
 
@@ -89,6 +88,10 @@
 
 .material-icons {
   color: $turingblue
+}
+
+.material-icons .menu{
+  color: white;
 }
 
 .more-vert:hover{
@@ -361,14 +364,40 @@ hr {
 
 footer.page-footer {
   background-color: #3C4040 !important;
-  height: 300px !important;
+  padding-bottom: 15px;
 }
 
 .newsletter {
-  font-size: 24px;
+  font-size: 1em;
   color: white;
   font-family: azo-sans-web, sans-serif;
   margin-top: 1em;
+}
+
+.newsletter h2{
+  font-size: 1.5em;
+}
+
+.social-links {
+  font-size: 1em;
+  color: white;
+  font-family: azo-sans-web, sans-serif;
+  margin-top: 1em;
+}
+
+.social-links h2{
+  font-size: 1.5em;
+}
+
+.contact {
+  font-size: 1em;
+  color: white;
+  font-family: azo-sans-web, sans-serif;
+  margin-top: 1em;
+}
+
+.contact h2{
+  font-size: 1.5em;
 }
 
 .social-footer {
@@ -379,7 +408,7 @@ footer.page-footer {
 
 .address {
   color: grey;
-  font-size: 16px;
+  font-size: 1em;
   width: 80%;
   line-height: 150%;
   margin-top: 6%;
@@ -388,7 +417,7 @@ footer.page-footer {
 
 .phone-number {
   color: #05c2d1;
-  font-size: 16px;
+  font-size: 1em;
   margin-top: 6%;
   line-height: 150%;
   width: 80%;
@@ -543,29 +572,31 @@ input[placeholder="Your Email Here"]{
     list-style: none;
     margin: 0;
     padding: 0;
-    padding-top: 22px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
     li {
       display: inline;
       .all-graduates-btn {
-        margin-right: 4px;
+        margin-right: .5em;
         text-align: left;
         border: 1px solid white;
-        padding-left: 7px;
-        padding-right: 7px;
+        padding-left: 1em;
+        padding-right: 1em;
       }
       .a-z-btn{
-        margin-right: 4px;
+        margin-right: .5em;
         text-align: left;
         border: 1px solid white;
-        padding-left: 7px;
-        padding-right: 7px;
+        padding-left: 1em;
+        padding-right: 1em;
       }
       .heart{
-        margin-right: 4px;
+        margin-right: .5em;
         text-align: center;
         border: 1px solid white;
-        padding-right: 2px;
-        padding-left: 2px;
+        padding-right: 1em;
+        padding-left: 1em;
       }
     }
   }
