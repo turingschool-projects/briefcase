@@ -28,6 +28,8 @@ git clone git@github.com:turingschool-projects/briefcase.git
  * S3_BUCKET_NAME
  * AWS_REGION
 
+Please find zip file with keys in the project-briefcase slack channel
+
 5. Install React.js
 ```shell
 rails g react:install
@@ -107,7 +109,17 @@ The application is currently using the following technlogies:
 * Libraries: JQuery, RedCarpet, Axios, Paperclip
 * Hosting: AWS S3
 
-Data flows from the controllers to Rails' built in ERB views. The views then render React components and pass props. The components then handle the rendering of data, and any requests are sent back to the server via Axios.
+Data flows from the controllers to Rails' built in ERB views.
+
+<center><img src="./app/assets/images/dashboard-controller.png" width="850"></center>
+
+The views then render React components and pass props.
+
+<center><img src="./app/assets/images/dashboard-erb-view.png" width="850"></center>
+
+The components then handle the rendering of data, and any requests are sent back to the server via Axios.
+
+<center><img src="./app/assets/images/dashboard-react-component.png" width="850"></center>
 
 
 ## Authors
