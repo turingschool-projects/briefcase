@@ -15,7 +15,7 @@ var AlumniBodyInfo = React.createClass({
         <div className="container">
           <div className="row about-me">
             <div className='col s4 graduate-picture'>
-              <img className="alumni-avatar" src={this.props.avatar}></img>
+              <img className="alumni-avatar" alt="alumni avatar" src={this.props.avatar}></img>
             </div>
             <div className='col s8 offset-s4'>
               <h1 className="about-title">About Me</h1>
@@ -25,8 +25,8 @@ var AlumniBodyInfo = React.createClass({
             </div>
             <div className=" col s8 offset-s4 button-space">
             <ul>
-              <li><button onClick={this.showEmail} className='btn transparent email-btn'>Click For Email <i className="fa fa-long-arrow-right" aria-hidden="true"></i></button></li>
-              <li><a target="_blank" href={"http://" + this.stripUrl(portfolio.github_url)}><button className='btn transparent github-btn'>GitHub Profile  <i className="fa fa-long-arrow-right" aria-hidden="true"></i></button></a></li>
+              <li><button onClick={this.showEmail} className='btn transparent email-btn'>Click For Email <i className="fa fa-long-arrow-right" aria-label="click to email directly" aria-hidden="true"></i></button></li>
+              <li><a target="_blank" href={"http://" + this.stripUrl(portfolio.github_url)}><button className='btn transparent github-btn'>GitHub Profile  <i className="fa fa-long-arrow-right" aria-label="github profile" aria-hidden="true"></i></button></a></li>
             </ul>
           </div>
         </div>
