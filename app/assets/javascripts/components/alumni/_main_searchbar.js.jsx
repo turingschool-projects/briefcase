@@ -80,7 +80,7 @@ var MainSearch = React.createClass({
     return (
       <div className="region-filters">
         <div className='row'>
-          <div className='col s4 offset-s2'>
+          <div className='col s12 l6'>
             <div className="search-container">
               <form action className="Search">
                 <input name="search-field" className="Search-box" placeholder="Search Here..." type="search" id="Search-box" autoComplete="off" onChange={this.handleSearch}/>
@@ -88,7 +88,7 @@ var MainSearch = React.createClass({
               </form>
             </div>
           </div>
-          <div className='col s3 offset-s2 search-buttons'>
+          <div className='col s12 l6 search-buttons'>
             <ul>
               <li><button className='title btn transparent all-graduates-btn' onClick={this.allGraduates}>All Alumni</button></li>
               <li><button className='title btn transparent heart' onClick={this.showHearts}><i id="by-heart" className="fa fa-heart-o center fa-2x" aria-label="favorite graduates" aria-hidden="true"></i></button></li>

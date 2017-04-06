@@ -2,7 +2,7 @@ var MainJumbo = React.createClass({
   render: function() {
     return (
       <div>
-          <section id="block-block-94" className="block block-block block-background block-block-94 block-layout-contained      clearfix" >
+          <section id="block-block-94" className="block block-block block-background block-block-94 block-layout-contained clearfix" >
             <div className="container">
               <div className="block-title-container">
               </div>
