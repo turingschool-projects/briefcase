@@ -112,10 +112,10 @@ var PortfolioForm = React.createClass({
             ?
             <div>
               <button className="btn waves-effect waves-light portfolio-btns" type="submit" name="action" value="Save Draft" onClick={this.handleDraftInsert}>Save as Draft</button>
-              <button className="btn waves-effect waves-light portfolio-btns" type="submit" name="action" value="Save Profile" onClick={this.handleInsert}>Save Profile</button>
+              <button className="btn waves-effect waves-light portfolio-btns" type="submit" name="action" value="Publish Profile" onClick={this.handleInsert}>Publish Profile</button>
             </div>
             :
-            <button className="btn waves-effect waves-light portfolio-btns" type="submit" name="action" value="Save Profile" onClick={this.handleUpdate}>Save Profile</button>
+            <button className="btn waves-effect waves-light portfolio-btns" type="submit" name="action" value="Publish Profile" onClick={this.handleUpdate}>Publish Profile</button>
           }
         </div>
       </div>
