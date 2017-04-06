@@ -364,10 +364,24 @@ hr {
 
 footer.page-footer {
   background-color: #3C4040 !important;
-  height: 300px !important;
+  // height: 300px !important;
 }
 
 .newsletter {
+  font-size: 24px;
+  color: white;
+  font-family: azo-sans-web, sans-serif;
+  margin-top: 1em;
+}
+
+.social-links {
+  font-size: 24px;
+  color: white;
+  font-family: azo-sans-web, sans-serif;
+  margin-top: 1em;
+}
+
+.contact {
   font-size: 24px;
   color: white;
   font-family: azo-sans-web, sans-serif;
@@ -382,7 +396,7 @@ footer.page-footer {
 
 .address {
   color: grey;
-  font-size: 16px;
+  font-size: 1em;
   width: 80%;
   line-height: 150%;
   margin-top: 6%;
@@ -391,7 +405,7 @@ footer.page-footer {
 
 .phone-number {
   color: #05c2d1;
-  font-size: 16px;
+  font-size: 1em;
   margin-top: 6%;
   line-height: 150%;
   width: 80%;
