@@ -13,7 +13,7 @@ var UserProjectCard = React.createClass ({
 							</div>
 							<div className='project-screenshot'>
 								{avatars[project.id] !== "/avatars/original/missing.png" &&
-								<img src={avatars[project.id]}></img>}
+								<img alt="project screenshot" src={avatars[project.id]}></img>}
 							</div>
 
 							<div className='project-overview col s6'>
