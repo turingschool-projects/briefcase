@@ -572,29 +572,31 @@ input[placeholder="Your Email Here"]{
     list-style: none;
     margin: 0;
     padding: 0;
-    padding-top: 22px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
     li {
       display: inline;
       .all-graduates-btn {
-        margin-right: 4px;
+        margin-right: .5em;
         text-align: left;
         border: 1px solid white;
-        padding-left: 7px;
-        padding-right: 7px;
+        padding-left: 1em;
+        padding-right: 1em;
       }
       .a-z-btn{
-        margin-right: 4px;
+        margin-right: .5em;
         text-align: left;
         border: 1px solid white;
-        padding-left: 7px;
-        padding-right: 7px;
+        padding-left: 1em;
+        padding-right: 1em;
       }
       .heart{
-        margin-right: 4px;
+        margin-right: .5em;
         text-align: center;
         border: 1px solid white;
-        padding-right: 2px;
-        padding-left: 2px;
+        padding-right: 1em;
+        padding-left: 1em;
       }
     }
   }
