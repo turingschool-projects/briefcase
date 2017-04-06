@@ -74,16 +74,9 @@ RSpec.describe Portfolio do
   end
 
   context "relationships" do
-    it "has many projects" do
-      portfolio = Portfolio.new(linkedin_url: "linkedin.com", full_name: "Anthony Ciccone", github_url: "github.com", email: "test@test.com", title: "software developer", bio: "about myself here")
-
-      expect(portfolio).to respond_to(:projects)
-    end
-
-    it "belongs to a user" do
-      portfolio = Portfolio.new(linkedin_url: "linkedin.com", full_name: "Anthony Ciccone", github_url: "github.com", email: "test@test.com", title: "software developer", bio: "about myself here")
-
-      expect(portfolio).to respond_to(:user)
-    end
+    it { is_expected.to have_many :projects }
+    it { is_expected.to have_many :portfolio_past_experiences }
+    it { is_expected.to have_many :portfolios }
+    it { is_expected.to belong_to :user }
   end
 end
