@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Navbar', js:true  do
-  context 'when not sigened in' do
+  context 'when not signed in' do
     it "has correct links " do
 
       visit '/'
@@ -60,7 +60,7 @@ RSpec.describe 'Navbar', js:true  do
     end
   end
 
-  context 'when sigened in' do
+  context 'when signed in' do
     it "has correct links and routes " do
       user = new_user
       visit '/'

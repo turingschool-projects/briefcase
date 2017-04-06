@@ -16,6 +16,6 @@ class UserPresenter
   end
 
   def projects
-    @user.portfolio.projects
+    @user.portfolio.projects.published
   end
 end

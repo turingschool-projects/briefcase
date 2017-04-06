@@ -41,7 +41,7 @@ class Users::ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:name, :github, :production_url, :screenshot, :description, :areas_of_focus )
+    params.require(:project).permit(:name, :github, :production_url, :screenshot, :description, :areas_of_focus, :published )
   end
 
   def update_avatar(project)

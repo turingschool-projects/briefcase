@@ -69,8 +69,9 @@ ActiveRecord::Schema.define(version: 20170406145124) do
     t.string   "resume_content_type"
     t.integer  "resume_file_size"
     t.datetime "resume_updated_at"
-    t.text     "previous_experience"
     t.boolean  "published",           default: true
+    t.text     "previous_experience"
+
     t.index ["user_id"], name: "index_portfolios_on_user_id", using: :btree
   end
 
@@ -91,6 +92,7 @@ ActiveRecord::Schema.define(version: 20170406145124) do
     t.datetime "avatar_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "published",           default: false
     t.index ["portfolio_id"], name: "index_projects_on_portfolio_id", using: :btree
     t.index ["user_id"], name: "index_projects_on_user_id", using: :btree
   end

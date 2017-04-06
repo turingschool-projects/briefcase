@@ -13,6 +13,8 @@ class Project < ApplicationRecord
 
 	validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
+	scope :published, -> { where(published: true) }
+	scope :draft, -> { where(published: false) }
 
 	def self.avatar_urls(user)
 		user.projects.reduce({}) do |result, project|
