@@ -3,7 +3,8 @@ var Footer = React.createClass({
     return (
       <footer className="page-footer">
         <div className="row">
-          <div className="col s4">
+
+          <div className="col s12 l4">
             <center><h2 className='newsletter'>Sign Up for our news letter</h2></center>
             <center><p className='address'>Get the latest and greatest news and updates from the team here at Turing that you'll enjoy!</p></center>
             <div className='input-for-news'>
@@ -13,9 +14,8 @@ var Footer = React.createClass({
           </center>
             </div>
           </div>
-        </div>
 
-          <div className="col s4">
+          <div className="col s12 l4">
             <center><h2 className='newsletter'>Social Links</h2></center>
             <div>
               <center>
@@ -28,7 +28,7 @@ var Footer = React.createClass({
             </div>
           </div>
 
-          <div className="col s4">
+          <div className="col s12 l4">
             <center>
               <h2 className='newsletter'>Contact us</h2>
             </center>
@@ -45,6 +45,7 @@ var Footer = React.createClass({
             </center>
           </div>
 
+        </div>
       </footer>
     );
   }
