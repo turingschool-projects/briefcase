@@ -54,6 +54,16 @@ To run all tests, run in the terminal:
 rspec
 ```
 
+## Accessing in LocalHost
+
+In order to access Briefcase in localhost here are the steps that you need to take:
+
+1. Ensure that ```gem 'omniauth-census', git: "https://github.com/NZenitram/census_staging_oauth"``` is the version of the omniauth with census gem that you are using.
+
+2. Go to Nick Martinez's census repo (click [here](https://github.com/NZenitram/census_staging_oauth)), scroll down to "Important Note", and follow the set up directions listed.
+
+3. An important note about ```thin start -p 3001 --ssl --ssl-key-file ~/.ssh/server.key --ssl-cert-file ~/.ssh/server.crt```: You will need to enter ```localhost:3001``` in the Safari Web Browser (it does not work for FireFox or Chrome).
+
 ## Functionality
 
 #### Authorization
