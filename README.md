@@ -92,6 +92,20 @@ Users can upload a picture per project. After the user creates a project, the pr
 
 Users can also view, edit and delete their projects by visiting the dashboard.
 
+## Data Flow
+
+Data flows from the controllers to Rails' built in ERB views.
+
+<center><img src="./app/assets/images/dashboard-controller.png" width="850"></center>
+
+The views then render React components and pass props.
+
+<center><img src="./app/assets/images/dashboard-erb-view.png" width="850"></center>
+
+The components then handle the rendering of data, and any requests are sent back to the server via Axios.
+
+<center><img src="./app/assets/images/dashboard-react-component.png" width="850"></center>
+
 ## Deployment
 
 Briefcase is currently deployed to two environments. Each environment is linked to different Census applications.
@@ -108,19 +122,6 @@ The application is currently using the following technlogies:
 * Database: PostgreSQL
 * Libraries: JQuery, RedCarpet, Axios, Paperclip
 * Hosting: AWS S3
-
-Data flows from the controllers to Rails' built in ERB views.
-
-<center><img src="./app/assets/images/dashboard-controller.png" width="850"></center>
-
-The views then render React components and pass props.
-
-<center><img src="./app/assets/images/dashboard-erb-view.png" width="850"></center>
-
-The components then handle the rendering of data, and any requests are sent back to the server via Axios.
-
-<center><img src="./app/assets/images/dashboard-react-component.png" width="850"></center>
-
 
 ## Authors
 * [Anthony Ciccone](https://github.com/anticcone/)
