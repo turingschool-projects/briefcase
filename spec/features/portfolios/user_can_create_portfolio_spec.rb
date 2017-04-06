@@ -18,7 +18,7 @@ RSpec.describe Portfolio, js:true  do
       fill_in 'github', with: "www.test.com"
       fill_in 'linkedin', with: "www.test.com"
 
-      click_on 'Save Profile'
+      click_on 'Publish Profile'
       sleep(1)
 
       expect(current_path).to eq(dashboard_path)
@@ -80,7 +80,7 @@ RSpec.describe Portfolio, js:true  do
       fill_in 'github', with: "www.test.com"
       fill_in 'linkedin', with: "www.test.com"
 
-      click_on 'Save Profile'
+      click_on 'Publish Profile'
       sleep(1)
 
       expect(current_path).to eq(new_user_portfolio_path(user.id))
@@ -101,7 +101,7 @@ RSpec.describe Portfolio, js:true  do
       fill_in 'github', with: "www.test.com"
       fill_in 'linkedin', with: "www.test.com"
 
-      click_on 'Save Profile'
+      click_on 'Publish Profile'
       sleep(1)
 
       expect(current_path).to eq(new_user_portfolio_path(user.id))
@@ -122,7 +122,7 @@ RSpec.describe Portfolio, js:true  do
       fill_in 'github', with: "www.test.com"
       fill_in 'linkedin', with: "www.test.com"
 
-      click_on 'Save Profile'
+      click_on 'Publish Profile'
       sleep(1)
 
       expect(current_path).to eq(new_user_portfolio_path(user.id))
@@ -141,7 +141,7 @@ RSpec.describe Portfolio, js:true  do
       fill_in 'title', with: "Developer"
       fill_in 'bio', with: "www.test.com"
 
-      click_on 'Save Profile'
+      click_on 'Publish Profile'
       sleep(1)
 
       expect(current_path).to eq(new_user_portfolio_path(user.id))

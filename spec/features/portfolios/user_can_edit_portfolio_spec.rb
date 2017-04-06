@@ -18,7 +18,7 @@ RSpec.describe Portfolio, js:true do
       fill_in :bio, with: "Edited Bio"
       fill_in :email, with: "some-email@email.com"
 
-      click_on 'Save Profile'
+      click_on 'Publish Profile'
       sleep(1)
 
       portfolio = Portfolio.first
@@ -39,7 +39,7 @@ RSpec.describe Portfolio, js:true do
       fill_in :bio, with: "Edited Bio"
       fill_in :email, with: "some-email@email.com"
 
-      click_on 'Save Profile'
+      click_on 'Publish Profile'
       sleep(1)
 
       expect(current_path).to eq(edit_user_portfolio_path(@user.id))
@@ -56,7 +56,7 @@ RSpec.describe Portfolio, js:true do
       fill_in :bio, with: "Edited Bio"
       fill_in :email, with: "some-email@email.com"
 
-      click_on 'Save Profile'
+      click_on 'Publish Profile'
       sleep(1)
 
       expect(current_path).to eq(edit_user_portfolio_path(@user.id))
@@ -73,7 +73,7 @@ RSpec.describe Portfolio, js:true do
       fill_in :bio, with: ""
       fill_in :email, with: "some-email@email.com"
 
-      click_on 'Save Profile'
+      click_on 'Publish Profile'
       sleep(1)
 
       expect(current_path).to eq(edit_user_portfolio_path(@user.id))
@@ -90,7 +90,7 @@ RSpec.describe Portfolio, js:true do
       fill_in :bio, with: "Edited Bio"
       fill_in :email, with: ""
 
-      click_on 'Save Profile'
+      click_on 'Publish Profile'
       sleep(1)
 
       expect(current_path).to eq(edit_user_portfolio_path(@user.id))
