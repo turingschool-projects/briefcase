@@ -23,8 +23,8 @@ var GuestJumbo = React.createClass({
 
                       <ul className='pull-right' >
                       <li><button className='title btn transparent resume-btn'>Resume</button></li>
-                      <li><button className='title btn transparent linkedin-btn'><i className="fa fa-linkedin fa-3x" aria-hidden="true"></i></button></li>
-                      <li><button className='title btn transparent heart'><i className="fa fa-heart-o left fa-2x" aria-hidden="true" onClick={this.fillHeart}></i></button></li>
+                      <li><button className='title btn transparent linkedin-btn'><i className="fa fa-linkedin fa-3x" aria-label="Linkedin" aria-hidden="true"></i></button></li>
+                      <li><button className='title btn transparent heart'><i className="fa fa-heart-o left fa-2x" aria-label="Favorite" aria-hidden="true" onClick={this.fillHeart}></i></button></li>
                       </ul>
 
                     </div>

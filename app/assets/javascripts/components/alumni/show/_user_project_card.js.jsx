@@ -27,9 +27,9 @@ var UserProjectCard = React.createClass ({
 							<div className='col s12 project-buttons'>
 	              <ul>
 									{project.github &&
-	                	<li><button className='btn transparent repository-btn'><a target="_blank" href={ 'http://' + this.stripUrl(project.github)}>Repository Page <i className="fa fa-long-arrow-right" aria-hidden="true"></i></a> </button></li> }
+	                	<li><button className='btn transparent repository-btn'><a target="_blank" href={ 'http://' + this.stripUrl(project.github)}>Repository Page <i className="fa fa-long-arrow-right" aria-label="GitHub repository" aria-hidden="true"></i></a> </button></li> }
 									{project.production_url &&
-										<li><button className='btn transparent launch-app-btn'><a target="_blank" href={ 'http://' + this.stripUrl(project.production_url) }>Launch Application <i className="fa fa-long-arrow-right" aria-hidden="true"></i></a> </button></li> }
+										<li><button className='btn transparent launch-app-btn'><a target="_blank" href={ 'http://' + this.stripUrl(project.production_url) }>Launch Application <i className="fa fa-long-arrow-right" aria-label="Launch Application" aria-hidden="true"></i></a> </button></li> }
 							</ul>
               </div>
               <div className='row'></div>
