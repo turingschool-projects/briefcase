@@ -33,6 +33,16 @@ git clone git@github.com:turingschool-projects/briefcase.git
 rails g react:install
 ```
 
+6. Install  phantom.js
+```shell
+  npm install -g phantomjs
+```
+
+7. ImageMagick
+```shell
+  brew install imagemagick
+```
+
 ## Running the tests
 
 The test suite is running on Poltergeist and RSpec in order test the rails backend with the client side JavaScript. Poltergeist is a driver for Capybara.
@@ -97,10 +107,14 @@ The application is currently using the following technlogies:
 * Libraries: JQuery, RedCarpet, Axios, Paperclip
 * Hosting: AWS S3
 
-Data flows from the controllers to Rail's built in ERB views. The views then render React components and pass props. The components then handle the rendering of data, and any requests are sent back to the server via Axios.
+Data flows from the controllers to Rails' built in ERB views. The views then render React components and pass props. The components then handle the rendering of data, and any requests are sent back to the server via Axios.
 
 
 ## Authors
-* [Daniel Shin](https://github.com/dshinzie/)
 * [Anthony Ciccone](https://github.com/anticcone/)
+* [Daniel Shin](https://github.com/dshinzie/)
 * [Matt DeMarteau](https://github.com/MDes41)
+* [Daniel Rodriguez](https://github.com/drod1000)
+* [Jason Conrad](https://github.com/jdconrad89)
+* [Laszlo Balogh](https://github.com/Laszlo-JFLMTCO)
+* [Molly Brown](https://github.com/mollybrown)
