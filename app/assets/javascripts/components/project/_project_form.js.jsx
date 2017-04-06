@@ -59,7 +59,10 @@ var ProjectForm = React.createClass({
             </div>
           </section>
         </div>
-        <a className="waves-effect waves-light btn project-save" onClick={this.props.handleInsert}><i className="fa fa-check" aria-hidden="true"></i>Save Project </a>
+        <div>
+          <a className="waves-effect waves-light btn project-draft" onClick={this.props.handleDraftInsert}><i className="fa fa-check" aria-hidden="true"></i>Save as Draft</a>
+          <a className="waves-effect waves-light btn project-save" onClick={this.props.handleInsert}><i className="fa fa-check" aria-hidden="true"></i>Publish</a>
+        </div>
       </div>
 
     )

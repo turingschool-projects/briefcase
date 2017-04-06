@@ -17,7 +17,7 @@ describe "As a user", js:true do
       sleep(1)
 
       expect(current_path).to eq(dashboard_path)
-      expect(user.portfolios.first.published).to eq(true)
+      expect(user.portfolio.projects.first.published).to eq(true)
       expect(page).to have_content("Edit project Name worked :)")
     end
   end
@@ -37,10 +37,10 @@ describe "As a user", js:true do
       sleep(1)
 
       expect(current_path).to eq(dashboard_path)
-      expect(user.portfolios.first.published).to eq(false)      
-      within('.projects-draft') do
+      expect(user.portfolio.projects.first.published).to eq(false)      
+      # within('.projects-draft') do
         expect(page).to have_content("Edit project Name worked :)")
-      end
+      # end
     end
   end
 

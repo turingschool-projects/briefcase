@@ -24,6 +24,7 @@ describe 'as a user', js:true do
 
       expect(current_path).to eq(dashboard_path)
       expect(@user.projects.count).to eq(1)
+      expect(@user.projects.first.published).to eq(true)      
     end
 
     it 'I can then create and SAVE AS DRAFT a project' do
@@ -40,12 +41,10 @@ describe 'as a user', js:true do
       find(".project-draft").trigger("click")
       sleep(1)
 
+
       expect(current_path).to eq(dashboard_path)
       expect(@user.projects.count).to eq(1)
       expect(@user.projects.first.published).to eq(false)
-      within('.projects-draft') do
-        expect(page).to have_content("Jam City")
-      end
     end
 
   end
