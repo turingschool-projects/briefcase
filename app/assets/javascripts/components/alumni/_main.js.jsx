@@ -10,7 +10,6 @@ var Main = React.createClass({
   },
 
   render(){
-    var signedIn = this.props.signed_in;
     var user = this.props.user;
     var newPortfolios = this.state.newPortfolios;
 
