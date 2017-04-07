@@ -10,29 +10,20 @@ var Main = React.createClass({
   },
 
   render(){
-    var user = this.props.user;
-    var newPortfolios = this.state.newPortfolios;
-
-    if(user != null) {
-      return (
-        <div>
-          <SignedInNavbar user={user}/>
-          <MainJumbo/>
-          <MainSearch prepNewPortfolios={this.prepNewPortfolios} port_asc={this.props.port_asc} port_desc={this.props.port_desc} portfolios={this.props.portfolios} locations={this.props.locations}/>
-            <UserCard portfolios={newPortfolios}  avatars={this.props.avatars} bios={this.props.bios} locations={this.props.locations}/>
-          <Footer/>
-        </div>
-      )
-    } else {
-      return (
-        <div>
-          <GuestNavbar/>
-          <MainJumbo/>
-          <MainSearch prepNewPortfolios={this.prepNewPortfolios} port_asc={this.props.port_asc} port_desc={this.props.port_desc} portfolios={this.props.portfolios} locations={this.props.locations}/>
-          <UserCard portfolios={newPortfolios} avatars={this.props.avatars} bios={this.props.bios} locations={this.props.locations}/>
-          <Footer/>
-        </div>
-      )
+    if(this.props.user != null) {
+      var navbar = <SignedInNavbar user={this.props.user}/>
     }
+    else {
+      var navbar = <GuestNavbar/>
+    }
+    return (
+      <div>
+        {navbar}
+        <MainJumbo/>
+        <MainSearch prepNewPortfolios={this.prepNewPortfolios} port_asc={this.props.port_asc} port_desc={this.props.port_desc} portfolios={this.props.portfolios} locations={this.props.locations}/>
+          <UserCard portfolios={this.state.newPortfolios}  avatars={this.props.avatars} bios={this.props.bios} locations={this.props.locations}/>
+        <Footer/>
+      </div>
+    )
   }
 })
