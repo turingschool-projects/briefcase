@@ -1,4 +1,4 @@
-var DashboardProject = React.createClass({
+var DashboardProjects = React.createClass({
   handleDelete(event){
     var user = this.props.user;
     var id = event.target.id;

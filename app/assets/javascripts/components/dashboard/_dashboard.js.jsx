@@ -16,7 +16,7 @@ var Dashboard = React.createClass({
 
               { this.props.projects != null && this.props.projects.length > 0
                 ?
-                <DashboardProject projectAvatars={this.props.project_avatars} user={this.props.user} projects={this.props.projects}/>
+                <DashboardProjects projectAvatars={this.props.project_avatars} user={this.props.user} projects={this.props.projects}/>
                 :
                 <NoDashboardProjects user={this.props.user} portfolio={this.props.portfolio}/>
               }
