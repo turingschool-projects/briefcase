@@ -44,12 +44,12 @@ var UserCard = React.createClass({
                 <hr/>
                 <center className="alumni-show-bio"><p className="card-bio" dangerouslySetInnerHTML={{__html: this.shorterBio(bios[portfolio.id])}}></p></center>
                 <div className="card-links">
-                  <a href={"http://" + this.stripUrl(portfolio.github_url)}><i className="fa fa-github fa-3x social-media" aria-label="Github" aria-hidden="true"></i></a>
-                  <a href={"http://" + this.stripUrl(portfolio.linkedin_url)}><i className="fa fa-linkedin fa-3x social-media" aria-label="Linkedin" aria-hidden="true"></i></a>
+                  <a href={"http://" + this.stripUrl(portfolio.github_url)} aria-label="Github"><i className="fa fa-github fa-3x social-media" aria-label="Github" aria-hidden="true"></i></a>
+                  <a href={"http://" + this.stripUrl(portfolio.linkedin_url)} aria-label="LinkedIn"><i className="fa fa-linkedin fa-3x social-media" aria-label="Linkedin" aria-hidden="true"></i></a>
                   {portfolio.twitter_url &&
-                  <a href={"http://" + this.stripUrl(portfolio.twitter_url)}><i className="fa fa-twitter fa-3x social-media" aria-label="twitter" aria-hidden="true"></i></a>}
+                  <a href={"http://" + this.stripUrl(portfolio.twitter_url)} aria-label="Twitter"><i className="fa fa-twitter fa-3x social-media" aria-label="twitter" aria-hidden="true"></i></a>}
                   {portfolio.personal_url &&
-                  <a href={"http://" + this.stripUrl(portfolio.personal_url)}><i className="fa fa-user fa-3x social-media" aria-label="personal website" aria-hidden="true"></i></a>}
+                  <a href={"http://" + this.stripUrl(portfolio.personal_url)} aria-label="Personal website"><i className="fa fa-user fa-3x social-media" aria-label="personal website" aria-hidden="true"></i></a>}
                 </div>
                 <center><a className="card-profile" href={ "/alumni/" + portfolio.user_slug }>View Profile</a></center>
               </div>
