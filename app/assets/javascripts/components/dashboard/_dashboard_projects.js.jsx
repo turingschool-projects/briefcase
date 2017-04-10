@@ -43,10 +43,9 @@ var DashboardProjects = React.createClass({
 
   render(){
     var user = this.props.user;
-    var projectAvatars = this.props.projectAvatars;
     var projects = this.props.projects.map((project) => {
       return (
-        <DashboardProject user={this.props.user} project={project} projectAvatars={projectAvatars}/>
+        <DashboardProject user={this.props.user} project={project} projectAvatars={this.props.projectAvatars}/>
       )
     });
 
