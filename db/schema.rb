@@ -71,7 +71,6 @@ ActiveRecord::Schema.define(version: 20170406145124) do
     t.datetime "resume_updated_at"
     t.boolean  "published",           default: true
     t.text     "previous_experience"
-
     t.index ["user_id"], name: "index_portfolios_on_user_id", using: :btree
   end
 
