@@ -1,8 +1,24 @@
 var DashboardProject = React.createClass({
+  handleDelete(event){
+    var user = this.props.user;
+    var id = event.target.id;
+    axios.delete(`/users/${user.id}/project?project=${id}`)
+    .then(response => {
+      window.location = response.data;
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  },
+
+  shorten(description){
+    return description.substring(0,150);
+  },
+
   render(){
     var user = this.props.user;
     var project = this.props.project;
-    
+
     <div key={project.id}>
         <div className="container">
           <div className="dashboard-project">
