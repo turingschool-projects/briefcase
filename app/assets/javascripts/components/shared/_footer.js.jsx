@@ -9,7 +9,7 @@ var Footer = React.createClass({
             <center><p className='address'>Get the latest and greatest news and updates from the team here at Turing that you'll enjoy!</p></center>
             <div className='input-for-news'>
           <center>
-            <input className='input-newsletter' placeholder="Your Email Here">
+            <input className='input-newsletter' placeholder="Your Email Here" aria-label="Enter your email here">
             </input>
           </center>
             </div>
