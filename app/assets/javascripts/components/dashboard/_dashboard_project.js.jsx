@@ -1,5 +1,8 @@
 var DashboardProject = React.createClass({
   render(){
+    var user = this.props.user;
+    var project = this.props.project;
+    
     <div key={project.id}>
         <div className="container">
           <div className="dashboard-project">
