@@ -32,15 +32,15 @@ var ProjectEditForm = React.createClass({
           <div className="col s12">
             <div className="row">
               <div className="input-field col s6">
-                <input placeholder="Project Name*" id="project-name" type="text" defaultValue={project.name} className="validate" onChange={this.handleNew}></input>
+                <input placeholder="Project Name*" id="project-name" type="text" aria-label="Project Name" defaultValue={project.name} className="validate" onChange={this.handleNew}></input>
               </div>
               <div className="input-field col s6">
-                <input placeholder="Github Url*" id="github"  defaultValue={project.github} type="text" className="validate" onChange={this.handleNew}/>
+                <input placeholder="Github Url*" id="github"  defaultValue={project.github} type="text" aria-label="GitHub URL" className="validate" onChange={this.handleNew}/>
               </div>
             </div>
             <div className="row">
               <div className="input-field col s6 production">
-                <input placeholder="Production Url" id="production_url" type="email" defaultValue={project.production_url} className="validate" onChange={this.handleNew} />
+                <input placeholder="Production Url" id="production_url" type="text" aria-label="Production URL" defaultValue={project.production_url} className="validate" onChange={this.handleNew} />
               </div>
               <div className="input-field col s6 ">
                 <ProjectEditAvatar avatar={this.props.avatar} prepForUpdate={this.props.prepForUpdate}/>
