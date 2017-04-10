@@ -1,6 +1,6 @@
 class DashboardController < ApplicationController
   def index
-    if (logged_in?)
+    if (current_user)
       @dashboard_presenter = DashboardPresenter.new(current_user)
     else
       redirect_to root_path
