@@ -16,11 +16,11 @@ class PortfolioPresenter
   end
 
   def desc
-    Portfolio.order(full_name: :desc)
+    Portfolio.all.published.order(full_name: :desc)
   end
 
   def asc
-    @portfolio.order(full_name: :asc)
+    Portfolio.all.published.order(full_name: :asc)
   end
 
   def build_up_portfolios
