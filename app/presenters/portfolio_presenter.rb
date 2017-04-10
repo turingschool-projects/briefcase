@@ -1,5 +1,5 @@
 class PortfolioPresenter
-  def all
+  def published
     build_up_portfolios
   end
 

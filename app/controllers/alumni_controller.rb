@@ -4,8 +4,7 @@ require 'redcarpet/render_strip'
 
 class AlumniController < ApplicationController
   def index
-    @portfolio = PortfolioPresenter.new
-    @portfolios = PortfolioPresenter.new.all
+    @portfolios = PortfolioPresenter.new
   end
 
   def show
