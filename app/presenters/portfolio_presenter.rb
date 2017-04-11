@@ -30,6 +30,6 @@ class PortfolioPresenter
   def build_up_portfolios
     @portfolios.all.published.map do |one_portfolio|
       PortfolioForReact.new(one_portfolio).output_for_react
-    end
+    end.shuffle
   end
 end
