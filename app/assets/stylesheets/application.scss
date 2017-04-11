@@ -315,12 +315,12 @@ img.card-picture {
   font-weight: normal;
 
   &:hover {
-    font-weight: bold;
+    border: 2px solid $turingblue;
   }
 }
 
 .card {
-  height: 50em;
+  height: 45em;
 }
 
 .card-picture {
