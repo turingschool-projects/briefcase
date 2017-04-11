@@ -297,6 +297,7 @@ input[type="search"] {
   i {
     padding-right: 5%;
     padding-left: 5%;
+    color: #7c8c8e;
   }
   margin-bottom: 12%;
   margin-top: 12%;
@@ -350,8 +351,11 @@ i.right {
 
 hr {
   width: 14em;
+  height: 1px;
   margin-top: 1em;
   margin-bottom: 1em;
+  background-color: #05c2d1;
+  border: none;
 }
 .card .card-content p {
     font-size: 16px !important;
