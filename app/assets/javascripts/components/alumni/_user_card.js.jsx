@@ -23,7 +23,7 @@ var UserCard = React.createClass({
 
     var portfolios = this.props.portfolios.map((portfolio) => { // props brought from controller
       return (
-          <div className="col s4 "key={portfolio.id}>
+          <div className="col s12 m6 l4"key={portfolio.id}>
             <div className="card">
             <i className="fa fa-heart-o left fa-2x" aria-label="favorite graduate" aria-hidden="true" onClick={this.fillHeart}></i>
             <i className="material-icons right activator more-vert">more_vert</i>
