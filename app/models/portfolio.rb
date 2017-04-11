@@ -10,6 +10,8 @@ class Portfolio < ApplicationRecord
   validates :bio, presence: true
   has_many :locations, :dependent => false
   has_many :locations, dependent: :destroy
+  has_many :portfolio_past_experiences
+  has_many :portfolios, through: :portfolio_past_experiences
 
   belongs_to :user
   after_create :set_slug
@@ -19,6 +21,9 @@ class Portfolio < ApplicationRecord
 
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
   validates_attachment_content_type :resume, content_type: ["application/pdf"]
+
+  scope :published, -> { where(published: true) }
+  scope :draft, -> { where(published: false) }
 
   def set_slug
     self.update(user_slug: self.user.slug)

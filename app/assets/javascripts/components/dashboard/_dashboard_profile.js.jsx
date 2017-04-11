@@ -30,8 +30,8 @@ var DashboardProfile = React.createClass({
               <center>
                 {
                   this.props.avatar === "/avatars/original/missing.png"
-                    ? <img className="activator card-picture" src="http://intelligentsystemsmonitoring.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png"></img>
-                    : <img className="activator card-picture" src={this.props.avatar}></img>
+                    ? <img alt="portfolio avatar" className="activator card-picture" src="http://intelligentsystemsmonitoring.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png"></img>
+                    : <img alt="portfolio avatar" className="activator card-picture" src={this.props.avatar}></img>
                 }
               </center>
             </div>
@@ -45,12 +45,12 @@ var DashboardProfile = React.createClass({
               <center className="alumni-show-bio"><p className="card-bio" dangerouslySetInnerHTML={{__html: this.shorterBio(this.props.markdownInfo.bio)}}></p></center>
 
               <div className="card-links">
-                <a href={"http://" + this.stripUrl(portfolio.github_url)}><i className="fa fa-github fa-3x social-media" aria-hidden="true"></i></a>
-                <a href={"http://" + this.stripUrl(portfolio.linkedin_url)}><i className="fa fa-linkedin fa-3x social-media" aria-hidden="true"></i></a>
+                <a href={"http://" + this.stripUrl(portfolio.github_url)}><i className="fa fa-github fa-3x social-media" aria-label="Github" aria-hidden="true"></i></a>
+                <a href={"http://" + this.stripUrl(portfolio.linkedin_url)}><i className="fa fa-linkedin fa-3x social-media" aria-label="Linkedin" aria-hidden="true"></i></a>
                 {portfolio.twitter_url &&
-                <a href={"http://" + this.stripUrl(portfolio.twitter_url)}><i className="fa fa-twitter fa-3x social-media" aria-hidden="true"></i></a>}
+                <a href={"http://" + this.stripUrl(portfolio.twitter_url)}><i className="fa fa-twitter fa-3x social-media" aria-label="Twitter" aria-hidden="true"></i></a>}
                 {portfolio.personal_url &&
-                <a href={"http://" + this.stripUrl(portfolio.personal_url)}><i className="fa fa-user fa-3x social-media" aria-hidden="true"></i></a>}
+                <a href={"http://" + this.stripUrl(portfolio.personal_url)}><i className="fa fa-user fa-3x social-media" aria-label="Personal website" aria-hidden="true"></i></a>}
               </div>
               <center>
                 <a className="card-profile" href={ `/alumni/${slug}` }>View</a>

@@ -36,19 +36,19 @@
     var imagePreviewUrl = this.state.imagePreviewUrl;
     var imagePreview = null;
     if (imagePreviewUrl != '') {
-      $imagePreview = (<img src={imagePreviewUrl} />);
+      $imagePreview = (<img alt="image preview" src={imagePreviewUrl} />);
     } else {
       $imagePreview = (
                         this.props.allProps.avatar === "/avatars/original/missing.png" || this.props.allProps.portfolio == null
-                          ? <img className="" src="http://intelligentsystemsmonitoring.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png"></img>
-                          : <img className="" src={this.props.allProps.avatar}></img>
+                          ? <img alt="portfolio avatar" className="" src="http://intelligentsystemsmonitoring.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png"></img>
+                          : <img alt="portfolio avatar" className="" src={this.props.allProps.avatar}></img>
                       );
     }
 
     return (
       <div className="portfolio-image-upload outer">
         <div className="responsive-avatar"></div>
-        <div className="img-preview">
+        <div className="img-preview" alt="portfolio image preview">
           {$imagePreview}
         </div>
         <div className='button-input inner'><input id='file-input-avatar' className="file-input" type="file" onChange={this.handleImageChange} /></div>

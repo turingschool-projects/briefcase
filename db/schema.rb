@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170219000009) do
+ActiveRecord::Schema.define(version: 20170406145124) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,19 @@ ActiveRecord::Schema.define(version: 20170219000009) do
     t.index ["portfolio_id"], name: "index_locations_on_portfolio_id", using: :btree
   end
 
+  create_table "past_experiences", force: :cascade do |t|
+    t.text     "experience"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "portfolio_past_experiences", force: :cascade do |t|
+    t.integer "portfolio_id"
+    t.integer "past_experience_id"
+    t.index ["past_experience_id"], name: "index_portfolio_past_experiences_on_past_experience_id", using: :btree
+    t.index ["portfolio_id"], name: "index_portfolio_past_experiences_on_portfolio_id", using: :btree
+  end
+
   create_table "portfolios", force: :cascade do |t|
     t.string   "email"
     t.string   "password_digest"
@@ -39,13 +52,12 @@ ActiveRecord::Schema.define(version: 20170219000009) do
     t.text     "looking_for"
     t.text     "best_at"
     t.integer  "hired"
-    t.integer  "published"
     t.string   "full_name"
     t.string   "title"
     t.string   "hired_by"
     t.integer  "user_id"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.string   "user_slug"
     t.string   "personal_url"
     t.string   "twitter_url"
@@ -57,6 +69,9 @@ ActiveRecord::Schema.define(version: 20170219000009) do
     t.string   "resume_content_type"
     t.integer  "resume_file_size"
     t.datetime "resume_updated_at"
+    t.boolean  "published",           default: true
+    t.text     "previous_experience"
+
     t.index ["user_id"], name: "index_portfolios_on_user_id", using: :btree
   end
 
@@ -77,6 +92,7 @@ ActiveRecord::Schema.define(version: 20170219000009) do
     t.datetime "avatar_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "published",           default: false
     t.index ["portfolio_id"], name: "index_projects_on_portfolio_id", using: :btree
     t.index ["user_id"], name: "index_projects_on_user_id", using: :btree
   end
@@ -94,6 +110,8 @@ ActiveRecord::Schema.define(version: 20170219000009) do
   end
 
   add_foreign_key "locations", "portfolios"
+  add_foreign_key "portfolio_past_experiences", "past_experiences"
+  add_foreign_key "portfolio_past_experiences", "portfolios"
   add_foreign_key "projects", "portfolios"
   add_foreign_key "projects", "users"
 end

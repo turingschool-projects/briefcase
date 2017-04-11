@@ -13,7 +13,6 @@ class User < ApplicationRecord
   end
 
   def self.create_from_census(user_info)
-		require "pry"; binding.pry
     user = find_or_initialize_by(uid: user_info["uid"])
 
     user.first_name = user_info.info["first_name"]

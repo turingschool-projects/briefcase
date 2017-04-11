@@ -25,14 +25,14 @@ var UserCard = React.createClass({
       return (
           <div className="col s4 "key={portfolio.id}>
             <div className="card">
-            <i className="fa fa-heart-o left fa-2x" aria-hidden="true" onClick={this.fillHeart}></i>
+            <i className="fa fa-heart-o left fa-2x" aria-label="favorite graduate" aria-hidden="true" onClick={this.fillHeart}></i>
             <i className="material-icons right activator more-vert">more_vert</i>
               <div className="card-image waves-effect waves-block waves-light">
                 <center>
                   {
-                    avatars[portfolio.id] === "/avatars/original/missing.png"
-                    ? <img className="activator card-picture" src="http://intelligentsystemsmonitoring.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png" />
-                    : <img className="activator card-picture" src={avatars[portfolio.id]} />
+                    portfolio.avatar_urls.square.includes("missing.png")
+                    ? <img alt="portfolio avatar" className="activator card-picture" src="http://intelligentsystemsmonitoring.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png" />
+                    : <img alt="portfolio avatar" className="activator card-picture" src={portfolio.avatar_urls.square} />
                   }
                 </center>
               </div>
@@ -44,12 +44,12 @@ var UserCard = React.createClass({
                 <hr/>
                 <center className="alumni-show-bio"><p className="card-bio" dangerouslySetInnerHTML={{__html: this.shorterBio(bios[portfolio.id])}}></p></center>
                 <div className="card-links">
-                  <a href={"http://" + this.stripUrl(portfolio.github_url)}><i className="fa fa-github fa-3x social-media" aria-hidden="true"></i></a>
-                  <a href={"http://" + this.stripUrl(portfolio.linkedin_url)}><i className="fa fa-linkedin fa-3x social-media" aria-hidden="true"></i></a>
+                  <a href={"http://" + this.stripUrl(portfolio.github_url)}><i className="fa fa-github fa-3x social-media" aria-label="Github" aria-hidden="true"></i></a>
+                  <a href={"http://" + this.stripUrl(portfolio.linkedin_url)}><i className="fa fa-linkedin fa-3x social-media" aria-label="Linkedin" aria-hidden="true"></i></a>
                   {portfolio.twitter_url &&
-                  <a href={"http://" + this.stripUrl(portfolio.twitter_url)}><i className="fa fa-twitter fa-3x social-media" aria-hidden="true"></i></a>}
+                  <a href={"http://" + this.stripUrl(portfolio.twitter_url)}><i className="fa fa-twitter fa-3x social-media" aria-label="twitter" aria-hidden="true"></i></a>}
                   {portfolio.personal_url &&
-                  <a href={"http://" + this.stripUrl(portfolio.personal_url)}><i className="fa fa-user fa-3x social-media" aria-hidden="true"></i></a>}
+                  <a href={"http://" + this.stripUrl(portfolio.personal_url)}><i className="fa fa-user fa-3x social-media" aria-label="personal website" aria-hidden="true"></i></a>}
                 </div>
                 <center><a className="card-profile" href={ "/alumni/" + portfolio.user_slug }>View Profile</a></center>
               </div>

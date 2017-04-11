@@ -35,7 +35,7 @@ var ProjectNewAvatar = React.createClass({
     var imagePreviewUrl = this.state.imagePreviewUrl;
     var imagePreview = null;
     if (imagePreviewUrl != '') {
-      $imagePreview = (<img src={imagePreviewUrl} />);
+      $imagePreview = (<img alt="image preview" src={imagePreviewUrl} />);
     } else {
       $imagePreview = (<div className="previewText"></div>);
     }
