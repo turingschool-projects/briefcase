@@ -28,3 +28,7 @@
 /node_modules
 application.yml
 figaro
+server.crt
+server.csr
+server.key
+server.orig.key

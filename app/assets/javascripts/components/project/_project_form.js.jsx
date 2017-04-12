@@ -31,15 +31,15 @@ var ProjectForm = React.createClass({
           <div className="col s12">
             <div className="row">
               <div className="input-field col s6">
-                <input placeholder="Project Name*" id="project-name" type="text" defaultValue="" className="" onChange={this.handleNew}></input>
+                <input placeholder="Project Name*" id="project-name" type="text" aria-label="Project Name" defaultValue="" className="" onChange={this.handleNew}></input>
               </div>
               <div className="input-field col s6">
-                <input placeholder="Github Url*" id="github" type="text" className="" onChange={this.handleNew}/>
+                <input placeholder="Github Url*" id="github" type="text" aria-label="GitHub URL for project" className="" onChange={this.handleNew}/>
               </div>
             </div>
             <div className="row">
               <div className="input-field col s6 production">
-                <input placeholder="Production Url" id="production_url" type="email" className="" onChange={this.handleNew} />
+                <input placeholder="Production Url" id="production_url" type="email" aria-label="Production URL" className="" onChange={this.handleNew} />
               </div>
               <div className="input-field col s6 ">
                 <ProjectNewAvatar prepForInsert={this.props.prepForInsert}/>
@@ -59,7 +59,10 @@ var ProjectForm = React.createClass({
             </div>
           </section>
         </div>
-        <a className="waves-effect waves-light btn project-save" onClick={this.props.handleInsert}><i className="fa fa-check" aria-hidden="true"></i>Save Project </a>
+        <div>
+          <a className="waves-effect waves-light btn project-draft" onClick={this.props.handleDraftInsert}><i className="fa fa-check" aria-hidden="true"></i>Save as Draft</a>
+          <a className="waves-effect waves-light btn project-save" onClick={this.props.handleInsert}><i className="fa fa-check" aria-hidden="true"></i>Publish</a>
+        </div>
       </div>
 
     )

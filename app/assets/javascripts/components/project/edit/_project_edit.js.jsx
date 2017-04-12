@@ -12,12 +12,30 @@ var ProjectEdit = React.createClass({
     });
   },
 
-  handleUpdate(){
+  handleDraftUpdate(){
     var user = this.props.user;
     var project = this.props.project
     $('.loader').show();
 
     axios.put(`/users/${user.id}/project`, {project: this.state.project})
+    .then(response => {
+      window.location = response.data;
+    })
+    .catch(function (error) {
+      $('.loader').hide();
+      console.log(error);
+    });
+  },
+
+  handleUpdate(){
+    var user = this.props.user;
+    var project = this.props.project
+    $('.loader').show();
+    const updatedProject = update(this.state.project, {
+      'published': { $set: 'true'}
+    })
+
+    axios.put(`/users/${user.id}/project`, {project: updatedProject})
     .then(response => {
       window.location = response.data;
     })
@@ -40,7 +58,7 @@ var ProjectEdit = React.createClass({
           <SignedInNavbar user={user}/>
           <ProjectJumbo/>
           <div className="loader"></div>
-          <ProjectEditForm project={project} avatar={this.props.avatar} handleUpdate={this.handleUpdate} prepForUpdate={this.prepForUpdate}/>
+          <ProjectEditForm project={project} avatar={this.props.avatar} handleDraftUpdate={this.handleDraftUpdate} handleUpdate={this.handleUpdate} prepForUpdate={this.prepForUpdate}/>
           <Footer/>
         </div>
       )

@@ -28,9 +28,21 @@ git clone git@github.com:turingschool-projects/briefcase.git
  * S3_BUCKET_NAME
  * AWS_REGION
 
+Please find zip file with keys in the project-briefcase slack channel
+
 5. Install React.js
 ```shell
 rails g react:install
+```
+
+6. Install  phantom.js
+```shell
+  npm install -g phantomjs
+```
+
+7. ImageMagick
+```shell
+  brew install imagemagick
 ```
 
 ## Running the tests
@@ -41,6 +53,16 @@ To run all tests, run in the terminal:
 ```shell
 rspec
 ```
+
+## Accessing in LocalHost
+
+In order to access Briefcase in localhost here are the steps that you need to take:
+
+1. Ensure that ```gem 'omniauth-census', git: "https://github.com/NZenitram/census_staging_oauth"``` is the version of the omniauth with census gem that you are using.
+
+2. Go to Nick Martinez's census repo (click [here](https://github.com/NZenitram/census_staging_oauth)), scroll down to "Important Note", and follow the set up directions listed.
+
+3. An important note about ```thin start -p 3001 --ssl --ssl-key-file ~/.ssh/server.key --ssl-cert-file ~/.ssh/server.crt```: You will need to enter ```localhost:3001``` in the Safari Web Browser (it does not work for FireFox or Chrome).
 
 ## Functionality
 
@@ -80,6 +102,20 @@ Users can upload a picture per project. After the user creates a project, the pr
 
 Users can also view, edit and delete their projects by visiting the dashboard.
 
+## Data Flow
+
+Data flows from the controllers to Rails' built in ERB views.
+
+<center><img src="./app/assets/images/dashboard-controller.png" width="850"></center>
+
+The views then render React components and pass props.
+
+<center><img src="./app/assets/images/dashboard-erb-view.png" width="850"></center>
+
+The components then handle the rendering of data, and any requests are sent back to the server via Axios.
+
+<center><img src="./app/assets/images/dashboard-react-component.png" width="850"></center>
+
 ## Deployment
 
 Briefcase is currently deployed to two environments. Each environment is linked to different Census applications.
@@ -97,10 +133,11 @@ The application is currently using the following technlogies:
 * Libraries: JQuery, RedCarpet, Axios, Paperclip
 * Hosting: AWS S3
 
-Data flows from the controllers to Rail's built in ERB views. The views then render React components and pass props. The components then handle the rendering of data, and any requests are sent back to the server via Axios.
-
-
 ## Authors
-* [Daniel Shin](https://github.com/dshinzie/)
 * [Anthony Ciccone](https://github.com/anticcone/)
+* [Daniel Shin](https://github.com/dshinzie/)
 * [Matt DeMarteau](https://github.com/MDes41)
+* [Daniel Rodriguez](https://github.com/drod1000)
+* [Jason Conrad](https://github.com/jdconrad89)
+* [Laszlo Balogh](https://github.com/Laszlo-JFLMTCO)
+* [Molly Brown](https://github.com/mollybrown)

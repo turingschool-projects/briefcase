@@ -35,7 +35,7 @@ var ProjectNewAvatar = React.createClass({
     var imagePreviewUrl = this.state.imagePreviewUrl;
     var imagePreview = null;
     if (imagePreviewUrl != '') {
-      $imagePreview = (<img src={imagePreviewUrl} />);
+      $imagePreview = (<img alt="image preview" src={imagePreviewUrl} />);
     } else {
       $imagePreview = (<div className="previewText"></div>);
     }
@@ -45,7 +45,7 @@ var ProjectNewAvatar = React.createClass({
         <div className="imgPreview">
           {$imagePreview}
         </div>
-        <div className='button-input inner'><input id='file-input-avatar' className="file-input" type="file" onChange={this.handleImageChange} /></div>
+        <div className='button-input inner'><input id='file-input-avatar' className="file-input" type="file" aria-label="File Input" onChange={this.handleImageChange} /></div>
       </div>
     )
   }
