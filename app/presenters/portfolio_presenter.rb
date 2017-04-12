@@ -1,29 +1,31 @@
 class PortfolioPresenter
-  def initialize(portfolio)
-    @portfolio = portfolio
-  end
-
-  def all
-    @portfolio.all
+  def published
+    build_up_portfolios
   end
 
   def avatar_urls
-    @portfolio.avatar_urls
+    Portfolio.avatar_urls
   end
 
   def bios
-    @portfolio.markdown_bios
+    Portfolio.markdown_bios
   end
 
   def locations
-    @portfolio.locations
+    Portfolio.locations
   end
 
   def desc
-    @portfolio.order(full_name: :desc)
+    Portfolio.all.published.order(full_name: :desc)
   end
 
   def asc
-    @portfolio.order(full_name: :asc)
+    Portfolio.all.published.order(full_name: :asc)
+  end
+
+  def build_up_portfolios
+    Portfolio.all.published.map do |one_portfolio|
+      PortfolioForReact.new(one_portfolio).output_for_react
+    end.shuffle
   end
 end

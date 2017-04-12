@@ -1,9 +1,5 @@
 class Users::PortfoliosController < ApplicationController
 
-  def show
-    @user = User.find_by(slug: params["user_slug"])
-  end
-
   def new
     @user = current_user
     @locations = Location.distinct_city_states
@@ -12,7 +8,6 @@ class Users::PortfoliosController < ApplicationController
   def create
     user = User.find(params[:user_id])
     new_portfolio = user.build_portfolio(portfolio_params)
-
     if(new_portfolio.save)
       update_avatar(user, new_portfolio) if params[:portfolio][:avatar]
       update_resume(user, new_portfolio) if params[:portfolio][:resume]
@@ -20,7 +15,7 @@ class Users::PortfoliosController < ApplicationController
 
       render js: "/dashboard"
     else
-      render component: 'Portfolio', props: { user: current_user, portfolio: current_user.portfolio, slug: current_user.slug, locations: Location.distinct_city_states}, status: 400
+      redirect_to new_user_portfolio_path(current_user), status: 400
     end
   end
 
@@ -39,7 +34,7 @@ class Users::PortfoliosController < ApplicationController
 
       render js: "/dashboard"
     else
-      render component: 'Portfolio', props: { user: current_user, portfolio: current_user.portfolio, slug: current_user.slug, avatar: current_user.portfolio.avatar.url(:regular), locations: Location.distinct_city_states, userLocations: current_user.portfolio.locations }, status: 400
+      redirect_to edit_user_portfolio_path(current_user), status: 400
     end
   end
 
@@ -59,7 +54,9 @@ class Users::PortfoliosController < ApplicationController
 
   private
     def portfolio_params
-      params.require("portfolio").permit("full_name", "title", "cohort", "github_url", "linkedin_url", "bio", "background", "resume_file", "locations", "looking_for", "best_at", "hired", "hired_by", "user_id", "email", "twitter_url", "personal_url", "hired_by")
+      params.require("portfolio").permit("full_name", "title", "cohort", "github_url", "linkedin_url", "bio", "background", "resume_file", "locations", "looking_for", "best_at", "hired", "hired_by", "user_id", "email", "twitter_url", "personal_url", "published")
+      params.require("portfolio").permit("full_name", "title", "cohort", "github_url", "linkedin_url", "bio", "background", "resume_file", "locations", "looking_for", "best_at", "hired",
+        "previous_experience", "user_id", "email", "twitter_url", "personal_url", "hired_by", "published")
     end
 
     def update_avatar(user, portfolio)

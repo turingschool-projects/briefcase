@@ -13,7 +13,7 @@ var ProjectNew = React.createClass({
     });
   },
 
-  handleInsert(){
+  handleDraftInsert(){
     var user = this.props.user;
     $('.loader').show();
 
@@ -27,6 +27,24 @@ var ProjectNew = React.createClass({
     });
   },
 
+  handleInsert(){
+    var user = this.props.user;
+    $('.loader').show();
+    const newProject = update(this.state.project, {
+      'published': { $set: 'true'}
+    })
+
+    axios.post(`/users/${user.id}/project.json`, {project: newProject})
+    .then(response => {
+      window.location = response.data;
+    })
+    .catch(function (error) {
+      $('.loader').hide();
+      Materialize.toast('Error: Missing required fields!', 4000);
+    });
+  },
+
+
   componentDidMount(){
     $('.loader').hide();
   },
@@ -39,7 +57,7 @@ var ProjectNew = React.createClass({
           <SignedInNavbar user={user}/>
           <ProjectJumbo/>
           <div className="loader"></div>
-          <ProjectForm user={user} prepForInsert={this.prepForInsert} handleInsert={this.handleInsert}/>
+          <ProjectForm user={user} prepForInsert={this.prepForInsert} handleDraftInsert={this.handleDraftInsert} handleInsert={this.handleInsert}/>
           <Footer/>
         </div>
       )

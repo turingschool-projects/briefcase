@@ -1,6 +1,6 @@
 <meta http-equiv="refresh" content="300">
 
-<%= react_component('Main', {portfolios: @portfolio.all,
+<%= react_component('Main', {portfolios: @portfolios.published,
   user: current_user,
   avatars: @portfolio.avatar_urls,
   bios: @portfolio.bios,
