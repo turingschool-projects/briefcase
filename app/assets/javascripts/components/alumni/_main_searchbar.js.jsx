@@ -1,18 +1,5 @@
 var MainSearch = React.createClass({
 
-  showHearts: function(self){
-    if ($('#by-heart').hasClass('fa-heart-o')) {
-      $('#by-heart').removeClass("fa-heart-o");
-      $('#by-heart').addClass("fa-heart");
-      $('.card').hide()
-      $('.card .fa-heart').parent().show()
-    } else {
-      $('#by-heart').removeClass("fa-heart");
-      $('#by-heart').addClass("fa-heart-o");
-      $('.card').show()
-    }
-  },
-
   sort: function(self){
     if ($('#arrow-toggle').hasClass('fa-arrow-up')) {
       this.props.prepNewPortfolios(this.props.portfolios.sort(function(a, b){
