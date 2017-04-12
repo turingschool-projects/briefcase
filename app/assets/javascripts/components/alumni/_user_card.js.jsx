@@ -1,9 +1,5 @@
 var UserCard = React.createClass({
 
-  fillHeart :function(self){
-    $(self.target).toggleClass("fa-heart-o fa-heart");
-  },
-
   shorterBio :function (text) {
     if(text == null) {
       return ""
