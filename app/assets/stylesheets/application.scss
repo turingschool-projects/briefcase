@@ -690,9 +690,19 @@ input[placeholder="Your Email Here"]{
   padding-top: 5px;
 }
 
-.hamburger {
+i.material-icons .hamburger {
   color: white;
   padding: 25px;
   float: right;
   font-size: 2em;
+}
+
+nav {
+  height: 0px;
+}
+
+nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+  float: right;
+  font-size: 30px;
+  color: white;
 }
