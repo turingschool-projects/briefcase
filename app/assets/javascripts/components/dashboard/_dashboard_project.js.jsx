@@ -12,29 +12,31 @@ var DashboardProject = React.createClass({
   },
 
   timeSince(date) {
-    var seconds = Math.floor((new Date() - new Date(date)) / 1000);
-    var interval = Math.floor(seconds / 31536000);
+    console.log(date);
+    // var seconds = Math.floor((new Date() - new Date(date)) / 1000);
+    // var interval = Math.floor(seconds / 31536000);
 
-    if (interval > 1) {
-        return interval + " years";
-    }
-    interval = Math.floor(seconds / 2592000);
-    if (interval > 1) {
-        return interval + " months";
-    }
-    interval = Math.floor(seconds / 86400);
-    if (interval > 1) {
-        return interval + " days";
-    }
-    interval = Math.floor(seconds / 3600);
-    if (interval > 1) {
-        return interval + " hours";
-    }
-    interval = Math.floor(seconds / 60);
-    if (interval > 1) {
-        return interval + " minutes";
-    }
-    return Math.floor(seconds) + " seconds";
+    // if (interval > 1) {
+    //     return interval + " years";
+    // }
+    // interval = Math.floor(seconds / 2592000);
+    // if (interval > 1) {
+    //     return interval + " months";
+    // }
+    // interval = Math.floor(seconds / 86400);
+    // if (interval > 1) {
+    //     return interval + " days";
+    // }
+    // interval = Math.floor(seconds / 3600);
+    // if (interval > 1) {
+    //     return interval + " hours";
+    // }
+    // interval = Math.floor(seconds / 60);
+    // if (interval > 1) {
+    //     return interval + " minutes";
+    // }
+    // return Math.floor(seconds) + " seconds";
+    return moment(date).fromNow();
   },
 
   shorten(description){
@@ -52,7 +54,7 @@ var DashboardProject = React.createClass({
                 <div className="row">
                   <div className="col s8">
                     <h1>{project.name}</h1>
-                    <h3 className="time-ago">Created: {this.timeSince(project.created_at)} ago</h3>
+                    <h3 className="time-ago">Created: {this.timeSince(project.created_at)}</h3>
                     <p className="description">{this.shorten(project.description)}...</p>
                   </div>
                   <div className="col s4">
