@@ -1,9 +1,5 @@
 class Users::PortfoliosController < ApplicationController
 
-  def show
-    @user = User.find_by(slug: params["user_slug"])
-  end
-
   def new
     @user = current_user
     @locations = Location.distinct_city_states
