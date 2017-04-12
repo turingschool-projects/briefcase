@@ -24,7 +24,6 @@ var MainSearch = React.createClass({
     this.props.prepNewPortfolios(this.props.portfolios)
   },
 
-
   handleSearch :function(event){
     var data = event.target.value.split(" ");
     var portfolios = this.props.portfolios;
