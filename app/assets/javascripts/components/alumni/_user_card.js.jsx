@@ -25,7 +25,6 @@ var UserCard = React.createClass({
       return (
           <div className="col s4 "key={portfolio.id}>
             <div className="card">
-            <i className="fa fa-heart-o left fa-2x" aria-label="favorite graduate" aria-hidden="true" onClick={this.fillHeart}></i>
             <i className="material-icons right activator more-vert">more_vert</i>
               <div className="card-image waves-effect waves-block waves-light">
                 <center>
