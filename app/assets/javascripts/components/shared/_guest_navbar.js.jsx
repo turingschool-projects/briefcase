@@ -1,9 +1,8 @@
 var GuestNavbar = React.createClass({
-  activePage(){
-    $(document).ready(function () {
-      $('.button-collapse').sideNav();
-    });
-    $('menu a').each(function(){
+ componentDidMount(){
+   $('.button-collapse').sideNav();
+   $('.collapsible').collapsible();
+   $('menu a').each(function(){
         if ($(this).prop('href') == window.location.href) {
             $(this).addClass('active'); $(this).parents('li').addClass('active');
         }
@@ -22,7 +21,7 @@ var GuestNavbar = React.createClass({
             </a>
           </div>
 
-          <a href="#" data-activates="mobile-demo" className="button-collapse"><i className="material-icons hamburger">menu</i></a>
+          <a href="#" data-activates="mobile-demo" className="button-collapse"><i className="material-icons">menu</i></a>
           <div role="navigation" className="pull-right visible-lg menu-container">
             <ul className="right hide-on-med-and-down menu nav navbar-nav">
               <li className="the-difference"><a href="https://www.turing.io/turing-difference"><span>The Difference</span></a></li>
