@@ -16,12 +16,6 @@ var DashboardProfile = React.createClass({
       var slug = this.props.user.slug;
       var portfolio = this.props.portfolio;
 
-      // if(portfolio.full_name != null){
-      //   var name = portfolio.full_name;
-      // } else {
-      //   var name = `${user.first_name} ${user.last_name}`;
-      // }
-
       return(
         <div className="col s4 dashboard-container" key={user.id}>
           <h2>My Profile</h2>
