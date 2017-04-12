@@ -29,6 +29,7 @@ var MainSearch = React.createClass({
     var data = event.target.value.split(" ");
     var portfolios = this.props.portfolios;
     var locations = this.props.locations;
+    var experiences = this.props.previous_experiences;
     var filterPortfolios = [];
 
     for (var i = 0; i < portfolios.length; i++) {
