@@ -159,10 +159,6 @@
           border: 1px solid white;
           width: 50px !important;
         }
-        .heart{
-          border: 1px solid white;
-          width: 50px !important;
-        }
 
       }
 
@@ -332,15 +328,6 @@ img.card-picture {
     font-size: 14px !important;
   }
   margin-top: 8%
-}
-
-.fa-heart-o {
-  color: pink;
-  padding: 2%;
-}
-.fa-heart {
-  color: pink;
-  padding: 2%;
 }
 
 i.right {
@@ -553,10 +540,6 @@ input[placeholder="Your Email Here"]{
   color: #05c2d1;
 }
 
-#by-heart{
-
-}
-
 #description {
   height: 300px;
 }
@@ -590,13 +573,6 @@ input[placeholder="Your Email Here"]{
         border: 1px solid white;
         padding-left: 1em;
         padding-right: 1em;
-      }
-      .heart{
-        margin-right: .5em;
-        text-align: center;
-        border: 1px solid white;
-        padding-right: 1em;
-        padding-left: 1em;
       }
     }
   }

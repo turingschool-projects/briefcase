@@ -51,7 +51,7 @@
         <div className="img-preview" alt="portfolio image preview">
           {$imagePreview}
         </div>
-        <div className='button-input inner'><input id='file-input-avatar' className="file-input" type="file" onChange={this.handleImageChange} /></div>
+        <div className='button-input inner'><input id='file-input-avatar' className="file-input" type="file" aria-label="File Input" onChange={this.handleImageChange} /></div>
       </div>
     )
   }

@@ -1,10 +1,10 @@
 <meta http-equiv="refresh" content="300">
 
-<%= react_component('Main', {portfolios: @portfolios,
+<%= react_component('Main', {portfolios: @portfolios.published,
   user: current_user,
-  avatars: @portfolio.avatar_urls,
-  bios: @portfolio.bios,
-  locations: @portfolio.locations,
+  avatars: @portfolios.avatar_urls,
+  bios: @portfolios.bios,
+  locations: @portfolios.locations,
   port_asc: @portfolios,
   port_desc: @portfolios},
 {prerender: true}) %>
