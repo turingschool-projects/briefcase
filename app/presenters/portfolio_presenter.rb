@@ -19,12 +19,16 @@ class PortfolioPresenter
     @portfolios.locations
   end
 
+  def previous_experience
+    @portfolios.previous_experiences
+  end
+
   def desc
     @portfolios.order(full_name: :desc)
   end
 
-  def asc
-    @portfolio.order(full_name: :asc)
+  def ascs
+    @portfolios.order(full_name: :asc)
   end
 
   def build_up_portfolios
