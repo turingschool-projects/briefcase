@@ -55,8 +55,8 @@ var UserCard = React.createClass({
                 <hr className="pop-up"></hr>
                 <span className="card-title grey-text text-darken-4">Locations</span>
                 <ul className="locations">
-                  {locations[portfolio.id].map((location) => {
-                    return ( <li>{location.city} {location.state}</li> )
+                  {locations[portfolio.id].map((location, index) => {
+                    return ( <li key={index}>{location.city} {location.state}</li> )
                   })}
                 </ul>
             </div>
