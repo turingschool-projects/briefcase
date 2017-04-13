@@ -17,5 +17,21 @@ describe 'as a user', js:true do
       expect(page).to have_content("John Ciccone")
       expect(page).to_not have_content("Anthony Ciccone")
     end
+
+    it 'I can use the search bar to search for a specific past experience', js:true do
+
+      user = new_user
+      portfolio = user.create_portfolio(linkedin_url: "linkedin.com", full_name: "Anthony Ciccone", github_url: "github.com", email: "test@test.com", title: "software developer", bio: "about myself here", previous_experience: "Accounting")
+
+      user2 = new_user
+      portfolio2 =  user2.create_portfolio(linkedin_url: "linkedin.com", full_name: "John Ciccone", github_url: "github.com", email: "test@test.com", title: "software developer", bio: "about myself here", previous_experience: "Marketing")
+
+      visit alumni_index_path
+
+      find(".Search-box").set("Marketing")
+
+      expect(page).to have_content("John Ciccone")
+      expect(page).to_not have_content("Anthony Ciccone")
+    end
   end
 end
