@@ -39,7 +39,7 @@ render() {
     } else {
       $imagePreview = (
                           this.props.avatar === "/avatars/original/missing.png"
-                            ? <img alt="portfolio avatar" className="" src="http://intelligentsystemsmonitoring.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png"></img>
+                            ? <img alt="portfolio avatar" className="" src="http://www.webtutorialspoint.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png"></img>
                             : <img alt="portfolio avatar" className="" src={this.props.avatar}></img>
                       );
     }

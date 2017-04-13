@@ -24,7 +24,7 @@ var DashboardProfile = React.createClass({
               <center>
                 {
                   this.props.avatar === "/avatars/original/missing.png"
-                    ? <img alt="portfolio avatar" className="activator card-picture" src="http://intelligentsystemsmonitoring.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png"></img>
+                    ? <img alt="portfolio avatar" className="activator card-picture" src="http://www.webtutorialspoint.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png"></img>
                     : <img alt="portfolio avatar" className="activator card-picture" src={this.props.avatar}></img>
                 }
               </center>
