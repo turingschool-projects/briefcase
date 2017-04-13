@@ -17,6 +17,7 @@ def create_previous_experience
 end
 
 def create_user
+  clean_users
   200.times do
     user = User.create!(
     first_name:       Faker::Name.first_name,
@@ -39,7 +40,6 @@ end
 
 
 def create_portfolio
-  clean_users
   users = User.all
   users.each do |user|
     user.portfolio = Portfolio.new(
