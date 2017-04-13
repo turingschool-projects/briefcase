@@ -303,6 +303,7 @@ img.card-picture {
   border-radius: 50% !important;
   height: 200px !important;
   width: 200px !important;
+  // margin: 0 auto;
 }
 .card-profile {
   color: $turingblue;
@@ -329,6 +330,11 @@ img.card-picture {
     font-size: 14px !important;
   }
   margin-top: 8%
+}
+
+.card .card-image {
+    position: relative;
+    left: 25px;
 }
 
 i.right {
