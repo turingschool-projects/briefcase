@@ -36,7 +36,8 @@ gem 'faraday'
 gem 'faker'
 gem 'react-rails'
 gem 'omniauth-oauth2'
-gem 'omniauth-census', git: "https://github.com/NZenitram/census_staging_oauth"
+gem 'omniauth-census', git: "https://github.com/NZenitram/census_staging_oauth", group: [:staging, :development, :test]
+gem 'omniauth-census', git: "https://github.com/turingschool-projects/omniauth-census", group: :production
 gem 'thin'
 gem 'axios_rails', '~> 0.7.0'
 gem "responders"
