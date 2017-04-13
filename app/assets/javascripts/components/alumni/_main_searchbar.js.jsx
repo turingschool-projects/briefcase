@@ -24,11 +24,11 @@ var MainSearch = React.createClass({
     this.props.prepNewPortfolios(this.props.portfolios)
   },
 
-
   handleSearch :function(event){
     var data = event.target.value.split(" ");
     var portfolios = this.props.portfolios;
     var locations = this.props.locations;
+    var experiences = this.props.previous_experiences;
     var filterPortfolios = [];
 
     for (var i = 0; i < portfolios.length; i++) {
@@ -42,6 +42,10 @@ var MainSearch = React.createClass({
           break
         }
         else if (portfolios[i].bio.toLowerCase().indexOf(data[j].toLowerCase()) != -1) {
+          filterPortfolios.push(portfolios[i]);
+          break
+        }
+        else if (portfolios[i].previous_experience.toLowerCase().indexOf(data[j].toLowerCase()) != -1) {
           filterPortfolios.push(portfolios[i]);
           break
         }

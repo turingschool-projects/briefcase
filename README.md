@@ -45,6 +45,12 @@ rails g react:install
   brew install imagemagick
 ```
 
+8. SetUp
+```shell
+  rake db:{create,migrate,seed,seed:test_user}
+ ```
+
+
 ## Running the tests
 
 The test suite is running on Poltergeist and RSpec in order test the rails backend with the client side JavaScript. Poltergeist is a driver for Capybara.

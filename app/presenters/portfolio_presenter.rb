@@ -15,6 +15,10 @@ class PortfolioPresenter
     Portfolio.locations
   end
 
+  def previous_experience
+    Portfolio.previous_experiences
+  end
+
   def desc
     Portfolio.all.published.order(full_name: :desc)
   end

@@ -10,7 +10,8 @@ class PortfolioForReact
       :linkedin_url => portfolio.linkedin_url,
       :twitter_url => portfolio.twitter_url,
       :personal_url => portfolio.personal_url,
-      :user_slug => portfolio.user_slug
+      :user_slug => portfolio.user_slug,
+      :previous_experience => portfolio.previous_experience
     }
     avatar_urls = {}
     avatar_urls[:thumb] = portfolio.avatar.url(:thumb)

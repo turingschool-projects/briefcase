@@ -59,6 +59,13 @@ class Portfolio < ApplicationRecord
     end
   end
 
+  def self.previous_experiences
+    Portfolio.all.reduce({}) do |result, portfolio|
+      result[portfolio.id] = portfolio.previous_experience
+      result
+    end
+  end
+
   def create_locations(checked_locations)
     self.locations.delete_all
 
