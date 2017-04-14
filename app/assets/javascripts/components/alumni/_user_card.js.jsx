@@ -30,7 +30,7 @@ var UserCard = React.createClass({
               <div className="card-image waves-effect waves-block waves-light">
                 <center>
                   {
-                    portfolio.avatar_urls.square.includes("missing.png")
+                    portfolio.avatar_urls.square.indexOf("missing.png")
                     ? <img alt="portfolio avatar" className="activator card-picture" src="http://intelligentsystemsmonitoring.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png" />
                     : <img alt="portfolio avatar" className="activator card-picture" src={portfolio.avatar_urls.square} />
                   }
