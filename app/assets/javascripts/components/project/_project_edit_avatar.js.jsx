@@ -39,7 +39,7 @@ render() {
     } else {
       $imagePreview = (
                           this.props.avatar === "/avatars/original/missing.png"
-                            ? <img alt="portfolio avatar" className="" src="http://intelligentsystemsmonitoring.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png"></img>
+                            ? <img alt="portfolio avatar" className="" src="http://www.webtutorialspoint.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png"></img>
                             : <img alt="portfolio avatar" className="" src={this.props.avatar}></img>
                       );
     }
@@ -50,7 +50,7 @@ render() {
         <div className="img-preview" alt="image preview">
           {$imagePreview}
         </div>
-        <div className='button-input inner'><input id='file-input-avatar' className="file-input" type="file" onChange={this.handleImageChange} /></div>
+        <div className='button-input inner'><input id='file-input-avatar' className="file-input" type="file" aria-label="File Input" onChange={this.handleImageChange} /></div>
       </div>
     )
   }

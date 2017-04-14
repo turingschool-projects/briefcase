@@ -16,4 +16,5 @@
 //= require react_ujs
 //= require components
 //= require axios
+//= require moment
 //= require_tree .

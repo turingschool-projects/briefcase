@@ -1,18 +1,5 @@
 var MainSearch = React.createClass({
 
-  showHearts: function(self){
-    if ($('#by-heart').hasClass('fa-heart-o')) {
-      $('#by-heart').removeClass("fa-heart-o");
-      $('#by-heart').addClass("fa-heart");
-      $('.card').hide()
-      $('.card .fa-heart').parent().show()
-    } else {
-      $('#by-heart').removeClass("fa-heart");
-      $('#by-heart').addClass("fa-heart-o");
-      $('.card').show()
-    }
-  },
-
   sort: function(self){
     if ($('#arrow-toggle').hasClass('fa-arrow-up')) {
       this.props.prepNewPortfolios(this.props.portfolios.sort(function(a, b){
@@ -37,11 +24,11 @@ var MainSearch = React.createClass({
     this.props.prepNewPortfolios(this.props.portfolios)
   },
 
-
   handleSearch :function(event){
     var data = event.target.value.split(" ");
     var portfolios = this.props.portfolios;
     var locations = this.props.locations;
+    var experiences = this.props.previous_experiences;
     var filterPortfolios = [];
 
     for (var i = 0; i < portfolios.length; i++) {
@@ -55,6 +42,10 @@ var MainSearch = React.createClass({
           break
         }
         else if (portfolios[i].bio.toLowerCase().indexOf(data[j].toLowerCase()) != -1) {
+          filterPortfolios.push(portfolios[i]);
+          break
+        }
+        else if (portfolios[i].previous_experience.toLowerCase().indexOf(data[j].toLowerCase()) != -1) {
           filterPortfolios.push(portfolios[i]);
           break
         }
@@ -83,7 +74,7 @@ var MainSearch = React.createClass({
           <div className='col s12 l6'>
             <div className="search-container">
               <form action className="Search">
-                <input name="search-field" className="Search-box" placeholder="Search Here..." type="search" id="Search-box" autoComplete="off" onChange={this.handleSearch}/>
+                <input name="search-field" className="Search-box" aria-label="search" placeholder="Search Here..." type="search" id="Search-box" autoComplete="off" onChange={this.handleSearch}/>
                 <label className="Search-label" htmlFor="Search-box"><i className="material-icons">search</i></label>
               </form>
             </div>
@@ -91,7 +82,6 @@ var MainSearch = React.createClass({
           <div className='col s12 l6 search-buttons'>
             <ul>
               <li><button className='title btn transparent all-graduates-btn' onClick={this.allGraduates}>All Alumni</button></li>
-              <li><button className='title btn transparent heart' onClick={this.showHearts}><i id="by-heart" className="fa fa-heart-o center fa-2x" aria-label="favorite graduates" aria-hidden="true"></i></button></li>
               <li><button className='title btn transparent a-z-btn' onClick={this.sort}> A-Z <i id='arrow-toggle' className="fa fa-arrow-down" aria-label="sort graduates a to z" aria-hidden="true"></i></button></li>
             </ul>
           </div>

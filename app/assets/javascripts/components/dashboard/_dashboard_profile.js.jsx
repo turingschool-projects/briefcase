@@ -16,12 +16,6 @@ var DashboardProfile = React.createClass({
       var slug = this.props.user.slug;
       var portfolio = this.props.portfolio;
 
-      if(portfolio.full_name != null){
-        var name = portfolio.full_name;
-      } else {
-        var name = `${user.first_name} ${user.last_name}`;
-      }
-
       return(
         <div className="col s4 dashboard-container" key={user.id}>
           <h2>My Profile</h2>
@@ -30,14 +24,14 @@ var DashboardProfile = React.createClass({
               <center>
                 {
                   this.props.avatar === "/avatars/original/missing.png"
-                    ? <img alt="portfolio avatar" className="activator card-picture" src="http://intelligentsystemsmonitoring.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png"></img>
+                    ? <img alt="portfolio avatar" className="activator card-picture" src="http://www.webtutorialspoint.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png"></img>
                     : <img alt="portfolio avatar" className="activator card-picture" src={this.props.avatar}></img>
                 }
               </center>
             </div>
             <div className="card-content">
               <center>
-                <span className="card-title grey-text text-darken-4">{name}</span>
+                <span className="card-title grey-text text-darken-4">{portfolio.full_name}</span>
                 <p className="card-title grey-text text-darken-4 ">{portfolio.title}</p>
               </center>
               <hr/>

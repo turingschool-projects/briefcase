@@ -47,7 +47,7 @@ RSpec.describe Portfolio, js:true  do
       fill_in 'linkedin', with: "www.test.com"
 
       click_on 'Save as Draft'
-      sleep(1)
+      sleep(5)
 
       expect(current_path).to eq(dashboard_path)
       expect(user.portfolio.full_name).to eq("Jimmy")

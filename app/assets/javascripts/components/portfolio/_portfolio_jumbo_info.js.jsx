@@ -33,10 +33,10 @@ var PortfolioJumboInfo = React.createClass({
                   <div className='col s4'>
                   </div>
                   <div className="col s4">
-                      <input type="text" id="edit-full-name" name="name" placeholder="Full Name*" defaultValue={this.state.full_name} onChange={this.handleUpdate}></input>
+                      <input type="text" id="edit-full-name" name="name" placeholder="Full Name*" aria-label="Full Name" defaultValue={this.state.full_name} onChange={this.handleUpdate}></input>
                   </div>
                   <div className="col s4 offset-s4">
-                      <input type="text" id="edit-title" name="title" placeholder="Title*" defaultValue={this.state.title} onChange={this.handleUpdate}></input>
+                      <input type="text" id="edit-title" name="title" placeholder="Title*" aria-label="Title" defaultValue={this.state.title} onChange={this.handleUpdate}></input>
                   </div>
 
                 </div>

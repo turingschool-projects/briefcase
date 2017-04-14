@@ -159,10 +159,6 @@
           border: 1px solid white;
           width: 50px !important;
         }
-        .heart{
-          border: 1px solid white;
-          width: 50px !important;
-        }
 
       }
 
@@ -297,6 +293,7 @@ input[type="search"] {
   i {
     padding-right: 5%;
     padding-left: 5%;
+    color: #7c8c8e;
   }
   margin-bottom: 12%;
   margin-top: 12%;
@@ -306,6 +303,7 @@ img.card-picture {
   border-radius: 50% !important;
   height: 200px !important;
   width: 200px !important;
+  // margin: 0 auto;
 }
 .card-profile {
   color: $turingblue;
@@ -315,12 +313,12 @@ img.card-picture {
   font-weight: normal;
 
   &:hover {
-    font-weight: bold;
+    border: 2px solid $turingblue;
   }
 }
 
 .card {
-  height: 50em;
+  height: 45em;
 }
 
 .card-picture {
@@ -334,13 +332,9 @@ img.card-picture {
   margin-top: 8%
 }
 
-.fa-heart-o {
-  color: pink;
-  padding: 2%;
-}
-.fa-heart {
-  color: pink;
-  padding: 2%;
+.card .card-image {
+    position: relative;
+    left: 25px;
 }
 
 i.right {
@@ -350,8 +344,11 @@ i.right {
 
 hr {
   width: 14em;
+  height: 1px;
   margin-top: 1em;
   margin-bottom: 1em;
+  background-color: #05c2d1;
+  border: none;
 }
 .card .card-content p {
     font-size: 16px !important;
@@ -553,10 +550,6 @@ input[placeholder="Your Email Here"]{
   color: #05c2d1;
 }
 
-#by-heart{
-
-}
-
 #description {
   height: 300px;
 }
@@ -590,13 +583,6 @@ input[placeholder="Your Email Here"]{
         border: 1px solid white;
         padding-left: 1em;
         padding-right: 1em;
-      }
-      .heart{
-        margin-right: .5em;
-        text-align: center;
-        border: 1px solid white;
-        padding-right: 1em;
-        padding-left: 1em;
       }
     }
   }
@@ -684,4 +670,21 @@ input[placeholder="Your Email Here"]{
 
 .project-bio-info p {
   padding-top: 5px;
+}
+
+i.material-icons .hamburger {
+  color: white;
+  padding: 25px;
+  float: right;
+  font-size: 2em;
+}
+
+nav {
+  height: 0px;
+}
+
+nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+  float: right;
+  font-size: 30px;
+  color: white;
 }
